@@ -1,0 +1,67 @@
+// Colores
+
+$primary: #01a767;
+$secondary: #87e9c3;
+$tertiary: #ffffff;
+
+$neutral_dark: #384751;
+$neutral: #b1babd;
+$neutral_light: #dce5e7;
+$neutral_lighter: #fafafa;
+
+$wallpaper: linear-gradient(
+  180.16deg,
+  #dce5e7 0.13%,
+  rgba(220, 229, 231, 0) 98.63%
+);
+
+$button_gradient: linear-gradient(124.06deg, #01a767 7.23%, #00d281 83.23%);
+
+$error: #ff3a3a;
+
+// Settings
+$border_radius: 90px 0px;
+$shadow: 0px 4px 5px rgba(0, 0, 0, 0.05);
+$max_width: 1140px;
+
+//Margin
+$margin_xs: 4px;
+$margin_sm: 8px;
+$margin_mm: 16px;
+$margin_lg: 32px;
+$margin_xl: 64px;
+
+//Padding
+$padding_xs: 4px;
+$padding_sm: 8px;
+$padding_md: 16px;
+$padding_lg: 32px;
+$padding_xl: 64px;
+
+//Font Size
+$size_xs: 18px;
+$size_sm: 20px;
+$size_md: 22px;
+$size_lg: 24px;
+$size_xl: 30px;
+
+//Fonts
+@mixin primaryFont($size) {
+  font-family: "GilroyLight", Arial, sans-serif;
+  font-size: $size;
+  font-weight: normal;
+}
+
+@mixin secondaryFont($size) {
+  font-family: "GilroyBold", Arial, sans-serif;
+  font-size: $size;
+  font-weight: bold;
+}
+
+// Flex
+@mixin flex($direction, $justify, $align) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify;
+  align-items: $align;
+}
