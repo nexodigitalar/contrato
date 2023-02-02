@@ -1,0 +1,38 @@
+@import "@/utils/theme.scss";
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  scroll-behavior: smooth;
+  background: $wallpaper;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+p {
+  margin: 0;
+}
+
+@font-face {
+  font-family: GilroyLight;
+  src: url("./assets/fonts/Gilroy-Light.woff");
+}
+
+@font-face {
+  font-family: GilroyBold;
+  src: url("./assets/fonts/Gilroy-ExtraBold.woff");
+}
+
+.underline {
+  text-decoration-line: underline;
+  text-decoration-color: #8cdcbd;
+  text-decoration-thickness: 0.45em;
+  text-decoration-skip-ink: none;
+  text-underline-offset: -0.1em;
+  -webkit-text-decoration-line: underline;
+  -webkit-text-decoration-color: #8cdcbd;
+  -webkit-text-decoration-thickness: 0.45em;
+  -webkit-text-decoration-skip-ink: none;
+  -webkit-text-underline-offset: -0.1em;
+}

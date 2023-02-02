@@ -1,0 +1,18 @@
+@import "@/utils/theme.scss";
+
+.navBar {
+  @include flex(row, center, center);
+  background-color: $neutral_lighter;
+  width: 100%;
+  padding: $padding_md 0;
+  box-shadow: $shadow;
+  .navBar_container {
+    @include flex(row, space-between, center);
+    width: 100%;
+    max-width: $max_width;
+    .navBar_title {
+      @include secondaryFont(40px);
+      color: $neutral_darker;
+    }
+  }
+}

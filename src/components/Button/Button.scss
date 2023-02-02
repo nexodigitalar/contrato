@@ -1,0 +1,15 @@
+@import "@/utils/theme.scss";
+
+.button {
+  @include primaryFont($size_xs);
+  border: none;
+  border-radius: 40px;
+  background: $green_gradient;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $tertiary;
+  padding: $padding_md $padding_lg;
+  margin: $margin_md 0;
+  cursor: pointer;
+}

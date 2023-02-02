@@ -1,0 +1,42 @@
+@import "@/utils/theme.scss";
+
+.cards {
+  @include flex(row, center, center);
+  background-color: $neutral_light;
+  border-radius: $border_radius;
+  width: 250px;
+  height: 240px;
+  .cards_container {
+    @include flex(column, center, center);
+    width: 80%;
+    .cards_img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+    .cards_title {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+      margin: $margin_sm 0;
+      text-align: center;
+      width: 80%;
+      .cards_greenTitle {
+        @include secondaryFont($size_xs);
+        color: $primary;
+      }
+      .cards_titleBold {
+        @include secondaryFont($size_xs);
+      }
+    }
+    .cards_number {
+      @include secondaryFont($size_sm);
+      color: $neutral_dark;
+      text-align: center;
+    }
+  }
+  .cards_line {
+    height: 120px;
+    width: 7px;
+    background-color: $secondary;
+  }
+}

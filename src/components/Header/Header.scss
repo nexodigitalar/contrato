@@ -1,0 +1,44 @@
+@import "@/utils/theme.scss";
+
+.header {
+  @include flex(column, center, center);
+  width: 100%;
+  .header_container {
+    @include flex(row, space-between, center);
+    width: 100%;
+    max-width: $max_width;
+    padding: $padding_md 0;
+    .header_titleContainer {
+      @include flex(row, space-between, center);
+      .header_title {
+        @include primaryFont($size_md);
+        text-align: right;
+        color: $neutral_darker;
+        .header_titleBold {
+          @include secondaryFont($size_md);
+        }
+      }
+      .header_line {
+        background-color: $primary;
+        height: 100px;
+        width: 1px;
+        margin: $margin_md;
+      }
+      .header_number {
+        @include secondaryFont(50px);
+        color: $neutral_darker;
+      }
+    }
+    .header_subtitle {
+      @include secondaryFont(100px);
+      color: $neutral_light;
+      opacity: 0.5;
+    }
+  }
+  .header_division {
+    width: 100%;
+    height: 1px;
+    background-color: $neutral_light;
+    max-width: $max_width;
+  }
+}

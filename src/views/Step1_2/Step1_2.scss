@@ -1,0 +1,53 @@
+@import "@/utils/theme.scss";
+
+.step1_2 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .step1_2_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+    .step1_2_innerContainer {
+      align-self: flex-start;
+      .step1_2_title {
+        @include primaryFont($size_lg);
+        color: $neutral_dark;
+        align-self: flex-start;
+        margin: $margin_sm 0;
+        .step1_greenTitle {
+          @include secondaryFont($size_lg);
+          color: $primary;
+        }
+        .step1_2_titleBold {
+          @include secondaryFont($size_lg);
+        }
+      }
+      .step1_2_textContainer {
+        @include flex(row, flex-start, center);
+        margin: $margin_lg 0;
+        .step1_2_watermark {
+          @include secondaryFont($size_xl);
+          color: $neutral_light;
+          margin: 0 $margin_md;
+          align-self: flex-start;
+        }
+        .step1_2_infoContainer {
+          @include flex(column, center, flex-start);
+        }
+        .step1_2_text {
+          @include primaryFont($size_sm);
+          color: $neutral_dark;
+          margin: $margin_sm 0;
+          .step1_2_greenText {
+            @include secondaryFont($size_sm);
+            color: $primary;
+          }
+        }
+      }
+    }
+    .step1_2_buttonContainer {
+      align-self: flex-end;
+    }
+  }
+}

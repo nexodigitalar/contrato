@@ -1,0 +1,52 @@
+@import "@/utils/theme.scss";
+
+.step1 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .step1_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+    .step1_title {
+      @include secondaryFont($size_lg);
+      color: $neutral_dark;
+      align-self: flex-start;
+      margin: $margin_sm 0;
+      .step1_greenTitle {
+        color: $primary;
+      }
+    }
+    .step1_right {
+      align-self: flex-end;
+    }
+    .step1_text {
+      @include primaryFont($size_sm);
+      color: $neutral_dark;
+      align-self: flex-start;
+      padding: $padding_lg 0;
+      .step1_greenText {
+        @include secondaryFont($size_sm);
+        color: $primary;
+      }
+    }
+    .step1_imgContainer {
+      @include flex(row, center, center);
+      gap: 50px;
+      width: 100%;
+      margin: $margin_xl 0;
+    }
+    .step1_textSm {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+      width: 100%;
+    }
+  }
+}
+
+.step1_rightContainer {
+  @include flex(column, center, flex-end);
+  text-align: right;
+  width: 100%;
+  align-self: flex-end;
+}

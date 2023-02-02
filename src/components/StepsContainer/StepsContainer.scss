@@ -1,0 +1,12 @@
+@import "@/utils/theme.scss";
+
+.stepsContainer {
+  @include flex(row, center, center);
+  width: 100%;
+  padding: $padding_md 0 $padding_xl 0;
+  .stepsContainer_container {
+    @include flex(row, space-between, center);
+    max-width: $max_width;
+    width: 100%;
+  }
+}

@@ -1,14 +1,23 @@
 /* Styles */
-import "./App.css";
+import "./App.scss";
 
 /* Components */
 import MainLayout from "./layout/MainLayout";
-import Home from "./views/Home/Home";
+import Home from "./pages/Home";
 
 /* React Router Dom */
 import { Routes, Route } from "react-router-dom";
 
+import { useEffect } from "react";
+
 const App = () => {
+  /*   useEffect(() => {
+    localStorage.setItem(
+      "contrato",
+      JSON.stringify({ Producto: "Pesos Fijos" })
+    );
+  }, []); */
+
   return (
     <>
       <Routes>
