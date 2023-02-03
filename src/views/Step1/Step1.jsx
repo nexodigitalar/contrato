@@ -1,5 +1,6 @@
 /* Styles & Img */
 import "./Step1.scss";
+import cuotaLibre from "@/assets/img/cuotaLibre.png";
 import capital from "@/assets/img/capital.png";
 import cuota from "@/assets/img/cuota.png";
 import totalCuotas from "@/assets/img/total-cuotas.png";

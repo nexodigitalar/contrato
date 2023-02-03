@@ -11,7 +11,6 @@ const Step1_2 = () => {
     <div className="step1_2">
       <div className="step1_2_container">
         <Header text="PRODUCTO" bold="SELECCIONADO" number="550" />
-        <StepsContainer />
 
         <section className="step1_2_innerContainer">
           <h3 className="step1_2_title">

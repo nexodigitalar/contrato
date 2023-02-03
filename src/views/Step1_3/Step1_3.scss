@@ -1,1 +1,69 @@
 @import "@/utils/theme.scss";
+
+.step1_3 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .step1_3_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+
+    .step1_3_innerContainer {
+      @include flex(row, flex-start, flex-start);
+      margin: $margin_md 0;
+      width: 100%;
+      .step1_3_watermark {
+        @include secondaryFont(150px);
+        color: $neutral_light;
+        margin: 0 $margin_md;
+        align-self: flex-start;
+      }
+
+      .step1_3_infoContainer {
+        width: 100%;
+        .step1_3_nav {
+          @include flex(row, space-between, center);
+          width: 100%;
+          .step1_3_title {
+            @include primaryFont($size_lg);
+            color: $neutral_dark;
+            margin: $margin_sm 0;
+            .step1_3_titleBold {
+              @include secondaryFont($size_lg);
+              color: $neutral_dark;
+            }
+            .step1_3_greenTitle {
+              @include secondaryFont($size_lg);
+              color: $primary;
+            }
+          }
+        }
+
+        .step1_3_switchContainer {
+          @include flex(row, center, center);
+          gap: 16px;
+        }
+
+        .step1_3_text {
+          @include primaryFont($size_sm);
+          color: $neutral_dark;
+          margin: $margin_md 0;
+          .step1_3_greenText {
+            @include secondaryFont($size_sm);
+            color: $primary;
+          }
+        }
+      }
+    }
+
+    .step1_3_buttonContainer {
+      align-self: flex-end;
+    }
+    .step1_3_subtext {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+      margin: $margin_md 0;
+    }
+  }
+}
