@@ -5,8 +5,21 @@
   width: 100%;
   margin-bottom: $margin_lg;
   .step2_container {
-    @include flex(column, center, center);
+    @include flex(column, center, flex-start);
     width: 100%;
     max-width: $max_width;
+    .step2_innerContainer {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      width: 100%;
+      gap: 50px;
+      .step2_title {
+        @include primaryFont($size_xl);
+        color: $neutral_dark;
+      }
+    }
+    .step2_buttonContainer {
+      align-self: flex-end;
+    }
   }
 }

@@ -1,0 +1,17 @@
+@import "@/utils/theme.scss";
+
+label {
+  width: 100%;
+}
+
+.input {
+  background-color: $tertiary;
+  border: none;
+  border-bottom: 2px solid $primary;
+  border-radius: 3px 3px 0px 0px;
+  padding: $padding_md;
+  @include primaryFont($size_md);
+  color: $neutral_dark;
+  margin: $margin_md 0;
+  width: 100%;
+}

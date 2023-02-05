@@ -12,7 +12,7 @@ import Step2 from "../views/Step2/Step2";
 
 const Home = () => {
   const [step, setStep] = useState(1);
-  return <div>{step === 1 && <Step1_3 />}</div>;
+  return <div>{step === 1 && <Step2 />}</div>;
 };
 
 export default Home;
