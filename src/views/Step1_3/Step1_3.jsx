@@ -2,6 +2,9 @@
 import "./Step1_3.scss";
 import cuotaLibre from "@/assets/img/cuota-libre.png";
 
+/* React Router */
+import { useNavigate } from "react-router-dom";
+
 /* Components */
 import Header from "@/components/Header/Header";
 import Switch from "@/components/Switch/Switch";
@@ -9,6 +12,8 @@ import Button from "@/components/Button/Button";
 import CuotaMinMax from "./components/CuotaMinMax";
 
 const Step1_3 = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="step1_3">
       <div className="step1_3_container">
@@ -232,7 +237,11 @@ const Step1_3 = () => {
         </section>
 
         <div className="step1_3_buttonContainer">
-          <Button text="Siguiente" />
+          <Button text="Ver preguntas frecuentes" type="secondary" />
+          <Button
+            text="Siguiente"
+            click={() => navigate("/datos-personales")}
+          />
         </div>
         <p className="step1_3_subtext">
           * Debe aceptar todas las informaciones correspondientes para poder

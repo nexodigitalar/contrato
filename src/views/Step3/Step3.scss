@@ -13,9 +13,12 @@
       grid-template-columns: 2fr 1fr;
       width: 100%;
       gap: 50px;
-      .step3_img {
-        width: 70%;
-        object-fit: contain;
+      .step3_imgContainer {
+        @include flex(column, flex-start, center);
+        width: 100%;
+        .step3_img {
+          width: 50%;
+        }
       }
     }
 

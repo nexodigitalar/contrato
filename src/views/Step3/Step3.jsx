@@ -3,6 +3,9 @@ import "./Step3.scss";
 import cuotaLibre from "@/assets/img/cuota-libre.png";
 import user from "@/assets/img/info-user.png";
 
+/* React Router */
+import { useNavigate } from "react-router-dom";
+
 /* Components */
 import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
@@ -10,15 +13,19 @@ import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
 
 const Step3 = () => {
+  const navigate = useNavigate();
+
   return (
     <div className="step3">
       <div className="step3_container">
         <Header text="DATOS" bold="OCUPACIONALES" logo={cuotaLibre} />
-        <StepsContainer />
+        <StepsContainer step={3} />
 
         <div className="step3_innerContainer">
           <InputForm />
-          <img className="step3_img" src={user} />
+          <div className="step3_imgContainer">
+            <img className="step3_img" src={user} />
+          </div>
         </div>
 
         <label className="step3_label">
@@ -34,7 +41,7 @@ const Step3 = () => {
         </p>
 
         <div className="step3_buttonContainer">
-          <Button text="Siguiente" />
+          <Button text="Siguiente" click={() => navigate("/resumen-plan")} />
         </div>
       </div>
     </div>

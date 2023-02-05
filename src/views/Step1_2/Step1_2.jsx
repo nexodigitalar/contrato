@@ -3,10 +3,9 @@ import "./Step1_2.scss";
 
 /* Components */
 import Header from "@/components/Header/Header";
-import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import Button from "@/components/Button/Button";
 
-const Step1_2 = () => {
+const Step1_2 = ({ changePage }) => {
   return (
     <div className="step1_2">
       <div className="step1_2_container">
@@ -80,7 +79,7 @@ const Step1_2 = () => {
           </div>
         </section>
         <div className="step1_2_buttonContainer">
-          <Button text="Siguiente" />
+          <Button text="Siguiente" click={() => changePage(3)} />
         </div>
       </div>
     </div>

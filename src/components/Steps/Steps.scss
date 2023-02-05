@@ -2,6 +2,7 @@
 
 .steps {
   @include flex(column, center, center);
+  cursor: pointer;
   .steps_container {
     @include flex(row, space-between, flex-end);
     gap: 22px;
@@ -19,6 +20,7 @@
     .steps_number {
       @include secondaryFont(150px);
       height: 150px;
+      margin: 0;
       color: $neutral_light;
     }
   }

@@ -21,7 +21,7 @@
       }
       .step1_2_textContainer {
         @include flex(row, flex-start, center);
-        margin: $margin_lg 0;
+        margin: $margin_md 0;
         .step1_2_watermark {
           @include secondaryFont($size_xl);
           color: $neutral_light;

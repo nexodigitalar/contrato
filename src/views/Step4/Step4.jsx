@@ -17,7 +17,7 @@ const Step4 = () => {
     <div className="step4">
       <div className="step4_container">
         <Header text="RESUMEN" bold="DEL PLAN" logo={cuotaLibre} />
-        <StepsContainer />
+        <StepsContainer step={4} />
 
         <h3 className="step4_title">
           <span className="green">Resumen </span>del{" "}
@@ -62,7 +62,9 @@ const Step4 = () => {
               </p>
             </div>
           </section>
-          <img src={check} />
+          <div className="step4_imgContainer">
+            <img className="step4_img" src={check} />
+          </div>
         </div>
 
         <div className="step4_buttonContainer">

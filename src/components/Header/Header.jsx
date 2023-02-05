@@ -12,7 +12,7 @@ const Header = ({ text, bold, logo, number }) => {
           </p>
           <div className="header_line"></div>
           {logo ? (
-            <img src={logo} />
+            <img src={logo} className="header_logo" />
           ) : (
             <p className="header_number">{number}</p>
           )}

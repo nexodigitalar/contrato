@@ -46,6 +46,8 @@
     }
 
     .step1_3_buttonContainer {
+      @include flex(row, center, center);
+      gap: 16px;
       align-self: flex-end;
     }
     .step1_3_subtext {

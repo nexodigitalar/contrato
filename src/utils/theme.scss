@@ -17,6 +17,11 @@ $wallpaper: linear-gradient(
 );
 
 $green_gradient: linear-gradient(124.06deg, #01a767 7.23%, #00d281 83.23%);
+$green_gradient_hover: linear-gradient(
+  124.06deg,
+  #017347 7.23%,
+  #009e5f 83.23%
+);
 
 $error: #ff3a3a;
 
@@ -40,11 +45,11 @@ $padding_lg: 32px;
 $padding_xl: 64px;
 
 //Font Size
-$size_xs: 18px;
-$size_sm: 20px;
-$size_md: 22px;
-$size_lg: 24px;
-$size_xl: 30px;
+$size_xs: 16px;
+$size_sm: 18px;
+$size_md: 20px;
+$size_lg: 22px;
+$size_xl: 24px;
 
 //Fonts
 @mixin primaryFont($size) {

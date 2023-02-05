@@ -1,7 +1,8 @@
 @import "@/utils/theme.scss";
 
 .inputForm_div {
-  @include flex(row, space-between, center);
-  gap: 100px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
   width: 100%;
 }

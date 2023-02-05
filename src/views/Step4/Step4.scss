@@ -9,7 +9,7 @@
     width: 100%;
     max-width: $max_width;
     .step4_title {
-      @include primaryFont($size_xl);
+      @include primaryFont($size_lg);
       color: $neutral_dark;
     }
     .step4_innerContainer {
@@ -30,9 +30,16 @@
           color: $neutral_dark;
         }
       }
+      .step4_imgContainer {
+        @include flex(column, flex-start, center);
+        width: 100%;
+        .step4_img {
+          width: 50%;
+        }
+      }
     }
     .step4_buttonContainer {
-      align-self: flex-end;
+      align-self: center;
     }
     .step4_finalText {
       @include primaryFont($size_xs);

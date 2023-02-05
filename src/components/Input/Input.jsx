@@ -1,11 +1,7 @@
 import "./Input.scss";
 
 const Input = ({ placeholder }) => {
-  return (
-    <label>
-      <input className="input" placeholder={placeholder} />
-    </label>
-  );
+  return <input className="input" placeholder={placeholder} />;
 };
 
 export default Input;

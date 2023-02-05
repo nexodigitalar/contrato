@@ -1,3 +1,4 @@
+/* Styles & Img */
 import "./NavBar.scss";
 import logo from "@/assets/img/logo.png";
 

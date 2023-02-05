@@ -11,7 +11,10 @@ const InputForm = () => {
         <SelectInput placeholder="* Sexo" />
         <Input placeholder="* Nacionalidad" />
       </div>
-      <Input placeholder="* Email" />
+      <div className="inputForm_div">
+        <Input placeholder="* Email" />
+      </div>
+
       <div className="inputForm_div">
         <SelectInput placeholder="* País" />
         <Input placeholder="* Departamento" />

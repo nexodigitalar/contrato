@@ -6,7 +6,9 @@ import Input from "../../../components/Input/Input";
 const InputForm = () => {
   return (
     <section>
-      <Input placeholder="* Cédula" />
+      <div className="inputForm_div">
+        <Input placeholder="* Cédula" />
+      </div>
       <div className="inputForm_div">
         <Input placeholder="Adjuntar frente de CI" />
         <Input placeholder="Adjuntar dorso de CI" />

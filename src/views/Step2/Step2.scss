@@ -14,8 +14,15 @@
       width: 100%;
       gap: 50px;
       .step2_title {
-        @include primaryFont($size_xl);
+        @include primaryFont($size_lg);
         color: $neutral_dark;
+      }
+      .step2_imgContainer {
+        @include flex(column, flex-start, center);
+        width: 100%;
+        .step2_img {
+          width: 50%;
+        }
       }
     }
     .step2_buttonContainer {

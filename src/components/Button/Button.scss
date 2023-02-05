@@ -12,4 +12,19 @@
   padding: $padding_md $padding_lg;
   margin: $margin_md 0;
   cursor: pointer;
+  transition: all 0.4s;
+  &:hover {
+    background: $green_gradient_hover;
+  }
+}
+
+.buttonSecondary {
+  border: 2px solid $primary;
+  background: transparent;
+  color: $primary;
+  &:hover {
+    background: transparent;
+    border: 2px solid #017347;
+    color: #017347;
+  }
 }
