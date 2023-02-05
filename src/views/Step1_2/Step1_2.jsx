@@ -14,44 +14,40 @@ const Step1_2 = () => {
 
         <section className="step1_2_innerContainer">
           <h3 className="step1_2_title">
-            <span className="step1_greenTitle">Detalles</span> que tenés que{" "}
-            <span className="step1_2_titleBold">conocer</span>
+            <span className="green">Detalles</span> que tenés que{" "}
+            <span className="gray">conocer</span>
           </h3>
 
           <div className="step1_2_textContainer">
             <p className="step1_2_watermark">a</p>
             <p className="step1_2_text">
-              Plazo: <span className="step1_2_greenText">200 meses</span>
+              Plazo: <span className="green">200 meses</span>
             </p>
           </div>
           <div className="step1_2_textContainer">
             <p className="step1_2_watermark">b</p>
             <p className="step1_2_text">
               Cantidad de integrantes:{" "}
-              <span className="step1_2_greenText">400 personas</span>
+              <span className="green">400 personas</span>
             </p>
           </div>
           <div className="step1_2_textContainer">
             <p className="step1_2_watermark">c</p>
             <p className="step1_2_text">
-              Primer sorteo:{" "}
-              <span className="step1_2_greenText">01/02/2023</span>
+              Primer sorteo: <span className="green">01/02/2023</span>
             </p>
           </div>
           <div className="step1_2_textContainer">
             <p className="step1_2_watermark">d</p>
             <p className="step1_2_text">
-              Sorteos: <span className="step1_2_greenText">mensuales</span>
+              Sorteos: <span className="green">mensuales</span>
             </p>
           </div>
           <div className="step1_2_textContainer">
             <p className="step1_2_watermark">e</p>
             <div className="step1_2_infoContainer">
               <p className="step1_2_text">
-                <span className="step1_2_greenText">
-                  {" "}
-                  Itinerario de adjudcaciones:{" "}
-                </span>
+                <span className="green"> Itinerario de adjudcaciones: </span>
                 El primer año (mes 1 al mes 12): 4 ganadores mensuales: 1 por
                 sorteo, 2 por licitación libre y 1 por licitación base, la cual
                 comenzará con 99 cuotas en el primer mes y luego irá decreciendo

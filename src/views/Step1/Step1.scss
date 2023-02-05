@@ -13,9 +13,6 @@
       color: $neutral_dark;
       align-self: flex-start;
       margin: $margin_sm 0;
-      .step1_greenTitle {
-        color: $primary;
-      }
     }
     .step1_right {
       align-self: flex-end;
@@ -25,10 +22,6 @@
       color: $neutral_dark;
       align-self: flex-start;
       padding: $padding_lg 0;
-      .step1_greenText {
-        @include secondaryFont($size_sm);
-        color: $primary;
-      }
     }
     .step1_imgContainer {
       @include flex(row, center, center);

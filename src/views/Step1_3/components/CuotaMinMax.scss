@@ -19,10 +19,6 @@
           color: $neutral_dark;
           margin: $margin_xs 0;
         }
-        .cuotam_greenText {
-          @include secondaryFont($size_sm);
-          color: $primary;
-        }
       }
       .cuotam_icon {
         color: $primary;

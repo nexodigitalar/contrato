@@ -1,1 +1,12 @@
 @import "@/utils/theme.scss";
+
+.step2 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .step2_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+  }
+}

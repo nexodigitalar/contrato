@@ -22,21 +22,21 @@ const Step1 = () => {
         <Header text="PRODUCTO" bold="SELECCIONADO" logo={cuotaLibre} />
         <StepsContainer />
         <h3 className="step1_title">
-          <span className="step1_greenTitle">Producto</span> seleccionado{" "}
-          <span className="step1_greenTitle">CUOTA LIBRE</span>
+          <span className="green">Producto</span> seleccionado{" "}
+          <span className="green">CUOTA LIBRE</span>
         </h3>
         <h3 className="step1_title">
-          <span className="step1_greenTitle">Contrato</span> con modalidad{" "}
-          <span className="step1_greenTitle">CUOTA LIBRE PESOS</span>
+          <span className="green">Contrato</span> con modalidad{" "}
+          <span className="green">CUOTA LIBRE PESOS</span>
         </h3>
         <p className="step1_text">
-          Tu <span className="step1_greenText">cuota promedio</span> determina
-          tu capital a retirar. Podés pagar cualquier valor entre la cuota{" "}
-          <span className="step1_greenText">mínima</span> y la{" "}
-          <span className="step1_greenText">máxima</span>. Cuando sos
-          favorecido, empezás a pagar la cuota promedio generada. Al hacer tus
-          pagos, se te ofrecerá la cuota correspondiente a tu capital elegido,
-          ajustado por <span className="step1_greenText">IPC</span>.
+          Tu <span className="green">cuota promedio</span> determina tu capital
+          a retirar. Podés pagar cualquier valor entre la cuota{" "}
+          <span className="green">mínima</span> y la{" "}
+          <span className="green">máxima</span>. Cuando sos favorecido, empezás
+          a pagar la cuota promedio generada. Al hacer tus pagos, se te ofrecerá
+          la cuota correspondiente a tu capital elegido, ajustado por{" "}
+          <span className="green">IPC</span>.
         </p>
 
         <section className="step1_imgContainer">
@@ -64,8 +64,8 @@ const Step1 = () => {
         </section>
 
         <h3 className="step1_title">
-          <span className="step1_greenTitle">Condiciones del contrato</span> en
-          modalidad <span className="step1_greenTitle">CUOTA LIBRE PESOS</span>
+          <span className="green">Condiciones del contrato</span> en modalidad{" "}
+          <span className="green">CUOTA LIBRE PESOS</span>
         </h3>
         <section className="step1_imgContainer">
           <Cards
@@ -85,7 +85,7 @@ const Step1 = () => {
         </section>
 
         <h3 className="step1_title">
-          <span className="step1_greenTitle">Otras</span> condiciones
+          <span className="green">Otras</span> condiciones
           <br />
           $1.000.000
         </h3>
@@ -109,8 +109,8 @@ const Step1 = () => {
 
         <section className="step1_rightContainer">
           <h3 className="step1_title step1_right">
-            <span className="step1_greenTitle">En la próxima página</span> verás
-            más detalles
+            <span className="green">En la próxima página</span> verás más
+            detalles
           </h3>
           <p className="step1_textSm">* Ver términos y condiciones</p>
           <Button text="Siguiente" click={() => null} />

@@ -6,9 +6,9 @@ const Cards = ({ titleGreen, title, titleBold, number, img }) => {
       <div className="cards_container">
         <img className="cards_img" src={img} alt={title} />
         <h4 className="cards_title">
-          <span className="cards_greenTitle">{titleGreen}</span>
+          <span className="green">{titleGreen}</span>
           {title}
-          <span className="cards_titleBold">{titleBold}</span>
+          <span className="gray">{titleBold}</span>
         </h4>
         <p className="cards_number">{number}</p>
       </div>

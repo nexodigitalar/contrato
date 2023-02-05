@@ -29,14 +29,6 @@
             @include primaryFont($size_lg);
             color: $neutral_dark;
             margin: $margin_sm 0;
-            .step1_3_titleBold {
-              @include secondaryFont($size_lg);
-              color: $neutral_dark;
-            }
-            .step1_3_greenTitle {
-              @include secondaryFont($size_lg);
-              color: $primary;
-            }
           }
         }
 
@@ -49,10 +41,6 @@
           @include primaryFont($size_sm);
           color: $neutral_dark;
           margin: $margin_md 0;
-          .step1_3_greenText {
-            @include secondaryFont($size_sm);
-            color: $primary;
-          }
         }
       }
     }

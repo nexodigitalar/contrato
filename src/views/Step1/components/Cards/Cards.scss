@@ -20,13 +20,6 @@
       margin: $margin_sm 0;
       text-align: center;
       width: 80%;
-      .cards_greenTitle {
-        @include secondaryFont($size_xs);
-        color: $primary;
-      }
-      .cards_titleBold {
-        @include secondaryFont($size_xs);
-      }
     }
     .cards_number {
       @include secondaryFont($size_sm);
