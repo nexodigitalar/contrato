@@ -1,0 +1,7 @@
+@import "@/utils/theme.scss";
+
+.inputForm_div {
+  @include flex(row, space-between, center);
+  gap: 100px;
+  width: 100%;
+}

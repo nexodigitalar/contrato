@@ -14,7 +14,7 @@ const Step2 = () => {
   return (
     <div className="step2">
       <div className="step2_container">
-        <Header text="PRODUCTO" bold="SELECCIONADO" logo={cuotaLibre} />
+        <Header text="DATOS" bold="DEL TITULAR" logo={cuotaLibre} />
         <StepsContainer />
 
         <div className="step2_innerContainer">

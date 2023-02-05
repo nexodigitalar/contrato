@@ -1,0 +1,43 @@
+@import "@/utils/theme.scss";
+
+.step4 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .step4_container {
+    @include flex(column, center, flex-start);
+    width: 100%;
+    max-width: $max_width;
+    .step4_title {
+      @include primaryFont($size_xl);
+      color: $neutral_dark;
+    }
+    .step4_innerContainer {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      width: 100%;
+      gap: 50px;
+      .step4_descriptionContainer {
+        @include flex(row, flex-start, center);
+        gap: 20px;
+        margin: $margin_lg 0;
+        .step4_icon {
+          color: $primary;
+          font-size: $size_sm;
+        }
+        .step4_text {
+          @include primaryFont($size_sm);
+          color: $neutral_dark;
+        }
+      }
+    }
+    .step4_buttonContainer {
+      align-self: flex-end;
+    }
+    .step4_finalText {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+      margin: 0;
+    }
+  }
+}

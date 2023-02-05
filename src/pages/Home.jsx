@@ -9,10 +9,12 @@ import Step1 from "../views/Step1/Step1";
 import Step1_2 from "../views/Step1_2/Step1_2";
 import Step1_3 from "../views/Step1_3/Step1_3";
 import Step2 from "../views/Step2/Step2";
+import Step3 from "../views/Step3/Step3";
+import Step4 from "../views/Step4/Step4";
 
 const Home = () => {
   const [step, setStep] = useState(1);
-  return <div>{step === 1 && <Step2 />}</div>;
+  return <div>{step === 1 && <Step1 />}</div>;
 };
 
 export default Home;

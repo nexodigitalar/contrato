@@ -1,0 +1,39 @@
+@import "@/utils/theme.scss";
+
+.step3 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .step3_container {
+    @include flex(column, center, flex-start);
+    width: 100%;
+    max-width: $max_width;
+    .step3_innerContainer {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      width: 100%;
+      gap: 50px;
+      .step3_img {
+        width: 70%;
+        object-fit: contain;
+      }
+    }
+
+    .step3_label {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+      margin: $margin_lg 0;
+    }
+
+    .step3_important {
+      @include primaryFont($size_xs);
+      color: $error;
+      margin-top: $margin_md;
+      align-self: flex-end;
+    }
+
+    .step3_buttonContainer {
+      align-self: flex-end;
+    }
+  }
+}

@@ -8,4 +8,5 @@
   padding: $padding_md;
   @include primaryFont($size_md);
   color: $neutral_dark;
+  width: 100%;
 }
