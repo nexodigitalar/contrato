@@ -58,6 +58,7 @@ const Step1_3 = () => {
                 el ritmo de adjudicación de los grupos, para mejorar, aún más,
                 tus chances.
               </p>
+              <Button text="Ampliar información" />
             </div>
           </section>
         </section>
@@ -152,6 +153,7 @@ const Step1_3 = () => {
                 favorecido.
               </p>
             </div>
+            <Button text="Ver condiciones" />
           </section>
         </section>
 
@@ -237,7 +239,6 @@ const Step1_3 = () => {
         </section>
 
         <div className="step1_3_buttonContainer">
-          <Button text="Ver preguntas frecuentes" type="secondary" />
           <Button
             text="Siguiente"
             click={() => navigate("/datos-personales")}
