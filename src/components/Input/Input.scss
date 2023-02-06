@@ -1,9 +1,5 @@
 @import "@/utils/theme.scss";
 
-label {
-  width: 100%;
-}
-
 .input {
   background-color: $tertiary;
   border: none;
@@ -13,4 +9,7 @@ label {
   @include primaryFont($size_sm);
   color: $neutral_dark;
   margin: $margin_md 0;
+  &::placeholder {
+    color: $neutral;
+  }
 }
