@@ -18,7 +18,7 @@ const StepsContainer = ({ step }) => {
           textBold="SELECCIONADO"
           number="1"
           active={step === 1 ? true : false}
-          click={() => navigate("/producto-seleccionado")}
+          click={() => navigate("/")}
         />
         <Steps
           text="INGRESO DE"
