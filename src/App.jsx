@@ -31,7 +31,7 @@ const App = () => {
     <>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/producto-seleccionado" element={<Step1 />} />
+          <Route path="/" element={<Step1 />} />
           <Route path="/datos-personales" element={<Step2 />} />
           <Route path="/datos-ocupacionales" element={<Step3 />} />
           <Route path="/resumen-plan" element={<Step4 />} />
