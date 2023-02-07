@@ -13,3 +13,10 @@
     color: $neutral;
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .input {
+    @include primaryFont($size_xs);
+    width: 50%;
+  }
+}

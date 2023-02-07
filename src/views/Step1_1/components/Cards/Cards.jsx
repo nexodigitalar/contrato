@@ -1,8 +1,10 @@
 import "./Cards.scss";
+import vector from "@/assets/img/vector.svg";
 
 const Cards = ({ titleGreen, title, titleBold, number, img }) => {
   return (
     <div className="cards">
+      <img src={vector} className="cards_svg" />
       <div className="cards_container">
         <img className="cards_img" src={img} alt={title} />
         <h4 className="cards_title">

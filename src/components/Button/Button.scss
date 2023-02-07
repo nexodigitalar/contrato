@@ -16,15 +16,26 @@
   &:hover {
     background: $green_gradient_hover;
   }
+  .button_icon {
+    color: $tertiary;
+    font-size: $size_xs;
+    margin-left: $margin_sm;
+  }
 }
 
 .buttonSecondary {
-  border: 2px solid $primary;
-  background: transparent;
-  color: $primary;
-  &:hover {
-    background: transparent;
-    border: 2px solid #017347;
-    color: #017347;
+  @include primaryFont($size_xs);
+  padding: $padding_sm $padding_md;
+  color: $tertiary;
+  background-color: $primary;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .button {
+    @include primaryFont($size_xs);
+    padding: $padding_sm $padding_md;
   }
 }

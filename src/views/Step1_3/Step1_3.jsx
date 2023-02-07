@@ -29,7 +29,7 @@ const Step1_3 = () => {
                 <span className="gray">licitación</span>
               </h3>
               <div className="step1_3_switchContainer">
-                <p className="step1_3_text">Entendido</p>
+                <p className="step1_3_text text_mobile">Entendido</p>
                 <Switch />
               </div>
             </div>
@@ -73,7 +73,7 @@ const Step1_3 = () => {
                 <span className="gray">libre</span>
               </h3>
               <div className="step1_3_switchContainer">
-                <p className="step1_3_text">Entendido</p>
+                <p className="step1_3_text text_mobile">Entendido</p>
                 <Switch />
               </div>
             </div>
@@ -118,7 +118,7 @@ const Step1_3 = () => {
                 <span className="gray">y promedio</span>
               </h3>
               <div className="step1_3_switchContainer">
-                <p className="step1_3_text">Entendido</p>
+                <p className="step1_3_text text_mobile">Entendido</p>
                 <Switch />
               </div>
             </div>
@@ -137,7 +137,7 @@ const Step1_3 = () => {
                 <span className="gray">IPC</span>
               </h3>
               <div className="step1_3_switchContainer">
-                <p className="step1_3_text">Entendido</p>
+                <p className="step1_3_text text_mobile">Entendido</p>
                 <Switch />
               </div>
             </div>
@@ -167,7 +167,7 @@ const Step1_3 = () => {
                 <span className="gray">capital</span>
               </h3>
               <div className="step1_3_switchContainer">
-                <p className="step1_3_text">Entendido</p>
+                <p className="step1_3_text text_mobile">Entendido</p>
                 <Switch />
               </div>
             </div>
@@ -197,7 +197,7 @@ const Step1_3 = () => {
                 <span className="green">ahorro </span>
               </h3>
               <div className="step1_3_switchContainer">
-                <p className="step1_3_text">Entendido</p>
+                <p className="step1_3_text text_mobile">Entendido</p>
                 <Switch />
               </div>
             </div>

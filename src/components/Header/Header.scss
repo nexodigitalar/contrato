@@ -47,3 +47,39 @@
     max-width: $max_width;
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .header {
+    .header_container {
+      display: block;
+      padding: $padding_lg 0;
+      .header_titleContainer {
+        @include flex(row, center, center);
+        margin: 0 $margin_md;
+        .header_title {
+          @include primaryFont($size_sm);
+          width: auto;
+        }
+        .header_line {
+          height: 80px;
+          width: 2px;
+          margin: 10px;
+        }
+        .header_logo {
+          width: 100px;
+          object-fit: contain;
+        }
+        .header_number {
+          @include secondaryFont(30px);
+        }
+      }
+      .header_subtitle {
+        display: none;
+      }
+    }
+    .header_division {
+      width: 90%;
+      background-color: $neutral_light;
+    }
+  }
+}

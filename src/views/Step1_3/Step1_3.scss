@@ -57,3 +57,49 @@
     }
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step1_3 {
+    .step1_3_container {
+      .step1_3_innerContainer {
+        margin: $margin_md $margin_md;
+        width: auto;
+        .step1_3_watermark {
+          display: none;
+        }
+
+        .step1_3_infoContainer {
+          width: 100%;
+          .step1_3_nav {
+            @include flex(row, space-between, center);
+            width: 100%;
+            .step1_3_title {
+              @include primaryFont($size_md);
+              margin: $margin_sm 0;
+            }
+          }
+
+          .step1_3_switchContainer {
+            @include flex(column, center, center);
+            gap: 5px;
+            width: 30%;
+          }
+          .text_mobile {
+            @include primaryFont($size_xs);
+            margin: 0;
+          }
+        }
+      }
+
+      .step1_3_buttonContainer {
+        @include flex(row, center, center);
+        gap: 16px;
+        align-self: flex-end;
+      }
+      .step1_3_subtext {
+        @include primaryFont($size_xxs);
+        text-align: center;
+      }
+    }
+  }
+}

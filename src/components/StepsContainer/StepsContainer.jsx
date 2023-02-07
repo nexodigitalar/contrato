@@ -21,7 +21,7 @@ const StepsContainer = ({ step }) => {
           click={() => navigate("/")}
         />
         <Steps
-          text="INGRESO DE"
+          text="INGRESO"
           textBold="DATOS PERSONALES"
           number="2"
           active={step === 2 ? true : false}

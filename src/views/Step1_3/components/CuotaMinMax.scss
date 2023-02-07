@@ -27,3 +27,29 @@
     }
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .cuotam {
+    .cuotam_section {
+      @include flex(row, center, flex-start);
+      gap: 8px;
+      margin: $margin_sm 0;
+      .cuotam_container {
+        @include flex(row, center, center);
+        gap: 3px;
+
+        .cuotam_textContainer {
+          @include flex(column, center, center);
+          .cuotam_text {
+            @include secondaryFont($size_xs);
+            margin: 0;
+          }
+        }
+        .cuotam_icon {
+          color: $primary;
+          font-size: $size_md;
+        }
+      }
+    }
+  }
+}

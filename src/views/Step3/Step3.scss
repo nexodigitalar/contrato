@@ -40,3 +40,30 @@
     }
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step3 {
+    margin-bottom: $margin_md;
+    .step3_container {
+      margin: 0 $margin_md;
+      .step3_innerContainer {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+        .step3_imgContainer {
+          display: none;
+        }
+      }
+
+      .step3_label {
+        @include primaryFont($size_xs);
+        margin: $margin_md 0;
+      }
+
+      .step3_important {
+        @include primaryFont($size_xxs);
+      }
+    }
+  }
+}

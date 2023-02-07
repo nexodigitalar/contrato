@@ -15,3 +15,11 @@
 option {
   color: $neutral !important;
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .selectInput {
+    padding: $padding_md;
+    @include primaryFont($size_xs);
+    width: 60%;
+  }
+}

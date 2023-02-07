@@ -4,7 +4,7 @@
   width: 0.1px;
   height: 0.1px;
   opacity: 0;
-  overflow: hidden;
+  overflow: hidden_mobile;
   position: absolute;
   z-index: -1;
 }
@@ -33,4 +33,11 @@
   @include primaryFont($size_sm);
   color: $neutral;
   margin: $margin_md 0;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .inputfile {
+    @include primaryFont($size_xs);
+    width: 90%;
+  }
 }

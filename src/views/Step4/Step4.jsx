@@ -1,7 +1,6 @@
 /* Styles & Img */
 import "./Step4.scss";
 import cuotaLibre from "@/assets/img/cuota-libre.png";
-import check from "@/assets/img/check.png";
 
 /* Icons */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -11,6 +10,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import Button from "@/components/Button/Button";
+import Input from "@/components/Input/Input";
 
 const Step4 = () => {
   return (
@@ -19,13 +19,12 @@ const Step4 = () => {
         <Header text="RESUMEN" bold="DEL PLAN" logo={cuotaLibre} />
         <StepsContainer step={4} />
 
-        <h3 className="step4_title">
-          <span className="green">Resumen </span>del{" "}
-          <span className="gray">plan</span>
-        </h3>
-
         <div className="step4_innerContainer">
           <section>
+            <h3 className="step4_title">
+              <span className="green">Resumen </span>del{" "}
+              <span className="gray">plan</span>
+            </h3>
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
@@ -62,29 +61,83 @@ const Step4 = () => {
               </p>
             </div>
           </section>
-          <div className="step4_imgContainer">
-            <img className="step4_img" src={check} />
+          <section className="step4_col2">
+            <h3 className="step4_title">
+              <span className="green">Resumen </span>del{" "}
+              <span className="gray">grupo</span>
+            </h3>
+            <div className="step4_descriptionContainer">
+              <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
+              <p className="step4_text">
+                <span className="green">Número</span> del{" "}
+                <span className="gray">grupo - 550</span>
+              </p>
+            </div>
+            <div className="step4_descriptionContainer">
+              <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
+              <p className="step4_text">
+                <span className="green">Cantidad</span> de{" "}
+                <span className="gray">integrantes - 400 personas</span>
+              </p>
+            </div>
+            <div className="step4_descriptionContainer">
+              <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
+              <p className="step4_text">
+                <span className="green">Plazo</span>{" "}
+                <span className="gray">- 200 meses</span>
+              </p>
+            </div>
+            <div className="step4_descriptionContainer">
+              <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
+              <p className="step4_text">
+                <span className="green">Monto</span> a{" "}
+                <span className="gray">recibir - $ 1.000.000</span>
+              </p>
+            </div>
+          </section>
+        </div>
+
+        <h3 className="step4_title">
+          <span className="green">Validación </span>del{" "}
+          <span className="gray">celular</span>
+        </h3>
+        <div className="step4_validationContainer">
+          <div className="step4_validation_innerContainer">
+            <Input placeholder="Número de celular" />
+            <Button text="ENVIAR" type="secondary" />
+          </div>
+          <div className="step4_validation_innerContainer">
+            <Input placeholder="PIN de validación" />
+            <Button text="VALIDAR" type="secondary" />
           </div>
         </div>
+        <p className="step4_error">
+          * La validación del celular es una acción obligatoria antes de
+          realizar la confirmación del contrato adquirido
+        </p>
+
+        <h3 className="step4_title">
+          <span className="green">Observaciones </span>del{" "}
+          <span className="gray">contrato</span>
+        </h3>
+        <p className="step4_finalText">
+          Acá van todas las observaciones de las condiciones particularesAcá van
+          todas las observaciones de las condiciones particularesAcá van todas
+          las observaciones de las condiciones particularesAcá van todas las
+          observaciones de las condiciones particularesAcá van todas las
+          observaciones de las condiciones particularesAcá van todas las
+          observaciones de las condiciones particularesAcá van todas las
+          observaciones de las condiciones particularesAcá van todas las
+          observaciones de las condiciones particularesAcá van todas las
+          observaciones de las condiciones particularesAcá van todas las
+          observaciones de las condiciones particularesAcá van todas las
+          observaciones de las condiciones particularesAcá van todas las
+          observaciones de las condiciones particulares
+        </p>
 
         <div className="step4_buttonContainer">
           <Button text="Confirmar contrato" />
         </div>
-
-        <h3 className="step4_title">
-          Tus <span className="green">cuotas </span>
-          <span className="gray">benificadas</span>
-        </h3>
-        <p className="step4_finalText">
-          Texto suministrado por el sistemaTexto suministrado por el
-          sistemaTexto suministrado por el sistemaTexto suministrado por el
-          sistemaTexto suministrado por el sistemaTexto suministrado por el
-          sistemaTexto suministrado por el sistemaTexto suministrado por el
-          sistemaTexto suministrado por el sistemaTexto suministrado por el
-          sistemaTexto suministrado por el sistemaTexto suministrado por el
-          sistemaTexto suministrado por el sistemaTexto suministrado por el
-          sistemaTexto suministrado por el sistema
-        </p>
       </div>
     </div>
   );

@@ -43,3 +43,21 @@
     }
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step1_2 {
+    .step1_2_container {
+      margin: 0 $margin_md;
+      .step1_2_innerContainer {
+        align-self: flex-start;
+        margin-top: $margin_md;
+        .step1_2_title {
+          @include primaryFont($size_md);
+        }
+        .step1_2_textContainer {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

@@ -25,7 +25,7 @@ const Step1_1 = ({ changePage }) => {
           <span className="green">Producto</span> seleccionado{" "}
           <span className="green">CUOTA LIBRE</span>
         </h3>
-        <h3 className="step1_title">
+        <h3 className="step1_title ">
           <span className="green">Contrato</span> con modalidad{" "}
           <span className="green">CUOTA LIBRE PESOS</span>
         </h3>
@@ -63,11 +63,11 @@ const Step1_1 = ({ changePage }) => {
           />
         </section>
 
-        <h3 className="step1_title">
+        <h3 className="step1_title ">
           <span className="green">Condiciones del contrato</span> en modalidad{" "}
           <span className="green">CUOTA LIBRE PESOS</span>
         </h3>
-        <section className="step1_imgContainer">
+        <section className="step1_imgContainer ">
           <Cards
             titleGreen="Cuota"
             title=""
@@ -84,10 +84,8 @@ const Step1_1 = ({ changePage }) => {
           />
         </section>
 
-        <h3 className="step1_title">
+        <h3 className="step1_title ">
           <span className="green">Otras</span> condiciones
-          <br />
-          $1.000.000
         </h3>
         <section className="step1_imgContainer">
           <Cards
@@ -108,7 +106,7 @@ const Step1_1 = ({ changePage }) => {
         </section>
 
         <section className="step1_rightContainer">
-          <h3 className="step1_title step1_right">
+          <h3 className="step1_title step1_right ">
             <span className="green">En la próxima página</span> verás más
             detalles
           </h3>

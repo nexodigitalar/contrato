@@ -16,6 +16,8 @@ $wallpaper: linear-gradient(
   rgba(220, 229, 231, 0) 98.63%
 );
 
+$cards: #f2f5f6;
+
 $green_gradient: linear-gradient(124.06deg, #01a767 7.23%, #00d281 83.23%);
 $green_gradient_hover: linear-gradient(
   124.06deg,
@@ -45,6 +47,7 @@ $padding_lg: 32px;
 $padding_xl: 64px;
 
 //Font Size
+$size_xxs: 14px;
 $size_xs: 16px;
 $size_sm: 18px;
 $size_md: 20px;

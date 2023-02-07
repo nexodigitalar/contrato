@@ -11,10 +11,11 @@
     .step4_title {
       @include primaryFont($size_lg);
       color: $neutral_dark;
+      margin-bottom: $margin_lg;
     }
     .step4_innerContainer {
       display: grid;
-      grid-template-columns: 2fr 1fr;
+      grid-template-columns: 1fr 1fr;
       width: 100%;
       gap: 50px;
       .step4_descriptionContainer {
@@ -39,12 +40,71 @@
       }
     }
     .step4_buttonContainer {
-      align-self: center;
+      align-self: flex-end;
+    }
+
+    .step4_validationContainer {
+      @include flex(row, flex-start, center);
+      gap: 50px;
+      width: 100%;
+      .step4_validation_innerContainer {
+        @include flex(row, space-between, center);
+        gap: 20px;
+        width: 100%;
+      }
+      .step4_validation_innerContainer > input {
+        width: 80%;
+      }
+    }
+
+    .step4_error {
+      @include primaryFont($size_xs);
+      color: $error;
+      margin-bottom: $margin_lg;
     }
     .step4_finalText {
       @include primaryFont($size_xs);
       color: $neutral_dark;
       margin: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step4 {
+    .step4_container {
+      margin: 0 $margin_md;
+      .step4_title {
+        @include primaryFont($size_md);
+        margin-bottom: $margin_lg;
+      }
+      .step4_innerContainer {
+        display: flex;
+        flex-direction: column;
+        gap: 0px;
+        .step4_descriptionContainer {
+          gap: 10px;
+          margin: $margin_lg 0;
+        }
+      }
+
+      .step4_validationContainer {
+        @include flex(column, flex-start, center);
+        gap: 0px;
+        .step4_validation_innerContainer {
+          @include flex(row, space-between, center);
+          gap: 10px;
+        }
+      }
+
+      .step4_error {
+        @include primaryFont($size_xs);
+        color: $error;
+        margin: $margin_md 0;
+      }
+      .step4_finalText {
+        margin-bottom: $margin_md;
+      }
     }
   }
 }

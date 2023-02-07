@@ -16,3 +16,18 @@
     }
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .navBar {
+    padding: $padding_lg 0;
+    .navBar_container {
+      margin: 0 $margin_md;
+      .navBar_title {
+        @include secondaryFont($size_md);
+      }
+      .navBar_logo {
+        width: 120px;
+      }
+    }
+  }
+}

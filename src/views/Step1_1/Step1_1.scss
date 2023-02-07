@@ -43,3 +43,34 @@
   width: 100%;
   align-self: flex-end;
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step1 {
+    @include flex(row, center, center);
+    width: 100%;
+    margin-bottom: $margin_lg;
+    .step1_container {
+      margin: 0 $margin_md;
+      .step1_title {
+        @include secondaryFont($size_sm);
+        margin: $margin_xs $margin_md;
+      }
+      .step1_text {
+        display: none;
+      }
+      .step1_imgContainer {
+        margin: $margin_md $margin_md;
+        flex-wrap: wrap;
+        gap: 15px;
+        width: 100%;
+      }
+      .step1_textSm {
+        @include primaryFont($size_xxs);
+      }
+    }
+  }
+
+  .step1_rightContainer {
+    margin: 0 $margin_md;
+  }
+}

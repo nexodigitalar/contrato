@@ -30,3 +30,28 @@
     }
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step2 {
+    margin-bottom: $margin_md;
+    .step2_container {
+      margin: 0 $margin_md;
+      .step2_innerContainer {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+        .step2_title {
+          @include primaryFont($size_md);
+          margin: $margin_xs 0;
+        }
+        .step2_imgContainer {
+          display: none;
+        }
+      }
+      .step2_buttonContainer {
+        align-self: flex-end;
+      }
+    }
+  }
+}

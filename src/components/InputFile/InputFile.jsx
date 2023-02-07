@@ -1,13 +1,6 @@
 import "./InputFile.scss";
-import { useState, useEffect } from "react";
 
-const InputFile = ({ placeholder }) => {
-  const [selectedFile, setSelectedFile] = useState(null);
-
-  useEffect(() => {
-    console.log(selectedFile);
-  }, [selectedFile]);
-
+const InputFile = ({ placeholder, click, selectedFile }) => {
   return (
     <form>
       <div className="inputFile_container">
@@ -17,7 +10,7 @@ const InputFile = ({ placeholder }) => {
           name="file"
           id="file"
           className="inputfile"
-          onChange={(e) => setSelectedFile(e.target.files[0])}
+          onChange={click}
         />
         <label htmlFor="file">Examinar</label>
       </div>
