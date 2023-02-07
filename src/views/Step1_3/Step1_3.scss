@@ -92,6 +92,7 @@
       }
 
       .step1_3_buttonContainer {
+        margin: 0 $margin_md;
         @include flex(row, center, center);
         gap: 16px;
         align-self: flex-end;
@@ -99,6 +100,7 @@
       .step1_3_subtext {
         @include primaryFont($size_xxs);
         text-align: center;
+        margin: 0 $margin_md;
       }
     }
   }

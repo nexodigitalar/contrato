@@ -13,7 +13,7 @@ const InputForm = () => {
 
   return (
     <section>
-      <div className="inputForm2_div">
+      <div className="inputForm2_div inputForm2_mobile">
         <Input placeholder="* Cédula" />
       </div>
       <div className="inputForm2_div inputForm_mobile">
