@@ -13,12 +13,15 @@ import Input from "@/components/Input/Input";
 
 /* Hooks */
 import { useSelector } from "react-redux";
+import useFormatNumber from "@/hooks/useFormatNumber";
 
 /* Data JSON */
 import text from "@/utils/text.json";
 
 const Step4 = () => {
-  const { simulador } = useSelector((state) => state.data);
+  const { simulador, cuotas, plazo, monto } = useSelector(
+    (state) => state.data
+  );
 
   return (
     <div className="step4">
@@ -40,7 +43,9 @@ const Step4 = () => {
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
                 <span className="green">Monto</span> a{" "}
-                <span className="gray">recibir - $ 1.000.000</span>
+                <span className="gray">
+                  recibir - $ {useFormatNumber(monto)}
+                </span>
               </p>
             </div>
             <div className="step4_descriptionContainer">
@@ -54,14 +59,16 @@ const Step4 = () => {
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
                 <span className="green">Valor</span> de{" "}
-                <span className="gray">cuota - $ 8.574</span>
+                <span className="gray">
+                  cuota - $ {useFormatNumber(cuotas)}
+                </span>
               </p>
             </div>
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
                 <span className="green">Total</span> de{" "}
-                <span className="gray">cuota - 100</span>
+                <span className="gray">cuotas - {plazo}</span>
               </p>
             </div>
             <div className="step4_descriptionContainer">
@@ -96,13 +103,6 @@ const Step4 = () => {
               <p className="step4_text">
                 <span className="green">Plazo</span>{" "}
                 <span className="gray">- 200 meses</span>
-              </p>
-            </div>
-            <div className="step4_descriptionContainer">
-              <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
-              <p className="step4_text">
-                <span className="green">Monto</span> a{" "}
-                <span className="gray">recibir - $ 1.000.000</span>
               </p>
             </div>
           </section>

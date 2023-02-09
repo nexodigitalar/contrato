@@ -67,11 +67,11 @@ const Step1_1 = ({ changePage }) => {
                     titleGreen="Cuota"
                     title=" para el"
                     titleBold=" capital elegido"
-                    number={`<span class="step1_text">Espera</span> $ ${useFormatNumber(
+                    number={`<span class="step1_textCard">Espera</span> $${useFormatNumber(
                       espera
-                    )} <span class="step1_text">Normal</span> $ ${useFormatNumber(
+                    )}<br/> <span class="step1_textCard">Normal</span> $${useFormatNumber(
                       normal
-                    )} <span class="step1_text">Final</span> $ ${useFormatNumber(
+                    )}<br/> <span class="step1_textCard">Final</span> $${useFormatNumber(
                       final
                     )}`}
                     img={cuota}

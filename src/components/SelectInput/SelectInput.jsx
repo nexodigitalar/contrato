@@ -4,7 +4,7 @@ const SelectInput = ({ placeholder, click }) => {
   return (
     <select name="select" className="selectInput" onClick={click}>
       {placeholder && (
-        <option value="placeholder" hidden_mobile selected>
+        <option value="placeholder" hidden selected>
           {placeholder}
         </option>
       )}

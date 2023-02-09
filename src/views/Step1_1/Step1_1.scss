@@ -52,6 +52,13 @@
   margin: $margin_lg 0;
 }
 
+.step1_textCard {
+  @include primaryFont($size_sm);
+  color: $neutral_dark;
+  align-self: flex-start;
+  padding: $padding_lg 0;
+}
+
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .step1 {
     @include flex(row, center, center);
@@ -80,5 +87,10 @@
 
   .step1_rightContainer {
     margin: 0 $margin_md;
+  }
+
+  .step1_textCard {
+    @include primaryFont($size_xxs);
+    padding: $padding_xs 0;
   }
 }
