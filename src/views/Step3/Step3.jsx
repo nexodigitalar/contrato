@@ -6,19 +6,30 @@ import user from "@/assets/img/info-user.png";
 /* React Router */
 import { useNavigate } from "react-router-dom";
 
+/* Hooks */
+import { useSelector } from "react-redux";
+
 /* Components */
 import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
 
+/* Data JSON */
+import text from "@/utils/text.json";
+
 const Step3 = () => {
   const navigate = useNavigate();
+  const { simulador } = useSelector((state) => state.data);
 
   return (
     <div className="step3">
       <div className="step3_container">
-        <Header text="DATOS" bold="OCUPACIONALES" logo={cuotaLibre} />
+        <Header
+          text="DATOS"
+          bold="OCUPACIONALES"
+          logo={text[simulador].step1_img}
+        />
         <StepsContainer step={3} />
 
         <div className="step3_innerContainer">

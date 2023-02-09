@@ -1,6 +1,5 @@
 /* Styles & Img */
 import "./Step4.scss";
-import cuotaLibre from "@/assets/img/cuota-libre.png";
 
 /* Icons */
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -12,11 +11,23 @@ import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import Button from "@/components/Button/Button";
 import Input from "@/components/Input/Input";
 
+/* Hooks */
+import { useSelector } from "react-redux";
+
+/* Data JSON */
+import text from "@/utils/text.json";
+
 const Step4 = () => {
+  const { simulador } = useSelector((state) => state.data);
+
   return (
     <div className="step4">
       <div className="step4_container">
-        <Header text="RESUMEN" bold="DEL PLAN" logo={cuotaLibre} />
+        <Header
+          text="RESUMEN"
+          bold="DEL PLAN"
+          logo={text[simulador].step1_img}
+        />
         <StepsContainer step={4} />
 
         <div className="step4_innerContainer">

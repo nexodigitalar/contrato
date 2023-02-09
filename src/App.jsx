@@ -6,9 +6,9 @@ import MainLayout from "./layout/MainLayout";
 
 /* Hooks */
 import { useEffect } from "react";
-
-/* React Router Dom */
 import { Routes, Route, useLocation } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { setData } from "@/store/dataSlice/dataSlice";
 
 /* Components */
 import Step1 from "@/views/Step1/Step1";
@@ -18,6 +18,7 @@ import Step4 from "@/views/Step4/Step4";
 
 const App = () => {
   const { pathname } = useLocation();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     document.documentElement.scrollTo({
@@ -26,6 +27,28 @@ const App = () => {
       behavior: "instant",
     });
   }, [pathname]);
+
+  useEffect(() => {
+    saveLocal();
+  }, []);
+
+  const saveLocal = () => {
+    let data = {
+      simulador: "Diferencial Dolares",
+      cuoCap: "CAPITAL",
+      moneda: "UYU",
+      monto: 5300000,
+      plazo: 200,
+      cuotas: 34450,
+      espera: 3500,
+      normal: 6500,
+      final: 9500,
+      entrega: "17/02/23",
+      LeadMontoNecesita: "100000_300000",
+    };
+    localStorage.setItem("contrato", JSON.stringify(data));
+    dispatch(setData(data));
+  };
 
   return (
     <>

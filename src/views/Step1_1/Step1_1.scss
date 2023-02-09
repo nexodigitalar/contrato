@@ -44,6 +44,14 @@
   align-self: flex-end;
 }
 
+.step1_imgContainer_fechaElegida {
+  @include flex(row, center, center);
+  gap: 50px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: $margin_lg 0;
+}
+
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .step1 {
     @include flex(row, center, center);
@@ -55,9 +63,9 @@
         @include secondaryFont($size_sm);
         margin: $margin_xs $margin_md;
       }
-      .step1_text {
+      /* .step1_text {
         display: none;
-      }
+      } */
       .step1_imgContainer {
         margin: $margin_md $margin_md;
         flex-wrap: wrap;

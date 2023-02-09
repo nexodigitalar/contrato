@@ -1,6 +1,8 @@
 import "./Cards.scss";
 import vector from "@/assets/img/vector.svg";
 
+import ReactHtmlParser from "react-html-parser";
+
 const Cards = ({ titleGreen, title, titleBold, number, img }) => {
   return (
     <div className="cards">
@@ -12,7 +14,7 @@ const Cards = ({ titleGreen, title, titleBold, number, img }) => {
           {title}
           <span className="gray">{titleBold}</span>
         </h4>
-        <p className="cards_number">{number}</p>
+        <p className="cards_number">{ReactHtmlParser(number)}</p>
       </div>
       <div className="cards_line"></div>
     </div>
