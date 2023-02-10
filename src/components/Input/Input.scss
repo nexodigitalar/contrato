@@ -12,6 +12,9 @@
   &::placeholder {
     color: $neutral;
   }
+  &:focus {
+    outline: 1px solid $secondary;
+  }
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {

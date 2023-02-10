@@ -14,8 +14,7 @@ const ErrorPage = () => {
           <img src={error} alt="check" className="error_img" />
 
           <h2 className="error_title">
-            Contrato
-            <span className="gray">570-179</span> ha sido{" "}
+            Contrato <span className="gray">570-179</span> ha sido{" "}
             <span className="gray">rechazado</span>.
           </h2>
           <p className="error_text">

@@ -3,6 +3,7 @@ import "./InputForm.scss";
 /* Components */
 import Input from "@/components/Input/Input";
 import SelectInput from "@/components/SelectInput/SelectInput";
+import InputCheck from "../../../components/InputCheck/InputCheck";
 
 const InputForm = () => {
   return (
@@ -25,7 +26,7 @@ const InputForm = () => {
       </div>
       <div className="inputForm_div">
         <SelectInput placeholder="* Estado Civíl" />
-        <Input placeholder="¿Es residente Uruguayo?" />
+        <InputCheck />
       </div>
       <div className="inputForm_div">
         <SelectInput placeholder="* Moneda Ingreso" />

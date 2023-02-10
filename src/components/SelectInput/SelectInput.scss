@@ -10,9 +10,16 @@
   color: $neutral_dark;
   margin: $margin_md 0;
   width: 100%;
+  &:focus {
+    outline: 1px solid $secondary;
+  }
 }
 
 option {
+  color: $neutral_dark;
+}
+
+select:first-child {
   color: $neutral !important;
 }
 

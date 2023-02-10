@@ -1,0 +1,13 @@
+@import "@/utils/theme.scss";
+
+.inputCheck {
+  @include flex(row, space-between, center);
+  background-color: $tertiary;
+  border: none;
+  border-bottom: 2px solid $primary;
+  border-radius: 3px 3px 0px 0px;
+  padding: $padding_md;
+  @include primaryFont($size_sm);
+  color: $neutral;
+  margin: $margin_md 0;
+}
