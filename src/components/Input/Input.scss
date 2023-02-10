@@ -1,19 +1,32 @@
 @import "@/utils/theme.scss";
 
-.input {
-  background-color: $tertiary;
-  border: none;
-  border-bottom: 2px solid $primary;
-  border-radius: 3px 3px 0px 0px;
-  padding: $padding_md;
-  @include primaryFont($size_sm);
-  color: $neutral_dark;
-  margin: $margin_md 0;
-  &::placeholder {
-    color: $neutral;
+.inputContainer {
+  @include flex(column, center, flex-start);
+  margin: $margin_xs 0;
+  .input {
+    background-color: $tertiary;
+    border: none;
+    border-bottom: 2px solid $primary;
+    border-radius: 3px 3px 0px 0px;
+    padding: $padding_md;
+    @include primaryFont($size_sm);
+    color: $neutral_dark;
+
+    &::placeholder {
+      color: $neutral;
+    }
+    &:focus {
+      outline: 1px solid $secondary;
+    }
   }
-  &:focus {
-    outline: 1px solid $secondary;
+
+  .input_error {
+    @include primaryFont($size_xs);
+    color: $error;
+    margin: $margin_xs 0 0 $margin_xs;
+  }
+  .input_error_hidden {
+    visibility: hidden;
   }
 }
 

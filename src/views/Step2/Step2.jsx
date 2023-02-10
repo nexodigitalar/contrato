@@ -4,14 +4,9 @@ import cuotaLibre from "@/assets/img/cuota-libre.png";
 import userPhoto from "@/assets/img/info-user.png";
 
 /* Hooks */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
-
-/* React Router */
 import { useNavigate } from "react-router-dom";
-
-/* Data JSON */
-import text from "@/utils/text.json";
 
 /* Components */
 import Header from "@/components/Header/Header";
@@ -24,6 +19,8 @@ const Step2 = () => {
   const [user, setUser] = useState(1);
   const { simulador } = useSelector((state) => state.data);
   const navigate = useNavigate();
+
+  useEffect(() => {}, [user]);
 
   return (
     <div className="step2">
@@ -47,7 +44,7 @@ const Step2 = () => {
                   <span className="green">Datos </span>del{" "}
                   <span className="gray">titular</span>
                 </h3>
-                <InputForm />
+                <InputForm index={index} />
               </div>
             ))}
           </div>
