@@ -16,7 +16,7 @@ import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
 
 /* Data JSON */
-import text from "@/utils/text.json";
+import { text } from "@/utils/text.js";
 
 const Step3 = () => {
   const navigate = useNavigate();

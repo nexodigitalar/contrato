@@ -17,7 +17,7 @@ import useFormatNumber from "@/hooks/useFormatNumber";
 import { useNavigate } from "react-router-dom";
 
 /* Data JSON */
-import text from "@/utils/text.json";
+import { text } from "@/utils/text.js";
 
 const Step4 = () => {
   const navigate = useNavigate();

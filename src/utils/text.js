@@ -1,4 +1,9 @@
-{
+import pesosAjustables from "@/assets/img/cuota-libre.png";
+import pesosFijos from "@/assets/img/pesos-fijos.png";
+import diferencial from "@/assets/img/diferencial.png";
+import fechaElegida from "@/assets/img/fecha-elegida.png"
+
+export const text = {
   "Pesos Ajustables": {
     "step1_titleSelected": "CUOTA LIBRE",
     "step1_title": "CUOTA LIBRE PESOS",
@@ -9,7 +14,7 @@
     "step1_lastCard": "de reajuste capital y cuota",
     "step1_lastCard_green": "Índice ",
     "step1_lastCard_value": "IPC",
-    "step1_img": "/contrato/src/assets/img/cuota-libre.png",
+    "step1_img": pesosAjustables,
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo <span class='green'>sin aumentar tu cuota</span>. </p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
     "step1_3_title2": "Tu contrato en modalidad <span  class='green'>cuota </span><span  class='gray'>libre</span>",
@@ -33,7 +38,7 @@
     "step1_lastCard": "",
     "step1_lastCard_green": "Moneda",
     "step1_lastCard_value": "Dólares americas",
-    "step1_img": "/contrato/src/assets/img/cuota-libre.png",
+    "step1_img": pesosAjustables,
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo <span class='green'>sin aumentar tu cuota</span>. </p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
     "step1_3_title2": "Tu contrato en modalidad <span  class='green'>cuota </span><span  class='gray'>libre</span>",
@@ -56,7 +61,7 @@
     "step1_adj": "SORTEO o LICITACIÓN",
     "step1_lastCard": "",
     "step1_lastCard_green": "Moneda",
-    "step1_lastCard_value": "Pesos fijos",
+    "step1_lastCard_value": pesosFijos,
     "step1_img": "/contrato/src/assets/img/pesos-fijos.png",
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo <span class='green'>sin aumentar tu cuota</span>. </p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
@@ -82,7 +87,7 @@
     "step1_lastCard": "de reajuste capital y cuota",
     "step1_lastCard_green": "Índice ",
     "step1_lastCard_value": "IPC",
-    "step1_img": "/contrato/src/assets/img/diferencial.png",
+    "step1_img": diferencial,
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo.</p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
     "step1_3_title2": "Tu contrato en modalidad <span  class='green'>diferencial </span><span  class='gray'>pesos ipc</span>",
@@ -106,7 +111,7 @@
     "step1_lastCard": "",
     "step1_lastCard_green": "Moneda",
     "step1_lastCard_value": "Pesos fijos sin ajuste",
-    "step1_img": "/contrato/src/assets/img/diferencial.png"
+    "step1_img": diferencial
   },
   "Diferencial Dolares": {
     "step1_titleSelected": "DIFERENCIAL DÓLARES",
@@ -118,7 +123,7 @@
     "step1_lastCard": "",
     "step1_lastCard_green": "Moneda",
     "step1_lastCard_value": "Dólares americanos",
-    "step1_img": "/contrato/src/assets/img/diferencial.png",
+    "step1_img": diferencial,
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo.</p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
     "step1_3_title2": "Tu contrato en modalidad <span  class='green'>diferencial </span><span  class='gray'>dólares</span>",
@@ -142,7 +147,7 @@
     "step1_lastCard": "de reajuste capital y cuota",
     "step1_lastCard_green": "Índice ",
     "step1_lastCard_value": "IPC",
-    "step1_img": "/contrato/src/assets/img/fecha-elegida.png",
+    "step1_img": fechaElegida,
     "step1_3_title1": "<span class='green'>Tu </span><span class='gray'>contrato</span>",
     "step1_3_text1": "<p class='step1_3_text'>Con fecha elegida tu contrato queda favorecido el día que elegiste al hacer tu contrato. Solo tenes que pagar las cuotas mensuales en la fecha establecida.</p>",
     "step1_3_title2": "",

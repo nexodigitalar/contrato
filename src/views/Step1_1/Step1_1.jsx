@@ -9,7 +9,7 @@ import adjudicacion from "@/assets/img/adjudicacion.png";
 import indice from "@/assets/img/indice.png";
 
 /* Data JSON */
-import text from "@/utils/text.json";
+import { text } from "@/utils/text.js";
 import ReactHtmlParser from "react-html-parser";
 
 /* Components */

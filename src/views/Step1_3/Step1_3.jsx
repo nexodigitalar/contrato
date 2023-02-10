@@ -6,7 +6,7 @@ import cuotaLibre from "@/assets/img/cuota-libre.png";
 import { useNavigate } from "react-router-dom";
 
 /* Data JSON */
-import text from "@/utils/text.json";
+import { text } from "@/utils/text.js";
 import ReactHtmlParser from "react-html-parser";
 
 /* Hooks */
