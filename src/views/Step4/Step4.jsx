@@ -14,11 +14,13 @@ import Input from "@/components/Input/Input";
 /* Hooks */
 import { useSelector } from "react-redux";
 import useFormatNumber from "@/hooks/useFormatNumber";
+import { useNavigate } from "react-router-dom";
 
 /* Data JSON */
 import text from "@/utils/text.json";
 
 const Step4 = () => {
+  const navigate = useNavigate();
   const { simulador, cuotas, plazo, monto } = useSelector(
     (state) => state.data
   );
@@ -147,7 +149,11 @@ const Step4 = () => {
         </p>
 
         <div className="step4_buttonContainer">
-          <Button text="Confirmar contrato" />
+          <Button
+            text="Mostrar error de contrato"
+            click={() => navigate("/error")}
+          />
+          <Button text="Confirmar contrato" click={() => navigate("/valid")} />
         </div>
       </div>
     </div>

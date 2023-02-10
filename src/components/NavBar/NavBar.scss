@@ -24,6 +24,7 @@
       margin: 0 $margin_md;
       .navBar_title {
         @include secondaryFont($size_md);
+        text-align: end;
       }
       .navBar_logo {
         width: 120px;

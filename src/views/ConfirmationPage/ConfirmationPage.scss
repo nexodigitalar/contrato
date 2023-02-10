@@ -1,0 +1,85 @@
+@import "@/utils/theme.scss";
+
+.confirmation {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .confirmation_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+    .confirmation_header {
+      padding: $padding_lg 0;
+      width: 100%;
+      .confirmation_header_title {
+        @include secondaryFont(5vw);
+        color: $neutral_light;
+        opacity: 0.5;
+        text-align: center;
+      }
+      .confirmation_division {
+        width: 100%;
+        height: 1px;
+        background-color: $neutral_light;
+        max-width: $max_width;
+      }
+    }
+
+    .confirmation_textContainer {
+      align-self: flex-start;
+      position: relative;
+      width: 100%;
+      .confirmation_title {
+        @include primaryFont($size_xl);
+        color: $neutral_dark;
+        margin: $margin_sm 0;
+        margin-bottom: $margin_lg;
+        width: 80%;
+      }
+      .confirmation_text {
+        @include primaryFont($size_sm);
+        color: $neutral_dark;
+        margin: $margin_md 0;
+        width: 80%;
+      }
+      .confirmation_img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .confirmation {
+    .confirmation_container {
+      margin: 0 $margin_md;
+      .confirmation_header {
+        padding: $padding_lg 0 $padding_md 0;
+        width: 100%;
+        .confirmation_header_title {
+          @include secondaryFont(26px);
+          margin-bottom: $margin_sm;
+        }
+      }
+
+      .confirmation_textContainer {
+        @include flex(column, center, center);
+        .confirmation_title {
+          @include primaryFont($size_lg);
+          margin: $margin_sm 0;
+          width: 100%;
+        }
+        .confirmation_text {
+          margin: $margin_sm 0;
+          width: 100%;
+        }
+        .confirmation_img {
+          position: inherit;
+        }
+      }
+    }
+  }
+}

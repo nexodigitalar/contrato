@@ -4,13 +4,13 @@ import { Outlet } from "react-router-dom";
 /* Components */
 import NavBar from "@/components/NavBar/NavBar";
 
-const MainLayout = () => {
+const ConfirmationLayout = () => {
   return (
     <div>
-      <NavBar title="Contrato" underline="online" />
+      <NavBar title="Confirmación de" underline="contrato" />
       <Outlet />
     </div>
   );
 };
 
-export default MainLayout;
+export default ConfirmationLayout;

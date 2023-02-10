@@ -1,9 +1,6 @@
 /* Styles */
 import "./App.scss";
 
-/* Components */
-import MainLayout from "./layout/MainLayout";
-
 /* Hooks */
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
@@ -15,6 +12,10 @@ import Step1 from "@/views/Step1/Step1";
 import Step2 from "@/views/Step2/Step2";
 import Step3 from "@/views/Step3/Step3";
 import Step4 from "@/views/Step4/Step4";
+import MainLayout from "@/layout/MainLayout";
+import ConfirmationLayout from "@/layout/ConfirmationLayout";
+import ErrorPage from "@/views/ErrorPage/ErrorPage";
+import ConfirmationPage from "@/views/ConfirmationPage/ConfirmationPage";
 
 const App = () => {
   const { pathname } = useLocation();
@@ -34,7 +35,7 @@ const App = () => {
 
   const saveLocal = () => {
     let data = {
-      simulador: "Diferencial Dolares",
+      simulador: "Pesos Fijos",
       cuoCap: "CAPITAL",
       moneda: "UYU",
       monto: 5300000,
@@ -58,6 +59,10 @@ const App = () => {
           <Route path="/datos-personales" element={<Step2 />} />
           <Route path="/datos-ocupacionales" element={<Step3 />} />
           <Route path="/resumen-plan" element={<Step4 />} />
+        </Route>
+        <Route element={<ConfirmationLayout />}>
+          <Route path="/error" element={<ErrorPage />} />
+          <Route path="/valid" element={<ConfirmationPage />} />
         </Route>
       </Routes>
     </>
