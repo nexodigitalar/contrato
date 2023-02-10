@@ -1,20 +1,14 @@
-import pesosAjustables from "@/assets/img/cuota-libre.png";
-import pesosFijos from "@/assets/img/pesos-fijos.png";
-import diferencial from "@/assets/img/diferencial.png";
-import fechaElegida from "@/assets/img/fecha-elegida.png"
-
-export const text = {
+{
   "Pesos Ajustables": {
     "step1_titleSelected": "CUOTA LIBRE",
     "step1_title": "CUOTA LIBRE PESOS",
-    "step1_text":  "Tu <span class='green'>cuota promedio</span> determina tu capital a retirar. Podés pagar cualquier valor entre la cuota <span class='green'>mínima</span> y la <span class='green'>máxima</span>. Cuando sos favorecido, empezás a pagar la cuota promedio generada. Al hacer tus pagos, se te ofrecerála cuota correspondiente a tu capital elegido, ajustado por <span class='green'>IPC</span>.",
+    "step1_text": "Tu <span class='green'>cuota promedio</span> determina tu capital a retirar. Podés pagar cualquier valor entre la cuota <span class='green'>mínima</span> y la <span class='green'>máxima</span>. Cuando sos favorecido, empezás a pagar la cuota promedio generada. Al hacer tus pagos, se te ofrecerála cuota correspondiente a tu capital elegido, ajustado por <span class='green'>IPC</span>.",
     "step1_cuo": "100 y 200",
     "step1_cap": "$1.000.0000 y y $10.000.000",
     "step1_adj": "SORTEO o LICITACIÓN",
     "step1_lastCard": "de reajuste capital y cuota",
     "step1_lastCard_green": "Índice ",
     "step1_lastCard_value": "IPC",
-    "step1_img": pesosAjustables,
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo <span class='green'>sin aumentar tu cuota</span>. </p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
     "step1_3_title2": "Tu contrato en modalidad <span  class='green'>cuota </span><span  class='gray'>libre</span>",
@@ -31,14 +25,13 @@ export const text = {
   "Dolares": {
     "step1_titleSelected": "CUOTA LIBRE",
     "step1_title": "CUOTA LIBRE DÓLARES",
-    "step1_text":  "Tu <span class='green'>cuota promedio</span> determina tu capital a retirar. Podés pagar cualquier valor entre la cuota <span class='green'>mínima</span> y la <span class='green'>máxima</span>. Cuando sos favorecido, empezás a pagar la cuota promedio generada. Al hacer tus pagos, se te ofrecerála cuota correspondiente a tu capital elegido, ajustado por <span class='green'>IPC</span>.",
+    "step1_text": "Tu <span class='green'>cuota promedio</span> determina tu capital a retirar. Podés pagar cualquier valor entre la cuota <span class='green'>mínima</span> y la <span class='green'>máxima</span>. Cuando sos favorecido, empezás a pagar la cuota promedio generada. Al hacer tus pagos, se te ofrecerála cuota correspondiente a tu capital elegido, ajustado por <span class='green'>IPC</span>.",
     "step1_cuo": "U$S 1.000.0000 y U$S 10.000.000",
     "step1_cap": "U$S 1.000.0000 y U$S 10.000.000",
     "step1_adj": "SORTEO o LICITACIÓN",
     "step1_lastCard": "",
     "step1_lastCard_green": "Moneda",
     "step1_lastCard_value": "Dólares americas",
-    "step1_img": pesosAjustables,
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo <span class='green'>sin aumentar tu cuota</span>. </p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
     "step1_3_title2": "Tu contrato en modalidad <span  class='green'>cuota </span><span  class='gray'>libre</span>",
@@ -55,14 +48,13 @@ export const text = {
   "Pesos Fijos": {
     "step1_titleSelected": "PESOS FIJOS",
     "step1_title": "CUOTA LIBRE",
-    "step1_text":  "Tu <span class='green'>cuota promedio</span> determina tu capital a retirar. Podés pagar cualquier valor entre la cuota <span class='green'>mínima</span> y la <span class='green'>máxima</span>. Cuando sos favorecido, empezás a pagar la cuota promedio generada. Al hacer tus pagos, se te ofrecerá la cuota correspondiente a tu capital elegido. Todas tus cuotas son iguales.",
+    "step1_text": "Tu <span class='green'>cuota promedio</span> determina tu capital a retirar. Podés pagar cualquier valor entre la cuota <span class='green'>mínima</span> y la <span class='green'>máxima</span>. Cuando sos favorecido, empezás a pagar la cuota promedio generada. Al hacer tus pagos, se te ofrecerá la cuota correspondiente a tu capital elegido. Todas tus cuotas son iguales.",
     "step1_cuo": "U$S 1.000.0000 y U$S 10.000.000",
     "step1_cap": "U$S 1.000.0000 y U$S 10.000.000",
     "step1_adj": "SORTEO o LICITACIÓN",
     "step1_lastCard": "",
     "step1_lastCard_green": "Moneda",
-    "step1_lastCard_value": pesosFijos,
-    "step1_img": "/contrato/src/assets/img/pesos-fijos.png",
+    "step1_lastCard_value": "Pesos fijos",
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo <span class='green'>sin aumentar tu cuota</span>. </p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
     "step1_3_title2": "Tu contrato en modalidad <span  class='green'>pesos </span><span  class='gray'>fijos</span>",
@@ -75,19 +67,17 @@ export const text = {
     "step1_3_text5": "<p class='step1_3_text'>Cuando ganes un sorteo o una licitación vas a retirar tu dinero. Ahí te vamos a ayudar a acreditar que vas a poder pagar el préstamo que obtuviste del grupo, equivalente a las cuotas que te quedan por pagar.</p>",
     "step1_3_title6": "Dificultades en los pagos en el <span class='gray'>período</span> de <span class='green'>ahorro </span>",
     "step1_3_text6": "<p class='step1_3_text'>Estás ahorrando para tu capital a un costo incomparable, esto tiene que ser seguro y placentero. Entonces, tu primera ventaja ante cualquier dificultad es tu modalidad cuota libre. Así, <span class='green'>bajas tu cuota </span>al mínimo establecido en tu contrato en cualquier momento. A esto, sumale la posibilidad de pedir <span class='green'>licencias </span>en tus pagos con simples pasos al entrar en tu cuenta online. Estás tranquilo desde el principio.</p><p class='step1_3_text'>Si necesitas dejar tu contrato, tu ahorro hasta ese momento tiene un valor y lo puedes <span class='green'>ceder a valor</span> mercado, ofreciéndolo al público. Finalmente, en el caso que ninguna solución te resulte conveniente, tu contrato puede verse rescindido y te corresponde una multa por incumplir con el grupo. Lo aportado, deducida la multa, lo recuperas dentro de los 90 días en que tu número de contrato resulte ganador en el grupo por cualquier modalidad.</p><p class='step1_3_text'>Tu contrato rescindido siempre es recuperable, superado tu inconveniente aun pasado el tiempo, te puedes <span class='green'>reenganchar</span>. CONSORCIO te espera.</p><p class='step1_3_text'>Además, CONSORCIO te ofrece atención personalizada y soluciones a medida, a través de su servicio al cliente llamando al 2915 2295.</p>"
-  
   },
   "Diferencial Pesos Ajustables": {
     "step1_titleSelected": "DIFERENCIAL PESOS IPC",
     "step1_title": "DIFERENCIAL",
-    "step1_text":  "Tendrás <span class='green'>tres tipos de cuota</span>: la de espera, la normal y la final. La cuota de espera, la pagás hasta el momento en que resultes ganador. A partir del mes siguiente, tu cuota será la cuota normal y recién al momento de recibir el capital, pagas la cuota final, hasta el fin del plazo.",
+    "step1_text": "Tendrás <span class='green'>tres tipos de cuota</span>: la de espera, la normal y la final. La cuota de espera, la pagás hasta el momento en que resultes ganador. A partir del mes siguiente, tu cuota será la cuota normal y recién al momento de recibir el capital, pagas la cuota final, hasta el fin del plazo.",
     "step1_cuo": "",
     "step1_cap": "",
     "step1_adj": "SORTEO o LICITACIÓN",
     "step1_lastCard": "de reajuste capital y cuota",
     "step1_lastCard_green": "Índice ",
     "step1_lastCard_value": "IPC",
-    "step1_img": diferencial,
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo.</p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
     "step1_3_title2": "Tu contrato en modalidad <span  class='green'>diferencial </span><span  class='gray'>pesos ipc</span>",
@@ -97,33 +87,31 @@ export const text = {
     "step1_3_title4": "<span class='green'>Ajuste </span>por <span class='gray'>IPC</span>",
     "step1_3_text4": "<p class='step1_3_text'>Tu <span class='green'>capital </span>y tu <span class='green'>cuota</span>, se ajusta por IPC mes a mes durante toda la vigencia del contrato. Durante tu período de ahorro esto te permite mantener el poder de compra y capitalizarte. Así, la cuota se ajustará a lo largo de todo el período de pago y el capital hasta el mes en que resulte favorecido.</p>",
     "step1_3_title5": "Al momento de <span class='green'>retirar </span> tu <span class='gray'>capital</span>",
-    "step1_3_text5":"<p class='step1_3_text'>Cuando ganes un sorteo o una licitación vas a <span class='green'>retirar tu dinero</span>. Ahí te vamos a ayudar a acreditar que vas a poder pagar el préstamo que obtuviste del grupo, equivalente a las cuotas que te quedan por pagar.</p>",
+    "step1_3_text5": "<p class='step1_3_text'>Cuando ganes un sorteo o una licitación vas a <span class='green'>retirar tu dinero</span>. Ahí te vamos a ayudar a acreditar que vas a poder pagar el préstamo que obtuviste del grupo, equivalente a las cuotas que te quedan por pagar.</p>",
     "step1_3_title6": "Dificultades en los pagos en el <span class='gray'>período</span> de <span class='green'>ahorro </span>",
     "step1_3_text6": "<p class='step1_3_text'>Estás ahorrando para tu capital a un costo incomparable, esto tiene que ser seguro y placentero. Entonces, tu primera ventaja ante cualquier dificultad es tu modalidad cuota libre. Así, <span class='green'>bajas tu cuota </span>al mínimo establecido en tu contrato en cualquier momento. A esto, sumale la posibilidad de pedir <span class='green'>licencias </span>en tus pagos con simples pasos al entrar en tu cuenta online. Estás tranquilo desde el principio.</p><p class='step1_3_text'>Si necesitas dejar tu contrato, tu ahorro hasta ese momento tiene un valor y lo puedes <span class='green'>ceder a valor</span> mercado, ofreciéndolo al público. Finalmente, en el caso que ninguna solución te resulte conveniente, tu contrato puede verse rescindido y te corresponde una multa por incumplir con el grupo. Lo aportado, deducida la multa, lo recuperas dentro de los 90 días en que tu número de contrato resulte ganador en el grupo por cualquier modalidad.</p><p class='step1_3_text'>Tu contrato rescindido siempre es recuperable, superado tu inconveniente aun pasado el tiempo, te puedes <span class='green'>reenganchar</span>. CONSORCIO te espera.</p><p class='step1_3_text'>Además, CONSORCIO te ofrece atención personalizada y soluciones a medida, a través de su servicio al cliente llamando al 2915 2295.</p>"
   },
   "Diferencial Pesos Fijos": {
     "step1_titleSelected": "DIFERENCIAL PESOS FIJOS",
     "step1_title": "DIFERENCIAL",
-    "step1_text":  "Tendrás <span class='green'>tres tipos de cuota</span>: la de espera, la normal y la final. La cuota de espera, la pagás hasta el momento en que resultes ganador. A partir del mes siguiente, tu cuota será la cuota normal y recién al momento de recibir el capital, pagas la cuota final, hasta el fin del plazo.",
+    "step1_text": "Tendrás <span class='green'>tres tipos de cuota</span>: la de espera, la normal y la final. La cuota de espera, la pagás hasta el momento en que resultes ganador. A partir del mes siguiente, tu cuota será la cuota normal y recién al momento de recibir el capital, pagas la cuota final, hasta el fin del plazo.",
     "step1_cuo": "",
     "step1_cap": "",
     "step1_adj": "SORTEO o LICITACIÓN",
     "step1_lastCard": "",
     "step1_lastCard_green": "Moneda",
-    "step1_lastCard_value": "Pesos fijos sin ajuste",
-    "step1_img": diferencial
+    "step1_lastCard_value": "Pesos fijos sin ajuste"
   },
   "Diferencial Dolares": {
     "step1_titleSelected": "DIFERENCIAL DÓLARES",
     "step1_title": "DIFERENCIAL",
-    "step1_text":  "Tendrás <span class='green'>tres tipos de cuota</span>: la de espera, la normal y la final. La cuota de espera, la pagás hasta el momento en que resultes ganador. A partir del mes siguiente, tu cuota será la cuota normal y recién al momento de recibir el capital, pagas la cuota final, hasta el fin del plazo.",
+    "step1_text": "Tendrás <span class='green'>tres tipos de cuota</span>: la de espera, la normal y la final. La cuota de espera, la pagás hasta el momento en que resultes ganador. A partir del mes siguiente, tu cuota será la cuota normal y recién al momento de recibir el capital, pagas la cuota final, hasta el fin del plazo.",
     "step1_cuo": "",
     "step1_cap": "",
     "step1_adj": "SORTEO o LICITACIÓN",
     "step1_lastCard": "",
     "step1_lastCard_green": "Moneda",
     "step1_lastCard_value": "Dólares americanos",
-    "step1_img": diferencial,
     "step1_3_title1": "<span class='green'>Sorteo </span>y <span class='gray'>licitación</span>",
     "step1_3_text1": "<p class='step1_3_text'>Todos los meses participas de <span class='green'>un sorteo y una o varias licitaciones</span> en tu grupo. Podes ser ganador <span class='green'>desde el primer mes </span>y cumplir tu sueño o proyecto con el costo más bajo del mercado.</p><p class='step1_3_text'>La licitación consiste en adelantar cuotas. Si sos quien ofrece la mayor cantidad de cuotas, sos el ganador. Las cuotas que ofreces se descuentan del capital que vas a recibir, no necesitas dinero extra para participar. De esta forma aceleras tu acceso al capital, acortando el plazo.</p><p class='step1_3_text'> Mira las oportunidades de licitación que tenes en la sección “mi grupo” de consorcio.uy. Los sorteos y las licitaciones aceleran el ritmo de adjudicación de los grupos, para mejorar, aún más, tus chances. </p>",
     "step1_3_title2": "Tu contrato en modalidad <span  class='green'>diferencial </span><span  class='gray'>dólares</span>",
@@ -133,7 +121,7 @@ export const text = {
     "step1_3_title4": "<span class='green'>Ajuste </span>por <span class='gray'>IPC</span>",
     "step1_3_text4": "<p class='step1_3_text'>Tu <span class='green'>capital </span>y tu <span class='green'>cuota</span>, se ajusta por IPC mes a mes durante toda la vigencia del contrato. Durante tu período de ahorro esto te permite mantener el poder de compra y capitalizarte. Así, la cuota se ajustará a lo largo de todo el período de pago y el capital hasta el mes en que resulte favorecido.</p>",
     "step1_3_title5": "Al momento de <span class='green'>retirar </span> tu <span class='gray'>capital</span>",
-    "step1_3_text5":"<p class='step1_3_text'>Cuando ganes un sorteo o una licitación vas a <span class='green'>retirar tu dinero</span>. De nuestra parte, tenemos que ayudarte a acreditar que por la parte que no ahorraste y que el grupo te presta, vas a pagar las cuotas que te faltan para que los demás también ganen. Para ello te vamos a pedir <span class='green'>ingresos</span> y <span class='green'>garantías</span> acordes al monto que te resta por pagar.</p>",
+    "step1_3_text5": "<p class='step1_3_text'>Cuando ganes un sorteo o una licitación vas a <span class='green'>retirar tu dinero</span>. De nuestra parte, tenemos que ayudarte a acreditar que por la parte que no ahorraste y que el grupo te presta, vas a pagar las cuotas que te faltan para que los demás también ganen. Para ello te vamos a pedir <span class='green'>ingresos</span> y <span class='green'>garantías</span> acordes al monto que te resta por pagar.</p>",
     "step1_3_title6": "Dificultades en los pagos en el <span class='gray'>período</span> de <span class='green'>ahorro </span>",
     "step1_3_text6": "<p class='step1_3_text'>Estás ahorrando para tu capital a un costo incomparable, esto tiene que ser seguro y placentero. Entonces, tu primera ventaja ante cualquier dificultad es tu modalidad cuota libre. Así, <span class='green'>bajas tu cuota </span>al mínimo establecido en tu contrato en cualquier momento. A esto, sumale la posibilidad de pedir <span class='green'>licencias </span>en tus pagos con simples pasos al entrar en tu cuenta online. Estás tranquilo desde el principio.</p><p class='step1_3_text'>Si necesitas dejar tu contrato, tu ahorro hasta ese momento tiene un valor y lo puedes <span class='green'>ceder a valor</span> mercado, ofreciéndolo al público. Finalmente, en el caso que ninguna solución te resulte conveniente, tu contrato puede verse rescindido y te corresponde una multa por incumplir con el grupo. Lo aportado, deducida la multa, lo recuperas dentro de los 90 días en que tu número de contrato resulte ganador en el grupo por cualquier modalidad.</p><p class='step1_3_text'>Tu contrato rescindido siempre es recuperable, superado tu inconveniente aun pasado el tiempo, te puedes <span class='green'>reenganchar</span>. CONSORCIO te espera.</p><p class='step1_3_text'>Además, CONSORCIO te ofrece atención personalizada y soluciones a medida, a través de su servicio al cliente llamando al 2915 2295.</p>"
   },
@@ -147,7 +135,6 @@ export const text = {
     "step1_lastCard": "de reajuste capital y cuota",
     "step1_lastCard_green": "Índice ",
     "step1_lastCard_value": "IPC",
-    "step1_img": fechaElegida,
     "step1_3_title1": "<span class='green'>Tu </span><span class='gray'>contrato</span>",
     "step1_3_text1": "<p class='step1_3_text'>Con fecha elegida tu contrato queda favorecido el día que elegiste al hacer tu contrato. Solo tenes que pagar las cuotas mensuales en la fecha establecida.</p>",
     "step1_3_title2": "",
@@ -157,9 +144,8 @@ export const text = {
     "step1_3_title4": "<span class='green'>Ajuste </span>por <span class='gray'>IPC</span>",
     "step1_3_text4": "<p class='step1_3_text'>Cuando ganes un sorteo o una licitación vas a <span class='green'>retirar tu dinero</span>. Ahí te vamos a ayudar a acreditar que vas a poder pagar el préstamo que obtuviste del grupo, equivalente a las cuotas que te quedan por pagar.</p>",
     "step1_3_title5": "Al momento de <span class='green'>retirar </span> tu <span class='gray'>capital</span>",
-    "step1_3_text5":"<p class='step1_3_text'>Cuando ganes un sorteo o una licitación vas a <span class='green'>retirar tu dinero</span>. De nuestra parte, tenemos que ayudarte a acreditar que por la parte que no ahorraste y que el grupo te presta, vas a pagar las cuotas que te faltan para que los demás también ganen. Para ello te vamos a pedir <span class='green'>ingresos</span> y <span class='green'>garantías</span> acordes al monto que te resta por pagar.</p>",
+    "step1_3_text5": "<p class='step1_3_text'>Cuando ganes un sorteo o una licitación vas a <span class='green'>retirar tu dinero</span>. De nuestra parte, tenemos que ayudarte a acreditar que por la parte que no ahorraste y que el grupo te presta, vas a pagar las cuotas que te faltan para que los demás también ganen. Para ello te vamos a pedir <span class='green'>ingresos</span> y <span class='green'>garantías</span> acordes al monto que te resta por pagar.</p>",
     "step1_3_title6": "Dificultades en los pagos en el <span class='gray'>período</span> de <span class='green'>ahorro </span>",
     "step1_3_text6": "<p class='step1_3_text'>Estás ahorrando para tu capital a un costo incomparable, esto tiene que ser seguro y placentero. Entonces, tu primera ventaja ante cualquier dificultad es tu modalidad cuota libre. Así, <span class='green'>bajas tu cuota </span>al mínimo establecido en tu contrato en cualquier momento. A esto, sumale la posibilidad de pedir <span class='green'>licencias </span>en tus pagos con simples pasos al entrar en tu cuenta online. Estás tranquilo desde el principio.</p><p class='step1_3_text'>Si necesitas dejar tu contrato, tu ahorro hasta ese momento tiene un valor y lo puedes <span class='green'>ceder a valor</span> mercado, ofreciéndolo al público. Finalmente, en el caso que ninguna solución te resulte conveniente, tu contrato puede verse rescindido y te corresponde una multa por incumplir con el grupo. Lo aportado, deducida la multa, lo recuperas dentro de los 90 días en que tu número de contrato resulte ganador en el grupo por cualquier modalidad.</p><p class='step1_3_text'>Tu contrato rescindido siempre es recuperable, superado tu inconveniente aun pasado el tiempo, te puedes <span class='green'>reenganchar</span>. CONSORCIO te espera.</p><p class='step1_3_text'>Además, CONSORCIO te ofrece atención personalizada y soluciones a medida, a través de su servicio al cliente llamando al 2915 2295.</p>"
-  
   }
 }

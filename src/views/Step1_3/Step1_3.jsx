@@ -6,7 +6,7 @@ import cuotaLibre from "@/assets/img/cuota-libre.png";
 import { useNavigate } from "react-router-dom";
 
 /* Data JSON */
-import { text } from "@/utils/text.js";
+import text from "@/utils/text.json";
 import ReactHtmlParser from "react-html-parser";
 
 /* Hooks */
@@ -25,11 +25,7 @@ const Step1_3 = () => {
   return (
     <div className="step1_3">
       <div className="step1_3_container">
-        <Header
-          text="USTED"
-          bold="SELECCIONÓ"
-          logo={text[simulador].step1_img}
-        />
+        <Header text="USTED" bold="SELECCIONÓ" logo={simulador} />
 
         <section className="step1_3_innerContainer">
           <p className="step1_3_watermark">1</p>

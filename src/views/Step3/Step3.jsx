@@ -16,7 +16,7 @@ import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
 
 /* Data JSON */
-import { text } from "@/utils/text.js";
+import text from "@/utils/text.json";
 
 const Step3 = () => {
   const navigate = useNavigate();
@@ -25,11 +25,7 @@ const Step3 = () => {
   return (
     <div className="step3">
       <div className="step3_container">
-        <Header
-          text="DATOS"
-          bold="OCUPACIONALES"
-          logo={text[simulador].step1_img}
-        />
+        <Header text="DATOS" bold="OCUPACIONALES" logo={simulador} />
         <StepsContainer step={3} />
 
         <div className="step3_innerContainer">

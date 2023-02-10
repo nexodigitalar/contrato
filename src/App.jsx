@@ -35,7 +35,7 @@ const App = () => {
 
   const saveLocal = () => {
     let data = {
-      simulador: "Pesos Fijos",
+      simulador: "Pesos Ajustables",
       cuoCap: "CAPITAL",
       moneda: "UYU",
       monto: 5300000,

@@ -9,7 +9,7 @@ import adjudicacion from "@/assets/img/adjudicacion.png";
 import indice from "@/assets/img/indice.png";
 
 /* Data JSON */
-import { text } from "@/utils/text.js";
+import text from "@/utils/text.json";
 import ReactHtmlParser from "react-html-parser";
 
 /* Components */
@@ -30,11 +30,7 @@ const Step1_1 = ({ changePage }) => {
     <div className="step1">
       {simulador && (
         <div className="step1_container">
-          <Header
-            text="PRODUCTO"
-            bold="SELECCIONADO"
-            logo={text[simulador].step1_img}
-          />
+          <Header text="PRODUCTO" bold="SELECCIONADO" logo={simulador} />
           <StepsContainer step={1} />
           <h3 className="step1_title">
             <span className="green">Producto</span> seleccionado{" "}

@@ -17,7 +17,7 @@ import useFormatNumber from "@/hooks/useFormatNumber";
 import { useNavigate } from "react-router-dom";
 
 /* Data JSON */
-import { text } from "@/utils/text.js";
+import text from "@/utils/text.json";
 
 const Step4 = () => {
   const navigate = useNavigate();
@@ -28,11 +28,7 @@ const Step4 = () => {
   return (
     <div className="step4">
       <div className="step4_container">
-        <Header
-          text="RESUMEN"
-          bold="DEL PLAN"
-          logo={text[simulador].step1_img}
-        />
+        <Header text="RESUMEN" bold="DEL PLAN" logo={simulador} />
         <StepsContainer step={4} />
 
         <div className="step4_innerContainer">

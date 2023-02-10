@@ -11,7 +11,7 @@ import { useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 
 /* Data JSON */
-import { text } from "@/utils/text.js";
+import text from "@/utils/text.json";
 
 /* Components */
 import Header from "@/components/Header/Header";
@@ -28,11 +28,7 @@ const Step2 = () => {
   return (
     <div className="step2">
       <div className="step2_container">
-        <Header
-          text="DATOS"
-          bold="DEL TITULAR"
-          logo={text[simulador].step1_img}
-        />
+        <Header text="DATOS" bold="DEL TITULAR" logo={simulador} />
         <StepsContainer step={2} />
 
         <div className="step2_innerContainer">
