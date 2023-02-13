@@ -1,12 +1,14 @@
 @import "@/utils/theme.scss";
 
 .inputfile {
-  width: 0.1px;
-  height: 0.1px;
+  width: auto;
+  height: auto;
   opacity: 0;
   overflow: hidden;
   position: absolute;
-  z-index: -1;
+  z-index: 5;
+  right: 0;
+  cursor: pointer;
 }
 
 .inputfile + label {
@@ -15,6 +17,7 @@
   color: $tertiary;
   background-color: $primary;
   display: inline-block;
+  cursor: pointer;
 }
 
 .inputfile:focus + label,
@@ -33,6 +36,8 @@
   @include primaryFont($size_sm);
   color: $neutral;
   margin: $margin_md 0;
+  position: relative;
+  cursor: pointer;
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {

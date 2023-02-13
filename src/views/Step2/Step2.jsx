@@ -16,12 +16,10 @@ import text from "@/utils/text.json";
 /* Components */
 import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
-import SelectInput from "../../components/SelectInput/SelectInput";
 import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
 
 const Step2 = () => {
-  const [user, setUser] = useState(1);
   const { simulador } = useSelector((state) => state.data);
   const navigate = useNavigate();
 
@@ -37,19 +35,7 @@ const Step2 = () => {
               ¿<span className="green">Cuántos </span>titulares{" "}
               <span className="gray">son</span>?
             </h3>
-            <div className="inputForm_div">
-              <SelectInput click={(e) => setUser(e.target.value)} />
-            </div>
-
-            {Array.from({ length: user }, (_, index) => (
-              <div key={index}>
-                <h3 className="step2_title">
-                  <span className="green">Datos </span>del{" "}
-                  <span className="gray">titular</span>
-                </h3>
-                <InputForm />
-              </div>
-            ))}
+            <InputForm />
           </div>
           <div className="step2_imgContainer">
             <img src={userPhoto} className="step2_img" />

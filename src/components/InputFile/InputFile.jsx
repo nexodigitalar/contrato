@@ -1,18 +1,12 @@
 import "./InputFile.scss";
 
-const InputFile = ({ placeholder, click, selectedFile }) => {
+const InputFile = ({ placeholder, click, selectedFile, name }) => {
   return (
     <form>
       <div className="inputFile_container">
-        <p>{selectedFile?.name ? selectedFile.name : placeholder}</p>
-        <input
-          type="file"
-          name="file"
-          id="file"
-          className="inputfile"
-          onChange={click}
-        />
-        <label htmlFor="file">Examinar</label>
+        <p>{placeholder}</p>
+        <input type="file" name={name} className="inputfile" onChange={click} />
+        <label>Examinar</label>
       </div>
     </form>
   );
