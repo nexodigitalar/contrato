@@ -1,6 +1,5 @@
 /* Styles & Img */
 import "./Step3.scss";
-import cuotaLibre from "@/assets/img/cuota-libre.png";
 import user from "@/assets/img/info-user.png";
 
 /* React Router */
@@ -15,11 +14,9 @@ import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
 
-/* Data JSON */
-import text from "@/utils/text.json";
-
 const Step3 = () => {
   const navigate = useNavigate();
+  const usuario = useSelector((state) => state.user.usuarios);
   const { simulador } = useSelector((state) => state.data);
 
   return (
@@ -29,7 +26,11 @@ const Step3 = () => {
         <StepsContainer step={3} />
 
         <div className="step3_innerContainer">
-          <InputForm />
+          <div>
+            {Array.from({ length: usuario.length }, (_, index) => (
+              <InputForm index={index} key={index} />
+            ))}
+          </div>
           <div className="step3_imgContainer">
             <img className="step3_img" src={user} />
           </div>

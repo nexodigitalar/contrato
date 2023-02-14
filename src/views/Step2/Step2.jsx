@@ -1,17 +1,14 @@
 /* Styles & Img */
 import "./Step2.scss";
-import cuotaLibre from "@/assets/img/cuota-libre.png";
 import userPhoto from "@/assets/img/info-user.png";
 
 /* Hooks */
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { setUsers } from "@/store/userSlice/userSlice";
 
 /* React Router */
 import { useNavigate } from "react-router-dom";
-
-/* Data JSON */
-import text from "@/utils/text.json";
 
 /* Components */
 import Header from "@/components/Header/Header";
@@ -21,7 +18,9 @@ import Button from "@/components/Button/Button";
 
 const Step2 = () => {
   const { simulador } = useSelector((state) => state.data);
+  const [initialValues, setInitialValues] = useState(undefined);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div className="step2">
@@ -35,7 +34,10 @@ const Step2 = () => {
               ¿<span className="green">Cuántos </span>titulares{" "}
               <span className="gray">son</span>?
             </h3>
-            <InputForm />
+            <InputForm
+              initialValues={initialValues}
+              setInitialValues={setInitialValues}
+            />
           </div>
           <div className="step2_imgContainer">
             <img src={userPhoto} className="step2_img" />
@@ -45,7 +47,10 @@ const Step2 = () => {
         <div className="step2_buttonContainer">
           <Button
             text="Siguiente"
-            click={() => navigate("/datos-ocupacionales")}
+            click={() => {
+              navigate("/datos-ocupacionales"),
+                dispatch(setUsers(initialValues));
+            }}
           />
         </div>
       </div>

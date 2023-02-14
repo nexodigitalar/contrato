@@ -2,68 +2,83 @@ import "./InputForm.scss";
 
 /* Hooks */
 import { useState, useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setAmountUser } from "@/store/userSlice/userSlice";
 
 /* Components */
 import Input from "../../../components/Input/Input";
 import InputFile from "../../../components/InputFile/InputFile";
-import SelectInput from "@/components/SelectInput/SelectInput";
 import InputDate from "../../../components/InputDate/InputDate";
 
-const InputForm = () => {
-  const [initialValues, setInitialValues] = useState(undefined);
+const InputForm = ({ initialValues, setInitialValues }) => {
   const [amountUsers, setAmountUsers] = useState(1);
+  const usuarios = useSelector((state) => state.user.usuarios);
+  const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     handleInitialValues();
+    if (defaultAmount != 1) {
+      setAmountUsers(defaultAmount);
+    }
   }, [amountUsers]);
 
   const handleInitialValues = () => {
+    let originalValues = {
+      cedula: "",
+      ciFrente: "",
+      ciDorso: "",
+      primerNombre: "",
+      segundoNombre: "",
+      primerApellido: "",
+      segundoApellido: "",
+      fechaNacimiento: "",
+      telefono: "",
+      sexo: "",
+      nacionalidad: "",
+      email: "",
+      pais: "",
+      departamento: "",
+      calle: "",
+      puertaNumero: "",
+      estadoCivil: "",
+      residenteUruguayo: "",
+      monedaIngreso: "",
+      ingresosMensuales: "",
+      empresaTrabaja: "",
+      rubroEmpresa: "",
+      actividadPrincipal: "",
+      origenFondos: "",
+    };
+
     if (!initialValues) {
-      let newNumber = new Array(Number(amountUsers))
-        .fill("")
-        .map((_, i) => i + 1);
+      if (usuarios.length >= 1) {
+        setAmountUsers(usuarios.length);
+        setInitialValues(usuarios);
+      } else {
+        let newNumber = new Array(Number(amountUsers))
+          .fill("")
+          .map((_, i) => i + 1);
 
-      let originalValues = {
-        cedula: "",
-        ciFrente: null,
-        ciDorso: null,
-        primerNombre: "",
-        segundoNombre: "",
-        primerApellido: "",
-        segundoApellido: "",
-        fechaNacimiento: "",
-        telefono: "",
-      };
-      let arrayValues = [];
+        let arrayValues = [];
 
-      newNumber.map((page) => {
-        arrayValues.push(originalValues);
-      });
+        newNumber.map((page) => {
+          arrayValues.push(originalValues);
+        });
 
-      setInitialValues(arrayValues);
+        setInitialValues(arrayValues);
+      }
     } else {
       let newNumber = new Array(Number(amountUsers))
         .fill("")
         .map((_, i) => i + 1);
 
-      let originalValues = {
-        cedula: "",
-        ciFrente: null,
-        ciDorso: null,
-        primerNombre: "",
-        segundoNombre: "",
-        primerApellido: "",
-        segundoApellido: "",
-        fechaNacimiento: "",
-        telefono: "",
-      };
       let arrayValues = [...initialValues];
 
       /* Cut or add to the array depens of user */
       if (newNumber.length > arrayValues.length) {
         newNumber.map((page) => {
           if (page > arrayValues.length) {
-            console.log(page);
             arrayValues.push(originalValues);
           }
         });
@@ -82,7 +97,6 @@ const InputForm = () => {
       [e.target.name]: e.target.value,
     };
     setInitialValues(updatedAreas);
-    console.log(initialValues);
   };
 
   const handleFiles = (e, i) => {
@@ -92,7 +106,6 @@ const InputForm = () => {
       [e.target.name]: e.target.files[0],
     };
     setInitialValues(updatedAreas);
-    console.log(updatedAreas);
   };
 
   const handleDate = (value, i) => {
@@ -102,7 +115,6 @@ const InputForm = () => {
       fechaNacimiento: value,
     };
     setInitialValues(updatedAreas);
-    console.log(updatedAreas);
   };
 
   return (
@@ -110,7 +122,20 @@ const InputForm = () => {
       {initialValues && (
         <section>
           <div className="inputForm_div">
-            <SelectInput click={(e) => setAmountUsers(e.target.value)} />
+            <select
+              className="selectInput"
+              onChange={(e) => {
+                setAmountUsers(e.target.value),
+                  dispatch(setAmountUser(e.target.value));
+              }}
+              defaultValue={defaultAmount != 1 ? defaultAmount : 1}
+            >
+              <option value={1}>1</option>
+              <option value={2}>2</option>
+              <option value={3}>3</option>
+              <option value={4}>4</option>
+              <option value={5}>5</option>
+            </select>
           </div>
           {Array.from({ length: amountUsers }, (_, index) => (
             <div key={index}>
@@ -123,6 +148,7 @@ const InputForm = () => {
                 <Input
                   placeholder="* Cédula"
                   name="cedula"
+                  value={initialValues[index]?.cedula || ""}
                   click={(e) => handleInput(e, index)}
                 />
               </div>
@@ -130,13 +156,13 @@ const InputForm = () => {
                 <InputFile
                   placeholder="Adjuntar frente de CI"
                   name="ciFrente"
-                  selectedFile={initialValues[index]}
+                  selectedFile={initialValues[index]?.ciFrente.name}
                   click={(e) => handleFiles(e, index)}
                 />
                 <InputFile
                   placeholder="Adjuntar dorso de CI"
                   name="ciDorso"
-                  selectedFile={initialValues[index]}
+                  selectedFile={initialValues[index]?.ciDorso.name}
                   click={(e) => handleFiles(e, index)}
                 />
               </div>
@@ -144,11 +170,13 @@ const InputForm = () => {
                 <Input
                   placeholder="* Primer Nombre"
                   name="primerNombre"
+                  value={initialValues[index]?.primerNombre || ""}
                   click={(e) => handleInput(e, index)}
                 />
                 <Input
                   placeholder="Segundo Nombre"
                   name="segundoNombre"
+                  value={initialValues[index]?.segundoNombre || ""}
                   click={(e) => handleInput(e, index)}
                 />
               </div>
@@ -156,11 +184,13 @@ const InputForm = () => {
                 <Input
                   placeholder="* Primer Apellido"
                   name="primerApellido"
+                  value={initialValues[index]?.primerApellido || ""}
                   click={(e) => handleInput(e, index)}
                 />
                 <Input
                   placeholder="Segundo Apellido"
                   name="segundoApellido"
+                  value={initialValues[index]?.segundoApellido || ""}
                   click={(e) => handleInput(e, index)}
                 />
               </div>
@@ -174,6 +204,7 @@ const InputForm = () => {
                 <Input
                   placeholder="* Teléfono / Celular"
                   name="telefono"
+                  value={initialValues[index]?.telefono || ""}
                   click={(e) => handleInput(e, index)}
                 />
               </div>
