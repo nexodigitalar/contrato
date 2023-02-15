@@ -162,8 +162,8 @@ const InputForm = ({ index }) => {
             />
             <Input
               placeholder="* Origen de fondos"
-              name="actividadPrincipal"
-              value={usuario[index]?.actividadPrincipal || ""}
+              name="origenFondos"
+              value={usuario[index]?.origenFondos || ""}
               click={(e) => handleInput(e, index)}
             />
           </div>
