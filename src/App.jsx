@@ -40,8 +40,8 @@ const App = () => {
       }
       const data = JSON.parse(e.data);
       if (typeof data !== undefined) {
-        localStorage.setItem("contrato", JSON.stringify(data));
-        dispatch(setData(data));
+        let newData = JSON.stringify(data);
+        dispatch(setData(newData));
       }
     });
     /* let data = JSON.parse(localStorage.getItem("contrato")); */
