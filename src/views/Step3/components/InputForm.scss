@@ -7,6 +7,11 @@
   width: 100%;
 }
 
+.inputForm_title {
+  @include primaryFont($size_lg);
+  color: $neutral_dark;
+}
+
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .inputForm_div {
     display: flex !important;
@@ -19,5 +24,9 @@
   }
   .inputForm_div_mobile > input {
     width: 100% !important;
+  }
+  .inputForm_title {
+    @include primaryFont($size_md);
+    margin: $margin_xs 0;
   }
 }

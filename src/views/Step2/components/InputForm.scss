@@ -29,4 +29,10 @@ input[type="number"] {
   .inputForm2_mobile > input {
     width: 100%;
   }
+  .inputForm_mobileColumn {
+    flex-direction: column;
+  }
+  .inputForm_mobileColumn > input {
+    width: 90%;
+  }
 }

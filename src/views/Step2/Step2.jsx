@@ -1,24 +1,27 @@
 /* Styles & Img */
 import "./Step2.scss";
-import cuotaLibre from "@/assets/img/cuota-libre.png";
 import userPhoto from "@/assets/img/info-user.png";
 
 /* Hooks */
-import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+
+import { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import { setUsers } from "@/store/userSlice/userSlice";
+
+/* React Router */
 import { useNavigate } from "react-router-dom";
 
 /* Components */
 import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
-import SelectInput from "../../components/SelectInput/SelectInput";
 import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
 
 const Step2 = () => {
-  const [user, setUser] = useState(1);
   const { simulador } = useSelector((state) => state.data);
+  const [initialValues, setInitialValues] = useState(undefined);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {}, [user]);
 
@@ -34,19 +37,11 @@ const Step2 = () => {
               ¿<span className="green">Cuántos </span>titulares{" "}
               <span className="gray">son</span>?
             </h3>
-            <div className="inputForm_div">
-              <SelectInput click={(e) => setUser(e.target.value)} />
-            </div>
 
-            {Array.from({ length: user }, (_, index) => (
-              <div key={index}>
-                <h3 className="step2_title">
-                  <span className="green">Datos </span>del{" "}
-                  <span className="gray">titular</span>
-                </h3>
-                <InputForm index={index} />
-              </div>
-            ))}
+            <InputForm
+              initialValues={initialValues}
+              setInitialValues={setInitialValues}
+            />
           </div>
           <div className="step2_imgContainer">
             <img src={userPhoto} className="step2_img" />
@@ -56,7 +51,10 @@ const Step2 = () => {
         <div className="step2_buttonContainer">
           <Button
             text="Siguiente"
-            click={() => navigate("/datos-ocupacionales")}
+            click={() => {
+              navigate("/datos-ocupacionales"),
+                dispatch(setUsers(initialValues));
+            }}
           />
         </div>
       </div>
