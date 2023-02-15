@@ -34,17 +34,8 @@ const App = () => {
   }, []);
 
   const getDataFromLocal = () => {
-    window.addEventListener("message", function (e) {
-      if (e.origin !== "https://webtest.consorciouruguay.com") {
-        return;
-      }
-      const data = JSON.parse(e.data);
-      if (typeof data !== undefined) {
-        let newData = JSON.stringify(data);
-        dispatch(setData(newData));
-      }
-    });
-    /* let data = JSON.parse(localStorage.getItem("contrato")); */
+    let data = JSON.parse(localStorage.getItem("contrato"));
+    dispatch(setData(data));
   };
 
   return (
