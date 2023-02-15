@@ -23,8 +23,6 @@ const Step2 = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  useEffect(() => {}, [user]);
-
   return (
     <div className="step2">
       <div className="step2_container">
