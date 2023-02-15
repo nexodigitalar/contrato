@@ -40,7 +40,7 @@ const App = () => {
       }
       const data = JSON.parse(e.data);
       if (typeof data !== undefined) {
-        localStorage.setItem("contrato", data);
+        localStorage.setItem("contrato", JSON.stringify(data));
         dispatch(setData(data));
       }
     });
