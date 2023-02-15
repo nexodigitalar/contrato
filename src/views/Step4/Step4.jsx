@@ -15,15 +15,18 @@ import Input from "@/components/Input/Input";
 import { useSelector } from "react-redux";
 import useFormatNumber from "@/hooks/useFormatNumber";
 import { useNavigate } from "react-router-dom";
-
-/* Data JSON */
-import text from "@/utils/text.json";
+import { useEffect } from "react";
 
 const Step4 = () => {
   const navigate = useNavigate();
   const { simulador, cuotas, plazo, monto } = useSelector(
     (state) => state.data
   );
+  const usuarios = useSelector((state) => state.user.usuarios);
+
+  useEffect(() => {
+    console.log(usuarios);
+  }, []);
 
   return (
     <div className="step4">

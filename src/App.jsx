@@ -30,24 +30,11 @@ const App = () => {
   }, [pathname]);
 
   useEffect(() => {
-    saveLocal();
+    getDataFromLocal();
   }, []);
 
-  const saveLocal = () => {
-    let data = {
-      simulador: "Pesos Ajustables",
-      cuoCap: "CAPITAL",
-      moneda: "UYU",
-      monto: 5300000,
-      plazo: 200,
-      cuotas: 34450,
-      espera: 3500,
-      normal: 6500,
-      final: 9500,
-      entrega: "17/02/23",
-      LeadMontoNecesita: "100000_300000",
-    };
-    localStorage.setItem("contrato", JSON.stringify(data));
+  const getDataFromLocal = () => {
+    let data = JSON.parse(localStorage.getItem("contrato"));
     dispatch(setData(data));
   };
 
