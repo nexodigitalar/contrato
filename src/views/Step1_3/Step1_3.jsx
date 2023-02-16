@@ -1,6 +1,5 @@
 /* Styles & Img */
 import "./Step1_3.scss";
-import cuotaLibre from "@/assets/img/cuota-libre.png";
 
 /* React Router */
 import { useNavigate } from "react-router-dom";
@@ -11,6 +10,7 @@ import ReactHtmlParser from "react-html-parser";
 
 /* Hooks */
 import { useSelector } from "react-redux";
+import { useEffect, useState } from "react";
 
 /* Components */
 import Header from "@/components/Header/Header";
@@ -20,7 +20,58 @@ import CuotaMinMax from "./components/CuotaMinMax";
 
 const Step1_3 = () => {
   const { simulador } = useSelector((state) => state.data);
+  const [switchCheck, setSwitchCheck] = useState();
+  const [disabled, setDisabled] = useState(true);
   const navigate = useNavigate();
+
+  useEffect(() => {
+    handleAmountChecks();
+  }, []);
+
+  useEffect(() => {
+    handleValidations();
+  }, [switchCheck]);
+
+  const handleAmountChecks = () => {
+    let numValidations = 0;
+    switch (simulador) {
+      case "Pesos Ajustables":
+      case "Pesos Fijos":
+      case "Diferencial Pesos Fijos":
+      case "Diferencial Pesos Ajustables":
+        numValidations = 6;
+        break;
+      case "Dolares":
+      case "Diferencial Dolares":
+        numValidations = 5;
+        break;
+      case "Fecha Elegida":
+        numValidations = 4;
+        break;
+    }
+
+    let arr = new Array(numValidations).fill("").map((_, i) => i + 1);
+    let newArr = [];
+    arr.forEach((n) => newArr.push(false));
+    setSwitchCheck(newArr);
+  };
+
+  const handleValidations = () => {
+    if (switchCheck) {
+      let isFalse = switchCheck.some((bool) => bool === false);
+      if (!isFalse) {
+        setDisabled(false);
+      } else {
+        setDisabled(true);
+      }
+    }
+  };
+
+  const handleCheck = (value, i) => {
+    const updatedAreas = [...switchCheck];
+    updatedAreas[i] = value;
+    setSwitchCheck(updatedAreas);
+  };
 
   return (
     <div className="step1_3">
@@ -37,7 +88,7 @@ const Step1_3 = () => {
               </h3>
               <div className="step1_3_switchContainer">
                 <p className="step1_3_text text_mobile">Entendido</p>
-                <Switch />
+                <Switch click={(value) => handleCheck(value, 0)} />
               </div>
             </div>
 
@@ -61,7 +112,7 @@ const Step1_3 = () => {
                 </h3>
                 <div className="step1_3_switchContainer">
                   <p className="step1_3_text text_mobile">Entendido</p>
-                  <Switch />
+                  <Switch click={(value) => handleCheck(value, 1)} />
                 </div>
               </div>
 
@@ -81,7 +132,7 @@ const Step1_3 = () => {
                 </h3>
                 <div className="step1_3_switchContainer">
                   <p className="step1_3_text text_mobile">Entendido</p>
-                  <Switch />
+                  <Switch click={(value) => handleCheck(value, 2)} />
                 </div>
               </div>
 
@@ -103,7 +154,7 @@ const Step1_3 = () => {
                 </h3>
                 <div className="step1_3_switchContainer">
                   <p className="step1_3_text text_mobile">Entendido</p>
-                  <Switch />
+                  <Switch click={(value) => handleCheck(value, 3)} />
                 </div>
               </div>
 
@@ -129,7 +180,7 @@ const Step1_3 = () => {
               </h3>
               <div className="step1_3_switchContainer">
                 <p className="step1_3_text text_mobile">Entendido</p>
-                <Switch />
+                <Switch click={(value) => handleCheck(value, 4)} />
               </div>
             </div>
 
@@ -153,7 +204,7 @@ const Step1_3 = () => {
               </h3>
               <div className="step1_3_switchContainer">
                 <p className="step1_3_text text_mobile">Entendido</p>
-                <Switch />
+                <Switch click={(value) => handleCheck(value, 5)} />
               </div>
             </div>
 
@@ -165,6 +216,7 @@ const Step1_3 = () => {
           <Button
             text="Siguiente"
             click={() => navigate("/datos-personales")}
+            disabled={disabled}
           />
         </div>
         <p className="step1_3_subtext">

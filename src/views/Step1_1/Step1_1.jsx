@@ -155,6 +155,31 @@ const Step1_1 = ({ changePage }) => {
                 </section>
               </>
 
+              {(simulador != "Pesos Ajustables" ||
+                simulador != "Pesos Fijos") && (
+                <>
+                  <h3 className="step1_title2">
+                    Detalle <span className="green">cuotas </span>
+                    <span className="gray">bonificadas</span>
+                  </h3>
+                  <p className="step1_text">
+                    Acá van todas las observaciones de las condiciones
+                    particularesAcá van todas las observaciones de las
+                    condiciones particularesAcá van todas las observaciones de
+                    las condiciones particularesAcá van todas las observaciones
+                    de las condiciones particularesAcá van todas las
+                    observaciones de las condiciones particularesAcá van todas
+                    las observaciones de las condiciones particularesAcá van
+                    todas las observaciones de las condiciones particularesAcá
+                    van todas las observaciones de las condiciones
+                    particularesAcá van todas las observaciones de las
+                    condiciones particularesAcá van todas las observaciones de
+                    las condiciones particularesAcá van todas las observaciones
+                    de las condiciones particularesAcá van todas las
+                    observaciones de las condiciones particulares
+                  </p>
+                </>
+              )}
               <section className="step1_rightContainer">
                 <h3 className="step1_title step1_right ">
                   <span className="green">En la próxima página</span> verás más
@@ -165,43 +190,54 @@ const Step1_1 = ({ changePage }) => {
               </section>
             </>
           ) : (
-            <section className="step1_imgContainer_fechaElegida">
-              <Cards
-                titleGreen="Capital"
-                title=""
-                titleBold=" elegido"
-                number={`$ ${useFormatNumber(monto)}`}
-                img={capital}
-              />
-              <Cards
-                titleGreen="Fecha "
-                title="de "
-                titleBold="entrega"
-                number={entrega}
-                img={cuotaEntre}
-              />
-              <Cards
-                titleGreen="Valor "
-                title="de "
-                titleBold="cuota"
-                number={cuotas}
-                img={cuota}
-              />
-              <Cards
-                titleGreen="Total "
-                title="de "
-                titleBold="cuotas"
-                number={text[simulador].step1_cuo}
-                img={totalCuotas}
-              />
-              <Cards
-                titleGreen={text[simulador].step1_lastCard_green}
-                title={text[simulador].step1_lastCard}
-                titleBold=""
-                number={text[simulador].step1_lastCard_value}
-                img={indice}
-              />
-            </section>
+            <>
+              <section className="step1_imgContainer_fechaElegida">
+                <Cards
+                  titleGreen="Capital"
+                  title=""
+                  titleBold=" elegido"
+                  number={`$ ${useFormatNumber(monto)}`}
+                  img={capital}
+                />
+                <Cards
+                  titleGreen="Fecha "
+                  title="de "
+                  titleBold="entrega"
+                  number={entrega}
+                  img={cuotaEntre}
+                />
+                <Cards
+                  titleGreen="Valor "
+                  title="de "
+                  titleBold="cuota"
+                  number={`$ ${useFormatNumber(cuotas)}`}
+                  img={cuota}
+                />
+                <Cards
+                  titleGreen="Total "
+                  title="de "
+                  titleBold="cuotas"
+                  number={text[simulador].step1_cuo}
+                  img={totalCuotas}
+                />
+                <Cards
+                  titleGreen={text[simulador].step1_lastCard_green}
+                  title={text[simulador].step1_lastCard}
+                  titleBold=""
+                  number={text[simulador].step1_lastCard_value}
+                  img={indice}
+                />
+              </section>
+
+              <section className="step1_rightContainer">
+                <h3 className="step1_title step1_right ">
+                  <span className="green">En la próxima página</span> verás más
+                  detalles
+                </h3>
+                <p className="step1_textSm">* Ver términos y condiciones</p>
+                <Button text="Siguiente" click={() => changePage(2)} />
+              </section>
+            </>
           )}
         </div>
       )}

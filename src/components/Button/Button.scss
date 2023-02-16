@@ -21,6 +21,10 @@
     font-size: $size_xs;
     margin-left: $margin_sm;
   }
+  &:disabled {
+    background: none;
+    background-color: $neutral_light;
+  }
 }
 
 .buttonSecondary {
@@ -31,6 +35,9 @@
   display: inline-block;
   cursor: pointer;
   border: none;
+  &:disabled {
+    background-color: $neutral_light;
+  }
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {

@@ -5,11 +5,12 @@ import "./Button.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 
-const Button = ({ text, click, type }) => {
+const Button = ({ text, click, type, disabled }) => {
   return (
     <button
       className={type === "secondary" ? "buttonSecondary" : "button"}
       onClick={click}
+      disabled={disabled}
     >
       {text}
       {type != "secondary" && (
