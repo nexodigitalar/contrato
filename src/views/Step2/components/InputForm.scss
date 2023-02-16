@@ -16,6 +16,10 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 
+.inputForm_innerContainer {
+  margin: $margin_lg 0;
+}
+
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .inputForm2_div {
     display: flex !important;
