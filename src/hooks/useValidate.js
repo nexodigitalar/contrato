@@ -1,12 +1,28 @@
-const useValidateInput = (e) => {
-  const timer = setTimeout(() => {
-    var target = e.target;
-    var error = target.parentElement.lastElementChild;
-    if (!e.target.value) {
-      error.classList.remove("input_error_hidden");
+let timer;
+
+const useValidateInput = (
+  e,
+  amountValidatios,
+  index,
+  position,
+  setAmountValidations
+) => {
+  clearTimeout(timer);
+  timer = setTimeout(() => {
+    if (e.target.value === "") {
+      let newArr = [...amountValidatios];
+      let newObj = newArr[index];
+      newObj[position] = false;
+      setAmountValidations(newArr);
+    } else if (e.target.value === false) {
+      return;
+    } else {
+      let newArr = [...amountValidatios];
+      let newObj = newArr[index];
+      newObj[position] = true;
+      setAmountValidations(newArr);
     }
-  }, 1000);
-  return () => clearTimeout(timer);
+  }, 2000);
 };
 
 export default useValidateInput;

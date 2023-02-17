@@ -4,24 +4,62 @@ import "./InputForm.scss";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setAmountUser } from "@/store/userSlice/userSlice";
+import useValidate from "@/hooks/useValidate";
 
 /* Components */
 import Input from "../../../components/Input/Input";
 import InputFile from "../../../components/InputFile/InputFile";
 import InputDate from "../../../components/InputDate/InputDate";
 
-const InputForm = ({ initialValues, setInitialValues }) => {
+const InputForm = ({
+  initialValues,
+  setInitialValues,
+  amountValidatios,
+  setAmountValidations,
+}) => {
   const [amountUsers, setAmountUsers] = useState(1);
   const usuarios = useSelector((state) => state.user.usuarios);
   const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
   const dispatch = useDispatch();
 
   useEffect(() => {
+    handleInitialValidations();
     handleInitialValues();
     if (defaultAmount != 1) {
       setAmountUsers(defaultAmount);
     }
   }, [amountUsers]);
+
+  useEffect(() => {
+    console.log(amountValidatios);
+  }, [amountValidatios]);
+
+  const handleInput = (e, i) => {
+    const updatedAreas = [...initialValues];
+    updatedAreas[i] = {
+      ...updatedAreas[i],
+      [e.target.name]: e.target.value,
+    };
+    setInitialValues(updatedAreas);
+  };
+
+  const handleFiles = (e, i) => {
+    const updatedAreas = [...initialValues];
+    updatedAreas[i] = {
+      ...updatedAreas[i],
+      [e.target.name]: e.target.files[0],
+    };
+    setInitialValues(updatedAreas);
+  };
+
+  const handleDate = (value, i) => {
+    const updatedAreas = [...initialValues];
+    updatedAreas[i] = {
+      ...updatedAreas[i],
+      fechaNacimiento: value,
+    };
+    setInitialValues(updatedAreas);
+  };
 
   const handleInitialValues = () => {
     let originalValues = {
@@ -90,43 +128,48 @@ const InputForm = ({ initialValues, setInitialValues }) => {
     }
   };
 
-  const handleInput = (e, i) => {
-    const updatedAreas = [...initialValues];
-    updatedAreas[i] = {
-      ...updatedAreas[i],
-      [e.target.name]: e.target.value,
+  const handleInitialValidations = () => {
+    let values = {
+      cedula: "",
+      ciFrente: "",
+      ciDorso: "",
+      primerNombre: "",
+      primerApellido: "",
+      fechaNacimiento: "",
+      telefono: "",
     };
-    setInitialValues(updatedAreas);
+
+    if (amountValidatios.length === 0) {
+      setAmountValidations([values]);
+    } else {
+      let copyAmountValidations = [...amountValidatios];
+
+      if (amountUsers > amountValidatios.length) {
+        let sum = amountUsers - amountValidatios.length;
+
+        let arraySum = new Array(sum).fill("").map((_, i) => i + 1);
+        arraySum.forEach((n) => copyAmountValidations.push(values));
+
+        setAmountValidations(copyAmountValidations);
+      } else {
+        let newArr = copyAmountValidations.slice(0, amountUsers);
+        setAmountValidations(newArr);
+      }
+    }
   };
 
-  const handleFiles = (e, i) => {
-    const updatedAreas = [...initialValues];
-    updatedAreas[i] = {
-      ...updatedAreas[i],
-      [e.target.name]: e.target.files[0],
-    };
-    setInitialValues(updatedAreas);
-  };
-
-  const handleDate = (value, i) => {
-    const updatedAreas = [...initialValues];
-    updatedAreas[i] = {
-      ...updatedAreas[i],
-      fechaNacimiento: value,
-    };
-    setInitialValues(updatedAreas);
-  };
+  const validateButton = () => {};
 
   return (
     <>
-      {initialValues && (
+      {initialValues && amountValidatios.length != 0 && (
         <section>
           <div className="inputForm_div">
             <select
               className="selectInput"
               onChange={(e) => {
-                setAmountUsers(e.target.value),
-                  dispatch(setAmountUser(e.target.value));
+                setAmountUsers(e.target.value);
+                dispatch(setAmountUser(e.target.value));
               }}
               defaultValue={defaultAmount != 1 ? defaultAmount : 1}
             >
@@ -149,7 +192,17 @@ const InputForm = ({ initialValues, setInitialValues }) => {
                   placeholder="* Cédula"
                   name="cedula"
                   value={initialValues[index]?.cedula || ""}
-                  click={(e) => handleInput(e, index)}
+                  error={amountValidatios[index]?.cedula}
+                  click={(e) => {
+                    handleInput(e, index),
+                      useValidate(
+                        e,
+                        amountValidatios,
+                        index,
+                        "cedula",
+                        setAmountValidations
+                      );
+                  }}
                 />
               </div>
               <div className="inputForm2_div inputForm_mobile">
@@ -171,7 +224,17 @@ const InputForm = ({ initialValues, setInitialValues }) => {
                   placeholder="* Primer Nombre"
                   name="primerNombre"
                   value={initialValues[index]?.primerNombre || ""}
-                  click={(e) => handleInput(e, index)}
+                  error={amountValidatios[index]?.primerNombre}
+                  click={(e) => {
+                    handleInput(e, index),
+                      useValidate(
+                        e,
+                        amountValidatios,
+                        index,
+                        "primerNombre",
+                        setAmountValidations
+                      );
+                  }}
                 />
                 <Input
                   placeholder="Segundo Nombre"
@@ -185,7 +248,17 @@ const InputForm = ({ initialValues, setInitialValues }) => {
                   placeholder="* Primer Apellido"
                   name="primerApellido"
                   value={initialValues[index]?.primerApellido || ""}
-                  click={(e) => handleInput(e, index)}
+                  error={amountValidatios[index]?.primerApellido}
+                  click={(e) => {
+                    handleInput(e, index),
+                      useValidate(
+                        e,
+                        amountValidatios,
+                        index,
+                        "primerApellido",
+                        setAmountValidations
+                      );
+                  }}
                 />
                 <Input
                   placeholder="Segundo Apellido"
@@ -205,7 +278,17 @@ const InputForm = ({ initialValues, setInitialValues }) => {
                   placeholder="* Teléfono / Celular"
                   name="telefono"
                   value={initialValues[index]?.telefono || ""}
-                  click={(e) => handleInput(e, index)}
+                  error={amountValidatios[index]?.telefono}
+                  click={(e) => {
+                    handleInput(e, index),
+                      useValidate(
+                        e,
+                        amountValidatios,
+                        index,
+                        "telefono",
+                        setAmountValidations
+                      );
+                  }}
                 />
               </div>
             </div>

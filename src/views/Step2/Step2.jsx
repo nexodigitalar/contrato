@@ -20,6 +20,8 @@ import Button from "@/components/Button/Button";
 const Step2 = () => {
   const { simulador } = useSelector((state) => state.data);
   const [initialValues, setInitialValues] = useState(undefined);
+  const [amountValidatios, setAmountValidations] = useState([]);
+  const [disabled, setDisabled] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
@@ -39,6 +41,8 @@ const Step2 = () => {
             <InputForm
               initialValues={initialValues}
               setInitialValues={setInitialValues}
+              amountValidatios={amountValidatios}
+              setAmountValidations={setAmountValidations}
             />
           </div>
           <div className="step2_imgContainer">
@@ -53,6 +57,7 @@ const Step2 = () => {
               navigate("/datos-ocupacionales"),
                 dispatch(setUsers(initialValues));
             }}
+            disabled={disabled}
           />
         </div>
       </div>

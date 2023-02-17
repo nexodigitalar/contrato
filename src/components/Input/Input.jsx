@@ -1,14 +1,17 @@
 import "./Input.scss";
 
-const Input = ({ placeholder, click, name, value }) => {
+const Input = ({ placeholder, click, name, value, error }) => {
   return (
-    <input
-      className="input"
-      placeholder={placeholder}
-      value={value}
-      name={name}
-      onChange={click}
-    />
+    <div className="inputContainer">
+      <input
+        className={error === false ? "input error" : "input"}
+        placeholder={placeholder}
+        value={value}
+        name={name}
+        onChange={click}
+      />
+      {error === false && <p className="input_error">Campo obligatorio</p>}
+    </div>
   );
 };
 
