@@ -29,7 +29,7 @@ const Step1_3 = () => {
   }, []);
 
   useEffect(() => {
-    handleValidations();
+    validateButton();
   }, [switchCheck]);
 
   const handleAmountChecks = () => {
@@ -56,7 +56,7 @@ const Step1_3 = () => {
     setSwitchCheck(newArr);
   };
 
-  const handleValidations = () => {
+  const validateButton = () => {
     if (switchCheck) {
       let isFalse = switchCheck.some((bool) => bool === false);
       if (!isFalse) {

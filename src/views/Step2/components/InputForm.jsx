@@ -196,7 +196,7 @@ const InputForm = ({
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
-                        e,
+                        e.target.value,
                         amountValidatios,
                         index,
                         "cedula",
@@ -210,13 +210,33 @@ const InputForm = ({
                   placeholder="Adjuntar frente de CI"
                   name="ciFrente"
                   selectedFile={initialValues[index]?.ciFrente.name}
-                  click={(e) => handleFiles(e, index)}
+                  error={amountValidatios[index]?.ciFrente}
+                  click={(e) => {
+                    handleFiles(e, index),
+                      useValidate(
+                        e.target.value,
+                        amountValidatios,
+                        index,
+                        "ciFrente",
+                        setAmountValidations
+                      );
+                  }}
                 />
                 <InputFile
                   placeholder="Adjuntar dorso de CI"
                   name="ciDorso"
                   selectedFile={initialValues[index]?.ciDorso.name}
-                  click={(e) => handleFiles(e, index)}
+                  error={amountValidatios[index]?.ciDorso}
+                  click={(e) => {
+                    handleFiles(e, index),
+                      useValidate(
+                        e.target.value,
+                        amountValidatios,
+                        index,
+                        "ciDorso",
+                        setAmountValidations
+                      );
+                  }}
                 />
               </div>
               <div className="inputForm2_div">
@@ -228,7 +248,7 @@ const InputForm = ({
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
-                        e,
+                        e.target.value,
                         amountValidatios,
                         index,
                         "primerNombre",
@@ -252,7 +272,7 @@ const InputForm = ({
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
-                        e,
+                        e.target.value,
                         amountValidatios,
                         index,
                         "primerApellido",
@@ -272,7 +292,17 @@ const InputForm = ({
                   placeholder="* Fecha de nacimiento"
                   name="fechaNacimiento"
                   value={initialValues[index]}
-                  click={(value) => handleDate(value, index)}
+                  error={amountValidatios[index]?.fechaNacimiento}
+                  click={(value) => {
+                    handleDate(value, index),
+                      useValidate(
+                        value,
+                        amountValidatios,
+                        index,
+                        "fechaNacimiento",
+                        setAmountValidations
+                      );
+                  }}
                 />
                 <Input
                   placeholder="* Teléfono / Celular"
@@ -282,7 +312,7 @@ const InputForm = ({
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
-                        e,
+                        e.target.value,
                         amountValidatios,
                         index,
                         "telefono",

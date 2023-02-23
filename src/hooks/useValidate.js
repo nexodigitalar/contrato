@@ -9,12 +9,12 @@ const useValidateInput = (
 ) => {
   clearTimeout(timer);
   timer = setTimeout(() => {
-    if (e.target.value === "") {
+    if (e === "") {
       let newArr = [...amountValidatios];
       let newObj = newArr[index];
       newObj[position] = false;
       setAmountValidations(newArr);
-    } else if (e.target.value === false) {
+    } else if (e === false) {
       return;
     } else {
       let newArr = [...amountValidatios];
@@ -22,7 +22,7 @@ const useValidateInput = (
       newObj[position] = true;
       setAmountValidations(newArr);
     }
-  }, 2000);
+  }, 1000);
 };
 
 export default useValidateInput;

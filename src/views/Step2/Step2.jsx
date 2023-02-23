@@ -16,6 +16,7 @@ import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
+import { useEffect } from "react";
 
 const Step2 = () => {
   const { simulador } = useSelector((state) => state.data);
@@ -24,6 +25,27 @@ const Step2 = () => {
   const [disabled, setDisabled] = useState(true);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  useEffect(() => {
+    validateButton();
+  }, [amountValidatios]);
+
+  const validateButton = () => {
+    let newArr = [];
+    amountValidatios.map((form) => {
+      for (let key in form) {
+        if (form[key] === false || form[key] === "") {
+          newArr.push(false);
+        }
+      }
+    });
+    let isFalse = newArr.some((bool) => bool === false);
+    if (!isFalse) {
+      setDisabled(false);
+    } else {
+      setDisabled(true);
+    }
+  };
 
   return (
     <div className="step2">

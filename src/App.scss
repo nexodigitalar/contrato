@@ -26,6 +26,12 @@ p {
   font-weight: bold;
 }
 
+.input_error {
+  @include primaryFont($size_xxs);
+  color: $error;
+  margin: $margin_xs 0;
+}
+
 @font-face {
   font-family: GilroyLight;
   src: url("./assets/fonts/Gilroy-Light.woff");
