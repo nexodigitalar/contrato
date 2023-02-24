@@ -68,13 +68,20 @@ const Step4 = () => {
                 <span className="gray">cuotas - {plazo}</span>
               </p>
             </div>
-            <div className="step4_descriptionContainer">
-              <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
-              <p className="step4_text">
-                <span className="green">Índice</span> de{" "}
-                <span className="gray">reajuste - IPC</span>
-              </p>
-            </div>
+            {simulador === "Pesos Ajustables" ||
+              simulador === "Diferencial Pesos Ajustables" ||
+              (simulador === "Fecha Elegida" && (
+                <div className="step4_descriptionContainer">
+                  <FontAwesomeIcon
+                    className="step4_icon"
+                    icon={faChevronRight}
+                  />
+                  <p className="step4_text">
+                    <span className="green">Índice</span> de{" "}
+                    <span className="gray">reajuste - IPC</span>
+                  </p>
+                </div>
+              ))}
           </section>
           <section className="step4_col2">
             <h3 className="step4_title">

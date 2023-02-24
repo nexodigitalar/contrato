@@ -199,6 +199,7 @@ const InputForm = ({
                   name="cedula"
                   value={initialValues[index]?.cedula || ""}
                   error={amountValidatios[index]?.cedula}
+                  type="number"
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
@@ -273,6 +274,7 @@ const InputForm = ({
                   name="primerNombre"
                   value={initialValues[index]?.primerNombre || ""}
                   error={amountValidatios[index]?.primerNombre}
+                  type="text"
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
@@ -288,6 +290,7 @@ const InputForm = ({
                   placeholder="Segundo Nombre"
                   name="segundoNombre"
                   value={initialValues[index]?.segundoNombre || ""}
+                  type="text"
                   click={(e) => handleInput(e, index)}
                 />
               </div>
@@ -297,6 +300,7 @@ const InputForm = ({
                   name="primerApellido"
                   value={initialValues[index]?.primerApellido || ""}
                   error={amountValidatios[index]?.primerApellido}
+                  type="text"
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
@@ -312,6 +316,7 @@ const InputForm = ({
                   placeholder="Segundo Apellido"
                   name="segundoApellido"
                   value={initialValues[index]?.segundoApellido || ""}
+                  type="text"
                   click={(e) => handleInput(e, index)}
                 />
               </div>
@@ -337,6 +342,7 @@ const InputForm = ({
                   name="telefono"
                   value={initialValues[index]?.telefono || ""}
                   error={amountValidatios[index]?.telefono}
+                  type="number"
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(

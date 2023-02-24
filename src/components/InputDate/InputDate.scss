@@ -1,7 +1,24 @@
 @import "@/utils/theme.scss";
 
-.react-date-picker {
-  width: 40%;
+.inputDate_form {
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.inputDate_container {
+  @include flex(row, space-between, center);
+  background-color: $tertiary;
+  border: none;
+  border-bottom: 2px solid $primary;
+  border-radius: 3px 3px 0px 0px;
+  padding: 13px;
+  @include primaryFont($size_sm);
+  color: $neutral;
+  margin: $margin_md 0 0 0;
 }
 
 .inputDate {
@@ -13,16 +30,8 @@
   z-index: -1;
 }
 
-.inputDate_container {
-  @include flex(row, space-between, center);
-  background-color: $tertiary;
-  border: none;
-  border-bottom: 2px solid $primary;
-  border-radius: 3px 3px 0px 0px;
-  padding: $padding_md;
-  @include primaryFont($size_sm);
-  color: $neutral;
-  margin: $margin_md 0;
+.react-date-picker {
+  width: 40%;
 }
 
 .react-date-picker--disabled {

@@ -3,7 +3,7 @@ import DatePicker from "react-date-picker/dist/entry.nostyle";
 
 const InputDate = ({ name, placeholder, click, valueFecha, error }) => {
   return (
-    <form>
+    <form className="inputDate_form">
       <div className="inputDate_container">
         <p>{placeholder}</p>
         <DatePicker

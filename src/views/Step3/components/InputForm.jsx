@@ -95,6 +95,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="nacionalidad"
               value={usuario[index]?.nacionalidad || ""}
               error={amountValidatios[index]?.nacionalidad}
+              type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
@@ -113,6 +114,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="email"
               value={usuario[index]?.email || ""}
               error={amountValidatios[index]?.email}
+              type="email"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
@@ -164,6 +166,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="departamento"
               value={usuario[index]?.departamento || ""}
               error={amountValidatios[index]?.departamento}
+              type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
@@ -182,6 +185,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="calle"
               value={usuario[index]?.calle || ""}
               error={amountValidatios[index]?.calle}
+              type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
@@ -198,6 +202,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="puertaNumero"
               value={usuario[index]?.puertaNumero || ""}
               error={amountValidatios[index]?.puertaNumero}
+              type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
@@ -288,6 +293,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="ingresosMensuales"
               value={usuario[index]?.ingresosMensuales || ""}
               error={amountValidatios[index]?.ingresosMensuales}
+              type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
@@ -306,6 +312,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="empresaTrabaja"
               value={usuario[index]?.empresaTrabaja || ""}
               error={amountValidatios[index]?.empresaTrabaja}
+              type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
@@ -322,6 +329,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="rubroEmpresa"
               value={usuario[index]?.rubroEmpresa || ""}
               error={amountValidatios[index]?.rubroEmpresa}
+              type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
@@ -372,6 +380,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="origenFondos"
               value={usuario[index]?.origenFondos || ""}
               error={amountValidatios[index]?.origenFondos}
+              type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(

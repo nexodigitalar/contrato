@@ -53,7 +53,6 @@ const Step3 = () => {
       origenFondos: "",
       politicos: true,
     };
-    console.log(usuario);
 
     if (amountValidatios.length === 0) {
       if (savedValidations.length != 0) {

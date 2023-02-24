@@ -9,7 +9,6 @@ import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "@/store/pageSlice/pageSlice";
 import { setUsers } from "@/store/userSlice/userSlice";
 import { setStep2 } from "@/store/validationSlice/validationSlice";
-import { useNavigate } from "react-router-dom";
 
 /* Components */
 import Header from "@/components/Header/Header";
@@ -23,7 +22,6 @@ const Step2 = () => {
   const [initialValues, setInitialValues] = useState(undefined);
   const [amountValidatios, setAmountValidations] = useState([]);
   const [disabled, setDisabled] = useState(true);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
 
   useEffect(() => {

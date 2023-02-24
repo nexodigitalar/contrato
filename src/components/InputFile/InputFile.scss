@@ -1,14 +1,42 @@
 @import "@/utils/theme.scss";
 
-.inputfile {
-  width: auto;
-  height: auto;
-  opacity: 0;
-  overflow: hidden;
-  position: absolute;
-  z-index: 5;
-  right: 0;
-  cursor: pointer;
+.inputFile_form {
+  height: 85px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  width: 100%;
+  .inputFile_container {
+    @include flex(row, space-between, center);
+    background-color: $tertiary;
+    border: none;
+    border-bottom: 2px solid $primary;
+    border-radius: 3px 3px 0px 0px;
+    padding: $padding_md;
+    @include primaryFont($size_sm);
+    color: $neutral;
+    margin: $margin_md 0 0 0;
+    position: relative;
+    cursor: pointer;
+    width: 90%;
+    .inputFile_p {
+      max-width: 200px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+  }
+  .inputfile {
+    width: auto;
+    height: auto;
+    opacity: 0;
+    overflow: hidden;
+    position: absolute;
+    z-index: 5;
+    right: 0;
+    cursor: pointer;
+  }
 }
 
 .inputfile + label {
@@ -26,38 +54,20 @@
   cursor: pointer;
 }
 
-.inputFile_container {
-  @include flex(row, space-between, center);
-  background-color: $tertiary;
-  border: none;
-  border-bottom: 2px solid $primary;
-  border-radius: 3px 3px 0px 0px;
-  padding: $padding_md;
-  @include primaryFont($size_sm);
-  color: $neutral;
-  margin: $margin_md 0 0 0;
-  position: relative;
-  cursor: pointer;
-}
-
 .border_error {
   border-bottom: 2px solid $error;
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .inputFile_form {
-    height: 85px;
-    display: flex;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: flex-start;
-    width: 100%;
     .inputFile_container {
       width: 90%;
       .inputFile_p {
         @include primaryFont($size_xs);
-        max-width: 200px;
+        max-width: 150px;
+        white-space: nowrap;
         overflow: hidden;
+        text-overflow: ellipsis;
       }
     }
     .inputfile {
