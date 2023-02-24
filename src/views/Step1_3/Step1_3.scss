@@ -53,7 +53,9 @@
     .step1_3_subtext {
       @include primaryFont($size_xs);
       color: $neutral_dark;
-      margin: $margin_md 0;
+      margin-top: $margin_md;
+      text-align: end;
+      width: 100%;
     }
   }
 }
@@ -99,8 +101,9 @@
       }
       .step1_3_subtext {
         @include primaryFont($size_xxs);
-        text-align: center;
+        text-align: end;
         margin: 0 $margin_md;
+        width: auto;
       }
     }
   }

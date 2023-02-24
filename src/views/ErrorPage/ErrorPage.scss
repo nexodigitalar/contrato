@@ -67,7 +67,7 @@
       .error_textContainer {
         @include flex(column, center, center);
         .error_title {
-          @include primaryFont($size_lg);
+          @include primaryFont($size_md);
           margin: $margin_sm 0;
           width: 100%;
         }

@@ -51,6 +51,7 @@
       }
       .step3_important {
         @include primaryFont($size_xxs);
+        text-align: end;
       }
     }
   }

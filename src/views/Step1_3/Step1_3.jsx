@@ -211,6 +211,11 @@ const Step1_3 = () => {
           </section>
         </section>
 
+        <p className="step1_3_subtext">
+          * Debe aceptar todas las informaciones correspondientes para poder
+          confirmar el contrato
+        </p>
+
         <div className="step1_3_buttonContainer">
           <Button
             text="Siguiente"
@@ -220,10 +225,6 @@ const Step1_3 = () => {
             disabled={disabled}
           />
         </div>
-        <p className="step1_3_subtext">
-          * Debe aceptar todas las informaciones correspondientes para poder
-          confirmar el contrato
-        </p>
       </div>
     </div>
   );

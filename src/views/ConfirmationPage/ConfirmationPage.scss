@@ -68,11 +68,12 @@
       .confirmation_textContainer {
         @include flex(column, center, center);
         .confirmation_title {
-          @include primaryFont($size_lg);
+          @include primaryFont($size_md);
           margin: $margin_sm 0;
           width: 100%;
         }
         .confirmation_text {
+          @include primaryFont($size_sm);
           margin: $margin_sm 0;
           width: 100%;
         }

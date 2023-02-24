@@ -103,6 +103,7 @@
         margin: $margin_md 0;
       }
       .step4_finalText {
+        @include primaryFont($size_xs);
         margin-bottom: $margin_md;
       }
     }
