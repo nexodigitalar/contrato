@@ -20,6 +20,7 @@ const InputForm = ({
   const [amountUsers, setAmountUsers] = useState(1);
   const usuarios = useSelector((state) => state.user.usuarios);
   const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
+  const savedValidations = useSelector((state) => state.validation.step2);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -29,10 +30,6 @@ const InputForm = ({
       setAmountUsers(defaultAmount);
     }
   }, [amountUsers]);
-
-  useEffect(() => {
-    console.log(amountValidatios);
-  }, [amountValidatios]);
 
   const handleInput = (e, i) => {
     const updatedAreas = [...initialValues];
@@ -53,10 +50,15 @@ const InputForm = ({
   };
 
   const handleDate = (value, i) => {
+    // Convertimos la fecha en un string para que pueda ser guardado en redux
+    const event = new Date(value);
+    const jsonDate = event.toJSON();
+    const newDate = new Date(jsonDate).toUTCString();
+
     const updatedAreas = [...initialValues];
     updatedAreas[i] = {
       ...updatedAreas[i],
-      fechaNacimiento: value,
+      fechaNacimiento: newDate,
     };
     setInitialValues(updatedAreas);
   };
@@ -80,13 +82,14 @@ const InputForm = ({
       calle: "",
       puertaNumero: "",
       estadoCivil: "",
-      residenteUruguayo: "",
+      residenteUruguayo: "No",
       monedaIngreso: "",
       ingresosMensuales: "",
       empresaTrabaja: "",
       rubroEmpresa: "",
       actividadPrincipal: "",
       origenFondos: "",
+      politicos: "No",
     };
 
     if (!initialValues) {
@@ -132,7 +135,7 @@ const InputForm = ({
     let values = {
       cedula: "",
       ciFrente: "",
-      ciDorso: "",
+      ciDorso: true,
       primerNombre: "",
       primerApellido: "",
       fechaNacimiento: "",
@@ -140,7 +143,12 @@ const InputForm = ({
     };
 
     if (amountValidatios.length === 0) {
-      setAmountValidations([values]);
+      if (savedValidations.length != 0) {
+        let reduxCopy = JSON.parse(JSON.stringify(savedValidations));
+        setAmountValidations(reduxCopy);
+      } else {
+        setAmountValidations([values]);
+      }
     } else {
       let copyAmountValidations = [...amountValidatios];
 
@@ -157,8 +165,6 @@ const InputForm = ({
       }
     }
   };
-
-  const validateButton = () => {};
 
   return (
     <>
@@ -209,9 +215,20 @@ const InputForm = ({
                 <InputFile
                   placeholder="Adjuntar frente de CI"
                   name="ciFrente"
-                  selectedFile={initialValues[index]?.ciFrente.name}
+                  selectedFile={initialValues[index]?.ciFrente}
                   error={amountValidatios[index]?.ciFrente}
-                  click={(e) => {
+                  click={(e) =>
+                    setTimeout(() => {
+                      useValidate(
+                        e.target.value,
+                        amountValidatios,
+                        index,
+                        "ciFrente",
+                        setAmountValidations
+                      );
+                    }, 2000)
+                  }
+                  change={(e) => {
                     handleFiles(e, index),
                       useValidate(
                         e.target.value,
@@ -225,9 +242,20 @@ const InputForm = ({
                 <InputFile
                   placeholder="Adjuntar dorso de CI"
                   name="ciDorso"
-                  selectedFile={initialValues[index]?.ciDorso.name}
+                  selectedFile={initialValues[index]?.ciDorso}
                   error={amountValidatios[index]?.ciDorso}
-                  click={(e) => {
+                  click={(e) =>
+                    setTimeout(() => {
+                      useValidate(
+                        e.target.value,
+                        amountValidatios,
+                        index,
+                        "ciDorso",
+                        setAmountValidations
+                      );
+                    }, 2000)
+                  }
+                  change={(e) => {
                     handleFiles(e, index),
                       useValidate(
                         e.target.value,
@@ -291,7 +319,7 @@ const InputForm = ({
                 <InputDate
                   placeholder="* Fecha de nacimiento"
                   name="fechaNacimiento"
-                  value={initialValues[index]}
+                  valueFecha={initialValues[index]?.fechaNacimiento}
                   error={amountValidatios[index]?.fechaNacimiento}
                   click={(value) => {
                     handleDate(value, index),

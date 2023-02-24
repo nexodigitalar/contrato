@@ -1,17 +1,14 @@
 import "./InputDate.scss";
-import { useState } from "react";
 import DatePicker from "react-date-picker/dist/entry.nostyle";
 
-const InputDate = ({ name, placeholder, click, value, error }) => {
-  const [date, setDate] = useState();
-
+const InputDate = ({ name, placeholder, click, valueFecha, error }) => {
   return (
     <form>
       <div className="inputDate_container">
         <p>{placeholder}</p>
         <DatePicker
           onChange={(value) => click(value)}
-          value={value?.fechaNacimiento}
+          value={valueFecha && new Date(valueFecha)}
           name={name}
           wrapperClassName="datePicker"
           dateFormat="dd/MM/yyyy"

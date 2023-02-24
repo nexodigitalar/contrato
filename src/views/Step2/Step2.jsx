@@ -7,8 +7,7 @@ import userPhoto from "@/assets/img/info-user.png";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setUsers } from "@/store/userSlice/userSlice";
-
-/* React Router */
+import { setStep2 } from "@/store/validationSlice/validationSlice";
 import { useNavigate } from "react-router-dom";
 
 /* Components */
@@ -28,6 +27,8 @@ const Step2 = () => {
 
   useEffect(() => {
     validateButton();
+    console.log(amountValidatios);
+    console.log(initialValues);
   }, [amountValidatios]);
 
   const validateButton = () => {
@@ -77,7 +78,8 @@ const Step2 = () => {
             text="Siguiente"
             click={() => {
               navigate("/datos-ocupacionales"),
-                dispatch(setUsers(initialValues));
+                dispatch(setUsers(initialValues)),
+                dispatch(setStep2(amountValidatios));
             }}
             disabled={disabled}
           />

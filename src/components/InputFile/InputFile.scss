@@ -35,9 +35,13 @@
   padding: $padding_md;
   @include primaryFont($size_sm);
   color: $neutral;
-  margin: $margin_md 0;
+  margin: $margin_md 0 0 0;
   position: relative;
   cursor: pointer;
+}
+
+.border_error {
+  border-bottom: 2px solid $error;
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {

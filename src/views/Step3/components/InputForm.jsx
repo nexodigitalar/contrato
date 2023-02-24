@@ -9,8 +9,10 @@ import InputCheck from "../../../components/InputCheck/InputCheck";
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUsers } from "@/store/userSlice/userSlice";
+import useValidate from "@/hooks/useValidate";
 
-const InputForm = ({ index }) => {
+const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
+  const [checkUruguayo, setCheckUruguayo] = useState(false);
   const [check, setCheck] = useState(false);
   const usuario = useSelector((state) => state.user.usuarios);
   const dispatch = useDispatch();
@@ -21,7 +23,10 @@ const InputForm = ({ index }) => {
 
   const handleSetInputs = (i) => {
     if (usuario[i]?.residenteUruguayo != "") {
-      setCheck(usuario[i].residenteUruguayo);
+      setCheckUruguayo(usuario[i].residenteUruguayo);
+    }
+    if (usuario[i]?.politicos != "") {
+      setCheck(usuario[i].politicos);
     }
   };
 
@@ -29,6 +34,12 @@ const InputForm = ({ index }) => {
     dispatch(
       updateUsers({ name: e.target.name, index: i, value: e.target.value })
     );
+  };
+
+  const handleCheckboxUruguayo = (i) => {
+    setCheckUruguayo(!checkUruguayo);
+    let newValue = !checkUruguayo === false ? "No" : "Si";
+    dispatch(updateUsers({ name: "politicos", index: i, value: newValue }));
   };
 
   const handleCheckbox = (i) => {
@@ -56,13 +67,37 @@ const InputForm = ({ index }) => {
               index={index}
               op1="Femenino"
               op2="Masculino"
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.sexo}
+              click={(e) =>
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "sexo",
+                    setAmountValidations
+                  );
+                }, 500)
+              }
+              change={(e) => {
+                handleInput(e, index);
+              }}
             />
             <Input
               placeholder="* Nacionalidad"
               name="nacionalidad"
               value={usuario[index]?.nacionalidad || ""}
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.nacionalidad}
+              click={(e) => {
+                handleInput(e, index),
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "nacionalidad",
+                    setAmountValidations
+                  );
+              }}
             />
           </div>
           <div className="inputForm_div inputForm_div_mobile">
@@ -70,7 +105,17 @@ const InputForm = ({ index }) => {
               placeholder="* Email"
               name="email"
               value={usuario[index]?.email || ""}
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.email}
+              click={(e) => {
+                handleInput(e, index),
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "email",
+                    setAmountValidations
+                  );
+              }}
             />
           </div>
 
@@ -82,13 +127,37 @@ const InputForm = ({ index }) => {
               index={index}
               op1="Argentina"
               op2="Uruguay"
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.pais}
+              click={(e) =>
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "pais",
+                    setAmountValidations
+                  );
+                }, 500)
+              }
+              change={(e) => {
+                handleInput(e, index);
+              }}
             />
             <Input
               placeholder="* Departamento"
               name="departamento"
               value={usuario[index]?.departamento || ""}
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.departamento}
+              click={(e) => {
+                handleInput(e, index),
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "departamento",
+                    setAmountValidations
+                  );
+              }}
             />
           </div>
           <div className="inputForm_div">
@@ -96,13 +165,33 @@ const InputForm = ({ index }) => {
               placeholder="* Calle"
               name="calle"
               value={usuario[index]?.calle || ""}
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.calle}
+              click={(e) => {
+                handleInput(e, index),
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "calle",
+                    setAmountValidations
+                  );
+              }}
             />
             <Input
               placeholder="* Puerta Número"
               name="puertaNumero"
               value={usuario[index]?.puertaNumero || ""}
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.puertaNumero}
+              click={(e) => {
+                handleInput(e, index),
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "puertaNumero",
+                    setAmountValidations
+                  );
+              }}
             />
           </div>
           <div className="inputForm_div">
@@ -115,9 +204,26 @@ const InputForm = ({ index }) => {
               op2="Casado/a"
               op3="Divorciado/a"
               op4="Viudo/a"
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.estadoCivil}
+              click={(e) =>
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "estadoCivil",
+                    setAmountValidations
+                  );
+                }, 500)
+              }
+              change={(e) => {
+                handleInput(e, index);
+              }}
             />
-            <InputCheck check={check} click={() => handleCheckbox(index)} />
+            <InputCheck
+              check={checkUruguayo}
+              click={() => handleCheckboxUruguayo(index)}
+            />
           </div>
           <div className="inputForm_div">
             <SelectInput
@@ -127,13 +233,37 @@ const InputForm = ({ index }) => {
               index={index}
               op1="Pesos Uruguayos"
               op2="Dólares"
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.monedaIngreso}
+              click={(e) =>
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "monedaIngreso",
+                    setAmountValidations
+                  );
+                }, 500)
+              }
+              change={(e) => {
+                handleInput(e, index);
+              }}
             />
             <Input
               placeholder="* Ingresos mensuales"
               name="ingresosMensuales"
               value={usuario[index]?.ingresosMensuales || ""}
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.ingresosMensuales}
+              click={(e) => {
+                handleInput(e, index),
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "ingresosMensuales",
+                    setAmountValidations
+                  );
+              }}
             />
           </div>
           <div className="inputForm_div">
@@ -141,13 +271,33 @@ const InputForm = ({ index }) => {
               placeholder="* Empresa en la que trabaja"
               name="empresaTrabaja"
               value={usuario[index]?.empresaTrabaja || ""}
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.empresaTrabaja}
+              click={(e) => {
+                handleInput(e, index),
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "empresaTrabaja",
+                    setAmountValidations
+                  );
+              }}
             />
             <Input
               placeholder="* Rubro de la Empresa"
               name="rubroEmpresa"
               value={usuario[index]?.rubroEmpresa || ""}
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.rubroEmpresa}
+              click={(e) => {
+                handleInput(e, index),
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "rubroEmpresa",
+                    setAmountValidations
+                  );
+              }}
             />
           </div>
           <div className="inputForm_div">
@@ -158,15 +308,50 @@ const InputForm = ({ index }) => {
               index={index}
               op1="Actividad 1"
               op2="Actividad 2"
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.actividadPrincipal}
+              click={(e) =>
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "actividadPrincipal",
+                    setAmountValidations
+                  );
+                }, 500)
+              }
+              change={(e) => {
+                handleInput(e, index);
+              }}
             />
             <Input
               placeholder="* Origen de fondos"
               name="origenFondos"
               value={usuario[index]?.origenFondos || ""}
-              click={(e) => handleInput(e, index)}
+              error={amountValidatios[index]?.origenFondos}
+              click={(e) => {
+                handleInput(e, index),
+                  useValidate(
+                    e.target.value,
+                    amountValidatios,
+                    index,
+                    "origenFondos",
+                    setAmountValidations
+                  );
+              }}
             />
           </div>
+          <label className="step3_label">
+            <input
+              type="checkbox"
+              value="second_checkbox"
+              checked={check}
+              onChange={() => handleCheckbox(index)}
+            />{" "}
+            Marcar la opción en caso de que usted haya desempeñado o desempeña,
+            o parientes suyos dentro del primer grado de consanguinidad,
+            funciones públicas o cargos políticos.
+          </label>
         </section>
       )}
     </>

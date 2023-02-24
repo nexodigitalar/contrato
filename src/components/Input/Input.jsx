@@ -4,7 +4,7 @@ const Input = ({ placeholder, click, name, value, error }) => {
   return (
     <div className="inputContainer">
       <input
-        className={error === false ? "input error" : "input"}
+        className={error === false ? "input border_error" : "input"}
         placeholder={placeholder}
         value={value}
         name={name}

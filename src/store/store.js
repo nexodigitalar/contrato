@@ -11,4 +11,8 @@ export const store = configureStore({
     user: userSlice,
     validation: validationSlice,
   },
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: false,
+    }),
 });
