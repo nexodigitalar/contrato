@@ -3,9 +3,10 @@ import "./Step2.scss";
 import userPhoto from "@/assets/img/info-user.png";
 
 /* Hooks */
-
+import useScrollTop from "@/hooks/useScrollTop";
 import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { changePage } from "@/store/pageSlice/pageSlice";
 import { setUsers } from "@/store/userSlice/userSlice";
 import { setStep2 } from "@/store/validationSlice/validationSlice";
 import { useNavigate } from "react-router-dom";
@@ -27,8 +28,6 @@ const Step2 = () => {
 
   useEffect(() => {
     validateButton();
-    console.log(amountValidatios);
-    console.log(initialValues);
   }, [amountValidatios]);
 
   const validateButton = () => {
@@ -73,11 +72,14 @@ const Step2 = () => {
           </div>
         </div>
 
+        <p className="step2_important">* Campos obligatorios</p>
+
         <div className="step2_buttonContainer">
           <Button
             text="Siguiente"
             click={() => {
-              navigate("/datos-ocupacionales"),
+              dispatch(changePage(3)),
+                useScrollTop(),
                 dispatch(setUsers(initialValues)),
                 dispatch(setStep2(amountValidatios));
             }}

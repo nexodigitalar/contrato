@@ -1,16 +1,15 @@
 /* Styles & Img */
 import "./Step1_3.scss";
 
-/* React Router */
-import { useNavigate } from "react-router-dom";
-
 /* Data JSON */
 import text from "@/utils/text.json";
 import ReactHtmlParser from "react-html-parser";
 
 /* Hooks */
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { changePage } from "@/store/pageSlice/pageSlice";
 import { useEffect, useState } from "react";
+import useScrollTop from "@/hooks/useScrollTop";
 
 /* Components */
 import Header from "@/components/Header/Header";
@@ -22,7 +21,7 @@ const Step1_3 = () => {
   const { simulador } = useSelector((state) => state.data);
   const [switchCheck, setSwitchCheck] = useState();
   const [disabled, setDisabled] = useState(true);
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   useEffect(() => {
     handleAmountChecks();
@@ -215,7 +214,9 @@ const Step1_3 = () => {
         <div className="step1_3_buttonContainer">
           <Button
             text="Siguiente"
-            click={() => navigate("/datos-personales")}
+            click={() => {
+              dispatch(changePage(2)), useScrollTop();
+            }}
             disabled={disabled}
           />
         </div>

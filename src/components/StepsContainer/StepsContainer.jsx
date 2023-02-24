@@ -4,11 +4,12 @@ import "./StepsContainer.scss";
 /* Components */
 import Steps from "../Steps/Steps";
 
-/* React Router */
-import { useNavigate } from "react-router-dom";
+/* Hooks */
+import { changePageValidations } from "@/store/pageSlice/pageSlice";
+import { useDispatch } from "react-redux";
 
 const StepsContainer = ({ step }) => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   return (
     <div className="stepsContainer">
@@ -18,28 +19,28 @@ const StepsContainer = ({ step }) => {
           textBold="SELECCIONADO"
           number="1"
           active={step === 1 ? true : false}
-          click={() => navigate("/")}
+          click={() => dispatch(changePageValidations(1))}
         />
         <Steps
           text="INGRESO"
           textBold="DATOS PERSONALES"
           number="2"
           active={step === 2 ? true : false}
-          click={() => navigate("/datos-personales")}
+          click={() => dispatch(changePageValidations(2))}
         />
         <Steps
           text="DATOS"
           textBold="OCUPACIONALES"
           number="3"
           active={step === 3 ? true : false}
-          click={() => navigate("/datos-ocupacionales")}
+          click={() => dispatch(changePageValidations(3))}
         />
         <Steps
           text="RESUMEN"
           textBold="DEL PLAN"
           number="4"
           active={step === 4 ? true : false}
-          click={() => navigate("/resumen-plan")}
+          click={() => dispatch(changePageValidations(4))}
         />
       </div>
     </div>

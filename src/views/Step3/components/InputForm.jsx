@@ -22,12 +22,10 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
   }, []);
 
   const handleSetInputs = (i) => {
-    if (usuario[i]?.residenteUruguayo != "") {
-      setCheckUruguayo(usuario[i].residenteUruguayo);
-    }
-    if (usuario[i]?.politicos != "") {
-      setCheck(usuario[i].politicos);
-    }
+    usuario[i]?.residenteUruguayo === "No"
+      ? setCheckUruguayo(false)
+      : setCheckUruguayo(true);
+    usuario[i]?.politicos === "No" ? setCheck(false) : setCheck(true);
   };
 
   const handleInput = (e, i) => {
@@ -80,7 +78,16 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                 }, 500)
               }
               change={(e) => {
-                handleInput(e, index);
+                {
+                  handleInput(e, index),
+                    useValidate(
+                      e.target.value,
+                      amountValidatios,
+                      index,
+                      "sexo",
+                      setAmountValidations
+                    );
+                }
               }}
             />
             <Input
@@ -137,10 +144,19 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                     "pais",
                     setAmountValidations
                   );
-                }, 500)
+                }, 1000)
               }
               change={(e) => {
-                handleInput(e, index);
+                {
+                  handleInput(e, index),
+                    useValidate(
+                      e.target.value,
+                      amountValidatios,
+                      index,
+                      "pais",
+                      setAmountValidations
+                    );
+                }
               }}
             />
             <Input
@@ -214,10 +230,19 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                     "estadoCivil",
                     setAmountValidations
                   );
-                }, 500)
+                }, 1000)
               }
               change={(e) => {
-                handleInput(e, index);
+                {
+                  handleInput(e, index),
+                    useValidate(
+                      e.target.value,
+                      amountValidatios,
+                      index,
+                      "estadoCivil",
+                      setAmountValidations
+                    );
+                }
               }}
             />
             <InputCheck
@@ -243,10 +268,19 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                     "monedaIngreso",
                     setAmountValidations
                   );
-                }, 500)
+                }, 1000)
               }
               change={(e) => {
-                handleInput(e, index);
+                {
+                  handleInput(e, index),
+                    useValidate(
+                      e.target.value,
+                      amountValidatios,
+                      index,
+                      "monedaIngreso",
+                      setAmountValidations
+                    );
+                }
               }}
             />
             <Input
@@ -318,10 +352,19 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                     "actividadPrincipal",
                     setAmountValidations
                   );
-                }, 500)
+                }, 1000)
               }
               change={(e) => {
-                handleInput(e, index);
+                {
+                  handleInput(e, index),
+                    useValidate(
+                      e.target.value,
+                      amountValidatios,
+                      index,
+                      "actividadPrincipal",
+                      setAmountValidations
+                    );
+                }
               }}
             />
             <Input
@@ -341,17 +384,19 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               }}
             />
           </div>
-          <label className="step3_label">
-            <input
-              type="checkbox"
-              value="second_checkbox"
-              checked={check}
-              onChange={() => handleCheckbox(index)}
-            />{" "}
-            Marcar la opción en caso de que usted haya desempeñado o desempeña,
-            o parientes suyos dentro del primer grado de consanguinidad,
-            funciones públicas o cargos políticos.
-          </label>
+          <div className="inputForm_labelContainer">
+            <label className="step3_label">
+              <input
+                type="checkbox"
+                value="second_checkbox"
+                checked={check}
+                onChange={() => handleCheckbox(index)}
+              />
+              Marcar la opción en caso de que usted haya desempeñado o
+              desempeña, o parientes suyos dentro del primer grado de
+              consanguinidad, funciones públicas o cargos políticos.
+            </label>
+          </div>
         </section>
       )}
     </>

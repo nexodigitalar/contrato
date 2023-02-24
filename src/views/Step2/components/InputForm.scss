@@ -23,8 +23,8 @@ input[type="number"] {
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .inputForm2_div {
     display: flex !important;
-    flex-direction: row;
-    gap: 5px;
+    flex-direction: column;
+    gap: 0px;
     width: 100%;
   }
   .inputForm_mobile {

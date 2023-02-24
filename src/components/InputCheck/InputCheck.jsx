@@ -3,7 +3,7 @@ import "./InputCheck.scss";
 const InputCheck = ({ check, click }) => {
   return (
     <div className="inputCheck">
-      <p>¿Es residente Uruguayo?</p>
+      <p className="inputCheck_p">¿Es residente Uruguayo?</p>
       <input
         type="checkbox"
         id="cbox1"

@@ -9,7 +9,7 @@ const InputFile = ({
   error,
 }) => {
   return (
-    <form>
+    <form className="inputFile_form">
       <div
         className={
           error === false
@@ -20,7 +20,7 @@ const InputFile = ({
         {selectedFile === undefined || selectedFile == "" ? (
           <p>{placeholder}</p>
         ) : (
-          <p>{selectedFile.name}</p>
+          <p className="inputFile_p">{selectedFile.name}</p>
         )}
         <input
           type="file"

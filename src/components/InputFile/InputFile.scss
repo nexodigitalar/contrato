@@ -45,8 +45,24 @@
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {
-  .inputfile {
-    @include primaryFont($size_xs);
-    width: 90%;
+  .inputFile_form {
+    height: 85px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: flex-start;
+    width: 100%;
+    .inputFile_container {
+      width: 90%;
+      .inputFile_p {
+        @include primaryFont($size_xs);
+        max-width: 200px;
+        overflow: hidden;
+      }
+    }
+    .inputfile {
+      @include primaryFont($size_xs);
+      width: 90%;
+    }
   }
 }

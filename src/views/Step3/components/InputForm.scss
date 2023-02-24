@@ -12,11 +12,19 @@
   color: $neutral_dark;
 }
 
+.inputForm_labelContainer {
+  margin: $margin_lg 0;
+  .step3_label {
+    @include primaryFont($size_xs);
+    color: $neutral_dark;
+  }
+}
+
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .inputForm_div {
     display: flex !important;
-    flex-direction: row;
-    gap: 5px;
+    flex-direction: column;
+    gap: 0px;
     width: 100%;
   }
   .inputForm_mobile {
@@ -28,5 +36,12 @@
   .inputForm_title {
     @include primaryFont($size_md);
     margin: $margin_xs 0;
+  }
+
+  .inputForm_labelContainer {
+    margin: $margin_md 0;
+    .step3_label {
+      @include primaryFont($size_xs);
+    }
   }
 }

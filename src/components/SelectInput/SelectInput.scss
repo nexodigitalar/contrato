@@ -36,6 +36,6 @@ select:first-child {
   .selectInput {
     padding: $padding_md;
     @include primaryFont($size_xs);
-    width: 60%;
+    width: 100%;
   }
 }

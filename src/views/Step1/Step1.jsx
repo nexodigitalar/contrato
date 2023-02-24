@@ -2,18 +2,16 @@ import Step1_1 from "@/views/Step1_1/Step1_1";
 import Step1_2 from "@/views/Step1_2/Step1_2";
 import Step1_3 from "@/views/Step1_3/Step1_3";
 
+/* Hooks */
 import { useState } from "react";
+import useScrollTop from "@/hooks/useScrollTop";
 
 const Step1 = () => {
   const [page, setPage] = useState(1);
 
   const changePage = (number) => {
     setPage(number);
-    document.documentElement.scrollTo({
-      top: 0,
-      left: 0,
-      behavior: "instant",
-    });
+    useScrollTop();
   };
 
   return (

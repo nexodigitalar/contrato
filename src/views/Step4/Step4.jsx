@@ -15,7 +15,7 @@ import Input from "@/components/Input/Input";
 import { useSelector } from "react-redux";
 import useFormatNumber from "@/hooks/useFormatNumber";
 import { useNavigate } from "react-router-dom";
-import { useEffect } from "react";
+import useScrollTop from "@/hooks/useScrollTop";
 
 const Step4 = () => {
   const navigate = useNavigate();
@@ -23,10 +23,6 @@ const Step4 = () => {
     (state) => state.data
   );
   const usuarios = useSelector((state) => state.user.usuarios);
-
-  useEffect(() => {
-    console.log(usuarios);
-  }, []);
 
   return (
     <div className="step4">

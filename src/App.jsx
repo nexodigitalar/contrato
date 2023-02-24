@@ -4,7 +4,7 @@ import "./App.scss";
 /* Hooks */
 import { useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setData } from "@/store/dataSlice/dataSlice";
 
 /* Components */
@@ -18,6 +18,7 @@ import ErrorPage from "@/views/ErrorPage/ErrorPage";
 import ConfirmationPage from "@/views/ConfirmationPage/ConfirmationPage";
 
 const App = () => {
+  const page = useSelector((state) => state.page.value);
   const { pathname } = useLocation();
   const dispatch = useDispatch();
 
@@ -42,10 +43,10 @@ const App = () => {
     <>
       <Routes>
         <Route element={<MainLayout />}>
-          <Route path="/" element={<Step1 />} />
-          <Route path="/datos-personales" element={<Step2 />} />
-          <Route path="/datos-ocupacionales" element={<Step3 />} />
-          <Route path="/resumen-plan" element={<Step4 />} />
+          {page === 1 && <Route path="/" element={<Step1 />} />}
+          {page === 2 && <Route path="/" element={<Step2 />} />}
+          {page === 3 && <Route path="/" element={<Step3 />} />}
+          {page === 4 && <Route path="/" element={<Step4 />} />}
         </Route>
         <Route element={<ConfirmationLayout />}>
           <Route path="/error" element={<ErrorPage />} />

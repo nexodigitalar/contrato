@@ -7,8 +7,10 @@ import { useNavigate } from "react-router-dom";
 
 /* Hooks */
 import { useSelector, useDispatch } from "react-redux";
+import { changePage } from "@/store/pageSlice/pageSlice";
 import { useEffect, useState } from "react";
 import { setStep3 } from "@/store/validationSlice/validationSlice";
+import useScrollTop from "@/hooks/useScrollTop";
 
 /* Components */
 import Header from "@/components/Header/Header";
@@ -19,7 +21,6 @@ import Button from "@/components/Button/Button";
 const Step3 = () => {
   const [amountValidatios, setAmountValidations] = useState([]);
   const [disabled, setDisabled] = useState(true);
-  const navigate = useNavigate();
   const dispatch = useDispatch();
   const usuario = useSelector((state) => state.user.usuarios);
   const savedValidations = useSelector((state) => state.validation.step3);
@@ -31,7 +32,6 @@ const Step3 = () => {
 
   useEffect(() => {
     validateButton();
-    console.log(amountValidatios);
   }, [amountValidatios]);
 
   const handleInitialValidations = () => {
@@ -53,6 +53,7 @@ const Step3 = () => {
       origenFondos: "",
       politicos: true,
     };
+    console.log(usuario);
 
     if (amountValidatios.length === 0) {
       if (savedValidations.length != 0) {
@@ -116,7 +117,9 @@ const Step3 = () => {
           <Button
             text="Siguiente"
             click={() => {
-              navigate("/resumen-plan"), dispatch(setStep3(amountValidatios));
+              dispatch(changePage(4)),
+                useScrollTop(),
+                dispatch(setStep3(amountValidatios));
             }}
             disabled={disabled}
           />

@@ -22,12 +22,6 @@
       }
     }
 
-    .step3_label {
-      @include primaryFont($size_xs);
-      color: $neutral_dark;
-      margin: $margin_lg 0;
-    }
-
     .step3_important {
       @include primaryFont($size_xs);
       color: $error;
@@ -55,12 +49,6 @@
           display: none;
         }
       }
-
-      .step3_label {
-        @include primaryFont($size_xs);
-        margin: $margin_md 0;
-      }
-
       .step3_important {
         @include primaryFont($size_xxs);
       }
