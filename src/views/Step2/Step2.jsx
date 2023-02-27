@@ -49,7 +49,7 @@ const Step2 = () => {
     <div className="step2">
       <div className="step2_container">
         <Header text="DATOS" bold="DEL TITULAR" logo={simulador} />
-        <StepsContainer step={2} />
+        <StepsContainer step={2} initialValues={initialValues} />
 
         <div className="step2_innerContainer">
           <div>

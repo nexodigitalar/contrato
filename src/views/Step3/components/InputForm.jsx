@@ -134,8 +134,8 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="pais"
               usuario={usuario}
               index={index}
-              op1="Argentina"
-              op2="Uruguay"
+              op1="Uruguay"
+              op2="Argentina"
               error={amountValidatios[index]?.pais}
               click={(e) =>
                 setTimeout(() => {
@@ -262,7 +262,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               usuario={usuario}
               index={index}
               op1="Pesos Uruguayos"
-              op2="Dólares"
+              op2="Dólares Americanos"
               error={amountValidatios[index]?.monedaIngreso}
               click={(e) =>
                 setTimeout(() => {
@@ -293,7 +293,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               name="ingresosMensuales"
               value={usuario[index]?.ingresosMensuales || ""}
               error={amountValidatios[index]?.ingresosMensuales}
-              type="text"
+              type="number"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
