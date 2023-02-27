@@ -32,7 +32,49 @@ const Step3 = () => {
 
   useEffect(() => {
     validateButton();
+    if (
+      usuario.length > amountValidatios.length ||
+      usuario.length < amountValidatios.length
+    ) {
+      updateAmountValidations();
+    }
   }, [amountValidatios]);
+
+  const updateAmountValidations = () => {
+    let values = {
+      sexo: "",
+      nacionalidad: "",
+      email: "",
+      pais: "",
+      departamento: "",
+      calle: "",
+      puertaNumero: "",
+      estadoCivil: "",
+      residenteUruguayo: true,
+      monedaIngreso: "",
+      ingresosMensuales: "",
+      empresaTrabaja: "",
+      rubroEmpresa: "",
+      actividadPrincipal: "",
+      origenFondos: "",
+      politicos: true,
+    };
+
+    let copyAmountValidations = [...amountValidatios];
+    let amountUsers = usuario.length;
+
+    if (amountUsers > amountValidatios.length) {
+      let sum = amountUsers - amountValidatios.length;
+
+      let arraySum = new Array(sum).fill("").map((_, i) => i + 1);
+      arraySum.forEach((n) => copyAmountValidations.push(values));
+
+      setAmountValidations(copyAmountValidations);
+    } else {
+      let newArr = copyAmountValidations.slice(0, amountUsers);
+      setAmountValidations(newArr);
+    }
+  };
 
   const handleInitialValidations = () => {
     let values = {
@@ -89,7 +131,7 @@ const Step3 = () => {
     <div className="step3">
       <div className="step3_container">
         <Header text="DATOS" bold="OCUPACIONALES" logo={simulador} />
-        <StepsContainer step={3} />
+        <StepsContainer step={3} amountValidatios={amountValidatios} />
 
         <div className="step3_innerContainer">
           <div>

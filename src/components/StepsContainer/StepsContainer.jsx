@@ -13,6 +13,13 @@ import { setStep2, setStep3 } from "@/store/validationSlice/validationSlice";
 const StepsContainer = ({ step, initialValues, amountValidatios }) => {
   const dispatch = useDispatch();
 
+  const handleStep2 = () => {
+    if (step === 3) {
+      dispatch(setStep3(amountValidatios));
+    }
+    dispatch(changePageValidations(2));
+  };
+
   const handleStep3 = () => {
     if (step === 2) {
       dispatch(setUsers(initialValues));
@@ -43,7 +50,7 @@ const StepsContainer = ({ step, initialValues, amountValidatios }) => {
           textBold="DATOS PERSONALES"
           number="2"
           active={step === 2 ? true : false}
-          click={() => dispatch(changePageValidations(2))}
+          click={() => handleStep2()}
         />
         <Steps
           text="DATOS"
