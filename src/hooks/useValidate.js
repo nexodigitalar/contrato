@@ -61,7 +61,7 @@ const useValidateInput = (
       if (e === "" || e === "placeholder") {
         newObj = { ...newObj, [position]: false };
         newArr[index] = newObj;
-
+        console.log(newArr);
         setAmountValidations(newArr);
       } else if (e === false) {
         return;

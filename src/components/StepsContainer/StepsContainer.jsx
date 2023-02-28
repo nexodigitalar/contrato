@@ -27,20 +27,16 @@ const StepsContainer = ({ step, initialValues, amountValidatios }) => {
       dispatch(setUsers(initialValues));
       dispatch(setStep2(amountValidatios));
     }
-    validateButton();
-    if (disabled) {
-      dispatch(changePageValidations(3));
-    }
+    if (amountValidatios) validateButton();
+    if (disabled) dispatch(changePageValidations(3));
   };
 
   const goToStep4 = () => {
     if (step === 3) {
       dispatch(setStep3(amountValidatios));
     }
-    validateButton();
-    if (disabled) {
-      dispatch(changePageValidations(4));
-    }
+    if (amountValidatios) validateButton();
+    if (disabled) dispatch(changePageValidations(4));
   };
 
   const validateButton = () => {
