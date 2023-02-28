@@ -12,6 +12,6 @@
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .smsInput {
     @include flex(row, space-between, center);
-    gap: 10px;
+    gap: 20px;
   }
 }

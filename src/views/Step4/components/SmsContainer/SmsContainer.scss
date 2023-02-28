@@ -11,5 +11,6 @@
   .smsContainer {
     @include flex(column, flex-start, center);
     gap: 0px;
+    width: 100%;
   }
 }

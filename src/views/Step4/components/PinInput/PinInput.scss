@@ -33,9 +33,12 @@
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .pinInput_container {
+    .pinInput_titleContainer {
+      gap: 5px;
+    }
     .pinInput {
       @include flex(row, space-between, center);
-      gap: 10px;
+      gap: 20px;
     }
   }
 }
