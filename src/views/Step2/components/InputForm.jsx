@@ -135,7 +135,7 @@ const InputForm = ({
     let values = {
       cedula: "",
       ciFrente: "",
-      ciDorso: true,
+      ciDorso: "",
       primerNombre: "",
       primerApellido: "",
       fechaNacimiento: "",

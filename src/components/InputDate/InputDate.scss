@@ -19,6 +19,7 @@
   @include primaryFont($size_sm);
   color: $neutral;
   margin: $margin_md 0 0 0;
+  width: 92%;
 }
 
 .inputDate {
@@ -30,8 +31,13 @@
   z-index: -1;
 }
 
+.inputDate_p {
+  position: absolute;
+}
+
 .react-date-picker {
-  width: 40%;
+  position: relative;
+  width: 100%;
 }
 
 .react-date-picker--disabled {
@@ -40,12 +46,12 @@
 }
 
 .react-date-picker__wrapper {
-  @include flex(row, space-between, center);
+  @include flex(row, flex-end, center);
   width: 100%;
 }
 
 .react-date-picker__inputGroup {
-  @include flex(row, flex-start, center);
+  @include flex(row, flex-end, center);
   min-width: calc((4px * 3) + 0.54em * 8 + 0.217em * 2);
   width: 100%;
   flex-grow: 1;

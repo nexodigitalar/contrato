@@ -16,14 +16,20 @@ const useValidateInput = (
     if (position === "telefono") {
       let lengthValidation = e.length <= 12 && e.length >= 8;
       if (e === "" || e === "placeholder") {
-        newObj[position] = false;
+        newObj = { ...newObj, [position]: false };
+        newArr[index] = newObj;
+
         setAmountValidations(newArr);
       } else {
         if (lengthValidation) {
-          newObj[position] = true;
+          newObj = { ...newObj, [position]: true };
+          newArr[index] = newObj;
+
           setAmountValidations(newArr);
         } else {
-          newObj[position] = false;
+          newObj = { ...newObj, [position]: false };
+          newArr[index] = newObj;
+
           setAmountValidations(newArr);
         }
       }
@@ -33,26 +39,36 @@ const useValidateInput = (
         /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
       );
       if (e === "" || e === "placeholder") {
-        newObj[position] = false;
+        newObj = { ...newObj, [position]: false };
+        newArr[index] = newObj;
+
         setAmountValidations(newArr);
       } else {
         if (validationEmail) {
-          newObj[position] = true;
+          newObj = { ...newObj, [position]: true };
+          newArr[index] = newObj;
+
           setAmountValidations(newArr);
         } else {
-          newObj[position] = false;
+          newObj = { ...newObj, [position]: false };
+          newArr[index] = newObj;
+
           setAmountValidations(newArr);
         }
       }
     } else {
       // Validar el resto
       if (e === "" || e === "placeholder") {
-        newObj[position] = false;
+        newObj = { ...newObj, [position]: false };
+        newArr[index] = newObj;
+
         setAmountValidations(newArr);
       } else if (e === false) {
         return;
       } else {
-        newObj[position] = true;
+        newObj = { ...newObj, [position]: true };
+        newArr[index] = newObj;
+
         setAmountValidations(newArr);
       }
     }

@@ -9,20 +9,20 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import Button from "@/components/Button/Button";
-import Input from "@/components/Input/Input";
+import SmsContainer from "./components/SmsContainer/SmsContainer";
 
 /* Hooks */
 import { useSelector } from "react-redux";
 import useFormatNumber from "@/hooks/useFormatNumber";
 import { useNavigate } from "react-router-dom";
-import useScrollTop from "@/hooks/useScrollTop";
+import { useState } from "react";
 
 const Step4 = () => {
   const navigate = useNavigate();
+  const [sms, setSms] = useState();
   const { simulador, cuotas, plazo, monto } = useSelector(
     (state) => state.data
   );
-  const usuarios = useSelector((state) => state.user.usuarios);
 
   return (
     <div className="step4">
@@ -113,16 +113,7 @@ const Step4 = () => {
           <span className="green">Validación </span>del{" "}
           <span className="gray">celular</span>
         </h3>
-        <div className="step4_validationContainer">
-          <div className="step4_validation_innerContainer">
-            <Input placeholder="Número de celular" />
-            <Button text="ENVIAR" type="secondary" />
-          </div>
-          <div className="step4_validation_innerContainer">
-            <Input placeholder="PIN de validación" />
-            <Button text="VALIDAR" type="secondary" />
-          </div>
-        </div>
+        <SmsContainer />
         <p className="step4_error">
           * La validación del celular es una acción obligatoria antes de
           realizar la confirmación del contrato adquirido

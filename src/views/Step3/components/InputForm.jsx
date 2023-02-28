@@ -12,7 +12,7 @@ import { updateUsers } from "@/store/userSlice/userSlice";
 import useValidate from "@/hooks/useValidate";
 
 const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
-  const [checkUruguayo, setCheckUruguayo] = useState(false);
+  const [checkUruguayo, setCheckUruguayo] = useState(true);
   const [check, setCheck] = useState(false);
   const usuario = useSelector((state) => state.user.usuarios);
   const dispatch = useDispatch();

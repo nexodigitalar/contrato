@@ -43,20 +43,6 @@
       align-self: flex-end;
     }
 
-    .step4_validationContainer {
-      @include flex(row, flex-start, center);
-      gap: 50px;
-      width: 100%;
-      .step4_validation_innerContainer {
-        @include flex(row, space-between, center);
-        gap: 20px;
-        width: 100%;
-      }
-      .step4_validation_innerContainer > input {
-        width: 80%;
-      }
-    }
-
     .step4_error {
       @include primaryFont($size_xs);
       color: $error;
@@ -85,15 +71,6 @@
         .step4_descriptionContainer {
           gap: 10px;
           margin: $margin_lg 0;
-        }
-      }
-
-      .step4_validationContainer {
-        @include flex(column, flex-start, center);
-        gap: 0px;
-        .step4_validation_innerContainer {
-          @include flex(row, space-between, center);
-          gap: 10px;
         }
       }
 

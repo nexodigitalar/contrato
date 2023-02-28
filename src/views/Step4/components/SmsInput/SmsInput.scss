@@ -1,0 +1,17 @@
+@import "@/utils/theme.scss";
+
+.smsInput {
+  @include flex(row, space-between, center);
+  gap: 10px;
+  width: 100%;
+}
+.smsInput > input {
+  width: 80%;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .smsInput {
+    @include flex(row, space-between, center);
+    gap: 10px;
+  }
+}

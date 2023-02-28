@@ -26,7 +26,7 @@ const SelectInput = ({
         onClick={click}
       >
         {placeholder && (
-          <option value="placeholder" hidden>
+          <option value="placeholder" className="prueba" hidden>
             {placeholder}
           </option>
         )}

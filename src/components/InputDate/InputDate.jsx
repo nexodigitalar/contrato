@@ -5,7 +5,7 @@ const InputDate = ({ name, placeholder, click, valueFecha, error }) => {
   return (
     <form className="inputDate_form">
       <div className="inputDate_container">
-        <p>{placeholder}</p>
+        <p className="inputDate_p">{placeholder}</p>
         <DatePicker
           onChange={(value) => click(value)}
           value={valueFecha && new Date(valueFecha)}

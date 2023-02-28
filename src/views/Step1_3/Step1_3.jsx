@@ -94,7 +94,9 @@ const Step1_3 = () => {
             <div>
               {ReactHtmlParser(text[simulador].step1_3_text1)}
               {simulador != "Fecha Elegida" && (
-                <Button text="Ampliar información" />
+                <a href="" target="_blank">
+                  <Button text="Ampliar información" />
+                </a>
               )}
             </div>
           </section>
@@ -158,7 +160,11 @@ const Step1_3 = () => {
               </div>
 
               <div>{ReactHtmlParser(text[simulador].step1_3_text4)}</div>
-              {simulador != "Pesos Fijos" && <Button text="Ver condiciones" />}
+              {simulador != "Pesos Fijos" && (
+                <a href="" target="_blank">
+                  <Button text="Ver condiciones" />
+                </a>
+              )}
             </section>
           </section>
         )}
