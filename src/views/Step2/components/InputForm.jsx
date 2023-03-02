@@ -16,6 +16,8 @@ const InputForm = ({
   setInitialValues,
   amountValidatios,
   setAmountValidations,
+  setImages,
+  images,
 }) => {
   const [amountUsers, setAmountUsers] = useState(1);
   const usuarios = useSelector((state) => state.user.usuarios);
@@ -46,6 +48,14 @@ const InputForm = ({
       ...updatedAreas[i],
       [e.target.name]: e.target.files[0],
     };
+
+    const updatedImg = [...images];
+    updatedImg[i] = {
+      ...updatedImg[i],
+      [e.target.name]: e.target.files[0],
+    };
+
+    setImages(updatedImg);
     setInitialValues(updatedAreas);
   };
 
@@ -92,6 +102,11 @@ const InputForm = ({
       politicos: "No",
     };
 
+    let imgValue = {
+      ciFrente: "",
+      ciDorso: "",
+    };
+
     if (!initialValues) {
       if (usuarios.length >= 1) {
         setAmountUsers(usuarios.length);
@@ -102,11 +117,17 @@ const InputForm = ({
           .map((_, i) => i + 1);
 
         let arrayValues = [];
+        let imgValues = [];
 
         newNumber.map((page) => {
           arrayValues.push(originalValues);
         });
 
+        newNumber.map((page) => {
+          imgValues.push(imgValue);
+        });
+
+        setImages(imgValues);
         setInitialValues(arrayValues);
       }
     } else {
@@ -115,18 +136,22 @@ const InputForm = ({
         .map((_, i) => i + 1);
 
       let arrayValues = [...initialValues];
+      let imgValues = [...images];
 
       /* Cut or add to the array depens of user */
       if (newNumber.length > arrayValues.length) {
         newNumber.map((page) => {
           if (page > arrayValues.length) {
             arrayValues.push(originalValues);
+            imgValues.push(imgValue);
           }
         });
       } else if (newNumber.length < arrayValues.length) {
         arrayValues = arrayValues.slice(0, newNumber.length);
+        imgValues = imgValues.slice(0, newNumber.length);
       }
 
+      setImages(imgValues);
       setInitialValues(arrayValues);
     }
   };
@@ -173,6 +198,7 @@ const InputForm = ({
           <div className="inputForm_div">
             <select
               className="selectInput"
+              id="inputAmountUsers"
               onChange={(e) => {
                 setAmountUsers(e.target.value);
                 dispatch(setAmountUser(e.target.value));

@@ -13,29 +13,29 @@ import { useState } from "react";
 
 const StepsContainer = ({ step, initialValues, amountValidatios }) => {
   const dispatch = useDispatch();
-  const [disabled, setDisabled] = useState(false);
+  const [disabled, setDisabled] = useState(true);
 
   const goToStep2 = () => {
-    if (step === 3) {
+    /*     if (step === 3) {
       dispatch(setStep3(amountValidatios));
-    }
+    } */
     dispatch(changePageValidations(2));
   };
 
   const goToStep3 = () => {
-    if (step === 2) {
+    /*     if (step === 2) {
       dispatch(setUsers(initialValues));
       dispatch(setStep2(amountValidatios));
     }
-    if (amountValidatios) validateButton();
+    if (amountValidatios) validateButton(); */
     if (disabled) dispatch(changePageValidations(3));
   };
 
   const goToStep4 = () => {
-    if (step === 3) {
+    /*     if (step === 3) {
       dispatch(setStep3(amountValidatios));
     }
-    if (amountValidatios) validateButton();
+    if (amountValidatios) validateButton(); */
     if (disabled) dispatch(changePageValidations(4));
   };
 

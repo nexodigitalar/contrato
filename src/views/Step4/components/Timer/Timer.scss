@@ -2,7 +2,7 @@
 
 .timer_buttonContainer {
   @include flex(row, center, center);
-  width: 100%;
+  width: 55%;
   gap: 10px;
   .timer_span {
     @include flex(row, center, center);

@@ -2,7 +2,7 @@
 import "./App.scss";
 
 /* Hooks */
-import { useEffect } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setData } from "@/store/dataSlice/dataSlice";
@@ -18,6 +18,7 @@ import ErrorPage from "@/views/ErrorPage/ErrorPage";
 import ConfirmationPage from "@/views/ConfirmationPage/ConfirmationPage";
 
 const App = () => {
+  const [images, setImages] = useState();
   const page = useSelector((state) => state.page.value);
   const { pathname } = useLocation();
   const dispatch = useDispatch();
@@ -44,7 +45,12 @@ const App = () => {
       <Routes>
         <Route element={<MainLayout />}>
           {page === 1 && <Route path="/" element={<Step1 />} />}
-          {page === 2 && <Route path="/" element={<Step2 />} />}
+          {page === 2 && (
+            <Route
+              path="/"
+              element={<Step2 setImages={setImages} images={images} />}
+            />
+          )}
           {page === 3 && <Route path="/" element={<Step3 />} />}
           {page === 4 && <Route path="/" element={<Step4 />} />}
         </Route>

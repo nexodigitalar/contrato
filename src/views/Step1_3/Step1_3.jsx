@@ -29,7 +29,6 @@ const Step1_3 = () => {
 
   useEffect(() => {
     validateButton();
-    console.log(switchCheck);
   }, [switchCheck]);
 
   const handleAmountChecks = () => {

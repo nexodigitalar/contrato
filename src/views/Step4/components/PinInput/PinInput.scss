@@ -23,11 +23,8 @@
   }
   .pinInput {
     @include flex(row, space-between, center);
-    gap: 20px;
-    width: 100%;
-  }
-  .pinInput > input {
-    width: 80%;
+    gap: 21px;
+    width: 55%;
   }
 }
 

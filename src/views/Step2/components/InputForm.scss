@@ -20,6 +20,10 @@ input[type="number"] {
   margin: $margin_lg 0;
 }
 
+/* #inputAmountUsers {
+  width: 20%;
+} */
+
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .inputForm2_div {
     display: flex !important;

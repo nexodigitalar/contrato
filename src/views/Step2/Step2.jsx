@@ -17,7 +17,7 @@ import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
 import { useEffect } from "react";
 
-const Step2 = () => {
+const Step2 = ({ setImages, images }) => {
   const { simulador } = useSelector((state) => state.data);
   const [initialValues, setInitialValues] = useState(undefined);
   const [amountValidatios, setAmountValidations] = useState([]);
@@ -67,6 +67,8 @@ const Step2 = () => {
               setInitialValues={setInitialValues}
               amountValidatios={amountValidatios}
               setAmountValidations={setAmountValidations}
+              setImages={setImages}
+              images={images}
             />
           </div>
           <div className="step2_imgContainer">
