@@ -343,16 +343,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
             />
           </div>
           <div className="inputForm_div">
-            <SelectInput
+            <Input
               placeholder="* Actividad principal"
               name="actividadPrincipal"
-              usuario={usuario}
-              index={index}
-              op1="Actividad 1"
-              op2="Actividad 2"
+              value={usuario[index]?.actividadPrincipal || ""}
               error={amountValidatios[index]?.actividadPrincipal}
-              click={(e) =>
-                setTimeout(() => {
+              click={(e) => {
+                handleInput(e, index),
                   useValidate(
                     e.target.value,
                     amountValidatios,
@@ -360,19 +357,6 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                     "actividadPrincipal",
                     setAmountValidations
                   );
-                }, 1000)
-              }
-              change={(e) => {
-                {
-                  handleInput(e, index),
-                    useValidate(
-                      e.target.value,
-                      amountValidatios,
-                      index,
-                      "actividadPrincipal",
-                      setAmountValidations
-                    );
-                }
               }}
             />
             <Input
