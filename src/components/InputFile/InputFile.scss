@@ -37,6 +37,14 @@
     right: 0;
     cursor: pointer;
   }
+
+  .border_error {
+    border-bottom: 2px solid $error;
+  }
+
+  .border_empty {
+    border-bottom: 2px solid $neutral;
+  }
 }
 
 .inputfile + label {
@@ -52,10 +60,6 @@
 .inputfile + label:hover {
   background-color: $primary;
   cursor: pointer;
-}
-
-.border_error {
-  border-bottom: 2px solid $error;
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {

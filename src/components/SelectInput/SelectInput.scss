@@ -23,6 +23,9 @@
 .border_error {
   border-bottom: 2px solid $error;
 }
+.border_empty {
+  border-bottom: 2px solid $neutral;
+}
 
 option {
   color: $neutral_dark;

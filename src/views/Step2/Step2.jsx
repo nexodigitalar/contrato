@@ -76,7 +76,11 @@ const Step2 = ({ setImages, images }) => {
           </div>
         </div>
 
-        <p className="step2_important">* Campos obligatorios</p>
+        {disabled && (
+          <p className="step2_important">
+            * Completá los campos obligatorios para continuar
+          </p>
+        )}
 
         <div className="step2_buttonContainer">
           <Button

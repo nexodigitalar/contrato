@@ -20,6 +20,12 @@
   }
 }
 
+.inputForm_mandatory {
+  @include primaryFont($size_xs);
+  color: $neutral_dark;
+  margin-top: $margin_md;
+}
+
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .inputForm_div {
     display: flex !important;

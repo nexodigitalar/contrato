@@ -1,10 +1,23 @@
 import "./Input.scss";
+import { useEffect, useState } from "react";
 
 const Input = ({ placeholder, click, name, value, error, type }) => {
+  const [styles, setStyles] = useState("input empty");
+
+  useEffect(() => {
+    if (error === false) {
+      setStyles("input border_error");
+    } else if (value != undefined && value != "") {
+      setStyles("input");
+    } else {
+      setStyles("input border_empty");
+    }
+  }, [value, error]);
+
   return (
     <div className="inputContainer">
       <input
-        className={error === false ? "input border_error" : "input"}
+        className={styles}
         placeholder={placeholder}
         value={value}
         name={name}

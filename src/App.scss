@@ -32,6 +32,13 @@ p {
   margin: $margin_xs 0;
 }
 
+.border_error {
+  border-bottom: 2px solid $error;
+}
+.empty {
+  border-bottom: 2px solid $neutral;
+}
+
 @font-face {
   font-family: GilroyLight;
   src: url("./assets/fonts/Gilroy-Light.woff");

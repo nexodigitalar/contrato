@@ -1,4 +1,5 @@
 import "./SelectInput.scss";
+import { useEffect, useState } from "react";
 
 const SelectInput = ({
   placeholder,
@@ -13,6 +14,21 @@ const SelectInput = ({
   op3,
   op4,
 }) => {
+  const [styles, setStyles] = useState("selectInput border_empty");
+
+  useEffect(() => {
+    if (error === false) {
+      setStyles("selectInput border_error");
+    } else if (
+      usuario[index][name] != undefined &&
+      usuario[index][name] != ""
+    ) {
+      setStyles("selectInput");
+    } else {
+      setStyles("selectInput border_empty");
+    }
+  }, [usuario[index][name], error]);
+
   return (
     <div className="selectInput_container">
       <select
@@ -21,7 +37,7 @@ const SelectInput = ({
         defaultValue={
           usuario[index][name] != "" ? usuario[index][name] : "placeholder"
         }
-        className={error === false ? "selectInput border_error" : "selectInput"}
+        className={styles}
         onChange={change}
         onClick={click}
       >

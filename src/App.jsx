@@ -36,7 +36,16 @@ const App = () => {
   }, []);
 
   const getDataFromLocal = () => {
-    let data = JSON.parse(localStorage.getItem("contrato"));
+    /*     let data = JSON.parse(localStorage.getItem("contrato")); */
+    let data = {
+      cuoCap: "CAPITAL",
+      cuotas: 130,
+      entrega: "17/02/23",
+      moneda: "USD",
+      monto: 20000,
+      plazo: 200,
+      simulador: "Dolares",
+    };
     dispatch(setData(data));
   };
 

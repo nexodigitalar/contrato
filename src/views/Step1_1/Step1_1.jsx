@@ -21,10 +21,27 @@ import Button from "@/components/Button/Button";
 /* Hooks */
 import { useSelector } from "react-redux";
 import useFormatNumber from "@/hooks/useFormatNumber";
+import { useState, useEffect } from "react";
 
 const Step1_1 = ({ changePage }) => {
-  const { simulador, espera, final, normal, monto, plazo, cuotas, entrega } =
-    useSelector((state) => state.data);
+  const {
+    simulador,
+    espera,
+    final,
+    normal,
+    monto,
+    plazo,
+    cuotas,
+    entrega,
+    moneda,
+  } = useSelector((state) => state.data);
+  const [currency, setCurrency] = useState("$");
+
+  useEffect(() => {
+    if (moneda === "USD") {
+      setCurrency("U$S");
+    }
+  });
 
   return (
     <div className="step1">
@@ -53,7 +70,7 @@ const Step1_1 = ({ changePage }) => {
                   titleGreen="Capital"
                   title=""
                   titleBold=" elegido"
-                  number={`$ ${useFormatNumber(monto)}`}
+                  number={`${currency} ${useFormatNumber(monto)}`}
                   img={capital}
                 />
                 {simulador === "Diferencial Pesos Ajustables" ||
@@ -77,7 +94,7 @@ const Step1_1 = ({ changePage }) => {
                     titleGreen="Cuota"
                     title=" para el"
                     titleBold=" capital elegido"
-                    number={`$ ${useFormatNumber(cuotas)}`}
+                    number={`${currency} ${useFormatNumber(cuotas)}`}
                     img={cuota}
                   />
                 )}
@@ -196,7 +213,7 @@ const Step1_1 = ({ changePage }) => {
                   titleGreen="Capital"
                   title=""
                   titleBold=" elegido"
-                  number={`$ ${useFormatNumber(monto)}`}
+                  number={`${currency} ${useFormatNumber(monto)}`}
                   img={capital}
                 />
                 <Cards
@@ -210,7 +227,7 @@ const Step1_1 = ({ changePage }) => {
                   titleGreen="Valor "
                   title="de "
                   titleBold="cuota"
-                  number={`$ ${useFormatNumber(cuotas)}`}
+                  number={`${currency} ${useFormatNumber(cuotas)}`}
                   img={cuota}
                 />
                 <Cards

@@ -22,6 +22,14 @@
   width: 92%;
 }
 
+.border_error {
+  border-bottom: 2px solid $error;
+}
+
+.border_empty {
+  border-bottom: 2px solid $neutral;
+}
+
 .inputDate {
   width: 0.1px;
   height: 0.1px;

@@ -15,6 +15,14 @@ const StepsContainer = ({ step, initialValues, amountValidatios }) => {
   const dispatch = useDispatch();
   const [disabled, setDisabled] = useState(false);
 
+  const goToStep1 = () => {
+    if (step === 2) {
+      dispatch(setUsers(initialValues));
+      dispatch(setStep2(amountValidatios));
+    }
+    dispatch(changePageValidations(1));
+  };
+
   const goToStep2 = () => {
     if (step === 3) {
       dispatch(setStep3(amountValidatios));
@@ -64,7 +72,7 @@ const StepsContainer = ({ step, initialValues, amountValidatios }) => {
           textBold="SELECCIONADO"
           number="1"
           active={step === 1 ? true : false}
-          click={() => dispatch(changePageValidations(1))}
+          click={() => goToStep1()}
         />
         <Steps
           text="INGRESO"

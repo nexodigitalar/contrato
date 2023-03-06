@@ -240,7 +240,7 @@ const InputForm = ({
               </div>
               <div className="inputForm2_div inputForm_mobile">
                 <InputFile
-                  placeholder="Adjuntar frente de CI"
+                  placeholder="* Adjuntar frente de CI"
                   name="ciFrente"
                   selectedFile={initialValues[index]?.ciFrente}
                   error={amountValidatios[index]?.ciFrente}
@@ -267,7 +267,7 @@ const InputForm = ({
                   }}
                 />
                 <InputFile
-                  placeholder="Adjuntar dorso de CI"
+                  placeholder="* Adjuntar dorso de CI"
                   name="ciDorso"
                   selectedFile={initialValues[index]?.ciDorso}
                   error={amountValidatios[index]?.ciDorso}
@@ -383,6 +383,7 @@ const InputForm = ({
               </div>
             </div>
           ))}
+          <p className="inputForm_mandatory">* Campos obligatorios</p>
         </section>
       )}
     </>
