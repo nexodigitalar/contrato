@@ -24,6 +24,7 @@ const InputForm = ({
   const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
   const savedValidations = useSelector((state) => state.validation.step2);
   const dispatch = useDispatch();
+  const data = useSelector((state) => state.data);
 
   useEffect(() => {
     handleInitialValidations();
@@ -126,6 +127,19 @@ const InputForm = ({
         newNumber.map((page) => {
           imgValues.push(imgValue);
         });
+
+        arrayValues[0].primerNombre = data.nombre;
+        arrayValues[0].primerApellido = data.apellido;
+        arrayValues[0].email = data.email;
+        arrayValues[0].telefono = data.telefono;
+        setAmountValidations([
+          {
+            ...amountValidatios,
+            primerNombre: true,
+            primerApellido: true,
+            telefono: true,
+          },
+        ]);
 
         setImages(imgValues);
         setInitialValues(arrayValues);

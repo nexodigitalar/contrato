@@ -15,14 +15,104 @@ import SmsContainer from "./components/SmsContainer/SmsContainer";
 import { useSelector } from "react-redux";
 import useFormatNumber from "@/hooks/useFormatNumber";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const Step4 = () => {
   const navigate = useNavigate();
   const [sms, setSms] = useState();
+  const venta = useSelector((state) => state.crm.ventaId);
   const { simulador, cuotas, plazo, monto } = useSelector(
     (state) => state.data
   );
+  const usuario = useSelector((state) => state.user.usuarios);
+
+  useEffect(() => {
+    console.log(usuario);
+    if (usuario) {
+      /* ActualizarClienteCRM(); */
+    }
+  }, []);
+
+  const ActualizarClienteCRM = async () => {
+    await fetch(
+      "http://190.64.74.3:8234/Web.NetEnvironment/rest/APIConsorcio/ActualizarClienteCRM",
+      {
+        method: "POST",
+        headers: {
+          pUsuario: "APIConsorcioWeb",
+          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pVentaOLId: venta,
+          pSDTActualizarClienteCRM: {
+            EmpresaId: "3",
+            CliId: "134005",
+            EmpresaNombre: "",
+            EmpresaClienteUlt: 0,
+            CliNom: usuario.primerNombre,
+            CliNom2: usuario.segundoNombre,
+            CliApe1: usuario.primerApellido,
+            CliApe2: usuario.segundoApellido,
+            CliSexo: usuario.sexo,
+            CliEdadRango: 0,
+            CliDoc: "",
+            CliOcupacion: "",
+            CliProf: "",
+            CliFchLlam: "0000-00-00T00:00:00",
+            CliDir: usuario.calle,
+            CliTel: usuario.telefono,
+            CliMovil: "",
+            CliTelTrb: "",
+            CliTelInt: "",
+            CliMail: usuario.email,
+            CliMail1: "",
+            DepartamentoId: 0,
+            DepartamentoNombre: usuario.departamento,
+            LocalidadId: 0,
+            LocalidadNombre: "",
+            CliBarrio: "Pocitos",
+            CliTpoInt: "",
+            CliMotivo: "",
+            CliAsignado: "",
+            CliUsrIng: "",
+            CliUltLin: 0,
+            CliTarUlt: 0,
+            CliNomComp: "",
+            CliTelComp: "",
+            CliPrdUlt: 0,
+            CliLinEstUlt: "",
+            CliContIni: "",
+            CliContDes: "",
+            CliSupoId: "",
+            CliSupoDes: "",
+            CliFchNac: usuario.fechaNacimiento,
+            CliEstCivil: usuario.estadoCivil,
+            CliRepetido: "",
+            CliGrupoUsuarioId: 0,
+            CliIngresosMonId: "",
+            CliCuotaIngreso: "",
+            CliCargo: "",
+            CliEmpAntiguedad: "",
+            CliEmpTrabajoLugar: usuario.empresaTrabaja,
+            CliIngresos: "0.00",
+            CliDestino: "",
+            CliOrigenFondo: usuario.origenFondos,
+            CliConyugeIngreso: "0.00",
+            CliConyugeMonId: "",
+            CliConyugeActividad: "",
+            CliConyugeDoc: "",
+            CliConyugeNombre: "",
+            CliEstado: "",
+          },
+        },
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
 
   return (
     <div className="step4">

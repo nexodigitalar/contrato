@@ -105,6 +105,7 @@ const Step3 = () => {
         Array.from({ length: usuario.length }, (_, index) =>
           newArr.push(values)
         );
+        newArr[0].email = true;
         setAmountValidations(newArr);
       }
     }

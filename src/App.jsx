@@ -22,6 +22,7 @@ const App = () => {
   const page = useSelector((state) => state.page.value);
   const { pathname } = useLocation();
   const dispatch = useDispatch();
+  const [registrarCliente, setRegistrarCliente] = useState(false);
 
   useEffect(() => {
     document.documentElement.scrollTo({
@@ -51,7 +52,9 @@ const App = () => {
       telefono: "123123456",
     };
     dispatch(setData(data));
-    RegistrarClienteCRM(data);
+    if (!registrarCliente) {
+      RegistrarClienteCRM(data);
+    }
   };
 
   const RegistrarClienteCRM = async (data) => {
@@ -86,6 +89,7 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        setRegistrarCliente(true);
       })
       .catch((err) => {
         console.log(err.message);
