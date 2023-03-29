@@ -19,101 +19,19 @@ import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
 
 const Step3 = () => {
-  const [amountValidatios, setAmountValidations] = useState([]);
+  const [amountValidations, setAmountValidations] = useState([]);
   const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
   const usuario = useSelector((state) => state.user.usuarios);
-  const savedValidations = useSelector((state) => state.validation.step3);
   const { simulador } = useSelector((state) => state.data);
 
   useEffect(() => {
-    handleInitialValidations();
-  }, []);
-
-  useEffect(() => {
     validateButton();
-    if (
-      usuario.length > amountValidatios.length ||
-      usuario.length < amountValidatios.length
-    ) {
-      updateAmountValidations();
-    }
-  }, [amountValidatios]);
-
-  const updateAmountValidations = () => {
-    let values = {
-      sexo: "",
-      nacionalidad: "",
-      email: "",
-      pais: "",
-      departamento: "",
-      calle: "",
-      puertaNumero: "",
-      estadoCivil: "",
-      residenteUruguayo: true,
-      monedaIngreso: "",
-      ingresosMensuales: "",
-      empresaTrabaja: "",
-      rubroEmpresa: "",
-      actividadPrincipal: "",
-      origenFondos: "",
-      politicos: true,
-    };
-
-    let copyAmountValidations = [...amountValidatios];
-    let amountUsers = usuario.length;
-
-    if (amountUsers > amountValidatios.length) {
-      let sum = amountUsers - amountValidatios.length;
-
-      let arraySum = new Array(sum).fill("").map((_, i) => i + 1);
-      arraySum.forEach((n) => copyAmountValidations.push(values));
-
-      setAmountValidations(copyAmountValidations);
-    } else {
-      let newArr = copyAmountValidations.slice(0, amountUsers);
-      setAmountValidations(newArr);
-    }
-  };
-
-  const handleInitialValidations = () => {
-    let values = {
-      sexo: "",
-      nacionalidad: "",
-      email: "",
-      pais: "",
-      departamento: "",
-      calle: "",
-      puertaNumero: "",
-      estadoCivil: "",
-      residenteUruguayo: true,
-      monedaIngreso: "",
-      ingresosMensuales: "",
-      empresaTrabaja: "",
-      rubroEmpresa: "",
-      actividadPrincipal: "",
-      origenFondos: "",
-      politicos: true,
-    };
-
-    if (amountValidatios.length === 0) {
-      if (savedValidations.length != 0) {
-        let reduxCopy = JSON.parse(JSON.stringify(savedValidations));
-        setAmountValidations(reduxCopy);
-      } else {
-        let newArr = [];
-        Array.from({ length: usuario.length }, (_, index) =>
-          newArr.push(values)
-        );
-        newArr[0].email = true;
-        setAmountValidations(newArr);
-      }
-    }
-  };
+  }, [amountValidations]);
 
   const validateButton = () => {
     let newArr = [];
-    amountValidatios.map((form) => {
+    amountValidations.map((form) => {
       for (let key in form) {
         if (form[key] === false || form[key] === "") {
           newArr.push(false);
@@ -132,7 +50,7 @@ const Step3 = () => {
     <div className="step3">
       <div className="step3_container">
         <Header text="DATOS" bold="OCUPACIONALES" logo={simulador} />
-        <StepsContainer step={3} amountValidatios={amountValidatios} />
+        <StepsContainer step={3} amountValidations={amountValidations} />
 
         <div className="step3_innerContainer">
           <div>
@@ -140,7 +58,7 @@ const Step3 = () => {
               <InputForm
                 index={index}
                 key={index}
-                amountValidatios={amountValidatios}
+                amountValidations={amountValidations}
                 setAmountValidations={setAmountValidations}
               />
             ))}
@@ -161,7 +79,7 @@ const Step3 = () => {
             click={() => {
               dispatch(changePage(4)),
                 useScrollTop(),
-                dispatch(setStep3(amountValidatios));
+                dispatch(setStep3(amountValidations));
             }}
             disabled={disabled}
           />

@@ -20,17 +20,17 @@ import { useEffect } from "react";
 const Step2 = ({ setImages, images }) => {
   const { simulador } = useSelector((state) => state.data);
   const [initialValues, setInitialValues] = useState(undefined);
-  const [amountValidatios, setAmountValidations] = useState([]);
+  const [amountValidations, setAmountValidations] = useState([]);
   const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
 
   useEffect(() => {
     validateButton();
-  }, [amountValidatios]);
+  }, [amountValidations]);
 
   const validateButton = () => {
     let newArr = [];
-    amountValidatios.map((form) => {
+    amountValidations.map((form) => {
       for (let key in form) {
         if (form[key] === false || form[key] === "") {
           newArr.push(false);
@@ -52,7 +52,7 @@ const Step2 = ({ setImages, images }) => {
         <StepsContainer
           step={2}
           initialValues={initialValues}
-          amountValidatios={amountValidatios}
+          amountValidations={amountValidations}
         />
 
         <div className="step2_innerContainer">
@@ -65,7 +65,7 @@ const Step2 = ({ setImages, images }) => {
             <InputForm
               initialValues={initialValues}
               setInitialValues={setInitialValues}
-              amountValidatios={amountValidatios}
+              amountValidations={amountValidations}
               setAmountValidations={setAmountValidations}
               setImages={setImages}
               images={images}
@@ -89,7 +89,7 @@ const Step2 = ({ setImages, images }) => {
               dispatch(changePage(3)),
                 useScrollTop(),
                 dispatch(setUsers(initialValues)),
-                dispatch(setStep2(amountValidatios));
+                dispatch(setStep2(amountValidations));
             }}
             disabled={disabled}
           />

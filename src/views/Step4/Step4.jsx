@@ -20,52 +20,68 @@ import { useState, useEffect } from "react";
 const Step4 = () => {
   const navigate = useNavigate();
   const [sms, setSms] = useState();
-  const venta = useSelector((state) => state.crm.ventaId);
+  const ids = useSelector((state) => state.crm.ids);
   const { simulador, cuotas, plazo, monto } = useSelector(
     (state) => state.data
   );
   const usuario = useSelector((state) => state.user.usuarios);
 
-  useEffect(() => {
+  /*   useEffect(() => {
     console.log(usuario);
-    if (usuario) {
-      /* ActualizarClienteCRM(); */
+    if (ids.length != 0) {
+      ActualizarClienteCRM();
     }
-  }, []);
+  }, []); */
+
+  const intentoUno = () => {
+    const arrOfPromises = usuario.map((item) => RegistrarClienteGestion());
+    return Promise.all(arrOfPromises);
+  };
+
+  const intentoDos = async () => {
+    await Promise.all(
+      usuario.map(async (user) => {
+        await RegistrarClienteGestion(user);
+      })
+    );
+  };
 
   const ActualizarClienteCRM = async () => {
     await fetch(
-      "http://190.64.74.3:8234/Web.NetEnvironment/rest/APIConsorcio/ActualizarClienteCRM",
+      "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
       {
         method: "POST",
         headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           pUsuario: "APIConsorcioWeb",
           pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
-          pVentaOLId: venta,
+          pVentaOLId: ids.venta,
           pSDTActualizarClienteCRM: {
-            EmpresaId: "3",
-            CliId: "134005",
+            EmpresaId: ids.empresaId,
+            CliId: ids.cliId,
             EmpresaNombre: "",
             EmpresaClienteUlt: 0,
-            CliNom: usuario.primerNombre,
-            CliNom2: usuario.segundoNombre,
-            CliApe1: usuario.primerApellido,
-            CliApe2: usuario.segundoApellido,
-            CliSexo: usuario.sexo,
+            CliNom: usuario[0].primerNombre,
+            CliNom2: usuario[0].segundoNombre,
+            CliApe1: usuario[0].primerApellido,
+            CliApe2: usuario[0].segundoApellido,
+            CliSexo: usuario[0].sexo,
             CliEdadRango: 0,
             CliDoc: "",
             CliOcupacion: "",
             CliProf: "",
             CliFchLlam: "0000-00-00T00:00:00",
-            CliDir: usuario.calle,
-            CliTel: usuario.telefono,
+            CliDir: usuario[0].calle + usuario[0].puertaNumero,
+            CliTel: usuario[0].telefono,
             CliMovil: "",
             CliTelTrb: "",
             CliTelInt: "",
-            CliMail: usuario.email,
+            CliMail: usuario[0].email,
             CliMail1: "",
             DepartamentoId: 0,
-            DepartamentoNombre: usuario.departamento,
+            DepartamentoNombre: usuario[0].departamento,
             LocalidadId: 0,
             LocalidadNombre: "",
             CliBarrio: "Pocitos",
@@ -83,18 +99,18 @@ const Step4 = () => {
             CliContDes: "",
             CliSupoId: "",
             CliSupoDes: "",
-            CliFchNac: usuario.fechaNacimiento,
-            CliEstCivil: usuario.estadoCivil,
+            CliFchNac: usuario[0].fechaNacimiento,
+            CliEstCivil: usuario[0].estadoCivil,
             CliRepetido: "",
             CliGrupoUsuarioId: 0,
             CliIngresosMonId: "",
             CliCuotaIngreso: "",
             CliCargo: "",
             CliEmpAntiguedad: "",
-            CliEmpTrabajoLugar: usuario.empresaTrabaja,
+            CliEmpTrabajoLugar: usuario[0].empresaTrabaja,
             CliIngresos: "0.00",
             CliDestino: "",
-            CliOrigenFondo: usuario.origenFondos,
+            CliOrigenFondo: usuario[0].origenFondos,
             CliConyugeIngreso: "0.00",
             CliConyugeMonId: "",
             CliConyugeActividad: "",
@@ -102,7 +118,154 @@ const Step4 = () => {
             CliConyugeNombre: "",
             CliEstado: "",
           },
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  const RegistrarClienteGestion = async (user) => {
+    await fetch(
+      "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
         },
+        body: JSON.stringify({
+          pUsuario: "APIConsorcioWeb",
+          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pVentaOLId: ids.ventaId,
+          pEmpresaId: ids.empresaId,
+          pCliId: ids.cliId,
+          pSDTRegistrarClienteGestion: {
+            LicenciaCodigo: 1,
+            PersonaCodigo: 0,
+            PersonaNombre1: user.primerNombre,
+            PersonaNombre2: user.segundoNombre,
+            PersonaApellido1: user.primerApellido,
+            PersonaApellido2: user.segundoApellido,
+            PersonaDireccion1: "",
+            PersonaDireccion2: "",
+            PersonaTelefono1: user.telefono,
+            PersonaTelefono2: "",
+            PersonaTelefonoMovil1: "095632655",
+            PersonaTelefonoMovil2: "",
+            PersonaFechaNacimiento: user.fechaNacimiento,
+            EstadoCivilCodigo: 2,
+            EstadoCivilNombre: user.estadoCivil,
+            PersonaPaisCodigo: "",
+            PersonaPaisNombre: user.nacionalidad,
+            PersonaMail1: user.email,
+            PersonaMail2: "",
+            PersonaSexo: user.sexo,
+            PersonaPaisResidenciaCodigo: "UY",
+            PersonaPaisResidenciaNombre: user.pais,
+            PersonaDepartamentoResCod: "MO",
+            PersonaDepartamentoResNom: "",
+            PersonaCiudadResCod: "",
+            PersonaCiudadResNom: user.departamento,
+            PersonaCalle: user.calle,
+            PersonaPuerta: user.puertaNumero,
+            PersonaApartamento: "",
+            PersonaCodigoPostal: "",
+            PersonaSectorActividadCodigo: 10,
+            PersonaSectorActividadNombre: user.actividadPrincipal,
+            PersonaSectorActividadBCUCodigo: 0,
+            PersonaSectorActividadBCUNombre: "",
+            PersonaSectorActividadCIIuCodigo: 0,
+            PersonaSectorActividadCIIUNombre: "",
+            PersonaSeparacionBienes: false,
+            PersonaZonaCodigo: 0,
+            PersonaZonaNombre: "",
+            PersonaApellidosyNombres: "",
+            PersonaLocalidadNombre: "",
+            PersonaDocumento: user.cedule,
+            PersonaOrigenInfo: "",
+            PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
+            PersonaEsPEP: user.pep,
+            PersonaRelacionContacto: {
+              PersonaRelacionContactoItems: [
+                {
+                  EmpresaId: ids.empresaId,
+                  CliId: ids.cliId,
+                  CliNom: "",
+                  CliApe1: "",
+                  CliApe2: "",
+                  CliDir: "",
+                  CliTel: "",
+                  CliMovil: "",
+                },
+              ],
+            },
+            PersonasRelacion: {
+              PersonasRelacionItems: [
+                {
+                  PersonaCodigoRelacion: 0,
+                  PersonaApellidoRelacion: "",
+                  PersonaNombreRelacion: "",
+                  PersonaRelacionCodigo: "",
+                  PersonaRelacionNumeroDocumento: "",
+                  PersonaRelacionOrigenInfo: "",
+                  PersonaRelacionOrigenFechaAlta: "0000-00-00T00:00:00",
+                },
+              ],
+            },
+            TipoDocumento: {
+              TipoDocumentoItems: [
+                {
+                  PersonaTipoDocumentoCodigo: "CI",
+                  PersonaTipoDocumentoNombre: "CI",
+                  PersonaNumeroDocumento: "4528124-7",
+                  PersonaDocumentoFechaVencimineto: "2028-05-02T00:00:00",
+                  PersonaDocumentoBlobOrdinal: 0,
+                  PersonaDocumentoOrigenInfo: "",
+                  PersonaDocumentoFechaAltaOrigen: "0000-00-00T00:00:00",
+                  PersonaDocumentoPrincipal: false,
+                },
+              ],
+            },
+            PersonaFechaAlta: "0000-00-00T00:00:00",
+            PersonaFechaModificacion: "0000-00-00T00:00:00",
+            PersonaIngresosImporte: user.ingresosMensuales,
+            PersonaIngresosMonedaCodigo: 1,
+            PersonaIngresosMonedaNombre: user.monedaIngreso,
+            PersonaRiesgoLavado: 0,
+            PersonaResidente: user.residenteUruguayo,
+            PersonaLugarTrabajoNombre: user.empresaTrabaja,
+            PersonaLugarTrabajoDireccion: "Rincon649",
+            PersonaLugarTrabajoCargo: "TI",
+            PersonaOrigenDeFondos: user.origenFondos,
+            PersonaRubroEmpresa: user.rubroEmpresa,
+            PersonaConyugeCodigo: 0,
+            PersonaConyugeTipoDocumento: "",
+            PersonaConyugeDocumento: "",
+            PersonaConyugeNombre1: "",
+            PersonaConyugeNombre2: "",
+            PersonaConyugeApellido1: "",
+            PersonaConyugeApellido2: "",
+            PersonaConyugeSexo: "",
+            PersonaConyugeFechaNac: "0000-00-00T00:00:00",
+            PersonaConyugeMail: "",
+            PersonaConyugeCelular: "",
+            PersonaConyugeSectorActCod: 0,
+            PersonaConyugeSectorActNombre: "",
+            PersonaConyugeMonedaIngreso: 0,
+            PersonaConyugeMonedaSimbolo: "",
+            PersonaConyugeIngresos: 0,
+            PersonaConyugeTrabajoNombre: "",
+            PersonaConyugeTrabajoDireccion: "",
+            PersonaConyugeTrabajoCargo: "",
+            PersonaConyugeOrigenFondo: "",
+            PersonaConyugeRubro: "",
+          },
+        }),
       }
     )
       .then((response) => response.json())

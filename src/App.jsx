@@ -6,6 +6,7 @@ import { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setData } from "@/store/dataSlice/dataSlice";
+import { setId } from "@/store/crmSlice/crmSlice";
 
 /* Components */
 import Step1 from "@/views/Step1/Step1";
@@ -37,32 +38,36 @@ const App = () => {
   }, []);
 
   const getDataFromLocal = () => {
-    /* let data = JSON.parse(localStorage.getItem("contrato")); */
+    /*  let data = JSON.parse(localStorage.getItem("contrato")); */
     let data = {
-      apellido: "TestApellido",
+      apellido: "Apellido",
+      codigo: "51",
       cuoCap: "CAPITAL",
-      cuotas: 6500,
-      email: "test@test.com",
+      cuotas: 43400,
+      email: "email@email.com",
       entrega: "17/02/23",
       moneda: "UYU",
-      monto: 1000000,
-      nombre: "TestNombre",
+      monto: 6200000,
+      nombre: "Nombre",
       plazo: 200,
-      simulador: "Pesos Ajustables",
-      telefono: "123123456",
+      simulador: "Pesos Fijos",
+      telefono: "123456879",
     };
     dispatch(setData(data));
-    if (!registrarCliente) {
+    /*     if (!registrarCliente) {
       RegistrarClienteCRM(data);
-    }
+    } */
   };
 
   const RegistrarClienteCRM = async (data) => {
     await fetch(
-      "http://190.64.74.3:8234/Web.NetEnvironment/rest/APIConsorcio/RegistrarClienteCRM",
+      "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteCRM",
       {
         method: "POST",
         headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           pUsuario: "APIConsorcioWeb",
           pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
           pCanal: "CONTRATO ONLINE",
@@ -72,24 +77,31 @@ const App = () => {
             Telefono: data.telefono,
             Email: data.email,
             ClienteIdExt: "0",
-            ProductoCodigo: "50",
-            CapitalObjetivo: data.monto.toString(),
-            CuotaPromedio: data.cuotas.toString(),
+            ProductoCodigo: data.codigo,
+            CapitalObjetivo: data.monto,
+            CuotaPromedio: data.cuotas,
             Moneda: data.moneda,
-            Plazo: data.plazo.toString(),
-            PlazoEntrega: data.entrega,
+            Plazo: data.plazo,
+            PlazoEntrega: "0",
             Bonificadas: "0",
-            UTMSource: "CONTRATO ONLINE",
-            UTMMedium: "https://consorcio.uy/contrato/",
-            UTMCampaign: " https://consorcio.uy/contrato/",
+            UTMSource: "PruebaReg1",
+            UTMMedium: "PruebaReg1",
+            UTMCampaign: "PruebaReg1",
           },
-        },
+        }),
       }
     )
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
+      .then((info) => {
         setRegistrarCliente(true);
+        console.log(info);
+        dispatch(
+          setId({
+            ventaId: info.pVentaOLId,
+            empresaId: info.pEmpresaId,
+            cliId: info.pCliId,
+          })
+        );
       })
       .catch((err) => {
         console.log(err.message);

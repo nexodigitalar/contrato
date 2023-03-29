@@ -11,49 +11,33 @@ import { useSelector, useDispatch } from "react-redux";
 import { setGrupo } from "@/store/crmSlice/crmSlice";
 
 const Step1_2 = ({ changePage }) => {
-  const venta = useSelector((state) => state.crm.ventaId);
-  const infoGrupo = useSelector((state) => state.crm.grupo);
+  const venta = useSelector((state) => state.crm.ids.ventaId);
+  /*   const infoGrupo = useSelector((state) => state.crm.grupo); */
   const dispatch = useDispatch();
 
-  useEffect(() => {
-    if (!infoGrupo) {
+  /*   useEffect(() => {
+    if (!infoGrupo.length && venta) {
+      console.log(venta);
       TomarNumeroCRM();
     }
-  }, []);
-
-  useEffect(() => {
-    const dataGrupo = {
-      GrupoId: "CRI580",
-      GrupoNombre: "CRISTAL 580",
-      GrupoPlazo: 200,
-      GrupoMiembros: 400,
-      FechaProximoSorteo: "2023-03-01T18:00:00",
-      GrupoRitmoAdjudicaciones:
-        "Ya hay 48 ganadores, 352 continúan participando. Este grupo finalizará en 182 meses.",
-    };
-    dispatch(setGrupo(dataGrupo));
-  }, []);
+  }, []); */
 
   const TomarNumeroCRM = async () => {
-    await fetch(
-      "http://190.64.74.3:8234/Web.NetEnvironment/rest/APIConsorcio/TomarNumeroCRM",
-      {
-        method: "POST",
-        headers: {
-          pUsuario: "APIConsorcioWeb",
-          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
-          pVentaOLId: venta,
-        },
-      }
-    )
+    await fetch("http://190.64.74.3:8234/rest/APIConsorcio/TomarNumeroCRM", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pUsuario: "APIConsorcioWeb",
+        pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+        pVentaOLId: venta,
+      }),
+    })
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        let infoData = {
-          pGrupo: "575",
-          pGrupoNumero: "033",
-        };
-        InformacionGrupoContratoOnLine(infoData.pGrupo);
+        InformacionGrupoContratoOnLine(data.pGrupo);
       })
       .catch((err) => {
         console.log(err.message);
@@ -62,20 +46,24 @@ const Step1_2 = ({ changePage }) => {
 
   const InformacionGrupoContratoOnLine = async (grupoId) => {
     await fetch(
-      "http://190.64.74.3:8234/Web.NetEnvironment/rest/APIConsorcio/InformacionGrupoContratoOnLine",
+      "http://190.64.74.3:8234/rest/APIConsorcio/InformacionGrupoContratoOnLine",
       {
         method: "POST",
         headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
           pUsuario: "APIConsorcioWeb",
           pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
           pGrupoId: grupoId,
-        },
+          pVentaOLId: venta,
+        }),
       }
     )
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        const dataGrupo = {
+        /*         const dataGrupo = {
           GrupoId: "CRI580",
           GrupoNombre: "CRISTAL 580",
           GrupoPlazo: 200,
@@ -84,11 +72,17 @@ const Step1_2 = ({ changePage }) => {
           GrupoRitmoAdjudicaciones:
             "Ya hay 48 ganadores, 352 continúan participando. Este grupo finalizará en 182 meses.",
         };
-        dispatch(setGrupo(dataGrupo));
+        dispatch(setGrupo(dataGrupo)); */
       })
       .catch((err) => {
         console.log(err.message);
       });
+  };
+
+  let infoGrupo = {
+    GrupoId: 580,
+    GrupoPlazo: 200,
+    GrupoMiembros: 400,
   };
 
   return (

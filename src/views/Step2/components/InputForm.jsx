@@ -14,7 +14,7 @@ import InputDate from "../../../components/InputDate/InputDate";
 const InputForm = ({
   initialValues,
   setInitialValues,
-  amountValidatios,
+  amountValidations,
   setAmountValidations,
   setImages,
   images,
@@ -100,7 +100,7 @@ const InputForm = ({
       rubroEmpresa: "",
       actividadPrincipal: "",
       origenFondos: "",
-      politicos: "No",
+      pep: "No",
     };
 
     let imgValue = {
@@ -132,11 +132,13 @@ const InputForm = ({
         arrayValues[0].primerApellido = data.apellido;
         arrayValues[0].email = data.email;
         arrayValues[0].telefono = data.telefono;
+
         setAmountValidations([
           {
-            ...amountValidatios,
+            cedula: "",
             primerNombre: true,
             primerApellido: true,
+            fechaNacimiento: "",
             telefono: true,
           },
         ]);
@@ -181,7 +183,7 @@ const InputForm = ({
       telefono: "",
     };
 
-    if (amountValidatios.length === 0) {
+    if (amountValidations.length === 0) {
       if (savedValidations.length != 0) {
         let reduxCopy = JSON.parse(JSON.stringify(savedValidations));
         setAmountValidations(reduxCopy);
@@ -189,10 +191,10 @@ const InputForm = ({
         setAmountValidations([values]);
       }
     } else {
-      let copyAmountValidations = [...amountValidatios];
+      let copyAmountValidations = [...amountValidations];
 
-      if (amountUsers > amountValidatios.length) {
-        let sum = amountUsers - amountValidatios.length;
+      if (amountUsers > amountValidations.length) {
+        let sum = amountUsers - amountValidations.length;
 
         let arraySum = new Array(sum).fill("").map((_, i) => i + 1);
         arraySum.forEach((n) => copyAmountValidations.push(values));
@@ -207,7 +209,7 @@ const InputForm = ({
 
   return (
     <>
-      {initialValues && amountValidatios.length != 0 && (
+      {initialValues && amountValidations.length != 0 && (
         <section>
           <div className="inputForm_div">
             <select
@@ -238,13 +240,13 @@ const InputForm = ({
                   placeholder="* Cédula"
                   name="cedula"
                   value={initialValues[index]?.cedula || ""}
-                  error={amountValidatios[index]?.cedula}
+                  error={amountValidations[index]?.cedula}
                   type="number"
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
                         e.target.value,
-                        amountValidatios,
+                        amountValidations,
                         index,
                         "cedula",
                         setAmountValidations
@@ -257,12 +259,12 @@ const InputForm = ({
                   placeholder="* Adjuntar frente de CI"
                   name="ciFrente"
                   selectedFile={initialValues[index]?.ciFrente}
-                  error={amountValidatios[index]?.ciFrente}
+                  error={amountValidations[index]?.ciFrente}
                   click={(e) =>
                     setTimeout(() => {
                       useValidate(
                         e.target.value,
-                        amountValidatios,
+                        amountValidations,
                         index,
                         "ciFrente",
                         setAmountValidations
@@ -273,7 +275,7 @@ const InputForm = ({
                     handleFiles(e, index),
                       useValidate(
                         e.target.value,
-                        amountValidatios,
+                        amountValidations,
                         index,
                         "ciFrente",
                         setAmountValidations
@@ -284,12 +286,12 @@ const InputForm = ({
                   placeholder="* Adjuntar dorso de CI"
                   name="ciDorso"
                   selectedFile={initialValues[index]?.ciDorso}
-                  error={amountValidatios[index]?.ciDorso}
+                  error={amountValidations[index]?.ciDorso}
                   click={(e) =>
                     setTimeout(() => {
                       useValidate(
                         e.target.value,
-                        amountValidatios,
+                        amountValidations,
                         index,
                         "ciDorso",
                         setAmountValidations
@@ -300,7 +302,7 @@ const InputForm = ({
                     handleFiles(e, index),
                       useValidate(
                         e.target.value,
-                        amountValidatios,
+                        amountValidations,
                         index,
                         "ciDorso",
                         setAmountValidations
@@ -313,13 +315,13 @@ const InputForm = ({
                   placeholder="* Primer Nombre"
                   name="primerNombre"
                   value={initialValues[index]?.primerNombre || ""}
-                  error={amountValidatios[index]?.primerNombre}
+                  error={amountValidations[index]?.primerNombre}
                   type="text"
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
                         e.target.value,
-                        amountValidatios,
+                        amountValidations,
                         index,
                         "primerNombre",
                         setAmountValidations
@@ -339,13 +341,13 @@ const InputForm = ({
                   placeholder="* Primer Apellido"
                   name="primerApellido"
                   value={initialValues[index]?.primerApellido || ""}
-                  error={amountValidatios[index]?.primerApellido}
+                  error={amountValidations[index]?.primerApellido}
                   type="text"
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
                         e.target.value,
-                        amountValidatios,
+                        amountValidations,
                         index,
                         "primerApellido",
                         setAmountValidations
@@ -365,12 +367,12 @@ const InputForm = ({
                   placeholder="* Fecha de nacimiento"
                   name="fechaNacimiento"
                   valueFecha={initialValues[index]?.fechaNacimiento}
-                  error={amountValidatios[index]?.fechaNacimiento}
+                  error={amountValidations[index]?.fechaNacimiento}
                   click={(value) => {
                     handleDate(value, index),
                       useValidate(
                         value,
-                        amountValidatios,
+                        amountValidations,
                         index,
                         "fechaNacimiento",
                         setAmountValidations
@@ -381,13 +383,13 @@ const InputForm = ({
                   placeholder="* Teléfono / Celular"
                   name="telefono"
                   value={initialValues[index]?.telefono || ""}
-                  error={amountValidatios[index]?.telefono}
+                  error={amountValidations[index]?.telefono}
                   type="number"
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
                         e.target.value,
-                        amountValidatios,
+                        amountValidations,
                         index,
                         "telefono",
                         setAmountValidations

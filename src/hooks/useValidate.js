@@ -2,14 +2,14 @@ let timer;
 
 const useValidateInput = (
   e,
-  amountValidatios,
+  amountValidations,
   index,
   position,
   setAmountValidations
 ) => {
   clearTimeout(position);
   timer = setTimeout(() => {
-    let newArr = [...amountValidatios];
+    let newArr = [...amountValidations];
     let newObj = newArr[index];
 
     //validar teléfono
@@ -61,7 +61,6 @@ const useValidateInput = (
       if (e === "" || e === "placeholder") {
         newObj = { ...newObj, [position]: false };
         newArr[index] = newObj;
-        console.log(newArr);
         setAmountValidations(newArr);
       } else if (e === false) {
         return;

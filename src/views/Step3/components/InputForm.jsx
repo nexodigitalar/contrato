@@ -11,21 +11,98 @@ import { useSelector, useDispatch } from "react-redux";
 import { updateUsers } from "@/store/userSlice/userSlice";
 import useValidate from "@/hooks/useValidate";
 
-const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
+const InputForm = ({ index, setAmountValidations, amountValidations }) => {
   const [checkUruguayo, setCheckUruguayo] = useState(true);
   const [check, setCheck] = useState(false);
   const usuario = useSelector((state) => state.user.usuarios);
+  const savedValidations = useSelector((state) => state.validation.step3);
   const dispatch = useDispatch();
+  const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
 
   useEffect(() => {
+    handleInitialValidations();
     handleSetInputs(index);
   }, []);
+
+  /*  const updateAmountValidations = () => {
+    let values = {
+      sexo: "",
+      nacionalidad: "",
+      email: true,
+      pais: "",
+      departamento: "",
+      calle: "",
+      puertaNumero: "",
+      estadoCivil: "",
+      residenteUruguayo: true,
+      monedaIngreso: "",
+      ingresosMensuales: "",
+      empresaTrabaja: "",
+      rubroEmpresa: "",
+      actividadPrincipal: "",
+      origenFondos: "",
+      pep: true,
+    };
+
+   
+  }; */
+
+  const handleInitialValidations = () => {
+    let values = {
+      sexo: "",
+      nacionalidad: "",
+      email: true,
+      pais: "",
+      departamento: "",
+      calle: "",
+      puertaNumero: "",
+      estadoCivil: "",
+      residenteUruguayo: true,
+      monedaIngreso: "",
+      ingresosMensuales: "",
+      empresaTrabaja: "",
+      rubroEmpresa: "",
+      actividadPrincipal: "",
+      origenFondos: "",
+      pep: true,
+    };
+
+    if (amountValidations.length === 0) {
+      if (savedValidations.length != 0) {
+        let reduxCopy = JSON.parse(JSON.stringify(savedValidations));
+        if (defaultAmount === reduxCopy.length) {
+          setAmountValidations(reduxCopy);
+        } else {
+          let copyAmountValidations = [...reduxCopy];
+
+          if (defaultAmount > reduxCopy.length) {
+            let sum = defaultAmount - reduxCopy.length;
+
+            let arraySum = new Array(sum).fill("").map((_, i) => i + 1);
+            arraySum.forEach((n) => copyAmountValidations.push(values));
+
+            setAmountValidations(copyAmountValidations);
+          } else {
+            let newArr = copyAmountValidations.slice(0, defaultAmount);
+            setAmountValidations(newArr);
+          }
+        }
+      } else {
+        let newArr = [];
+        Array.from({ length: usuario.length }, (_, index) =>
+          newArr.push(values)
+        );
+        newArr[0].email = true;
+        setAmountValidations(newArr);
+      }
+    }
+  };
 
   const handleSetInputs = (i) => {
     usuario[i]?.residenteUruguayo === "No"
       ? setCheckUruguayo(false)
       : setCheckUruguayo(true);
-    usuario[i]?.politicos === "No" ? setCheck(false) : setCheck(true);
+    usuario[i]?.pep === "No" ? setCheck(false) : setCheck(true);
   };
 
   const handleInput = (e, i) => {
@@ -37,7 +114,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
   const handleCheckboxUruguayo = (i) => {
     setCheckUruguayo(!checkUruguayo);
     let newValue = !checkUruguayo === false ? "No" : "Si";
-    dispatch(updateUsers({ name: "politicos", index: i, value: newValue }));
+    dispatch(updateUsers({ name: "pep", index: i, value: newValue }));
   };
 
   const handleCheckbox = (i) => {
@@ -65,12 +142,12 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               index={index}
               op1="Femenino"
               op2="Masculino"
-              error={amountValidatios[index]?.sexo}
+              error={amountValidations[index]?.sexo}
               click={(e) =>
                 setTimeout(() => {
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "sexo",
                     setAmountValidations
@@ -82,7 +159,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                   handleInput(e, index),
                     useValidate(
                       e.target.value,
-                      amountValidatios,
+                      amountValidations,
                       index,
                       "sexo",
                       setAmountValidations
@@ -94,13 +171,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Nacionalidad"
               name="nacionalidad"
               value={usuario[index]?.nacionalidad || ""}
-              error={amountValidatios[index]?.nacionalidad}
+              error={amountValidations[index]?.nacionalidad}
               type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "nacionalidad",
                     setAmountValidations
@@ -113,13 +190,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Email"
               name="email"
               value={usuario[index]?.email || ""}
-              error={amountValidatios[index]?.email}
+              error={amountValidations[index]?.email}
               type="email"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "email",
                     setAmountValidations
@@ -136,12 +213,12 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               index={index}
               op1="Uruguay"
               op2="Argentina"
-              error={amountValidatios[index]?.pais}
+              error={amountValidations[index]?.pais}
               click={(e) =>
                 setTimeout(() => {
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "pais",
                     setAmountValidations
@@ -153,7 +230,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                   handleInput(e, index),
                     useValidate(
                       e.target.value,
-                      amountValidatios,
+                      amountValidations,
                       index,
                       "pais",
                       setAmountValidations
@@ -165,13 +242,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Departamento"
               name="departamento"
               value={usuario[index]?.departamento || ""}
-              error={amountValidatios[index]?.departamento}
+              error={amountValidations[index]?.departamento}
               type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "departamento",
                     setAmountValidations
@@ -184,13 +261,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Calle"
               name="calle"
               value={usuario[index]?.calle || ""}
-              error={amountValidatios[index]?.calle}
+              error={amountValidations[index]?.calle}
               type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "calle",
                     setAmountValidations
@@ -201,13 +278,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Puerta Número"
               name="puertaNumero"
               value={usuario[index]?.puertaNumero || ""}
-              error={amountValidatios[index]?.puertaNumero}
+              error={amountValidations[index]?.puertaNumero}
               type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "puertaNumero",
                     setAmountValidations
@@ -225,12 +302,12 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               op2="Casado/a"
               op3="Divorciado/a"
               op4="Viudo/a"
-              error={amountValidatios[index]?.estadoCivil}
+              error={amountValidations[index]?.estadoCivil}
               click={(e) =>
                 setTimeout(() => {
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "estadoCivil",
                     setAmountValidations
@@ -242,7 +319,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                   handleInput(e, index),
                     useValidate(
                       e.target.value,
-                      amountValidatios,
+                      amountValidations,
                       index,
                       "estadoCivil",
                       setAmountValidations
@@ -263,12 +340,12 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               index={index}
               op1="Pesos Uruguayos"
               op2="Dólares Americanos"
-              error={amountValidatios[index]?.monedaIngreso}
+              error={amountValidations[index]?.monedaIngreso}
               click={(e) =>
                 setTimeout(() => {
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "monedaIngreso",
                     setAmountValidations
@@ -280,7 +357,7 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
                   handleInput(e, index),
                     useValidate(
                       e.target.value,
-                      amountValidatios,
+                      amountValidations,
                       index,
                       "monedaIngreso",
                       setAmountValidations
@@ -292,13 +369,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Ingresos mensuales"
               name="ingresosMensuales"
               value={usuario[index]?.ingresosMensuales || ""}
-              error={amountValidatios[index]?.ingresosMensuales}
+              error={amountValidations[index]?.ingresosMensuales}
               type="number"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "ingresosMensuales",
                     setAmountValidations
@@ -311,13 +388,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Empresa en la que trabaja"
               name="empresaTrabaja"
               value={usuario[index]?.empresaTrabaja || ""}
-              error={amountValidatios[index]?.empresaTrabaja}
+              error={amountValidations[index]?.empresaTrabaja}
               type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "empresaTrabaja",
                     setAmountValidations
@@ -328,13 +405,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Rubro de la Empresa"
               name="rubroEmpresa"
               value={usuario[index]?.rubroEmpresa || ""}
-              error={amountValidatios[index]?.rubroEmpresa}
+              error={amountValidations[index]?.rubroEmpresa}
               type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "rubroEmpresa",
                     setAmountValidations
@@ -347,12 +424,12 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Actividad principal"
               name="actividadPrincipal"
               value={usuario[index]?.actividadPrincipal || ""}
-              error={amountValidatios[index]?.actividadPrincipal}
+              error={amountValidations[index]?.actividadPrincipal}
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "actividadPrincipal",
                     setAmountValidations
@@ -363,13 +440,13 @@ const InputForm = ({ index, setAmountValidations, amountValidatios }) => {
               placeholder="* Origen de fondos"
               name="origenFondos"
               value={usuario[index]?.origenFondos || ""}
-              error={amountValidatios[index]?.origenFondos}
+              error={amountValidations[index]?.origenFondos}
               type="text"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
                     e.target.value,
-                    amountValidatios,
+                    amountValidations,
                     index,
                     "origenFondos",
                     setAmountValidations
