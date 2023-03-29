@@ -38,8 +38,8 @@ const App = () => {
   }, []);
 
   const getDataFromLocal = () => {
-    /*  let data = JSON.parse(localStorage.getItem("contrato")); */
-    let data = {
+    let data = JSON.parse(localStorage.getItem("contrato"));
+    /* let data = {
       apellido: "Apellido",
       codigo: "51",
       cuoCap: "CAPITAL",
@@ -52,7 +52,7 @@ const App = () => {
       plazo: 200,
       simulador: "Pesos Fijos",
       telefono: "123456879",
-    };
+    }; */
     dispatch(setData(data));
     /*     if (!registrarCliente) {
       RegistrarClienteCRM(data);
