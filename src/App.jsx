@@ -7,6 +7,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setData } from "@/store/dataSlice/dataSlice";
 import { setId } from "@/store/crmSlice/crmSlice";
+import { setGrupo } from "@/store/crmSlice/crmSlice";
 
 /* Components */
 import Step1 from "@/views/Step1/Step1";
@@ -20,10 +21,11 @@ import ConfirmationPage from "@/views/ConfirmationPage/ConfirmationPage";
 
 const App = () => {
   const [images, setImages] = useState();
+  const [spinner, setSpinner] = useState(true);
   const page = useSelector((state) => state.page.value);
   const { pathname } = useLocation();
   const dispatch = useDispatch();
-  const [registrarCliente, setRegistrarCliente] = useState(false);
+  const registrarCliente = useSelector((state) => state.crm.ids);
 
   useEffect(() => {
     document.documentElement.scrollTo({
@@ -38,25 +40,25 @@ const App = () => {
   }, []);
 
   const getDataFromLocal = () => {
-    let data = JSON.parse(localStorage.getItem("contrato"));
-    /* let data = {
+    /*  let data = JSON.parse(localStorage.getItem("contrato")); */
+    let data = {
       apellido: "Apellido",
       codigo: "51",
       cuoCap: "CAPITAL",
-      cuotas: 43400,
+      cuotas: "43400",
       email: "email@email.com",
       entrega: "17/02/23",
       moneda: "UYU",
-      monto: 6200000,
+      monto: "6200000",
       nombre: "Nombre",
-      plazo: 200,
+      plazo: "200",
       simulador: "Pesos Fijos",
       telefono: "123456879",
-    }; */
+    };
     dispatch(setData(data));
-    /*     if (!registrarCliente) {
+    if (!registrarCliente.ventaId) {
       RegistrarClienteCRM(data);
-    } */
+    }
   };
 
   const RegistrarClienteCRM = async (data) => {
@@ -71,6 +73,7 @@ const App = () => {
           pUsuario: "APIConsorcioWeb",
           pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
           pCanal: "CONTRATO ONLINE",
+          pVentaOLId: 0,
           pSDTRegistrarClienteCRM: {
             Nombre: data.nombre,
             Apellido: data.apellido,
@@ -93,7 +96,6 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((info) => {
-        setRegistrarCliente(true);
         console.log(info);
         dispatch(
           setId({
@@ -102,6 +104,58 @@ const App = () => {
             cliId: info.pCliId,
           })
         );
+        TomarNumeroCRM(info.pVentaOLId);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  const TomarNumeroCRM = async (venta) => {
+    await fetch("http://190.64.74.3:8234/rest/APIConsorcio/TomarNumeroCRM", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pUsuario: "APIConsorcioWeb",
+        pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+        pVentaOLId: venta,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        InformacionGrupoContratoOnLine(data.pGrupo, venta);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  const InformacionGrupoContratoOnLine = async (grupoId, venta) => {
+    await fetch(
+      "http://190.64.74.3:8234/rest/APIConsorcio/InformacionGrupoContratoOnLine",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pUsuario: "APIConsorcioWeb",
+          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pGrupo: grupoId,
+          pVentaOLId: venta,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
+      })
+      .finally(() => {
+        setSpinner(false);
       })
       .catch((err) => {
         console.log(err.message);
@@ -112,7 +166,9 @@ const App = () => {
     <>
       <Routes>
         <Route element={<MainLayout />}>
-          {page === 1 && <Route path="/" element={<Step1 />} />}
+          {page === 1 && (
+            <Route path="/" element={<Step1 spinner={spinner} />} />
+          )}
           {page === 2 && (
             <Route
               path="/"

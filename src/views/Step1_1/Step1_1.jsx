@@ -36,6 +36,7 @@ const Step1_1 = ({ changePage }) => {
     moneda,
   } = useSelector((state) => state.data);
   const [currency, setCurrency] = useState("$");
+  const cuotasRango = useSelector((state) => state.crm.grupo);
 
   useEffect(() => {
     if (moneda === "USD") {
@@ -125,7 +126,14 @@ const Step1_1 = ({ changePage }) => {
                         titleGreen="Cuota"
                         title=""
                         titleBold=" entre"
-                        number={text[simulador].step1_cuo}
+                        number={useFormatNumber(
+                          cuotasRango.InfoGrupoProducto.CuotasRangos[0]
+                            .CuotaMinima
+                        )}
+                        number2={useFormatNumber(
+                          cuotasRango.InfoGrupoProducto.CuotasRangos[0]
+                            .CuotaMaxima
+                        )}
                         img={cuotaEntre}
                       />
 
@@ -141,7 +149,14 @@ const Step1_1 = ({ changePage }) => {
                         titleGreen="Capital"
                         title=""
                         titleBold=" entre"
-                        number={text[simulador].step1_cap}
+                        number={useFormatNumber(
+                          cuotasRango.InfoGrupoProducto.CapitalesRangos[0]
+                            .CapitalMinimo
+                        )}
+                        number2={useFormatNumber(
+                          cuotasRango.InfoGrupoProducto.CapitalesRangos[0]
+                            .CapitalMaximo
+                        )}
                         img={capitalEntre}
                       />
                     </section>

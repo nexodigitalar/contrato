@@ -6,26 +6,23 @@ import Button from "@/components/Button/Button";
 import Input from "@/components/Input/Input";
 
 const SmsInput = ({ setSmsSent, phone, setPhone }) => {
-  const validatePhone = (e) => {
-    let lengthValidation = e.length <= 12 && e.length >= 8;
-
-    if (e === "" || e === "placeholder") {
+  const validatePhone = () => {
+    let lengthValidation =
+      phone.number.length <= 12 && phone.number.length >= 8;
+    if (phone.number === "" || phone.number === "placeholder") {
       setPhone({ ...phone, validation: false });
-      return false;
     } else {
       if (lengthValidation) {
         setPhone({ ...phone, validation: true });
-        return true;
       } else {
         setPhone({ ...phone, validation: false });
-        return false;
       }
     }
   };
 
   const submitPhone = () => {
-    let validation = validatePhone(phone.number);
-    if (validation) {
+    validatePhone();
+    if (phone.validation) {
       setSmsSent(true);
     }
   };

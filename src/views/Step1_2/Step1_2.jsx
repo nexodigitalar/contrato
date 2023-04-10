@@ -7,93 +7,26 @@ import Button from "@/components/Button/Button";
 
 /* Hooks */
 import { useState, useEffect } from "react";
-import { useSelector, useDispatch } from "react-redux";
-import { setGrupo } from "@/store/crmSlice/crmSlice";
+import { useSelector } from "react-redux";
 
 const Step1_2 = ({ changePage }) => {
-  const venta = useSelector((state) => state.crm.ids.ventaId);
-  /*   const infoGrupo = useSelector((state) => state.crm.grupo); */
-  const dispatch = useDispatch();
+  const [date, setDate] = useState("");
+  const infoGrupo = useSelector((state) => state.crm.grupo);
 
-  /*   useEffect(() => {
-    if (!infoGrupo.length && venta) {
-      console.log(venta);
-      TomarNumeroCRM();
-    }
-  }, []); */
-
-  const TomarNumeroCRM = async () => {
-    await fetch("http://190.64.74.3:8234/rest/APIConsorcio/TomarNumeroCRM", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        pUsuario: "APIConsorcioWeb",
-        pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
-        pVentaOLId: venta,
-      }),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        InformacionGrupoContratoOnLine(data.pGrupo);
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-
-  const InformacionGrupoContratoOnLine = async (grupoId) => {
-    await fetch(
-      "http://190.64.74.3:8234/rest/APIConsorcio/InformacionGrupoContratoOnLine",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          pUsuario: "APIConsorcioWeb",
-          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
-          pGrupoId: grupoId,
-          pVentaOLId: venta,
-        }),
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-        /*         const dataGrupo = {
-          GrupoId: "CRI580",
-          GrupoNombre: "CRISTAL 580",
-          GrupoPlazo: 200,
-          GrupoMiembros: 400,
-          FechaProximoSorteo: "2023-03-01T18:00:00",
-          GrupoRitmoAdjudicaciones:
-            "Ya hay 48 ganadores, 352 continúan participando. Este grupo finalizará en 182 meses.",
-        };
-        dispatch(setGrupo(dataGrupo)); */
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-
-  let infoGrupo = {
-    GrupoId: 580,
-    GrupoPlazo: 200,
-    GrupoMiembros: 400,
-  };
+  useEffect(() => {
+    if (infoGrupo.FechaProximoSorteo)
+      setDate(new Date(infoGrupo.FechaProximoSorteo));
+  }, [infoGrupo]);
 
   return (
     <>
-      {infoGrupo ? (
+      {infoGrupo && (
         <div className="step1_2">
           <div className="step1_2_container">
             <Header
               text="PRODUCTO"
               bold="SELECCIONADO"
-              number={infoGrupo.GrupoId}
+              number={infoGrupo.Grupo}
             />
 
             <section className="step1_2_innerContainer">
@@ -118,12 +51,15 @@ const Step1_2 = ({ changePage }) => {
                   </span>
                 </p>
               </div>
-              <div className="step1_2_textContainer">
-                <p className="step1_2_watermark">c</p>
-                <p className="step1_2_text">
-                  Primer sorteo: <span className="green">01/02/2023</span>
-                </p>
-              </div>
+              {date && (
+                <div className="step1_2_textContainer">
+                  <p className="step1_2_watermark">c</p>
+                  <p className="step1_2_text">
+                    Primer sorteo:{" "}
+                    <span className="green">{date.toLocaleDateString()}</span>
+                  </p>
+                </div>
+              )}
               <div className="step1_2_textContainer">
                 <p className="step1_2_watermark">d</p>
                 <p className="step1_2_text">
@@ -132,6 +68,13 @@ const Step1_2 = ({ changePage }) => {
               </div>
               <div className="step1_2_textContainer">
                 <p className="step1_2_watermark">e</p>
+                <p className="step1_2_text">
+                  <span className="green">Adjudicados:</span>{" "}
+                  {infoGrupo.GrupoRitmoAdjudicaciones}
+                </p>
+              </div>
+              <div className="step1_2_textContainer">
+                <p className="step1_2_watermark">f</p>
                 <div className="step1_2_infoContainer">
                   <p className="step1_2_text">
                     <span className="green">
@@ -170,14 +113,40 @@ const Step1_2 = ({ changePage }) => {
                   </p>
                 </div>
               </div>
+
+              <h3 className="step1_2_title step1_2_detail">
+                Detalle <span className="green">cuotas</span>{" "}
+                <span className="gray">bonificadas</span>
+              </h3>
+              <p className="step1_2_text">
+                Acá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particularesAcá van todas las observaciones de las condiciones
+                particulares
+              </p>
+
+              <h3 className="step1_2_title step1_2_detail">
+                Observaciones <span className="green">del</span>{" "}
+                <span className="gray">contrato</span>
+              </h3>
+              <p className="step1_2_text">
+                {infoGrupo.InfoGrupoProducto.Observaciones}
+              </p>
             </section>
             <div className="step1_2_buttonContainer">
               <Button text="Siguiente" click={() => changePage(3)} />
             </div>
           </div>
         </div>
-      ) : (
-        <p>Cargando...</p>
       )}
     </>
   );

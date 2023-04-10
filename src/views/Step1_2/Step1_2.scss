@@ -37,6 +37,14 @@
           margin: $margin_sm 0;
         }
       }
+      .step1_2_text {
+        @include primaryFont($size_sm);
+        color: $neutral_dark;
+        margin: $margin_sm 0;
+      }
+      .step1_2_detail {
+        margin: 32px 0 24px 0;
+      }
     }
     .step1_2_buttonContainer {
       align-self: flex-end;

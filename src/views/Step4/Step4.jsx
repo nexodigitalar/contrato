@@ -26,12 +26,12 @@ const Step4 = () => {
   );
   const usuario = useSelector((state) => state.user.usuarios);
 
-  /*   useEffect(() => {
-    console.log(usuario);
+  useEffect(() => {
+    /*
     if (ids.length != 0) {
       ActualizarClienteCRM();
-    }
-  }, []); */
+    } */
+  }, []);
 
   const intentoUno = () => {
     const arrOfPromises = usuario.map((item) => RegistrarClienteGestion());
@@ -57,7 +57,7 @@ const Step4 = () => {
         body: JSON.stringify({
           pUsuario: "APIConsorcioWeb",
           pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
-          pVentaOLId: ids.venta,
+          pVentaOLId: ids.ventaId,
           pSDTActualizarClienteCRM: {
             EmpresaId: ids.empresaId,
             CliId: ids.cliId,

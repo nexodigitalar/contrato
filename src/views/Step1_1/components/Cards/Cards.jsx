@@ -3,7 +3,7 @@ import vector from "@/assets/img/vector.svg";
 
 import ReactHtmlParser from "react-html-parser";
 
-const Cards = ({ titleGreen, title, titleBold, number, img }) => {
+const Cards = ({ titleGreen, title, titleBold, number, number2, img }) => {
   return (
     <div className="cards">
       <img src={vector} className="cards_svg" />
@@ -14,7 +14,13 @@ const Cards = ({ titleGreen, title, titleBold, number, img }) => {
           {title}
           <span className="gray">{titleBold}</span>
         </h4>
-        <p className="cards_number">{ReactHtmlParser(number)}</p>
+        {number2 ? (
+          <p className="cards_number">
+            ${ReactHtmlParser(number)} y ${number2}
+          </p>
+        ) : (
+          <p className="cards_number">{ReactHtmlParser(number)}</p>
+        )}
       </div>
       <div className="cards_line"></div>
     </div>

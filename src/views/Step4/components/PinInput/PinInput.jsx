@@ -6,7 +6,22 @@ import Button from "@/components/Button/Button";
 import Input from "@/components/Input/Input";
 import Timer from "../Timer/Timer";
 
-const PinInput = ({ phone, setSmsSent }) => {
+/* Hooks */
+import { useState } from "react";
+
+const PinInput = ({ phone, setSmsSent, numberValidation }) => {
+  const [pinTyped, setPinTyped] = useState();
+  console.log(numberValidation);
+  console.log(pinTyped);
+
+  const validatePin = () => {
+    if (numberValidation == pinTyped) {
+      console.log("correcto");
+    } else {
+      console.log("incorrecto");
+    }
+  };
+
   return (
     <div className="pinInput_container">
       <div className="pinInput_titleContainer">
@@ -20,8 +35,14 @@ const PinInput = ({ phone, setSmsSent }) => {
       </div>
 
       <div className="pinInput">
-        <Input placeholder="PIN de validación" />
-        <Button text="VALIDAR" type="secondary" />
+        <Input
+          placeholder="PIN de validación"
+          name="pin"
+          value={pinTyped}
+          type="number"
+          click={(e) => setPinTyped(e.target.value)}
+        />
+        <Button text="VALIDAR" type="secondary" click={() => validatePin()} />
       </div>
 
       <Timer countdown={new Date(new Date().getTime() + 31000)} />
