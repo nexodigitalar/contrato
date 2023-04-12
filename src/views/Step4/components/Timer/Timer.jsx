@@ -4,7 +4,7 @@ import "./Timer.scss";
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
 
-const Timer = ({ countdown }) => {
+const Timer = ({ countdown, envioSms }) => {
   const [disabled, setDisabled] = useState(true);
   const [remainingTime, setRemainingTime] = useState(30);
 
@@ -36,7 +36,7 @@ const Timer = ({ countdown }) => {
       <span className="timer_span">{remainingTime}</span>
       <button
         className="timer_buttonSubtitle"
-        onClick={() => null}
+        onClick={envioSms}
         disabled={disabled}
       >
         Volver a enviar PIN

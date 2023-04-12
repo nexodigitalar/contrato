@@ -22,9 +22,9 @@ import ConfirmationPage from "@/views/ConfirmationPage/ConfirmationPage";
 const App = () => {
   const [images, setImages] = useState();
   const [spinner, setSpinner] = useState(true);
-  const page = useSelector((state) => state.page.value);
   const { pathname } = useLocation();
   const dispatch = useDispatch();
+  const page = useSelector((state) => state.page.value);
   const registrarCliente = useSelector((state) => state.crm.ids);
 
   useEffect(() => {
@@ -46,14 +46,15 @@ const App = () => {
       codigo: "51",
       cuoCap: "CAPITAL",
       cuotas: "43400",
-      email: "email@email.com",
+      email: "email@gmail.com",
       entrega: "17/02/23",
       moneda: "UYU",
       monto: "6200000",
       nombre: "Nombre",
       plazo: "200",
-      simulador: "Pesos Fijos",
+      simulador: "Pesos Ajustables",
       telefono: "123456879",
+      codigo: "50",
     };
     dispatch(setData(data));
     if (!registrarCliente.ventaId) {

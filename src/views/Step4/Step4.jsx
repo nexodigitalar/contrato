@@ -19,24 +19,22 @@ import { useState, useEffect } from "react";
 
 const Step4 = () => {
   const navigate = useNavigate();
-  const [sms, setSms] = useState();
   const ids = useSelector((state) => state.crm.ids);
   const { simulador, cuotas, plazo, monto } = useSelector(
     (state) => state.data
   );
   const usuario = useSelector((state) => state.user.usuarios);
+  const infoGrupo = useSelector((state) => state.crm.grupo);
+  const [confirmContract, setConfirmContract] = useState(true);
 
   useEffect(() => {
-    /*
-    if (ids.length != 0) {
-      ActualizarClienteCRM();
-    } */
+    ActualizarClienteCRM();
   }, []);
 
-  const intentoUno = () => {
-    const arrOfPromises = usuario.map((item) => RegistrarClienteGestion());
+  /*   const intentoUno = () => {
+    const arrOfPromises = usuario.map((user) => RegistrarClienteGestion(user));
     return Promise.all(arrOfPromises);
-  };
+  }; */
 
   const intentoDos = async () => {
     await Promise.all(
@@ -69,13 +67,13 @@ const Step4 = () => {
             CliApe2: usuario[0].segundoApellido,
             CliSexo: usuario[0].sexo,
             CliEdadRango: 0,
-            CliDoc: "",
+            CliDoc: usuario[0].cedula,
             CliOcupacion: "",
             CliProf: "",
             CliFchLlam: "0000-00-00T00:00:00",
             CliDir: usuario[0].calle + usuario[0].puertaNumero,
-            CliTel: usuario[0].telefono,
-            CliMovil: "",
+            CliTel: "",
+            CliMovil: usuario[0].telefono,
             CliTelTrb: "",
             CliTelInt: "",
             CliMail: usuario[0].email,
@@ -124,6 +122,7 @@ const Step4 = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+        intentoDos();
       })
       .catch((err) => {
         console.log(err.message);
@@ -131,8 +130,9 @@ const Step4 = () => {
   };
 
   const RegistrarClienteGestion = async (user) => {
+    console.log(user);
     await fetch(
-      "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
+      "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
       {
         method: "POST",
         headers: {
@@ -151,11 +151,11 @@ const Step4 = () => {
             PersonaNombre2: user.segundoNombre,
             PersonaApellido1: user.primerApellido,
             PersonaApellido2: user.segundoApellido,
-            PersonaDireccion1: "",
+            PersonaDireccion1: "Rincon649",
             PersonaDireccion2: "",
-            PersonaTelefono1: user.telefono,
+            PersonaTelefono1: "",
             PersonaTelefono2: "",
-            PersonaTelefonoMovil1: "095632655",
+            PersonaTelefonoMovil1: user.telefono,
             PersonaTelefonoMovil2: "",
             PersonaFechaNacimiento: user.fechaNacimiento,
             EstadoCivilCodigo: 2,
@@ -186,21 +186,21 @@ const Step4 = () => {
             PersonaZonaNombre: "",
             PersonaApellidosyNombres: "",
             PersonaLocalidadNombre: "",
-            PersonaDocumento: user.cedule,
+            PersonaDocumento: user.cedula,
             PersonaOrigenInfo: "",
             PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
-            PersonaEsPEP: user.pep,
+            PersonaEsPEP: false,
             PersonaRelacionContacto: {
               PersonaRelacionContactoItems: [
                 {
                   EmpresaId: ids.empresaId,
                   CliId: ids.cliId,
-                  CliNom: "",
-                  CliApe1: "",
-                  CliApe2: "",
-                  CliDir: "",
+                  CliNom: user.primerNombre,
+                  CliApe1: user.primerApellido,
+                  CliApe2: user.segundoApellido,
+                  CliDir: user.calle + user.puertaNumero,
                   CliTel: "",
-                  CliMovil: "",
+                  CliMovil: user.telefono,
                 },
               ],
             },
@@ -222,12 +222,12 @@ const Step4 = () => {
                 {
                   PersonaTipoDocumentoCodigo: "CI",
                   PersonaTipoDocumentoNombre: "CI",
-                  PersonaNumeroDocumento: "4528124-7",
+                  PersonaNumeroDocumento: user.cedula,
                   PersonaDocumentoFechaVencimineto: "2028-05-02T00:00:00",
                   PersonaDocumentoBlobOrdinal: 0,
                   PersonaDocumentoOrigenInfo: "",
                   PersonaDocumentoFechaAltaOrigen: "0000-00-00T00:00:00",
-                  PersonaDocumentoPrincipal: false,
+                  PersonaDocumentoPrincipal: true,
                 },
               ],
             },
@@ -237,9 +237,9 @@ const Step4 = () => {
             PersonaIngresosMonedaCodigo: 1,
             PersonaIngresosMonedaNombre: user.monedaIngreso,
             PersonaRiesgoLavado: 0,
-            PersonaResidente: user.residenteUruguayo,
+            PersonaResidente: false,
             PersonaLugarTrabajoNombre: user.empresaTrabaja,
-            PersonaLugarTrabajoDireccion: "Rincon649",
+            PersonaLugarTrabajoDireccion: "Rincon 649",
             PersonaLugarTrabajoCargo: "TI",
             PersonaOrigenDeFondos: user.origenFondos,
             PersonaRubroEmpresa: user.rubroEmpresa,
@@ -271,6 +271,35 @@ const Step4 = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  const AltaContratoGestion = async () => {
+    await fetch(
+      "http://190.64.74.3:8234/rest/APIConsorcio/AltaContratoGestion",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pUsuario: "APIConsorcioWeb",
+          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pVentaOLId: ids.ventaId,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+        if (data.pCodigoRespuesta != "00") {
+          navigate("/error");
+        } else {
+          navigate("/valid");
+        }
       })
       .catch((err) => {
         console.log(err.message);
@@ -342,21 +371,23 @@ const Step4 = () => {
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
                 <span className="green">Número</span> del{" "}
-                <span className="gray">grupo - 550</span>
+                <span className="gray">grupo - {infoGrupo.Grupo}</span>
               </p>
             </div>
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
                 <span className="green">Cantidad</span> de{" "}
-                <span className="gray">integrantes - 400 personas</span>
+                <span className="gray">
+                  integrantes - {infoGrupo.GrupoMiembros} personas
+                </span>
               </p>
             </div>
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
                 <span className="green">Plazo</span>{" "}
-                <span className="gray">- 200 meses</span>
+                <span className="gray">- {infoGrupo.GrupoPlazo} meses</span>
               </p>
             </div>
           </section>
@@ -366,37 +397,22 @@ const Step4 = () => {
           <span className="green">Validación </span>del{" "}
           <span className="gray">celular</span>
         </h3>
-        <SmsContainer />
-        <p className="step4_error">
-          * La validación del celular es una acción obligatoria antes de
-          realizar la confirmación del contrato adquirido
-        </p>
+        <SmsContainer setConfirmContract={setConfirmContract} />
 
         <h3 className="step4_title">
           <span className="green">Observaciones </span>del{" "}
           <span className="gray">contrato</span>
         </h3>
         <p className="step4_finalText">
-          Acá van todas las observaciones de las condiciones particularesAcá van
-          todas las observaciones de las condiciones particularesAcá van todas
-          las observaciones de las condiciones particularesAcá van todas las
-          observaciones de las condiciones particularesAcá van todas las
-          observaciones de las condiciones particularesAcá van todas las
-          observaciones de las condiciones particularesAcá van todas las
-          observaciones de las condiciones particularesAcá van todas las
-          observaciones de las condiciones particularesAcá van todas las
-          observaciones de las condiciones particularesAcá van todas las
-          observaciones de las condiciones particularesAcá van todas las
-          observaciones de las condiciones particularesAcá van todas las
-          observaciones de las condiciones particulares
+          {infoGrupo.InfoGrupoProducto.Observaciones}
         </p>
 
         <div className="step4_buttonContainer">
           <Button
-            text="Mostrar error de contrato"
-            click={() => navigate("/error")}
+            text="Confirmar contrato"
+            click={() => AltaContratoGestion()}
+            disabled={confirmContract}
           />
-          <Button text="Confirmar contrato" click={() => navigate("/valid")} />
         </div>
       </div>
     </div>

@@ -24,29 +24,6 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     handleSetInputs(index);
   }, []);
 
-  /*  const updateAmountValidations = () => {
-    let values = {
-      sexo: "",
-      nacionalidad: "",
-      email: true,
-      pais: "",
-      departamento: "",
-      calle: "",
-      puertaNumero: "",
-      estadoCivil: "",
-      residenteUruguayo: true,
-      monedaIngreso: "",
-      ingresosMensuales: "",
-      empresaTrabaja: "",
-      rubroEmpresa: "",
-      actividadPrincipal: "",
-      origenFondos: "",
-      pep: true,
-    };
-
-   
-  }; */
-
   const handleInitialValidations = () => {
     let values = {
       sexo: "",
@@ -113,8 +90,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
 
   const handleCheckboxUruguayo = (i) => {
     setCheckUruguayo(!checkUruguayo);
-    let newValue = !checkUruguayo === false ? "No" : "Si";
-    dispatch(updateUsers({ name: "pep", index: i, value: newValue }));
+    dispatch(updateUsers({ name: "pep", index: i, value: checkUruguayo }));
   };
 
   const handleCheckbox = (i) => {

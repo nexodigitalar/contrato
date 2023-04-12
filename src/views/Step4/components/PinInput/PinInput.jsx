@@ -9,16 +9,23 @@ import Timer from "../Timer/Timer";
 /* Hooks */
 import { useState } from "react";
 
-const PinInput = ({ phone, setSmsSent, numberValidation }) => {
+const PinInput = ({
+  phone,
+  setSmsSent,
+  numberValidation,
+  envioSms,
+  setValidated,
+}) => {
   const [pinTyped, setPinTyped] = useState();
+  const [error, setError] = useState(true);
   console.log(numberValidation);
-  console.log(pinTyped);
 
   const validatePin = () => {
     if (numberValidation == pinTyped) {
-      console.log("correcto");
+      setValidated(true);
+      setError(true);
     } else {
-      console.log("incorrecto");
+      setError(false);
     }
   };
 
@@ -29,23 +36,27 @@ const PinInput = ({ phone, setSmsSent, numberValidation }) => {
           Tu PIN fue enviado al número{" "}
           <span className="green">{phone.number}</span>
         </h3>
-        <p className="pinInput_subtitle" onClick={() => setSmsSent(false)}>
+        {/*  <p className="pinInput_subtitle" onClick={() => setSmsSent(false)}>
           Cambiar número
-        </p>
+        </p> */}
       </div>
 
       <div className="pinInput">
         <Input
           placeholder="PIN de validación"
           name="pin"
-          value={pinTyped}
+          value={pinTyped || ""}
           type="number"
           click={(e) => setPinTyped(e.target.value)}
+          error={error}
         />
         <Button text="VALIDAR" type="secondary" click={() => validatePin()} />
       </div>
 
-      <Timer countdown={new Date(new Date().getTime() + 31000)} />
+      <Timer
+        countdown={new Date(new Date().getTime() + 31000)}
+        envioSms={envioSms}
+      />
     </div>
   );
 };

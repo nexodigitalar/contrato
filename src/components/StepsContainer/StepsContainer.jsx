@@ -10,7 +10,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setUsers } from "@/store/userSlice/userSlice";
 import { setStep2, setStep3 } from "@/store/validationSlice/validationSlice";
 import { useState } from "react";
-import { setLastPage } from "@/store/pageSlice/pageSlice";
+import { setLastPage, blockPages } from "@/store/pageSlice/pageSlice";
 
 const StepsContainer = ({ step, initialValues, amountValidations }) => {
   const dispatch = useDispatch();
@@ -25,6 +25,8 @@ const StepsContainer = ({ step, initialValues, amountValidations }) => {
       dispatch(setStep2(amountValidations));
     } else if (step === 3) {
       dispatch(setStep3(amountValidations));
+    } else if (step === 4) {
+      return;
     }
     dispatch(changePageValidations(1));
   };
@@ -32,6 +34,9 @@ const StepsContainer = ({ step, initialValues, amountValidations }) => {
   const goToStep2 = () => {
     if (step === 3) {
       dispatch(setStep3(amountValidations));
+    }
+    if (step === 4) {
+      return;
     }
     dispatch(changePageValidations(2));
   };
@@ -43,6 +48,8 @@ const StepsContainer = ({ step, initialValues, amountValidations }) => {
       validateButton(3);
     } else if (step === 1) {
       validateButton(3);
+    } else if (step === 4) {
+      return;
     } else {
       dispatch(changePageValidations(3));
     }
@@ -62,6 +69,7 @@ const StepsContainer = ({ step, initialValues, amountValidations }) => {
       dispatch(changePageValidations(4));
       dispatch(setLastPage());
     }
+    dispatch(blockPages());
   };
 
   const validateButton = (number) => {

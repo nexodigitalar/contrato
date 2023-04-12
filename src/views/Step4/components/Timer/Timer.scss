@@ -4,6 +4,7 @@
   @include flex(row, center, center);
   width: 55%;
   gap: 10px;
+  margin: 20px 0;
   .timer_span {
     @include flex(row, center, center);
     @include primaryFont($size_xxs);

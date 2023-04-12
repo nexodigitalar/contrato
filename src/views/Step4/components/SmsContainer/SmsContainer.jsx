@@ -9,27 +9,34 @@ import PinInput from "../PinInput/PinInput";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-const SmsContainer = () => {
+const SmsContainer = ({ setConfirmContract }) => {
   const [smsSent, setSmsSent] = useState(false);
+  const [validated, setValidated] = useState(false);
+  const usuario = useSelector((state) => state.user.usuarios);
   const [numberValidation, setNumberValidation] = useState(
     Math.floor(100000 + Math.random() * 900000)
   );
-  const usuario = useSelector((state) => state.user.usuarios);
-  const ids = useSelector((state) => state.crm.ids);
   const [phone, setPhone] = useState({
     validation: "",
     number: usuario[0].telefono,
   });
+  const ids = useSelector((state) => state.crm.ids);
 
-  /*   useEffect(() => {
+  useEffect(() => {
     if (smsSent) {
       EnvioSMSContratoOnLine();
     }
-  }, [smsSent]); */
+  }, [smsSent]);
+
+  useEffect(() => {
+    if (validated) {
+      setConfirmContract(false);
+    }
+  }, [validated]);
 
   const EnvioSMSContratoOnLine = async () => {
     await fetch(
-      "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
+      "http://190.64.74.3:8234/rest/APIConsorcio/EnvioSMSContratoOnLine",
       {
         method: "POST",
         headers: {
@@ -40,7 +47,7 @@ const SmsContainer = () => {
           pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
           pVentaOLId: ids.ventaId,
           pTelMovil: usuario[0].telefono,
-          pMsjSMS: "Mensaje prueba",
+          pMsjSMS: "Tu PIN de confirmación es: " + numberValidation,
         }),
       }
     )
@@ -55,14 +62,32 @@ const SmsContainer = () => {
 
   return (
     <div className="smsContainer">
-      {smsSent ? (
-        <PinInput
-          phone={phone}
-          setSmsSent={setSmsSent}
-          numberValidation={numberValidation}
-        />
+      {validated ? (
+        <p className="validated">
+          Tu celular fue validado <span className="green">correctamente</span>
+        </p>
       ) : (
-        <SmsInput setSmsSent={setSmsSent} setPhone={setPhone} phone={phone} />
+        <>
+          {smsSent ? (
+            <PinInput
+              phone={phone}
+              setSmsSent={setSmsSent}
+              numberValidation={numberValidation}
+              envioSms={() => EnvioSMSContratoOnLine()}
+              setValidated={setValidated}
+            />
+          ) : (
+            <SmsInput
+              setSmsSent={setSmsSent}
+              setPhone={setPhone}
+              phone={phone}
+            />
+          )}
+          <p className="sms_warning">
+            * La validación del celular es una acción obligatoria antes de
+            realizar la confirmación del contrato adquirido
+          </p>
+        </>
       )}
     </div>
   );

@@ -26,6 +26,11 @@
     gap: 21px;
     width: 55%;
   }
+  .pinInput_error {
+    @include primaryFont($size_xxs);
+    color: $error;
+    margin-bottom: 10px;
+  }
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {
@@ -36,6 +41,7 @@
     .pinInput {
       @include flex(row, space-between, center);
       gap: 20px;
+      width: 100%;
     }
   }
 }

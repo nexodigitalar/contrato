@@ -5,6 +5,12 @@
   gap: 21px;
   width: 55%;
 }
+
+.smsInput_number {
+  @include primaryFont($size_sm);
+  color: $neutral_dark;
+}
+
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .smsInput {
     @include flex(row, space-between, center);

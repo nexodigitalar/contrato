@@ -195,3 +195,10 @@
     color: $primary;
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .react-date-picker__calendar,
+  .react-date-picker__calendar--open {
+    width: 300px !important;
+  }
+}

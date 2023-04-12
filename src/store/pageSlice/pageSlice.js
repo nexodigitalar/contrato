@@ -23,10 +23,15 @@ export const pageSlice = createSlice({
       state.lastPage = true;
       return state;
     },
+    blockPages: (state) => {
+      state.steps[0][0] = false;
+      state.steps[0][1] = false;
+      state.steps[0][2] = false;
+    },
   },
 });
 
-export const { changePage, changePageValidations, setLastPage } =
+export const { changePage, changePageValidations, setLastPage, blockPages } =
   pageSlice.actions;
 
 export default pageSlice.reducer;
