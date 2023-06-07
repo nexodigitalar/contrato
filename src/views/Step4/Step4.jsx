@@ -10,6 +10,7 @@ import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import Button from "@/components/Button/Button";
 import SmsContainer from "./components/SmsContainer/SmsContainer";
+import Spinner from "@/components/Spinner/Spinner";
 
 /* Hooks */
 import { useSelector } from "react-redux";
@@ -19,6 +20,7 @@ import { useState, useEffect } from "react";
 
 const Step4 = () => {
   const navigate = useNavigate();
+  const [spinner, setSpinner] = useState(false);
   const ids = useSelector((state) => state.crm.ids);
   const { simulador, cuotas, plazo, monto } = useSelector(
     (state) => state.data
@@ -278,6 +280,7 @@ const Step4 = () => {
   };
 
   const AltaContratoGestion = async () => {
+    setSpinner(true);
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/AltaContratoGestion",
       {
@@ -413,6 +416,7 @@ const Step4 = () => {
             click={() => AltaContratoGestion()}
             disabled={confirmContract}
           />
+          {spinner && <Spinner styles="spinner_step4" />}
         </div>
       </div>
     </div>

@@ -41,6 +41,9 @@
     }
     .step4_buttonContainer {
       align-self: flex-end;
+      width: 100%;
+      @include flex(row, flex-end, center);
+      gap: 20px;
     }
 
     .step4_finalText {

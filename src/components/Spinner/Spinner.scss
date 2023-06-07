@@ -1,6 +1,11 @@
 @import "@/utils/theme.scss";
 
-.spinnerContainer {
+.spinner_step4 {
+  @include flex(row, center, center);
+  width: auto;
+}
+
+.spinner_home {
   @include flex(row, center, center);
   margin-top: 200px;
   width: 100%;

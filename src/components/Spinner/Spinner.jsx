@@ -1,9 +1,9 @@
 /* Styles & Img */
 import "./Spinner.scss";
 
-const Spinner = () => {
+const Spinner = ({ styles }) => {
   return (
-    <div className="spinnerContainer">
+    <div className={styles}>
       <div className="spinner"></div>
     </div>
   );

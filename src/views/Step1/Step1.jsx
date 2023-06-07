@@ -18,7 +18,7 @@ const Step1 = ({ spinner }) => {
   return (
     <>
       {spinner ? (
-        <Spinner />
+        <Spinner styles="spinner_home" />
       ) : (
         <>
           {page === 1 && <Step1_1 changePage={changePage} />}
