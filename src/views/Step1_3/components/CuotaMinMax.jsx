@@ -11,27 +11,27 @@ const CuotaMinMax = () => {
         <div className="cuotam_container">
           <div className="cuotam_textContainer">
             <p className="cuotam_text">
-              cuota <span className="green">mínima</span>
+              cuota <span className="color_text">mínima</span>
             </p>
-            <p className="green">U$S 10.000</p>
+            <p className="color_text">U$S 10.000</p>
           </div>
           <FontAwesomeIcon className="cuotam_icon" icon={faChevronRight} />
         </div>
         <div className="cuotam_container">
           <div className="cuotam_textContainer">
             <p className="cuotam_text">
-              cuota <span className="green">promedio</span>
+              cuota <span className="color_text">promedio</span>
             </p>
-            <p className="green">U$S 30.000</p>
+            <p className="color_text">U$S 30.000</p>
           </div>
           <FontAwesomeIcon className="cuotam_icon" icon={faChevronRight} />
         </div>
         <div className="cuotam_container">
           <div className="cuotam_textContainer">
             <p className="cuotam_text">
-              cuota <span className="green">máxima</span>
+              cuota <span className="color_text">máxima</span>
             </p>
-            <p className="green">U$S 60.000</p>
+            <p className="color_text">U$S 60.000</p>
           </div>
         </div>
       </section>
@@ -40,27 +40,27 @@ const CuotaMinMax = () => {
         <div className="cuotam_container">
           <div className="cuotam_textContainer">
             <p className="cuotam_text">
-              cuota <span className="green">mínima</span>
+              cuota <span className="color_text">mínima</span>
             </p>
-            <p className="green">U$S 10.000</p>
+            <p className="color_text">U$S 10.000</p>
           </div>
           <FontAwesomeIcon className="cuotam_icon" icon={faChevronRight} />
         </div>
         <div className="cuotam_container">
           <div className="cuotam_textContainer">
             <p className="cuotam_text">
-              cuota <span className="green">promedio</span>
+              cuota <span className="color_text">promedio</span>
             </p>
-            <p className="green">U$S 30.000</p>
+            <p className="color_text">U$S 30.000</p>
           </div>
           <FontAwesomeIcon className="cuotam_icon" icon={faChevronRight} />
         </div>
         <div className="cuotam_container">
           <div className="cuotam_textContainer">
             <p className="cuotam_text">
-              cuota <span className="green">máxima</span>
+              cuota <span className="color_text">máxima</span>
             </p>
-            <p className="green">U$S 60.000</p>
+            <p className="color_text">U$S 60.000</p>
           </div>
         </div>
       </section>

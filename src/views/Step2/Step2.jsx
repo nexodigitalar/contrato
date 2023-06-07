@@ -18,7 +18,7 @@ import Button from "@/components/Button/Button";
 import { useEffect } from "react";
 
 const Step2 = ({ setImages, images }) => {
-  const { simulador } = useSelector((state) => state.data);
+  const { simulador, plazo } = useSelector((state) => state.data);
   const [initialValues, setInitialValues] = useState(undefined);
   const [amountValidations, setAmountValidations] = useState([]);
   const [disabled, setDisabled] = useState(true);
@@ -48,7 +48,12 @@ const Step2 = ({ setImages, images }) => {
   return (
     <div className="step2">
       <div className="step2_container">
-        <Header text="DATOS" bold="DEL TITULAR" logo={simulador} />
+        <Header
+          text="DATOS"
+          bold="DEL TITULAR"
+          logo={simulador}
+          plazo={plazo}
+        />
         <StepsContainer
           step={2}
           initialValues={initialValues}
@@ -58,7 +63,7 @@ const Step2 = ({ setImages, images }) => {
         <div className="step2_innerContainer">
           <div>
             <h3 className="step2_title">
-              ¿<span className="green">Cuántos </span>titulares{" "}
+              ¿<span className="color_text">Cuántos </span>titulares{" "}
               <span className="gray">son</span>?
             </h3>
 

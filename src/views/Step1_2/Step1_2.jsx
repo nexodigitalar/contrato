@@ -31,7 +31,7 @@ const Step1_2 = ({ changePage }) => {
 
             <section className="step1_2_innerContainer">
               <h3 className="step1_2_title">
-                <span className="green">Detalles</span> que tenés que{" "}
+                <span className="color_text">Detalles</span> que tenés que{" "}
                 <span className="gray">conocer</span>
               </h3>
 
@@ -39,14 +39,16 @@ const Step1_2 = ({ changePage }) => {
                 <p className="step1_2_watermark">a</p>
                 <p className="step1_2_text">
                   Plazo:{" "}
-                  <span className="green">{infoGrupo.GrupoPlazo} meses</span>
+                  <span className="color_text">
+                    {infoGrupo.GrupoPlazo} meses
+                  </span>
                 </p>
               </div>
               <div className="step1_2_textContainer">
                 <p className="step1_2_watermark">b</p>
                 <p className="step1_2_text">
                   Cantidad de integrantes:{" "}
-                  <span className="green">
+                  <span className="color_text">
                     {infoGrupo.GrupoMiembros} personas
                   </span>
                 </p>
@@ -56,20 +58,22 @@ const Step1_2 = ({ changePage }) => {
                   <p className="step1_2_watermark">c</p>
                   <p className="step1_2_text">
                     Primer sorteo:{" "}
-                    <span className="green">{date.toLocaleDateString()}</span>
+                    <span className="color_text">
+                      {date.toLocaleDateString()}
+                    </span>
                   </p>
                 </div>
               )}
               <div className="step1_2_textContainer">
                 <p className="step1_2_watermark">d</p>
                 <p className="step1_2_text">
-                  Sorteos: <span className="green">mensuales</span>
+                  Sorteos: <span className="color_text">mensuales</span>
                 </p>
               </div>
               <div className="step1_2_textContainer">
                 <p className="step1_2_watermark">e</p>
                 <p className="step1_2_text">
-                  <span className="green">Adjudicados:</span>{" "}
+                  <span className="color_text">Adjudicados:</span>{" "}
                   {infoGrupo.GrupoRitmoAdjudicaciones}
                 </p>
               </div>
@@ -77,7 +81,7 @@ const Step1_2 = ({ changePage }) => {
                 <p className="step1_2_watermark">f</p>
                 <div className="step1_2_infoContainer">
                   <p className="step1_2_text">
-                    <span className="green">
+                    <span className="color_text">
                       {" "}
                       Itinerario de adjudcaciones:{" "}
                     </span>
@@ -115,7 +119,7 @@ const Step1_2 = ({ changePage }) => {
               </div>
 
               <h3 className="step1_2_title step1_2_detail">
-                Detalle <span className="green">cuotas</span>{" "}
+                Detalle <span className="color_text">cuotas</span>{" "}
                 <span className="gray">bonificadas</span>
               </h3>
               <p className="step1_2_text">
@@ -135,7 +139,7 @@ const Step1_2 = ({ changePage }) => {
               </p>
 
               <h3 className="step1_2_title step1_2_detail">
-                Observaciones <span className="green">del</span>{" "}
+                Observaciones <span className="color_text">del</span>{" "}
                 <span className="gray">contrato</span>
               </h3>
               <p className="step1_2_text">

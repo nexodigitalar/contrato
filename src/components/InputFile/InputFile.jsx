@@ -32,12 +32,12 @@ const InputFile = ({
         <input
           type="file"
           name={name}
-          className="inputfile"
+          className="inputfile color_primary_background"
           onChange={change}
           onClick={click}
           accept="image/*"
         />
-        <label>Examinar</label>
+        <label className="color_primary_background">Examinar</label>
       </div>
       {error === false && <p className="input_error">Campo obligatorio</p>}
     </form>

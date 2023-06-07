@@ -106,7 +106,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
       {usuario && (
         <section>
           <h3 className="inputForm_title">
-            <span className="green">Datos </span>de{" "}
+            <span className="color_text">Datos </span>de{" "}
             <span className="gray">{usuario[index]?.primerNombre}</span>
           </h3>
 

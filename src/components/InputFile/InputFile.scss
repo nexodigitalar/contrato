@@ -11,7 +11,7 @@
     @include flex(row, space-between, center);
     background-color: $tertiary;
     border: none;
-    border-bottom: 2px solid $primary;
+    border-bottom: 2px solid $cristal_primary;
     border-radius: 3px 3px 0px 0px;
     padding: $padding_md;
     @include primaryFont($size_sm);
@@ -51,14 +51,12 @@
   @include primaryFont($size_xs);
   padding: $padding_xs $padding_sm;
   color: $tertiary;
-  background-color: $primary;
   display: inline-block;
   cursor: pointer;
 }
 
 .inputfile:focus + label,
 .inputfile + label:hover {
-  background-color: $primary;
   cursor: pointer;
 }
 

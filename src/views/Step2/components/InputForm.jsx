@@ -231,7 +231,7 @@ const InputForm = ({
           {Array.from({ length: amountUsers }, (_, index) => (
             <div key={index} className="inputForm_innerContainer">
               <h3 className="step2_title">
-                <span className="green">Datos </span>del{" "}
+                <span className="color_text">Datos </span>del{" "}
                 <span className="gray">titular</span>
               </h3>
 

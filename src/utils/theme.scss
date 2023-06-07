@@ -1,7 +1,9 @@
 // Colors
 
-$primary: #01a767;
-$secondary: #87e9c3;
+$cristal_primary: #003090;
+$cristal_secondary: #4986e8;
+$pimba_primary: #471c56;
+$pimba_secondary: #ffd500;
 $tertiary: #ffffff;
 
 $neutral_darker: #384751;
@@ -10,22 +12,59 @@ $neutral: #b1babd;
 $neutral_light: #dce5e7;
 $neutral_lighter: #fafafa;
 
+$pimba_underline: #fceb96;
+$cristal_underline: #b3ccf3;
+
 $wallpaper: linear-gradient(
   180.16deg,
-  #f9fafa 0.1%,
-  rgba(220, 229, 231, 0) 99.9%
+  #f9fafa 0.5%,
+  rgba(220, 229, 231, 0) 99.5%
 );
 
 $cards: #f2f5f6;
 
-$green_gradient: linear-gradient(124.06deg, #01a767 7.23%, #00d281 83.23%);
-$green_gradient_hover: linear-gradient(
+$cristal_primary_gradient: linear-gradient(
   124.06deg,
-  #017347 7.23%,
-  #009e5f 83.23%
+  rgba(0, 48, 144, 0.878431) 7.23%,
+  #4986e8 83.23%
+);
+$pimba_primary_gradient: linear-gradient(
+  124.06deg,
+  rgba(71, 28, 86, 0.878431) 7.23%,
+  #de7eff 83.23%
 );
 
 $error: #ff3a3a;
+$correct: #017347;
+
+/* Colors Var */
+
+:root {
+  --primary-color: #{$cristal_primary};
+  --bg-primary-color: #{$cristal_primary};
+  --secondary-color: #{$cristal_secondary};
+  --bg-secondary-color: #{$cristal_secondary};
+  --primary-gradient: #{$cristal_primary_gradient};
+  --underline: #{$cristal_underline};
+}
+
+[data-theme="cristal"] {
+  --primary-color: #{$cristal_primary};
+  --bg-primary-color: #{$cristal_primary};
+  --secondary-color: #{$cristal_secondary};
+  --bg-secondary-color: #{$cristal_secondary};
+  --primary-gradient: #{$cristal_primary_gradient};
+  --underline: #{$cristal_underline};
+}
+
+[data-theme="pimba"] {
+  --primary-color: #{$pimba_primary};
+  --bg-primary-color: #{$pimba_primary};
+  --secondary-color: #{$pimba_secondary};
+  --bg-secondary-color: #{$pimba_secondary};
+  --primary-gradient: #{$pimba_primary_gradient};
+  --underline: #{$pimba_underline};
+}
 
 // Settings
 $border_radius: 0px 60px;

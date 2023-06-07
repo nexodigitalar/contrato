@@ -40,10 +40,9 @@ const App = () => {
   }, []);
 
   const getDataFromLocal = () => {
-    /*  let data = JSON.parse(localStorage.getItem("contrato")); */
-    let data = {
+    let data = JSON.parse(localStorage.getItem("contrato"));
+    /*  let data = {
       apellido: "Apellido",
-      codigo: "51",
       cuoCap: "CAPITAL",
       cuotas: "43400",
       email: "email@gmail.com",
@@ -55,10 +54,17 @@ const App = () => {
       simulador: "Pesos Ajustables",
       telefono: "123456879",
       codigo: "50",
-    };
+    }; */
+
     dispatch(setData(data));
     if (!registrarCliente.ventaId) {
       RegistrarClienteCRM(data);
+    }
+
+    if (data.plazo == 200) {
+      document.documentElement.setAttribute("data-theme", "cristal");
+    } else {
+      document.documentElement.setAttribute("data-theme", "pimba");
     }
   };
 

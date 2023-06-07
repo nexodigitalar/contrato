@@ -10,7 +10,7 @@ const Steps = ({ text, textBold, number, active, click }) => {
         </div>
         <p className="steps_number">{number}</p>
       </div>
-      <div className="steps_line"></div>
+      <div className="steps_line color_primary_gradient"></div>
     </div>
   );
 };

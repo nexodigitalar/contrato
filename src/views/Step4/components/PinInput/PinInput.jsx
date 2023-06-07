@@ -34,7 +34,7 @@ const PinInput = ({
       <div className="pinInput_titleContainer">
         <h3 className="pinInput_title">
           Tu PIN fue enviado al número{" "}
-          <span className="green">{phone.number}</span>
+          <span className="color_text">{phone.number}</span>
         </h3>
         {/*  <p className="pinInput_subtitle" onClick={() => setSmsSent(false)}>
           Cambiar número

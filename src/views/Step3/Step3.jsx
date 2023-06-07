@@ -25,7 +25,7 @@ const Step3 = () => {
   const [showPopUp, setShowPopUp] = useState(false);
   const dispatch = useDispatch();
   const usuario = useSelector((state) => state.user.usuarios);
-  const { simulador } = useSelector((state) => state.data);
+  const { simulador, plazo } = useSelector((state) => state.data);
 
   useEffect(() => {
     validateButton();
@@ -58,7 +58,12 @@ const Step3 = () => {
     <>
       <div className="step3">
         <div className="step3_container">
-          <Header text="DATOS" bold="OCUPACIONALES" logo={simulador} />
+          <Header
+            text="DATOS"
+            bold="OCUPACIONALES"
+            logo={simulador}
+            plazo={plazo}
+          />
           <StepsContainer step={3} amountValidations={amountValidations} />
 
           <div className="step3_innerContainer">

@@ -18,7 +18,7 @@ import Button from "@/components/Button/Button";
 import CuotaMinMax from "./components/CuotaMinMax";
 
 const Step1_3 = () => {
-  const { simulador } = useSelector((state) => state.data);
+  const { simulador, plazo } = useSelector((state) => state.data);
   const [switchCheck, setSwitchCheck] = useState();
   const [disabled, setDisabled] = useState(true);
   const dispatch = useDispatch();
@@ -74,7 +74,7 @@ const Step1_3 = () => {
   return (
     <div className="step1_3">
       <div className="step1_3_container">
-        <Header text="USTED" bold="SELECCIONÓ" logo={simulador} />
+        <Header text="USTED" bold="SELECCIONÓ" logo={simulador} plazo={plazo} />
 
         <section className="step1_3_innerContainer">
           <p className="step1_3_watermark">1</p>

@@ -49,7 +49,7 @@ input:focus + .switch_circle {
 }
 
 input:checked + .switch_circle:before {
-  background-color: $primary;
+  background-color: var(--bg-primary-color);
   -webkit-transform: translateX(20px);
   -ms-transform: translateX(20px);
   transform: translateX(20px);

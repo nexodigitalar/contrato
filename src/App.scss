@@ -14,10 +14,22 @@ p {
   margin: 0;
 }
 
-.green {
-  color: $primary;
+.color_text {
+  color: var(--primary-color);
   font-family: "GilroyBold", Arial, sans-serif;
   font-weight: bold;
+}
+
+.color_primary_background {
+  background-color: var(--bg-primary-color);
+}
+
+.color_secondary_background {
+  background-color: var(--bg-secondary-color);
+}
+
+.color_primary_gradient {
+  background: var(--primary-gradient);
 }
 
 .gray {
@@ -51,12 +63,12 @@ p {
 
 .underline {
   text-decoration-line: underline;
-  text-decoration-color: #8cdcbd;
+  text-decoration-color: var(--underline);
   text-decoration-thickness: 0.45em;
   text-decoration-skip-ink: none;
   text-underline-offset: -0.1em;
   -webkit-text-decoration-line: underline;
-  -webkit-text-decoration-color: #8cdcbd;
+  -webkit-text-decoration-color: var(--underline);
   -webkit-text-decoration-thickness: 0.45em;
   -webkit-text-decoration-skip-ink: none;
   -webkit-text-underline-offset: -0.1em;

@@ -8,6 +8,14 @@ import capitalEntre from "@/assets/img/capital-entre.png";
 import adjudicacion from "@/assets/img/adjudicacion.png";
 import indice from "@/assets/img/indice.png";
 
+import capital2 from "@/assets/img/capital2.png";
+import cuota2 from "@/assets/img/cuota2.png";
+import totalCuotas2 from "@/assets/img/total-cuotas2.png";
+import cuotaEntre2 from "@/assets/img/cuota-entre2.png";
+import capitalEntre2 from "@/assets/img/capital-entre2.png";
+import adjudicacion2 from "@/assets/img/adjudicacion2.png";
+import indice2 from "@/assets/img/indice2.png";
+
 /* Data JSON */
 import text from "@/utils/text.json";
 import ReactHtmlParser from "react-html-parser";
@@ -48,18 +56,27 @@ const Step1_1 = ({ changePage }) => {
     <div className="step1">
       {simulador && (
         <div className="step1_container">
-          <Header text="PRODUCTO" bold="SELECCIONADO" logo={simulador} />
+          <Header
+            text="PRODUCTO"
+            bold="SELECCIONADO"
+            logo={simulador}
+            plazo={plazo}
+          />
           <StepsContainer step={1} />
           <h3 className="step1_title">
-            <span className="green">Producto</span> seleccionado{" "}
-            <span className="green">{text[simulador].step1_titleSelected}</span>
+            <span className="color_text">Producto</span> seleccionado{" "}
+            <span className="color_text">
+              {text[simulador].step1_titleSelected}
+            </span>
           </h3>
 
           {simulador != "Fecha Elegida" ? (
             <>
               <h3 className="step1_title ">
-                <span className="green">Contrato</span> con modalidad{" "}
-                <span className="green">{text[simulador].step1_title}</span>
+                <span className="color_text">Contrato</span> con modalidad{" "}
+                <span className="color_text">
+                  {text[simulador].step1_title}
+                </span>
               </h3>
               <p className="step1_text">
                 {ReactHtmlParser(text[simulador].step1_text)}
@@ -72,7 +89,8 @@ const Step1_1 = ({ changePage }) => {
                   title=""
                   titleBold=" elegido"
                   number={`${currency} ${useFormatNumber(monto)}`}
-                  img={capital}
+                  img={plazo == 200 ? capital2 : capital}
+                  plazo={plazo}
                 />
                 {simulador === "Diferencial Pesos Ajustables" ||
                 simulador === "Diferencial Pesos Fijos" ||
@@ -88,7 +106,8 @@ const Step1_1 = ({ changePage }) => {
                     )}<br/> <span class="step1_textCard">Final</span> $${useFormatNumber(
                       final
                     )}`}
-                    img={cuota}
+                    img={plazo == 200 ? cuota2 : cuota}
+                    plazo={plazo}
                   />
                 ) : (
                   <Cards
@@ -96,7 +115,8 @@ const Step1_1 = ({ changePage }) => {
                     title=" para el"
                     titleBold=" capital elegido"
                     number={`${currency} ${useFormatNumber(cuotas)}`}
-                    img={cuota}
+                    img={plazo == 200 ? cuota2 : cuota}
+                    plazo={plazo}
                   />
                 )}
                 <Cards
@@ -104,7 +124,8 @@ const Step1_1 = ({ changePage }) => {
                   title=" de"
                   titleBold=" cuotas"
                   number={`${plazo} meses`}
-                  img={totalCuotas}
+                  img={plazo == 200 ? totalCuotas2 : totalCuotas}
+                  plazo={plazo}
                 />
               </section>
 
@@ -114,9 +135,11 @@ const Step1_1 = ({ changePage }) => {
                 simulador != "Diferencial Dolares" && (
                   <>
                     <h3 className="step1_title ">
-                      <span className="green">Condiciones del contrato</span> en
-                      modalidad{" "}
-                      <span className="green">
+                      <span className="color_text">
+                        Condiciones del contrato
+                      </span>{" "}
+                      en modalidad{" "}
+                      <span className="color_text">
                         {" "}
                         {text[simulador].step1_title}
                       </span>
@@ -134,7 +157,8 @@ const Step1_1 = ({ changePage }) => {
                           cuotasRango.InfoGrupoProducto.CuotasRangos[0]
                             .CuotaMaxima
                         )}
-                        img={cuotaEntre}
+                        img={plazo == 200 ? cuotaEntre2 : cuotaEntre}
+                        plazo={plazo}
                       />
 
                       <Cards
@@ -142,7 +166,8 @@ const Step1_1 = ({ changePage }) => {
                         title={text[simulador].step1_lastCard}
                         titleBold=""
                         number={text[simulador].step1_lastCard_value}
-                        img={indice}
+                        img={plazo == 200 ? indice2 : indice}
+                        plazo={plazo}
                       />
 
                       <Cards
@@ -157,7 +182,8 @@ const Step1_1 = ({ changePage }) => {
                           cuotasRango.InfoGrupoProducto.CapitalesRangos[0]
                             .CapitalMaximo
                         )}
-                        img={capitalEntre}
+                        img={plazo == 200 ? capitalEntre2 : capitalEntre}
+                        plazo={plazo}
                       />
                     </section>
                   </>
@@ -167,7 +193,7 @@ const Step1_1 = ({ changePage }) => {
 
               <>
                 <h3 className="step1_title ">
-                  <span className="green">Otras</span> condiciones
+                  <span className="color_text">Otras</span> condiciones
                 </h3>
                 <section className="step1_imgContainer">
                   <Cards
@@ -175,14 +201,16 @@ const Step1_1 = ({ changePage }) => {
                     title=""
                     titleBold=""
                     number={text[simulador].step1_adj}
-                    img={adjudicacion}
+                    img={plazo == 200 ? adjudicacion2 : adjudicacion}
+                    plazo={plazo}
                   />
                   <Cards
                     titleGreen={text[simulador].step1_lastCard_green}
                     title={text[simulador].step1_lastCard}
                     titleBold=""
                     number={text[simulador].step1_lastCard_value}
-                    img={indice}
+                    img={plazo == 200 ? indice2 : indice}
+                    plazo={plazo}
                   />
                 </section>
               </>
@@ -191,7 +219,7 @@ const Step1_1 = ({ changePage }) => {
                 simulador != "Pesos Fijos") && (
                 <>
                   <h3 className="step1_title2">
-                    Detalle <span className="green">cuotas </span>
+                    Detalle <span className="color_text">cuotas </span>
                     <span className="gray">bonificadas</span>
                   </h3>
                   <p className="step1_text">
@@ -214,8 +242,8 @@ const Step1_1 = ({ changePage }) => {
               )}
               <section className="step1_rightContainer">
                 <h3 className="step1_title step1_right ">
-                  <span className="green">En la próxima página</span> verás más
-                  detalles
+                  <span className="color_text">En la próxima página</span> verás
+                  más detalles
                 </h3>
                 <p className="step1_textSm">* Ver términos y condiciones</p>
                 <Button text="Siguiente" click={() => changePage(2)} />
@@ -229,42 +257,47 @@ const Step1_1 = ({ changePage }) => {
                   title=""
                   titleBold=" elegido"
                   number={`${currency} ${useFormatNumber(monto)}`}
-                  img={capital}
+                  img={plazo == 200 ? capital2 : capital}
+                  plazo={plazo}
                 />
                 <Cards
                   titleGreen="Fecha "
                   title="de "
                   titleBold="entrega"
                   number={entrega}
-                  img={cuotaEntre}
+                  img={plazo == 200 ? cuotaEntre2 : cuotaEntre}
+                  plazo={plazo}
                 />
                 <Cards
                   titleGreen="Valor "
                   title="de "
                   titleBold="cuota"
                   number={`${currency} ${useFormatNumber(cuotas)}`}
-                  img={cuota}
+                  img={plazo == 200 ? cuota2 : cuota}
+                  plazo={plazo}
                 />
                 <Cards
                   titleGreen="Total "
                   title="de "
                   titleBold="cuotas"
                   number={text[simulador].step1_cuo}
-                  img={totalCuotas}
+                  img={plazo == 200 ? totalCuotas2 : totalCuotas}
+                  plazo={plazo}
                 />
                 <Cards
                   titleGreen={text[simulador].step1_lastCard_green}
                   title={text[simulador].step1_lastCard}
                   titleBold=""
                   number={text[simulador].step1_lastCard_value}
-                  img={indice}
+                  img={plazo == 200 ? indice2 : indice}
+                  plazo={plazo}
                 />
               </section>
 
               <section className="step1_rightContainer">
                 <h3 className="step1_title step1_right ">
-                  <span className="green">En la próxima página</span> verás más
-                  detalles
+                  <span className="color_text">En la próxima página</span> verás
+                  más detalles
                 </h3>
                 <p className="step1_textSm">* Ver términos y condiciones</p>
                 <Button text="Siguiente" click={() => changePage(2)} />

@@ -10,9 +10,24 @@
     @include flex(row, space-between, center);
     width: 100%;
     max-width: $max_width;
-    .navBar_title {
-      @include secondaryFont(40px);
-      color: $neutral_darker;
+    .navBar_logo {
+      width: 200px;
+      height: auto;
+      object-fit: contain;
+    }
+    .navBar_innerContainer {
+      @include flex(row, center, center);
+      gap: 25px;
+      .navBar_title {
+        @include secondaryFont(40px);
+      }
+      .navBar_img {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+        position: relative;
+        top: 5px;
+      }
     }
   }
 }

@@ -309,19 +309,19 @@ const Step4 = () => {
   return (
     <div className="step4">
       <div className="step4_container">
-        <Header text="RESUMEN" bold="DEL PLAN" logo={simulador} />
+        <Header text="RESUMEN" bold="DEL PLAN" logo={simulador} plazo={plazo} />
         <StepsContainer step={4} />
 
         <div className="step4_innerContainer">
           <section>
             <h3 className="step4_title">
-              <span className="green">Resumen </span>del{" "}
+              <span className="color_text">Resumen </span>del{" "}
               <span className="gray">plan</span>
             </h3>
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
-                <span className="green">Monto</span> a{" "}
+                <span className="color_text">Monto</span> a{" "}
                 <span className="gray">
                   recibir - $ {useFormatNumber(monto)}
                 </span>
@@ -330,14 +330,14 @@ const Step4 = () => {
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
-                <span className="green">Fecha</span> de{" "}
+                <span className="color_text">Fecha</span> de{" "}
                 <span className="gray">entrega - 17/02/2023</span>
               </p>
             </div>
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
-                <span className="green">Valor</span> de{" "}
+                <span className="color_text">Valor</span> de{" "}
                 <span className="gray">
                   cuota - $ {useFormatNumber(cuotas)}
                 </span>
@@ -346,7 +346,7 @@ const Step4 = () => {
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
-                <span className="green">Total</span> de{" "}
+                <span className="color_text">Total</span> de{" "}
                 <span className="gray">cuotas - {plazo}</span>
               </p>
             </div>
@@ -356,7 +356,7 @@ const Step4 = () => {
               <div className="step4_descriptionContainer">
                 <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
                 <p className="step4_text">
-                  <span className="green">Índice</span> de{" "}
+                  <span className="color_text">Índice</span> de{" "}
                   <span className="gray">reajuste - IPC</span>
                 </p>
               </div>
@@ -364,20 +364,20 @@ const Step4 = () => {
           </section>
           <section className="step4_col2">
             <h3 className="step4_title">
-              <span className="green">Resumen </span>del{" "}
+              <span className="color_text">Resumen </span>del{" "}
               <span className="gray">grupo</span>
             </h3>
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
-                <span className="green">Número</span> del{" "}
+                <span className="color_text">Número</span> del{" "}
                 <span className="gray">grupo - {infoGrupo.Grupo}</span>
               </p>
             </div>
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
-                <span className="green">Cantidad</span> de{" "}
+                <span className="color_text">Cantidad</span> de{" "}
                 <span className="gray">
                   integrantes - {infoGrupo.GrupoMiembros} personas
                 </span>
@@ -386,7 +386,7 @@ const Step4 = () => {
             <div className="step4_descriptionContainer">
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
-                <span className="green">Plazo</span>{" "}
+                <span className="color_text">Plazo</span>{" "}
                 <span className="gray">- {infoGrupo.GrupoPlazo} meses</span>
               </p>
             </div>
@@ -394,13 +394,13 @@ const Step4 = () => {
         </div>
 
         <h3 className="step4_title">
-          <span className="green">Validación </span>del{" "}
+          <span className="color_text">Validación </span>del{" "}
           <span className="gray">celular</span>
         </h3>
         <SmsContainer setConfirmContract={setConfirmContract} />
 
         <h3 className="step4_title">
-          <span className="green">Observaciones </span>del{" "}
+          <span className="color_text">Observaciones </span>del{" "}
           <span className="gray">contrato</span>
         </h3>
         <p className="step4_finalText">

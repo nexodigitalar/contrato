@@ -64,7 +64,8 @@ const SmsContainer = ({ setConfirmContract }) => {
     <div className="smsContainer">
       {validated ? (
         <p className="validated">
-          Tu celular fue validado <span className="green">correctamente</span>
+          Tu celular fue validado{" "}
+          <span className="color_text">correctamente</span>
         </p>
       ) : (
         <>

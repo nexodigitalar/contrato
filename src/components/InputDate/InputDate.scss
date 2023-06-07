@@ -13,7 +13,7 @@
   @include flex(row, space-between, center);
   background-color: $tertiary;
   border: none;
-  border-bottom: 2px solid $primary;
+  border-bottom: 2px solid var(--primary-color);
   border-radius: 3px 3px 0px 0px;
   padding: 13px;
   @include primaryFont($size_sm);
@@ -118,7 +118,7 @@
   cursor: pointer;
 }
 .react-date-picker__button svg {
-  stroke: $primary !important;
+  stroke: var(--primary-color) !important;
 }
 .react-date-picker__clear-button {
   display: none;
@@ -126,11 +126,11 @@
 
 .react-date-picker__button:enabled:hover .react-date-picker__button__icon,
 .react-date-picker__button:enabled:focus .react-date-picker__button__icon {
-  stroke: $primary;
+  stroke: var(--primary-color);
 }
 
 .react-date-picker__button:disabled .react-date-picker__button__icon {
-  stroke: $secondary;
+  stroke: var(--secondary-color);
 }
 
 .react-date-picker__button svg {
@@ -144,7 +144,7 @@
   background-color: $neutral_light;
   border-radius: 4px;
   box-shadow: $shadow;
-  border: 1px solid $primary;
+  border: 1px solid var(--primary-color);
 }
 
 .react-date-picker__calendar--closed {
@@ -191,8 +191,8 @@
   cursor: pointer;
   @include primaryFont($size_xxs);
   &:hover {
-    background-color: $secondary;
-    color: $primary;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
   }
 }
 

@@ -4,7 +4,6 @@
   @include primaryFont($size_xs);
   border: none;
   border-radius: 40px;
-  background: $green_gradient;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -14,7 +13,7 @@
   cursor: pointer;
   transition: all 0.4s;
   &:hover {
-    background: $green_gradient_hover;
+    box-shadow: 2px 2px 8px #888888;
   }
   .button_icon {
     color: $tertiary;
@@ -31,7 +30,6 @@
   @include primaryFont($size_xs);
   padding: $padding_sm $padding_md;
   color: $tertiary;
-  background-color: $primary;
   display: inline-block;
   cursor: pointer;
   border: none;
