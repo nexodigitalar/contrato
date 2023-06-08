@@ -1,6 +1,7 @@
 /* Styles & Img */
 import "./Step3.scss";
 import user from "@/assets/img/info-user.png";
+import user2 from "@/assets/img/info-user2.png";
 
 /* React Router */
 import { useNavigate } from "react-router-dom";
@@ -78,7 +79,7 @@ const Step3 = () => {
               ))}
             </div>
             <div className="step3_imgContainer">
-              <img className="step3_img" src={user} />
+              <img className="step3_img" src={plazo == 200 ? user2 : user} />
             </div>
           </div>
 

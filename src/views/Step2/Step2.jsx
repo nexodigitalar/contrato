@@ -1,6 +1,7 @@
 /* Styles & Img */
 import "./Step2.scss";
 import userPhoto from "@/assets/img/info-user.png";
+import userPhoto2 from "@/assets/img/info-user2.png";
 
 /* Hooks */
 import useScrollTop from "@/hooks/useScrollTop";
@@ -77,7 +78,10 @@ const Step2 = ({ setImages, images }) => {
             />
           </div>
           <div className="step2_imgContainer">
-            <img src={userPhoto} className="step2_img" />
+            <img
+              src={plazo == 200 ? userPhoto2 : userPhoto}
+              className="step2_img"
+            />
           </div>
         </div>
 
