@@ -17,7 +17,7 @@ import useFormatNumber from "@/hooks/useFormatNumber";
 import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
 
-const Step4 = () => {
+const Step4 = ({ images }) => {
   const navigate = useNavigate();
   const ids = useSelector((state) => state.crm.ids);
   const { simulador, cuotas, plazo, monto } = useSelector(
@@ -31,12 +31,63 @@ const Step4 = () => {
     ActualizarClienteCRM();
   }, []);
 
-  /*   const intentoUno = () => {
+  /*   const mapUserIntento2 = () => {
     const arrOfPromises = usuario.map((user) => RegistrarClienteGestion(user));
     return Promise.all(arrOfPromises);
   }; */
 
-  const intentoDos = async () => {
+  const convertFilesBase64 = () => {
+    images.forEach((obj, index) => {
+      let user = usuario[index];
+
+      let reader = new FileReader();
+      reader.readAsDataURL(obj.ciFrente);
+      reader.onload = function () {
+        let base64 = reader.result;
+        WSCedulaContratoOnLine(user, base64);
+      };
+      /*    for (const image in obj) {
+        let reader = new FileReader();
+        reader.readAsDataURL(obj[image]);
+        reader.onload = function () {
+          let base64 = reader.result;
+          WSCedulaContratoOnLine(user, base64);
+        };
+      } */
+    });
+  };
+
+  const WSCedulaContratoOnLine = async (user, image) => {
+    console.log("Servicio Imagen, cedula enviada:", user.cedula);
+    /*    console.log("Cedula tipo:", typeof user.cedula);
+
+    console.log("Imagen tipo:", typeof image); */
+    await fetch(
+      "http://190.64.74.3:8234/rest/APIConsorcio/WSCedulaContratoOnLine",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pUsuario: "APIConsorcioWeb",
+          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pNroDoc: Number(user.cedula),
+          pVentaOLId: ids.ventaId,
+          pDocBase64: image,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((info) => {
+        console.log(info);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  const mapUsers = async () => {
     await Promise.all(
       usuario.map(async (user) => {
         await RegistrarClienteGestion(user);
@@ -67,7 +118,7 @@ const Step4 = () => {
             CliApe2: usuario[0].segundoApellido,
             CliSexo: usuario[0].sexo,
             CliEdadRango: 0,
-            CliDoc: usuario[0].cedula,
+            CliDoc: Number(usuario[0].cedula),
             CliOcupacion: "",
             CliProf: "",
             CliFchLlam: "0000-00-00T00:00:00",
@@ -122,7 +173,12 @@ const Step4 = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        intentoDos();
+        if (data.pCodigoRespuesta == "00") {
+          console.log("CliDoc enviado en actualización:", usuario[0].cedula);
+          /*    console.log("CliDoc tipo:", typeof usuario[0].cedula); */
+          convertFilesBase64();
+          /*   mapUsers(); */
+        }
       })
       .catch((err) => {
         console.log(err.message);

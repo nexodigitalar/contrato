@@ -8,6 +8,7 @@ const InputFile = ({
   selectedFile,
   name,
   error,
+  message,
 }) => {
   const [styles, setStyles] = useState("inputFile_container border_empty");
 
@@ -39,7 +40,7 @@ const InputFile = ({
         />
         <label className="color_primary_background">Examinar</label>
       </div>
-      {error === false && <p className="input_error">Campo obligatorio</p>}
+      {error === false && <p className="input_error">{message}</p>}
     </form>
   );
 };

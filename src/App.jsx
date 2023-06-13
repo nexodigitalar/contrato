@@ -40,8 +40,8 @@ const App = () => {
   }, []);
 
   const getDataFromLocal = () => {
-    let data = JSON.parse(localStorage.getItem("contrato"));
-    /*     let data = {
+    /*   let data = JSON.parse(localStorage.getItem("contrato")); */
+    let data = {
       apellido: "Test Apellido",
       cuoCap: "CAPITAL",
       cuotas: "43400",
@@ -54,7 +54,9 @@ const App = () => {
       simulador: "Pesos Ajustables",
       telefono: "123456879",
       codigo: "50",
-    }; */
+    };
+
+    console.log(data);
 
     dispatch(setData(data));
     if (!registrarCliente.ventaId) {
@@ -104,14 +106,16 @@ const App = () => {
       .then((response) => response.json())
       .then((info) => {
         console.log(info);
-        dispatch(
-          setId({
-            ventaId: info.pVentaOLId,
-            empresaId: info.pEmpresaId,
-            cliId: info.pCliId,
-          })
-        );
-        TomarNumeroCRM(info.pVentaOLId);
+        if (info.pCodigoRespuesta == "00") {
+          dispatch(
+            setId({
+              ventaId: info.pVentaOLId,
+              empresaId: info.pEmpresaId,
+              cliId: info.pCliId,
+            })
+          );
+          TomarNumeroCRM(info.pVentaOLId);
+        }
       })
       .catch((err) => {
         console.log(err.message);
@@ -133,7 +137,9 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        InformacionGrupoContratoOnLine(data.pGrupo, venta);
+        if (data.pCodigoRespuesta == "00") {
+          InformacionGrupoContratoOnLine(data.pGrupo, venta);
+        }
       })
       .catch((err) => {
         console.log(err.message);
@@ -159,7 +165,9 @@ const App = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
-        dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
+        if (data.pCodigoRespuesta == "00") {
+          dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
+        }
       })
       .finally(() => {
         setSpinner(false);
@@ -183,7 +191,7 @@ const App = () => {
             />
           )}
           {page === 3 && <Route path="/" element={<Step3 />} />}
-          {page === 4 && <Route path="/" element={<Step4 />} />}
+          {page === 4 && <Route path="/" element={<Step4 images={images} />} />}
         </Route>
         <Route element={<ConfirmationLayout />}>
           <Route path="/error" element={<ErrorPage />} />

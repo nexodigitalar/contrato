@@ -5,7 +5,8 @@ const useValidateInput = (
   amountValidations,
   index,
   position,
-  setAmountValidations
+  setAmountValidations,
+  setMessageFile
 ) => {
   clearTimeout(position);
   timer = setTimeout(() => {
@@ -51,6 +52,27 @@ const useValidateInput = (
           setAmountValidations(newArr);
         } else {
           newObj = { ...newObj, [position]: false };
+          newArr[index] = newObj;
+
+          setAmountValidations(newArr);
+        }
+      }
+    } else if (position === "ciFrente" || position === "ciDorso") {
+      if (e.length == 0) {
+        newObj = { ...newObj, [position]: false };
+        newArr[index] = newObj;
+
+        setMessageFile("Campo obligatorio");
+        setAmountValidations(newArr);
+      } else {
+        if (e[0].size > 5000) {
+          newObj = { ...newObj, [position]: false };
+          newArr[index] = newObj;
+
+          setMessageFile("El archvio debe pesar menos de 5mb");
+          setAmountValidations(newArr);
+        } else {
+          newObj = { ...newObj, [position]: true };
           newArr[index] = newObj;
 
           setAmountValidations(newArr);

@@ -20,6 +20,7 @@ const InputForm = ({
   images,
 }) => {
   const [amountUsers, setAmountUsers] = useState(1);
+  const [messageFile, setMessageFile] = useState("Campo obligatorio");
   const usuarios = useSelector((state) => state.user.usuarios);
   const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
   const savedValidations = useSelector((state) => state.validation.step2);
@@ -260,25 +261,28 @@ const InputForm = ({
                   name="ciFrente"
                   selectedFile={initialValues[index]?.ciFrente}
                   error={amountValidations[index]?.ciFrente}
+                  message={messageFile}
                   click={(e) =>
                     setTimeout(() => {
                       useValidate(
-                        e.target.value,
+                        e.target.files,
                         amountValidations,
                         index,
                         "ciFrente",
-                        setAmountValidations
+                        setAmountValidations,
+                        setMessageFile
                       );
                     }, 2000)
                   }
                   change={(e) => {
                     handleFiles(e, index),
                       useValidate(
-                        e.target.value,
+                        e.target.files,
                         amountValidations,
                         index,
                         "ciFrente",
-                        setAmountValidations
+                        setAmountValidations,
+                        setMessageFile
                       );
                   }}
                 />
@@ -287,25 +291,28 @@ const InputForm = ({
                   name="ciDorso"
                   selectedFile={initialValues[index]?.ciDorso}
                   error={amountValidations[index]?.ciDorso}
+                  message={messageFile}
                   click={(e) =>
                     setTimeout(() => {
                       useValidate(
-                        e.target.value,
+                        e.target.files,
                         amountValidations,
                         index,
                         "ciDorso",
-                        setAmountValidations
+                        setAmountValidations,
+                        setMessageFile
                       );
                     }, 2000)
                   }
                   change={(e) => {
                     handleFiles(e, index),
                       useValidate(
-                        e.target.value,
+                        e.target.files,
                         amountValidations,
                         index,
                         "ciDorso",
-                        setAmountValidations
+                        setAmountValidations,
+                        setMessageFile
                       );
                   }}
                 />
