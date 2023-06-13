@@ -26,6 +26,7 @@ const Step4 = ({ images }) => {
   const usuario = useSelector((state) => state.user.usuarios);
   const infoGrupo = useSelector((state) => state.crm.grupo);
   const [confirmContract, setConfirmContract] = useState(true);
+  const [blockSms, setBlockSms] = useState(false);
 
   useEffect(() => {
     ActualizarClienteCRM();
@@ -39,31 +40,21 @@ const Step4 = ({ images }) => {
   const convertFilesBase64 = () => {
     images.forEach((obj, index) => {
       let user = usuario[index];
-
-      let reader = new FileReader();
-      reader.readAsDataURL(obj.ciFrente);
-      reader.onload = function () {
-        var arrayAux = [];
-        let base64 = reader.result;
-        arrayAux = base64.split(",");
-        let result = arrayAux[1];
-        WSCedulaContratoOnLine(user, result);
-      };
-      /*    for (const image in obj) {
+      for (const image in obj) {
         let reader = new FileReader();
         reader.readAsDataURL(obj[image]);
         reader.onload = function () {
+          var arrayAux = [];
           let base64 = reader.result;
-          WSCedulaContratoOnLine(user, base64);
+          arrayAux = base64.split(",");
+          let result = arrayAux[1];
+          WSCedulaContratoOnLine(user, result);
         };
-      } */
+      }
     });
   };
 
   const WSCedulaContratoOnLine = async (user, image) => {
-    console.log("Servicio para imagenes:");
-    console.log("Cedula:", user.cedula);
-    console.log("Id de venta", ids.ventaId);
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/WSCedulaContratoOnLine",
       {
@@ -72,8 +63,8 @@ const Step4 = ({ images }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          pUsuario: "APIConsorcioWeb",
-          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
           pNroDoc: user.cedula,
           pVentaOLId: ids.ventaId,
           pDocBase64: image,
@@ -81,8 +72,11 @@ const Step4 = ({ images }) => {
       }
     )
       .then((response) => response.json())
-      .then((info) => {
-        console.log(info);
+      .then((data) => {
+        console.log("WSCedulaContratoOnLine:", data);
+        if (data.pCodigoRespuesta != "00") {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
+        }
       })
       .catch((err) => {
         console.log(err.message);
@@ -106,8 +100,8 @@ const Step4 = ({ images }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          pUsuario: "APIConsorcioWeb",
-          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
           pVentaOLId: ids.ventaId,
           pSDTActualizarClienteCRM: {
             EmpresaId: ids.empresaId,
@@ -174,13 +168,11 @@ const Step4 = ({ images }) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log("ActualizarClienteCRM:", data);
         if (data.pCodigoRespuesta == "00") {
-          console.log("Servicio actualizar cliente:");
-          console.log("Cedula:", usuario[0].cedula);
-          console.log("Id de venta:", ids.ventaId);
-          convertFilesBase64();
-          /*   mapUsers(); */
+          mapUsers();
+        } else {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
         }
       })
       .catch((err) => {
@@ -189,7 +181,6 @@ const Step4 = ({ images }) => {
   };
 
   const RegistrarClienteGestion = async (user) => {
-    console.log(user);
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
       {
@@ -198,8 +189,8 @@ const Step4 = ({ images }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          pUsuario: "APIConsorcioWeb",
-          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
           pVentaOLId: ids.ventaId,
           pEmpresaId: ids.empresaId,
           pCliId: ids.cliId,
@@ -329,7 +320,13 @@ const Step4 = ({ images }) => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log("RegistrarClienteGestion:", data);
+        if (data.pCodigoRespuesta != "00") {
+          setBlockSms(true);
+          convertFilesBase64();
+        } else {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
+        }
       })
       .catch((err) => {
         console.log(err.message);
@@ -345,8 +342,8 @@ const Step4 = ({ images }) => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          pUsuario: "APIConsorcioWeb",
-          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
           pVentaOLId: ids.ventaId,
         }),
       }
@@ -355,6 +352,7 @@ const Step4 = ({ images }) => {
       .then((data) => {
         console.log(data);
         if (data.pCodigoRespuesta != "00") {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
           navigate("/error");
         } else {
           navigate("/valid");
@@ -430,7 +428,7 @@ const Step4 = ({ images }) => {
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
                 <span className="color_text">Número</span> del{" "}
-                <span className="gray">grupo - {infoGrupo.Grupo}</span>
+                <span className="gray">grupo - {infoGrupo?.Grupo}</span>
               </p>
             </div>
             <div className="step4_descriptionContainer">
@@ -438,7 +436,7 @@ const Step4 = ({ images }) => {
               <p className="step4_text">
                 <span className="color_text">Cantidad</span> de{" "}
                 <span className="gray">
-                  integrantes - {infoGrupo.GrupoMiembros} personas
+                  integrantes - {infoGrupo?.GrupoMiembros} personas
                 </span>
               </p>
             </div>
@@ -446,7 +444,7 @@ const Step4 = ({ images }) => {
               <FontAwesomeIcon className="step4_icon" icon={faChevronRight} />
               <p className="step4_text">
                 <span className="color_text">Plazo</span>{" "}
-                <span className="gray">- {infoGrupo.GrupoPlazo} meses</span>
+                <span className="gray">- {infoGrupo?.GrupoPlazo} meses</span>
               </p>
             </div>
           </section>
@@ -456,14 +454,17 @@ const Step4 = ({ images }) => {
           <span className="color_text">Validación </span>del{" "}
           <span className="gray">celular</span>
         </h3>
-        <SmsContainer setConfirmContract={setConfirmContract} />
+        <SmsContainer
+          setConfirmContract={setConfirmContract}
+          blockSms={blockSms}
+        />
 
         <h3 className="step4_title">
           <span className="color_text">Observaciones </span>del{" "}
           <span className="gray">contrato</span>
         </h3>
         <p className="step4_finalText">
-          {infoGrupo.InfoGrupoProducto.Observaciones}
+          {infoGrupo.InfoGrupoProducto?.Observaciones}
         </p>
 
         <div className="step4_buttonContainer">

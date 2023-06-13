@@ -82,7 +82,7 @@ const useValidateInput = (
 
         setAmountValidations(newArr);
       } else {
-        if (e[0].size > 5000) {
+        if (e[0].size > 15000) {
           newObj = { ...newObj, [position]: false };
           newArr[index] = newObj;
 

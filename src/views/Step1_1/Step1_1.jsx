@@ -150,11 +150,11 @@ const Step1_1 = ({ changePage }) => {
                         title=""
                         titleBold=" entre"
                         number={useFormatNumber(
-                          cuotasRango.InfoGrupoProducto.CuotasRangos[0]
+                          cuotasRango.InfoGrupoProducto?.CuotasRangos[0]
                             .CuotaMinima
                         )}
                         number2={useFormatNumber(
-                          cuotasRango.InfoGrupoProducto.CuotasRangos[0]
+                          cuotasRango.InfoGrupoProducto?.CuotasRangos[0]
                             .CuotaMaxima
                         )}
                         img={plazo == 200 ? cuotaEntre2 : cuotaEntre}
@@ -175,11 +175,11 @@ const Step1_1 = ({ changePage }) => {
                         title=""
                         titleBold=" entre"
                         number={useFormatNumber(
-                          cuotasRango.InfoGrupoProducto.CapitalesRangos[0]
+                          cuotasRango.InfoGrupoProducto?.CapitalesRangos[0]
                             .CapitalMinimo
                         )}
                         number2={useFormatNumber(
-                          cuotasRango.InfoGrupoProducto.CapitalesRangos[0]
+                          cuotasRango.InfoGrupoProducto?.CapitalesRangos[0]
                             .CapitalMaximo
                         )}
                         img={plazo == 200 ? capitalEntre2 : capitalEntre}

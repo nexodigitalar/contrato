@@ -50,13 +50,11 @@ const App = () => {
       moneda: "UYU",
       monto: "6200000",
       nombre: "Test Nombre",
-      plazo: "200",
+      plazo: "300",
       simulador: "Pesos Ajustables",
       telefono: "123456879",
-      codigo: "50",
+      codigo: "90",
     };
-
-    console.log(data);
 
     dispatch(setData(data));
     if (!registrarCliente.ventaId) {
@@ -79,8 +77,8 @@ const App = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          pUsuario: "APIConsorcioWeb",
-          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
           pCanal: "CONTRATO ONLINE",
           pVentaOLId: 0,
           pSDTRegistrarClienteCRM: {
@@ -104,17 +102,19 @@ const App = () => {
       }
     )
       .then((response) => response.json())
-      .then((info) => {
-        console.log("Registrar cliente CRM", info);
-        if (info.pCodigoRespuesta == "00") {
+      .then((data) => {
+        console.log("Registrar cliente CRM", data);
+        if (data.pCodigoRespuesta == "00") {
           dispatch(
             setId({
-              ventaId: info.pVentaOLId,
-              empresaId: info.pEmpresaId,
-              cliId: info.pCliId,
+              ventaId: data.pVentaOLId,
+              empresaId: data.pEmpresaId,
+              cliId: data.pCliId,
             })
           );
-          TomarNumeroCRM(info.pVentaOLId);
+          TomarNumeroCRM(data.pVentaOLId);
+        } else {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
         }
       })
       .catch((err) => {
@@ -129,8 +129,8 @@ const App = () => {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({
-        pUsuario: "APIConsorcioWeb",
-        pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+        pUsuario: import.meta.env.VITE_USUARIO,
+        pPassword: import.meta.env.VITE_PASSWORD,
         pVentaOLId: venta,
       }),
     })
@@ -139,6 +139,8 @@ const App = () => {
         console.log("TomarNumeroCRM", data);
         if (data.pCodigoRespuesta == "00") {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
+        } else {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
         }
       })
       .catch((err) => {
@@ -155,8 +157,8 @@ const App = () => {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          pUsuario: "APIConsorcioWeb",
-          pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
           pGrupo: grupoId,
           pVentaOLId: venta,
         }),
@@ -167,9 +169,9 @@ const App = () => {
         console.log("InformacionGrupoContratoOnLine", data);
         if (data.pCodigoRespuesta == "00") {
           dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
+        } else {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
         }
-      })
-      .finally(() => {
         setSpinner(false);
       })
       .catch((err) => {
