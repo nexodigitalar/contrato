@@ -105,7 +105,7 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((info) => {
-        console.log(info);
+        console.log("Registrar cliente CRM", info);
         if (info.pCodigoRespuesta == "00") {
           dispatch(
             setId({
@@ -136,7 +136,7 @@ const App = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log("TomarNumeroCRM", data);
         if (data.pCodigoRespuesta == "00") {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
         }
@@ -164,7 +164,7 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log(data);
+        console.log("InformacionGrupoContratoOnLine", data);
         if (data.pCodigoRespuesta == "00") {
           dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
         }

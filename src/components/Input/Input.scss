@@ -7,7 +7,7 @@
   .input {
     background-color: $tertiary;
     border: none;
-    border-bottom: 2px solid $cristal_primary;
+    border-bottom: 2px solid var(--primary-color);
     border-radius: 3px 3px 0px 0px;
     padding: $padding_md;
     @include primaryFont($size_sm);
@@ -18,7 +18,7 @@
       color: $neutral;
     }
     &:focus {
-      outline: 1px solid $cristal_secondary;
+      outline: 1px solid var(--primary-color);
     }
   }
 

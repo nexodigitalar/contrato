@@ -20,7 +20,12 @@ const InputForm = ({
   images,
 }) => {
   const [amountUsers, setAmountUsers] = useState(1);
-  const [messageFile, setMessageFile] = useState("Campo obligatorio");
+  const [messageFile, setMessageFile] = useState([
+    {
+      frente: "Campo obligatorio",
+      dorso: "Campo obligatorio",
+    },
+  ]);
   const usuarios = useSelector((state) => state.user.usuarios);
   const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
   const savedValidations = useSelector((state) => state.validation.step2);
@@ -109,10 +114,26 @@ const InputForm = ({
       ciDorso: "",
     };
 
+    let fileMessages = {
+      frente: "Campo obligatorio",
+      dorso: "Campo obligatorio",
+    };
+
     if (!initialValues) {
       if (usuarios.length >= 1) {
         setAmountUsers(usuarios.length);
         setInitialValues(usuarios);
+
+        let arrayFilesImages = [];
+        let newNumber = new Array(Number(usuarios.length))
+          .fill("")
+          .map((_, i) => i + 1);
+
+        newNumber.map((page) => {
+          arrayFilesImages.push(fileMessages);
+        });
+
+        setMessageFile(arrayFilesImages);
       } else {
         let newNumber = new Array(Number(amountUsers))
           .fill("")
@@ -154,6 +175,7 @@ const InputForm = ({
 
       let arrayValues = [...initialValues];
       let imgValues = [...images];
+      let arrayFilesImages = [...messageFile];
 
       /* Cut or add to the array depens of user */
       if (newNumber.length > arrayValues.length) {
@@ -161,15 +183,18 @@ const InputForm = ({
           if (page > arrayValues.length) {
             arrayValues.push(originalValues);
             imgValues.push(imgValue);
+            arrayFilesImages.push(fileMessages);
           }
         });
       } else if (newNumber.length < arrayValues.length) {
         arrayValues = arrayValues.slice(0, newNumber.length);
         imgValues = imgValues.slice(0, newNumber.length);
+        arrayFilesImages = arrayFilesImages.slice(0, newNumber.length);
       }
 
       setImages(imgValues);
       setInitialValues(arrayValues);
+      setMessageFile(arrayFilesImages);
     }
   };
 
@@ -242,7 +267,7 @@ const InputForm = ({
                   name="cedula"
                   value={initialValues[index]?.cedula || ""}
                   error={amountValidations[index]?.cedula}
-                  type="number"
+                  type="text"
                   click={(e) => {
                     handleInput(e, index),
                       useValidate(
@@ -261,7 +286,7 @@ const InputForm = ({
                   name="ciFrente"
                   selectedFile={initialValues[index]?.ciFrente}
                   error={amountValidations[index]?.ciFrente}
-                  message={messageFile}
+                  message={messageFile[index]?.frente}
                   click={(e) =>
                     setTimeout(() => {
                       useValidate(
@@ -270,7 +295,8 @@ const InputForm = ({
                         index,
                         "ciFrente",
                         setAmountValidations,
-                        setMessageFile
+                        setMessageFile,
+                        messageFile
                       );
                     }, 2000)
                   }
@@ -282,7 +308,8 @@ const InputForm = ({
                         index,
                         "ciFrente",
                         setAmountValidations,
-                        setMessageFile
+                        setMessageFile,
+                        messageFile
                       );
                   }}
                 />
@@ -291,7 +318,7 @@ const InputForm = ({
                   name="ciDorso"
                   selectedFile={initialValues[index]?.ciDorso}
                   error={amountValidations[index]?.ciDorso}
-                  message={messageFile}
+                  message={messageFile[index]?.dorso}
                   click={(e) =>
                     setTimeout(() => {
                       useValidate(
@@ -300,7 +327,8 @@ const InputForm = ({
                         index,
                         "ciDorso",
                         setAmountValidations,
-                        setMessageFile
+                        setMessageFile,
+                        messageFile
                       );
                     }, 2000)
                   }
@@ -312,7 +340,8 @@ const InputForm = ({
                         index,
                         "ciDorso",
                         setAmountValidations,
-                        setMessageFile
+                        setMessageFile,
+                        messageFile
                       );
                   }}
                 />

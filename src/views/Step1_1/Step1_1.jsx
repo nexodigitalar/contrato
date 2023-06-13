@@ -72,7 +72,7 @@ const Step1_1 = ({ changePage }) => {
 
           {simulador != "Fecha Elegida" ? (
             <>
-              <h3 className="step1_title ">
+              {/*   <h3 className="step1_title ">
                 <span className="color_text">Contrato</span> con modalidad{" "}
                 <span className="color_text">
                   {text[simulador].step1_title}

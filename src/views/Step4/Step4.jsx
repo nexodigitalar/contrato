@@ -43,8 +43,11 @@ const Step4 = ({ images }) => {
       let reader = new FileReader();
       reader.readAsDataURL(obj.ciFrente);
       reader.onload = function () {
+        var arrayAux = [];
         let base64 = reader.result;
-        WSCedulaContratoOnLine(user, base64);
+        arrayAux = base64.split(",");
+        let result = arrayAux[1];
+        WSCedulaContratoOnLine(user, result);
       };
       /*    for (const image in obj) {
         let reader = new FileReader();
@@ -58,10 +61,9 @@ const Step4 = ({ images }) => {
   };
 
   const WSCedulaContratoOnLine = async (user, image) => {
-    console.log("Servicio Imagen, cedula enviada:", user.cedula);
-    /*    console.log("Cedula tipo:", typeof user.cedula);
-
-    console.log("Imagen tipo:", typeof image); */
+    console.log("Servicio para imagenes:");
+    console.log("Cedula:", user.cedula);
+    console.log("Id de venta", ids.ventaId);
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/WSCedulaContratoOnLine",
       {
@@ -72,7 +74,7 @@ const Step4 = ({ images }) => {
         body: JSON.stringify({
           pUsuario: "APIConsorcioWeb",
           pPassword: "9u7y5.3C1o8n6s4o2r0c3i5o7.9u2y4",
-          pNroDoc: Number(user.cedula),
+          pNroDoc: user.cedula,
           pVentaOLId: ids.ventaId,
           pDocBase64: image,
         }),
@@ -118,7 +120,7 @@ const Step4 = ({ images }) => {
             CliApe2: usuario[0].segundoApellido,
             CliSexo: usuario[0].sexo,
             CliEdadRango: 0,
-            CliDoc: Number(usuario[0].cedula),
+            CliDoc: usuario[0].cedula,
             CliOcupacion: "",
             CliProf: "",
             CliFchLlam: "0000-00-00T00:00:00",
@@ -174,8 +176,9 @@ const Step4 = ({ images }) => {
       .then((data) => {
         console.log(data);
         if (data.pCodigoRespuesta == "00") {
-          console.log("CliDoc enviado en actualización:", usuario[0].cedula);
-          /*    console.log("CliDoc tipo:", typeof usuario[0].cedula); */
+          console.log("Servicio actualizar cliente:");
+          console.log("Cedula:", usuario[0].cedula);
+          console.log("Id de venta:", ids.ventaId);
           convertFilesBase64();
           /*   mapUsers(); */
         }

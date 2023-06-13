@@ -6,14 +6,15 @@ const useValidateInput = (
   index,
   position,
   setAmountValidations,
-  setMessageFile
+  setMessageFile,
+  messageFile
 ) => {
   clearTimeout(position);
   timer = setTimeout(() => {
     let newArr = [...amountValidations];
     let newObj = newArr[index];
 
-    //validar teléfono
+    //Validar teléfono
     if (position === "telefono") {
       let lengthValidation = e.length <= 12 && e.length >= 8;
       if (e === "" || e === "placeholder") {
@@ -58,18 +59,49 @@ const useValidateInput = (
         }
       }
     } else if (position === "ciFrente" || position === "ciDorso") {
+      // Validar archivos
       if (e.length == 0) {
         newObj = { ...newObj, [position]: false };
         newArr[index] = newObj;
 
-        setMessageFile("Campo obligatorio");
+        if (position === "ciFrente") {
+          const updatedFiles = [...messageFile];
+          updatedFiles[index] = {
+            ...updatedFiles[index],
+            frente: "Campo obligatorio",
+          };
+          setMessageFile(updatedFiles);
+        } else {
+          const updatedFiles = [...messageFile];
+          updatedFiles[index] = {
+            ...updatedFiles[index],
+            dorso: "Campo obligatorio",
+          };
+          setMessageFile(updatedFiles);
+        }
+
         setAmountValidations(newArr);
       } else {
         if (e[0].size > 5000) {
           newObj = { ...newObj, [position]: false };
           newArr[index] = newObj;
 
-          setMessageFile("El archvio debe pesar menos de 5mb");
+          if (position === "ciFrente") {
+            const updatedFiles = [...messageFile];
+            updatedFiles[index] = {
+              ...updatedFiles[index],
+              frente: "El archvio debe pesar menos de 5Mb",
+            };
+            setMessageFile(updatedFiles);
+          } else {
+            const updatedFiles = [...messageFile];
+            updatedFiles[index] = {
+              ...updatedFiles[index],
+              dorso: "El archvio debe pesar menos de 5Mb",
+            };
+            setMessageFile(updatedFiles);
+          }
+
           setAmountValidations(newArr);
         } else {
           newObj = { ...newObj, [position]: true };
