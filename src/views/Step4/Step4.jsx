@@ -12,86 +12,42 @@ import Button from "@/components/Button/Button";
 import SmsContainer from "./components/SmsContainer/SmsContainer";
 
 /* Hooks */
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import useFormatNumber from "@/hooks/useFormatNumber";
-import { useNavigate } from "react-router-dom";
 import { useState, useEffect } from "react";
+import { blockPages } from "@/store/pageSlice/pageSlice";
 
 const Step4 = ({ images }) => {
-  const navigate = useNavigate();
+  const dispatch = useDispatch();
   const ids = useSelector((state) => state.crm.ids);
   const { simulador, cuotas, plazo, monto } = useSelector(
     (state) => state.data
   );
   const usuario = useSelector((state) => state.user.usuarios);
   const infoGrupo = useSelector((state) => state.crm.grupo);
+  const data = useSelector((state) => state.data);
   const [confirmContract, setConfirmContract] = useState(true);
   const [blockSms, setBlockSms] = useState(false);
 
   useEffect(() => {
-    ActualizarClienteCRM();
+    dispatch(blockPages());
+    ActualizarClienteCRM(usuario[0]);
   }, []);
 
-  /*   const mapUserIntento2 = () => {
-    const arrOfPromises = usuario.map((user) => RegistrarClienteGestion(user));
-    return Promise.all(arrOfPromises);
-  }; */
-
-  const convertFilesBase64 = () => {
-    images.forEach((obj, index) => {
-      let user = usuario[index];
-      for (const image in obj) {
-        let reader = new FileReader();
-        reader.readAsDataURL(obj[image]);
-        reader.onload = function () {
-          var arrayAux = [];
-          let base64 = reader.result;
-          arrayAux = base64.split(",");
-          let result = arrayAux[1];
-          WSCedulaContratoOnLine(user, result);
-        };
-      }
-    });
-  };
-
-  const WSCedulaContratoOnLine = async (user, image) => {
-    await fetch(
-      "http://190.64.74.3:8234/rest/APIConsorcio/WSCedulaContratoOnLine",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          pUsuario: import.meta.env.VITE_USUARIO,
-          pPassword: import.meta.env.VITE_PASSWORD,
-          pNroDoc: user.cedula,
-          pVentaOLId: ids.ventaId,
-          pDocBase64: image,
-        }),
-      }
-    )
-      .then((response) => response.json())
-      .then((data) => {
-        console.log("WSCedulaContratoOnLine:", data);
-        if (data.pCodigoRespuesta != "00") {
-          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
-        }
-      })
-      .catch((err) => {
-        console.log(err.message);
-      });
-  };
-
   const mapUsers = async () => {
+    let otherUsers = usuario.slice(1, usuario.length);
+
     await Promise.all(
-      usuario.map(async (user) => {
-        await RegistrarClienteGestion(user);
+      otherUsers.map(async (user) => {
+        await RegistrarClienteCRMOther(user);
       })
     );
+    /* convertFilesBase64();
+    setBlockSms(true); */
   };
 
-  const ActualizarClienteCRM = async () => {
+  const ActualizarClienteCRM = async (user) => {
+    console.log("ID primer cliente:", ids.cliId);
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
       {
@@ -108,25 +64,25 @@ const Step4 = ({ images }) => {
             CliId: ids.cliId,
             EmpresaNombre: "",
             EmpresaClienteUlt: 0,
-            CliNom: usuario[0].primerNombre,
-            CliNom2: usuario[0].segundoNombre,
-            CliApe1: usuario[0].primerApellido,
-            CliApe2: usuario[0].segundoApellido,
-            CliSexo: usuario[0].sexo,
+            CliNom: user.primerNombre,
+            CliNom2: user.segundoNombre,
+            CliApe1: user.primerApellido,
+            CliApe2: user.segundoApellido,
+            CliSexo: user.sexo,
             CliEdadRango: 0,
-            CliDoc: usuario[0].cedula,
+            CliDoc: user.cedula,
             CliOcupacion: "",
             CliProf: "",
             CliFchLlam: "0000-00-00T00:00:00",
-            CliDir: usuario[0].calle + usuario[0].puertaNumero,
+            CliDir: user.calle + user.puertaNumero,
             CliTel: "",
-            CliMovil: usuario[0].telefono,
+            CliMovil: user.telefono,
             CliTelTrb: "",
             CliTelInt: "",
-            CliMail: usuario[0].email,
+            CliMail: user.email,
             CliMail1: "",
             DepartamentoId: 0,
-            DepartamentoNombre: usuario[0].departamento,
+            DepartamentoNombre: user.departamento,
             LocalidadId: 0,
             LocalidadNombre: "",
             CliBarrio: "Pocitos",
@@ -144,18 +100,18 @@ const Step4 = ({ images }) => {
             CliContDes: "",
             CliSupoId: "",
             CliSupoDes: "",
-            CliFchNac: usuario[0].fechaNacimiento,
-            CliEstCivil: usuario[0].estadoCivil,
+            CliFchNac: user.fechaNacimiento,
+            CliEstCivil: user.estadoCivil,
             CliRepetido: "",
             CliGrupoUsuarioId: 0,
             CliIngresosMonId: "",
             CliCuotaIngreso: "",
             CliCargo: "",
             CliEmpAntiguedad: "",
-            CliEmpTrabajoLugar: usuario[0].empresaTrabaja,
+            CliEmpTrabajoLugar: user.empresaTrabaja,
             CliIngresos: "0.00",
             CliDestino: "",
-            CliOrigenFondo: usuario[0].origenFondos,
+            CliOrigenFondo: user.origenFondos,
             CliConyugeIngreso: "0.00",
             CliConyugeMonId: "",
             CliConyugeActividad: "",
@@ -170,7 +126,7 @@ const Step4 = ({ images }) => {
       .then((data) => {
         console.log("ActualizarClienteCRM:", data);
         if (data.pCodigoRespuesta == "00") {
-          mapUsers();
+          RegistrarClienteGestion(user);
         } else {
           alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
         }
@@ -321,9 +277,356 @@ const Step4 = ({ images }) => {
       .then((response) => response.json())
       .then((data) => {
         console.log("RegistrarClienteGestion:", data);
-        if (data.pCodigoRespuesta != "00") {
-          setBlockSms(true);
-          convertFilesBase64();
+        if (data.pCodigoRespuesta == "00") {
+          if (usuario.length > 1) {
+            mapUsers();
+          } else {
+            console.log("sólo hay un usuario");
+            /*  convertFilesBase64();
+            setBlockSms(true); */
+          }
+        } else {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  /* Para otros clientes */
+
+  const RegistrarClienteCRMOther = async (user) => {
+    await fetch(
+      "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteCRM",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
+          pCanal: "CONTRATO ONLINE",
+          pVentaOLId: ids.ventaId,
+          pSDTRegistrarClienteCRM: {
+            Nombre: user.nombre,
+            Apellido: user.apellido,
+            Telefono: user.telefono,
+            Email: user.email,
+            ClienteIdExt: "0",
+            ProductoCodigo: data.codigo,
+            CapitalObjetivo: data.monto,
+            CuotaPromedio: data.cuotas,
+            Moneda: data.moneda,
+            Plazo: data.plazo,
+            PlazoEntrega: "0",
+            Bonificadas: "0",
+            UTMSource: "PruebaReg1",
+            UTMMedium: "PruebaReg1",
+            UTMCampaign: "PruebaReg1",
+          },
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Registrar otro cliente crm", data);
+        if (data.pCodigoRespuesta == "00") {
+          console.log("ID otro cliente:", data.pCliId);
+          ActualizarClienteCRMOther(user, data.pCliId);
+        } else {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  const ActualizarClienteCRMOther = async (user, idUser) => {
+    await fetch(
+      "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
+          pVentaOLId: ids.ventaId,
+          pSDTActualizarClienteCRM: {
+            EmpresaId: ids.empresaId,
+            CliId: idUser,
+            EmpresaNombre: "",
+            EmpresaClienteUlt: 0,
+            CliNom: user.primerNombre,
+            CliNom2: user.segundoNombre,
+            CliApe1: user.primerApellido,
+            CliApe2: user.segundoApellido,
+            CliSexo: user.sexo,
+            CliEdadRango: 0,
+            CliDoc: user.cedula,
+            CliOcupacion: "",
+            CliProf: "",
+            CliFchLlam: "0000-00-00T00:00:00",
+            CliDir: user.calle + user.puertaNumero,
+            CliTel: "",
+            CliMovil: user.telefono,
+            CliTelTrb: "",
+            CliTelInt: "",
+            CliMail: user.email,
+            CliMail1: "",
+            DepartamentoId: 0,
+            DepartamentoNombre: user.departamento,
+            LocalidadId: 0,
+            LocalidadNombre: "",
+            CliBarrio: "Pocitos",
+            CliTpoInt: "",
+            CliMotivo: "",
+            CliAsignado: "",
+            CliUsrIng: "",
+            CliUltLin: 0,
+            CliTarUlt: 0,
+            CliNomComp: "",
+            CliTelComp: "",
+            CliPrdUlt: 0,
+            CliLinEstUlt: "",
+            CliContIni: "",
+            CliContDes: "",
+            CliSupoId: "",
+            CliSupoDes: "",
+            CliFchNac: user.fechaNacimiento,
+            CliEstCivil: user.estadoCivil,
+            CliRepetido: "",
+            CliGrupoUsuarioId: 0,
+            CliIngresosMonId: "",
+            CliCuotaIngreso: "",
+            CliCargo: "",
+            CliEmpAntiguedad: "",
+            CliEmpTrabajoLugar: user.empresaTrabaja,
+            CliIngresos: "0.00",
+            CliDestino: "",
+            CliOrigenFondo: user.origenFondos,
+            CliConyugeIngreso: "0.00",
+            CliConyugeMonId: "",
+            CliConyugeActividad: "",
+            CliConyugeDoc: "",
+            CliConyugeNombre: "",
+            CliEstado: "",
+          },
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Actualizar otro cliente crm:", data);
+        if (data.pCodigoRespuesta == "00") {
+          RegistrarClienteGestionOther(user, idUser);
+        } else {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  const RegistrarClienteGestionOther = async (user, idUser) => {
+    await fetch(
+      "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
+          pVentaOLId: ids.ventaId,
+          pEmpresaId: ids.empresaId,
+          pCliId: idUser,
+          pSDTRegistrarClienteGestion: {
+            LicenciaCodigo: 1,
+            PersonaCodigo: 0,
+            PersonaNombre1: user.primerNombre,
+            PersonaNombre2: user.segundoNombre,
+            PersonaApellido1: user.primerApellido,
+            PersonaApellido2: user.segundoApellido,
+            PersonaDireccion1: "Rincon649",
+            PersonaDireccion2: "",
+            PersonaTelefono1: "",
+            PersonaTelefono2: "",
+            PersonaTelefonoMovil1: user.telefono,
+            PersonaTelefonoMovil2: "",
+            PersonaFechaNacimiento: user.fechaNacimiento,
+            EstadoCivilCodigo: 2,
+            EstadoCivilNombre: user.estadoCivil,
+            PersonaPaisCodigo: "",
+            PersonaPaisNombre: user.nacionalidad,
+            PersonaMail1: user.email,
+            PersonaMail2: "",
+            PersonaSexo: user.sexo,
+            PersonaPaisResidenciaCodigo: "UY",
+            PersonaPaisResidenciaNombre: user.pais,
+            PersonaDepartamentoResCod: "MO",
+            PersonaDepartamentoResNom: "",
+            PersonaCiudadResCod: "",
+            PersonaCiudadResNom: user.departamento,
+            PersonaCalle: user.calle,
+            PersonaPuerta: user.puertaNumero,
+            PersonaApartamento: "",
+            PersonaCodigoPostal: "",
+            PersonaSectorActividadCodigo: 10,
+            PersonaSectorActividadNombre: user.actividadPrincipal,
+            PersonaSectorActividadBCUCodigo: 0,
+            PersonaSectorActividadBCUNombre: "",
+            PersonaSectorActividadCIIuCodigo: 0,
+            PersonaSectorActividadCIIUNombre: "",
+            PersonaSeparacionBienes: false,
+            PersonaZonaCodigo: 0,
+            PersonaZonaNombre: "",
+            PersonaApellidosyNombres: "",
+            PersonaLocalidadNombre: "",
+            PersonaDocumento: user.cedula,
+            PersonaOrigenInfo: "",
+            PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
+            PersonaEsPEP: false,
+            PersonaRelacionContacto: {
+              PersonaRelacionContactoItems: [
+                {
+                  EmpresaId: ids.empresaId,
+                  CliId: idUser,
+                  CliNom: user.primerNombre,
+                  CliApe1: user.primerApellido,
+                  CliApe2: user.segundoApellido,
+                  CliDir: user.calle + user.puertaNumero,
+                  CliTel: "",
+                  CliMovil: user.telefono,
+                },
+              ],
+            },
+            PersonasRelacion: {
+              PersonasRelacionItems: [
+                {
+                  PersonaCodigoRelacion: 0,
+                  PersonaApellidoRelacion: "",
+                  PersonaNombreRelacion: "",
+                  PersonaRelacionCodigo: "",
+                  PersonaRelacionNumeroDocumento: "",
+                  PersonaRelacionOrigenInfo: "",
+                  PersonaRelacionOrigenFechaAlta: "0000-00-00T00:00:00",
+                },
+              ],
+            },
+            TipoDocumento: {
+              TipoDocumentoItems: [
+                {
+                  PersonaTipoDocumentoCodigo: "CI",
+                  PersonaTipoDocumentoNombre: "CI",
+                  PersonaNumeroDocumento: user.cedula,
+                  PersonaDocumentoFechaVencimineto: "2028-05-02T00:00:00",
+                  PersonaDocumentoBlobOrdinal: 0,
+                  PersonaDocumentoOrigenInfo: "",
+                  PersonaDocumentoFechaAltaOrigen: "0000-00-00T00:00:00",
+                  PersonaDocumentoPrincipal: true,
+                },
+              ],
+            },
+            PersonaFechaAlta: "0000-00-00T00:00:00",
+            PersonaFechaModificacion: "0000-00-00T00:00:00",
+            PersonaIngresosImporte: user.ingresosMensuales,
+            PersonaIngresosMonedaCodigo: 1,
+            PersonaIngresosMonedaNombre: user.monedaIngreso,
+            PersonaRiesgoLavado: 0,
+            PersonaResidente: false,
+            PersonaLugarTrabajoNombre: user.empresaTrabaja,
+            PersonaLugarTrabajoDireccion: "Rincon 649",
+            PersonaLugarTrabajoCargo: "TI",
+            PersonaOrigenDeFondos: user.origenFondos,
+            PersonaRubroEmpresa: user.rubroEmpresa,
+            PersonaConyugeCodigo: 0,
+            PersonaConyugeTipoDocumento: "",
+            PersonaConyugeDocumento: "",
+            PersonaConyugeNombre1: "",
+            PersonaConyugeNombre2: "",
+            PersonaConyugeApellido1: "",
+            PersonaConyugeApellido2: "",
+            PersonaConyugeSexo: "",
+            PersonaConyugeFechaNac: "0000-00-00T00:00:00",
+            PersonaConyugeMail: "",
+            PersonaConyugeCelular: "",
+            PersonaConyugeSectorActCod: 0,
+            PersonaConyugeSectorActNombre: "",
+            PersonaConyugeMonedaIngreso: 0,
+            PersonaConyugeMonedaSimbolo: "",
+            PersonaConyugeIngresos: 0,
+            PersonaConyugeTrabajoNombre: "",
+            PersonaConyugeTrabajoDireccion: "",
+            PersonaConyugeTrabajoCargo: "",
+            PersonaConyugeOrigenFondo: "",
+            PersonaConyugeRubro: "",
+          },
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("Registrar otro cliente gestión:", data);
+        if (data.pCodigoRespuesta == "00") {
+          console.log("Terminado otro cliente");
+        } else {
+          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
+        }
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
+  };
+
+  /* Fin para otros clientes */
+
+  const convertFilesBase64 = async () => {
+    images.forEach((obj, index) => {
+      let user = usuario[index];
+      for (const image in obj) {
+        let reader = new FileReader();
+        reader.readAsDataURL(obj[image]);
+        reader.onload = function () {
+          var arrayAux = [];
+          let base64 = reader.result;
+          arrayAux = base64.split(",");
+          let result = arrayAux[1];
+          WSCedulaContratoOnLine(user, "CI_DORSO", result);
+        };
+      }
+    });
+  };
+
+  const WSCedulaContratoOnLine = async (user, type, image) => {
+    await fetch(
+      "http://190.64.74.3:8234/rest/APIConsorcio/WSCedulaContratoOnLine",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
+          pVentaOLId: ids.ventaId,
+          pNroDoc: user.cedula,
+          pTipoDoc: type,
+          pDocBase64: image,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log("WSCedulaContratoOnLine:", data);
+        if (data.pCodigoRespuesta == "00") {
+          console.log("ok");
         } else {
           alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
         }
@@ -353,9 +656,9 @@ const Step4 = ({ images }) => {
         console.log(data);
         if (data.pCodigoRespuesta != "00") {
           alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
-          navigate("/error");
+          dispatch(changePage(5));
         } else {
-          navigate("/valid");
+          dispatch(changePage(6));
         }
       })
       .catch((err) => {
@@ -459,13 +762,17 @@ const Step4 = ({ images }) => {
           blockSms={blockSms}
         />
 
-        <h3 className="step4_title">
-          <span className="color_text">Observaciones </span>del{" "}
-          <span className="gray">contrato</span>
-        </h3>
-        <p className="step4_finalText">
-          {infoGrupo.InfoGrupoProducto?.Observaciones}
-        </p>
+        {infoGrupo.InfoGrupoProducto.Observaciones != "" && (
+          <>
+            <h3 className="step4_title">
+              <span className="color_text">Observaciones </span>del{" "}
+              <span className="gray">contrato</span>
+            </h3>
+            <p className="step4_finalText">
+              {infoGrupo.InfoGrupoProducto?.Observaciones}
+            </p>
+          </>
+        )}
 
         <div className="step4_buttonContainer">
           <Button

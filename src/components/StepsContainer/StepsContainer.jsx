@@ -9,12 +9,9 @@ import { changePageValidations } from "@/store/pageSlice/pageSlice";
 import { useDispatch, useSelector } from "react-redux";
 import { setUsers } from "@/store/userSlice/userSlice";
 import { setStep2, setStep3 } from "@/store/validationSlice/validationSlice";
-import { useState } from "react";
-import { setLastPage, blockPages } from "@/store/pageSlice/pageSlice";
 
 const StepsContainer = ({ step, initialValues, amountValidations }) => {
   const dispatch = useDispatch();
-  const [disabled, setDisabled] = useState(false);
   const validationStep2 = useSelector((state) => state.validation.step2);
   const validationStep3 = useSelector((state) => state.validation.step3);
   const page = useSelector((state) => state.page.lastPage);
@@ -25,8 +22,6 @@ const StepsContainer = ({ step, initialValues, amountValidations }) => {
       dispatch(setStep2(amountValidations));
     } else if (step === 3) {
       dispatch(setStep3(amountValidations));
-    } else if (step === 4) {
-      return;
     }
     dispatch(changePageValidations(1));
   };
@@ -34,9 +29,6 @@ const StepsContainer = ({ step, initialValues, amountValidations }) => {
   const goToStep2 = () => {
     if (step === 3) {
       dispatch(setStep3(amountValidations));
-    }
-    if (step === 4) {
-      return;
     }
     dispatch(changePageValidations(2));
   };
@@ -48,28 +40,9 @@ const StepsContainer = ({ step, initialValues, amountValidations }) => {
       validateButton(3);
     } else if (step === 1) {
       validateButton(3);
-    } else if (step === 4) {
-      return;
     } else {
       dispatch(changePageValidations(3));
     }
-  };
-
-  const goToStep4 = () => {
-    if (step === 3) {
-      dispatch(setStep3(amountValidations));
-      validateButton(4);
-    } else if (step === 2) {
-      dispatch(setUsers(initialValues));
-      dispatch(setStep2(amountValidations));
-      validateButton(4);
-    } else if (step === 1) {
-      validateButton(4);
-    } else {
-      dispatch(changePageValidations(4));
-      dispatch(setLastPage());
-    }
-    dispatch(blockPages());
   };
 
   const validateButton = (number) => {
@@ -108,15 +81,6 @@ const StepsContainer = ({ step, initialValues, amountValidations }) => {
         });
       }
     }
-
-    let isFalse = newArr.some((bool) => bool === false);
-    if (isFalse) {
-      setDisabled(false);
-    } else {
-      setDisabled(true);
-      if (number === 4) dispatch(setLastPage());
-      dispatch(changePageValidations(number));
-    }
   };
 
   return (
@@ -148,7 +112,6 @@ const StepsContainer = ({ step, initialValues, amountValidations }) => {
           textBold="DEL PLAN"
           number="4"
           active={step === 4 ? true : false}
-          click={() => goToStep4()}
         />
       </div>
     </div>

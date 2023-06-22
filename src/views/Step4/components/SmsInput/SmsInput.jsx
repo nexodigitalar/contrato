@@ -3,7 +3,6 @@ import "./SmsInput.scss";
 
 /* Components */
 import Button from "@/components/Button/Button";
-import Input from "@/components/Input/Input";
 
 const SmsInput = ({ setSmsSent, phone, setPhone }) => {
   const validatePhone = () => {
@@ -31,15 +30,6 @@ const SmsInput = ({ setSmsSent, phone, setPhone }) => {
 
   return (
     <div className="smsInput">
-      {/* <Input
-        placeholder="Número de celular"
-        name="telefono"
-        value={phone.number}
-        error={phone.validation}
-        type="number"
-        click={(e) => setPhone({ ...phone, number: e.target.value })}
-        disabled={true}
-      /> */}
       <p className="smsInput_number">{phone.number}</p>
       <Button text="ENVIAR" type="secondary" click={() => submitPhone()} />
     </div>

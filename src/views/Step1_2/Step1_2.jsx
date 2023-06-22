@@ -118,33 +118,42 @@ const Step1_2 = ({ changePage }) => {
                 </div>
               </div>
 
-              <h3 className="step1_2_title step1_2_detail">
-                Detalle <span className="color_text">cuotas</span>{" "}
-                <span className="gray">bonificadas</span>
-              </h3>
-              <p className="step1_2_text">
-                Acá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particularesAcá van todas las observaciones de las condiciones
-                particulares
-              </p>
+              {infoGrupo.InfoGrupoProducto.CuotasBonificadas.length != 0 && (
+                <>
+                  <h3 className="step1_2_title step1_2_detail">
+                    Detalle <span className="color_text">cuotas</span>{" "}
+                    <span className="gray">bonificadas</span>
+                  </h3>
+                  <p className="step1_2_text">
+                    Acá van todas las observaciones de las condiciones
+                    particularesAcá van todas las observaciones de las
+                    condiciones particularesAcá van todas las observaciones de
+                    las condiciones particularesAcá van todas las observaciones
+                    de las condiciones particularesAcá van todas las
+                    observaciones de las condiciones particularesAcá van todas
+                    las observaciones de las condiciones particularesAcá van
+                    todas las observaciones de las condiciones particularesAcá
+                    van todas las observaciones de las condiciones
+                    particularesAcá van todas las observaciones de las
+                    condiciones particularesAcá van todas las observaciones de
+                    las condiciones particularesAcá van todas las observaciones
+                    de las condiciones particularesAcá van todas las
+                    observaciones de las condiciones particulares
+                  </p>
+                </>
+              )}
 
-              <h3 className="step1_2_title step1_2_detail">
-                Observaciones <span className="color_text">del</span>{" "}
-                <span className="gray">contrato</span>
-              </h3>
-              <p className="step1_2_text">
-                {infoGrupo.InfoGrupoProducto.Observaciones}
-              </p>
+              {infoGrupo.InfoGrupoProducto.Observaciones != "" && (
+                <>
+                  <h3 className="step1_2_title step1_2_detail">
+                    Observaciones <span className="color_text">del</span>{" "}
+                    <span className="gray">contrato</span>
+                  </h3>
+                  <p className="step1_2_text">
+                    {infoGrupo.InfoGrupoProducto.Observaciones}
+                  </p>
+                </>
+              )}
             </section>
             <div className="step1_2_buttonContainer">
               <Button text="Siguiente" click={() => changePage(3)} />

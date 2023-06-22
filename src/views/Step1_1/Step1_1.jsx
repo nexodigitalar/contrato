@@ -45,6 +45,7 @@ const Step1_1 = ({ changePage }) => {
   } = useSelector((state) => state.data);
   const [currency, setCurrency] = useState("$");
   const cuotasRango = useSelector((state) => state.crm.grupo);
+  const infoGrupo = useSelector((state) => state.crm.grupo);
 
   useEffect(() => {
     if (moneda === "USD") {
@@ -216,30 +217,31 @@ const Step1_1 = ({ changePage }) => {
               </>
 
               {(simulador != "Pesos Ajustables" ||
-                simulador != "Pesos Fijos") && (
-                <>
-                  <h3 className="step1_title2">
-                    Detalle <span className="color_text">cuotas </span>
-                    <span className="gray">bonificadas</span>
-                  </h3>
-                  <p className="step1_text">
-                    Acá van todas las observaciones de las condiciones
-                    particularesAcá van todas las observaciones de las
-                    condiciones particularesAcá van todas las observaciones de
-                    las condiciones particularesAcá van todas las observaciones
-                    de las condiciones particularesAcá van todas las
-                    observaciones de las condiciones particularesAcá van todas
-                    las observaciones de las condiciones particularesAcá van
-                    todas las observaciones de las condiciones particularesAcá
-                    van todas las observaciones de las condiciones
-                    particularesAcá van todas las observaciones de las
-                    condiciones particularesAcá van todas las observaciones de
-                    las condiciones particularesAcá van todas las observaciones
-                    de las condiciones particularesAcá van todas las
-                    observaciones de las condiciones particulares
-                  </p>
-                </>
-              )}
+                simulador != "Pesos Fijos") &&
+                infoGrupo.InfoGrupoProducto.CuotasBonificadas.length != 0 && (
+                  <>
+                    <h3 className="step1_title2">
+                      Detalle <span className="color_text">cuotas </span>
+                      <span className="gray">bonificadas</span>
+                    </h3>
+                    <p className="step1_text">
+                      Acá van todas las observaciones de las condiciones
+                      particularesAcá van todas las observaciones de las
+                      condiciones particularesAcá van todas las observaciones de
+                      las condiciones particularesAcá van todas las
+                      observaciones de las condiciones particularesAcá van todas
+                      las observaciones de las condiciones particularesAcá van
+                      todas las observaciones de las condiciones particularesAcá
+                      van todas las observaciones de las condiciones
+                      particularesAcá van todas las observaciones de las
+                      condiciones particularesAcá van todas las observaciones de
+                      las condiciones particularesAcá van todas las
+                      observaciones de las condiciones particularesAcá van todas
+                      las observaciones de las condiciones particularesAcá van
+                      todas las observaciones de las condiciones particulares
+                    </p>
+                  </>
+                )}
               <section className="step1_rightContainer">
                 <h3 className="step1_title step1_right ">
                   <span className="color_text">En la próxima página</span> verás

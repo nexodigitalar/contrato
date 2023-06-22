@@ -3,9 +3,6 @@ import "./Step3.scss";
 import user from "@/assets/img/info-user.png";
 import user2 from "@/assets/img/info-user2.png";
 
-/* React Router */
-import { useNavigate } from "react-router-dom";
-
 /* Hooks */
 import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "@/store/pageSlice/pageSlice";
@@ -50,6 +47,7 @@ const Step3 = () => {
   };
 
   const handlePage4 = () => {
+    validateButton();
     dispatch(changePage(4));
     useScrollTop();
     dispatch(setStep3(amountValidations));

@@ -196,8 +196,8 @@ const App = () => {
           {page === 4 && <Route path="/" element={<Step4 images={images} />} />}
         </Route>
         <Route element={<ConfirmationLayout />}>
-          <Route path="/error" element={<ErrorPage />} />
-          <Route path="/valid" element={<ConfirmationPage />} />
+          {page === 5 && <Route path="/" element={<ErrorPage />} />}
+          {page === 6 && <Route path="/" element={<ConfirmationPage />} />}
         </Route>
       </Routes>
     </>

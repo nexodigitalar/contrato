@@ -3,7 +3,6 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   value: 1,
   steps: [{ 1: true, 2: true, 3: false, 4: false }],
-  lastPage: false,
 };
 
 export const pageSlice = createSlice({
@@ -19,19 +18,14 @@ export const pageSlice = createSlice({
         state.value = action.payload;
       }
     },
-    setLastPage: (state) => {
-      state.lastPage = true;
-      return state;
-    },
     blockPages: (state) => {
-      state.steps[0][0] = false;
-      state.steps[0][1] = false;
-      state.steps[0][2] = false;
+      state.steps = [{ 1: false, 2: false, 3: false, 4: true }];
+      return state;
     },
   },
 });
 
-export const { changePage, changePageValidations, setLastPage, blockPages } =
+export const { changePage, changePageValidations, blockPages } =
   pageSlice.actions;
 
 export default pageSlice.reducer;
