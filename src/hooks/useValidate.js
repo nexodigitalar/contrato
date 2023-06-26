@@ -110,6 +110,27 @@ const useValidateInput = (
           setAmountValidations(newArr);
         }
       }
+    } else if (position === "cedula") {
+      let editNumber = e.replaceAll("-", "");
+      let validationCedula = editNumber.match(/^\d+$/);
+
+      if (e === "" || e === "placeholder") {
+        newObj = { ...newObj, [position]: false };
+        newArr[index] = newObj;
+        setAmountValidations(newArr);
+      } else {
+        if (validationCedula && editNumber.length === 8) {
+          newObj = { ...newObj, [position]: true };
+          newArr[index] = newObj;
+
+          setAmountValidations(newArr);
+        } else {
+          newObj = { ...newObj, [position]: false };
+          newArr[index] = newObj;
+
+          setAmountValidations(newArr);
+        }
+      }
     } else {
       // Validar el resto
       if (e === "" || e === "placeholder") {
@@ -125,7 +146,7 @@ const useValidateInput = (
         setAmountValidations(newArr);
       }
     }
-  }, 500);
+  }, 400);
 };
 
 export default useValidateInput;

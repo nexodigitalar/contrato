@@ -1,12 +1,15 @@
 import "./ErrorPage.scss";
 import error from "@/assets/img/error.png";
+import { useSelector } from "react-redux";
 
 const ErrorPage = () => {
+  const errorInfo = useSelector((state) => state.error);
+
   return (
     <div className="error">
       <div className="error_container">
         <div className="error_header">
-          <p className="error_header_title">Confirmación de contrato</p>
+          <p className="error_header_title">Error de contrato</p>
           <div className="error_division"></div>
         </div>
 
@@ -17,10 +20,7 @@ const ErrorPage = () => {
             Contrato <span className="gray">570-179</span> ha sido{" "}
             <span className="gray">rechazado</span>.
           </h2>
-          <p className="error_text">
-            También puede pagar en cualquiera de los locales de Red Pagos o
-            Abitab.
-          </p>
+          <p className="error_text">{errorInfo.title}</p>
 
           <p className="error_text">
             Ante cualquier dificultad no dude en consultar con su asesor

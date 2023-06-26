@@ -37,12 +37,14 @@
     padding: $padding_lg 0;
     .navBar_container {
       margin: 0 $margin_md;
-      .navBar_title {
-        @include secondaryFont($size_md);
-        text-align: end;
-      }
       .navBar_logo {
         width: 120px;
+      }
+      .navBar_innerContainer {
+        .navBar_title {
+          @include secondaryFont($size_md);
+          text-align: end;
+        }
       }
     }
   }

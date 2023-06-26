@@ -9,7 +9,7 @@ import PinInput from "../PinInput/PinInput";
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-const SmsContainer = ({ setConfirmContract, blockSms }) => {
+const SmsContainer = ({ setConfirmContract }) => {
   const [smsSent, setSmsSent] = useState(false);
   const [validated, setValidated] = useState(false);
   const usuario = useSelector((state) => state.user.usuarios);
@@ -35,31 +35,29 @@ const SmsContainer = ({ setConfirmContract, blockSms }) => {
   }, [validated]);
 
   const EnvioSMSContratoOnLine = async () => {
-    if (blockSms) {
-      await fetch(
-        "http://190.64.74.3:8234/rest/APIConsorcio/EnvioSMSContratoOnLine",
-        {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({
-            pUsuario: import.meta.env.VITE_USUARIO,
-            pPassword: import.meta.env.VITE_PASSWORD,
-            pVentaOLId: ids.ventaId,
-            pTelMovil: usuario[0].telefono,
-            pMsjSMS: "Tu PIN de confirmación es: " + numberValidation,
-          }),
-        }
-      )
-        .then((response) => response.json())
-        .then((data) => {
-          console.log(data);
-        })
-        .catch((err) => {
-          console.log(err.message);
-        });
-    }
+    await fetch(
+      "http://190.64.74.3:8234/rest/APIConsorcio/EnvioSMSContratoOnLine",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
+          pVentaOLId: ids.ventaId,
+          pTelMovil: usuario[0].telefono,
+          pMsjSMS: "Tu PIN de confirmación es: " + numberValidation,
+        }),
+      }
+    )
+      .then((response) => response.json())
+      .then((data) => {
+        console.log(data);
+      })
+      .catch((err) => {
+        console.log(err.message);
+      });
   };
 
   return (

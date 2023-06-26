@@ -28,6 +28,7 @@ const Input = ({ placeholder, click, name, value, error, type, disabled }) => {
       {error === false &&
         name != "telefono" &&
         name != "email" &&
+        name != "cedula" &&
         name != "pin" && <p className="input_error">Campo obligatorio</p>}
       {error === false && name === "telefono" && (
         <p className="input_error">Ingrese un número válido</p>
@@ -37,6 +38,9 @@ const Input = ({ placeholder, click, name, value, error, type, disabled }) => {
       )}
       {error === false && name === "pin" && (
         <p className="input_error">En PIN no es válido</p>
+      )}
+      {error === false && name === "cedula" && (
+        <p className="input_error">Ingrese una cédula de 8 números</p>
       )}
     </div>
   );

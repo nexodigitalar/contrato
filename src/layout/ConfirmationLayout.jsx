@@ -9,7 +9,12 @@ const ConfirmationLayout = () => {
 
   return (
     <div>
-      <NavBar title="Confirmación de" underline="contrato" plazo={plazo} />
+      <NavBar
+        title="Confirmación de"
+        underline="contrato"
+        plazo={plazo}
+        image={false}
+      />
       <Outlet />
     </div>
   );

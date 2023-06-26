@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setData } from "@/store/dataSlice/dataSlice";
 import { setId } from "@/store/crmSlice/crmSlice";
 import { setGrupo } from "@/store/crmSlice/crmSlice";
+import { setError } from "@/store/errorSlice/errorSlice";
 
 /* Components */
 import Step1 from "@/views/Step1/Step1";
@@ -18,6 +19,7 @@ import MainLayout from "@/layout/MainLayout";
 import ConfirmationLayout from "@/layout/ConfirmationLayout";
 import ErrorPage from "@/views/ErrorPage/ErrorPage";
 import ConfirmationPage from "@/views/ConfirmationPage/ConfirmationPage";
+import { changePage } from "@/store/pageSlice/pageSlice";
 
 const App = () => {
   const [images, setImages] = useState();
@@ -36,23 +38,23 @@ const App = () => {
   }, [pathname]);
 
   useEffect(() => {
-    getDataFromLocal();
+    /*     getDataFromLocal(); */
   }, []);
 
   const getDataFromLocal = () => {
     /*   let data = JSON.parse(localStorage.getItem("contrato")); */
     let data = {
-      apellido: "Test Apellido",
+      nombre: "Lanae",
+      apellido: "Shank",
+      email: "lshanka@github.com",
+      telefono: "1251822227",
       cuoCap: "CAPITAL",
       cuotas: "43400",
-      email: "test@gmail.com",
       entrega: "17/02/23",
       moneda: "UYU",
       monto: "6200000",
-      nombre: "Test Nombre",
       plazo: "300",
       simulador: "Pesos Ajustables",
-      telefono: "123456879",
       codigo: "90",
     };
 
@@ -114,7 +116,10 @@ const App = () => {
           );
           TomarNumeroCRM(data.pVentaOLId);
         } else {
-          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
+          dispatch(
+            setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
+          );
+          dispatch(changePage(5));
         }
       })
       .catch((err) => {
@@ -140,7 +145,10 @@ const App = () => {
         if (data.pCodigoRespuesta == "00") {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
         } else {
-          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
+          dispatch(
+            setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
+          );
+          dispatch(changePage(5));
         }
       })
       .catch((err) => {
@@ -170,7 +178,10 @@ const App = () => {
         if (data.pCodigoRespuesta == "00") {
           dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
         } else {
-          alert(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`);
+          dispatch(
+            setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
+          );
+          dispatch(changePage(5));
         }
         setSpinner(false);
       })

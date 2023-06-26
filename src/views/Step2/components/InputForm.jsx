@@ -49,6 +49,41 @@ const InputForm = ({
     setInitialValues(updatedAreas);
   };
 
+  const handleCedula = (e, i) => {
+    let editNumber = e.target.value;
+    let checkMark = editNumber.includes("-");
+
+    if (checkMark) {
+      editNumber = editNumber.replaceAll("-", "");
+    }
+
+    let validationCedula = editNumber.match(/^\d+$/);
+
+    if (validationCedula || editNumber === "") {
+      if (editNumber.length === 8) {
+        editNumber =
+          editNumber.slice(0, editNumber.length - 1) +
+          "-" +
+          editNumber.slice(editNumber.length - 1);
+      } else if (editNumber.length === 9) {
+        editNumber = editNumber.slice(0, editNumber.length - 1);
+        editNumber =
+          editNumber.slice(0, editNumber.length - 1) +
+          "-" +
+          editNumber.slice(editNumber.length - 1);
+      }
+
+      if (editNumber.length <= 9) {
+        const updatedAreas = [...initialValues];
+        updatedAreas[i] = {
+          ...updatedAreas[i],
+          [e.target.name]: editNumber,
+        };
+        setInitialValues(updatedAreas);
+      }
+    }
+  };
+
   const handleFiles = (e, i) => {
     const updatedAreas = [...initialValues];
     updatedAreas[i] = {
@@ -269,7 +304,7 @@ const InputForm = ({
                   error={amountValidations[index]?.cedula}
                   type="text"
                   click={(e) => {
-                    handleInput(e, index),
+                    handleCedula(e, index),
                       useValidate(
                         e.target.value,
                         amountValidations,
