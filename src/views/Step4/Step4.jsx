@@ -639,6 +639,7 @@ const Step4 = ({ images }) => {
   }
 
   const AltaContratoGestion = async () => {
+    setSpinner(true);
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/AltaContratoGestion",
       {
@@ -658,6 +659,7 @@ const Step4 = ({ images }) => {
         console.log(data);
         if (data.pCodigoRespuesta === "00") {
           dispatch(changePage(6));
+          setSpinner(false);
         } else {
           dispatch(
             setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
