@@ -8,6 +8,7 @@ import ReactHtmlParser from "react-html-parser";
 /* Hooks */
 import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "@/store/pageSlice/pageSlice";
+import { setAccept } from "@/store/validationSlice/validationSlice";
 import { useEffect, useState } from "react";
 import useScrollTop from "@/hooks/useScrollTop";
 
@@ -19,8 +20,10 @@ import CuotaMinMax from "./components/CuotaMinMax";
 
 const Step1_3 = () => {
   const { simulador, plazo } = useSelector((state) => state.data);
+  const accept = useSelector((state) => state.validation.accept);
   const [switchCheck, setSwitchCheck] = useState();
   const [disabled, setDisabled] = useState(true);
+  const [storage, setStorage] = useState(false);
   const dispatch = useDispatch();
 
   useEffect(() => {
@@ -48,10 +51,17 @@ const Step1_3 = () => {
         numValidations = 4;
         break;
     }
-    let arr = new Array(numValidations).fill("").map((_, i) => i + 1);
-    let newArr = [];
-    arr.forEach((n) => newArr.push(false));
-    setSwitchCheck(newArr);
+
+    if (accept.length > 0) {
+      setStorage(true);
+      setSwitchCheck(accept);
+    } else {
+      setStorage(false);
+      let arr = new Array(numValidations).fill("").map((_, i) => i + 1);
+      let newArr = [];
+      arr.forEach((n) => newArr.push(false));
+      setSwitchCheck(newArr);
+    }
   };
 
   const validateButton = () => {
@@ -86,7 +96,10 @@ const Step1_3 = () => {
               </h3>
               <div className="step1_3_switchContainer">
                 <p className="step1_3_text text_mobile">Entendido</p>
-                <Switch click={(value) => handleCheck(value, 0)} />
+                <Switch
+                  storage={storage}
+                  click={(value) => handleCheck(value, 0)}
+                />
               </div>
             </div>
 
@@ -112,7 +125,10 @@ const Step1_3 = () => {
                 </h3>
                 <div className="step1_3_switchContainer">
                   <p className="step1_3_text text_mobile">Entendido</p>
-                  <Switch click={(value) => handleCheck(value, 1)} />
+                  <Switch
+                    storage={storage}
+                    click={(value) => handleCheck(value, 1)}
+                  />
                 </div>
               </div>
 
@@ -132,7 +148,10 @@ const Step1_3 = () => {
                 </h3>
                 <div className="step1_3_switchContainer">
                   <p className="step1_3_text text_mobile">Entendido</p>
-                  <Switch click={(value) => handleCheck(value, 2)} />
+                  <Switch
+                    storage={storage}
+                    click={(value) => handleCheck(value, 2)}
+                  />
                 </div>
               </div>
 
@@ -155,9 +174,15 @@ const Step1_3 = () => {
                 <div className="step1_3_switchContainer">
                   <p className="step1_3_text text_mobile">Entendido</p>
                   {simulador === "Fecha Elegida" ? (
-                    <Switch click={(value) => handleCheck(value, 1)} />
+                    <Switch
+                      storage={storage}
+                      click={(value) => handleCheck(value, 1)}
+                    />
                   ) : (
-                    <Switch click={(value) => handleCheck(value, 3)} />
+                    <Switch
+                      storage={storage}
+                      click={(value) => handleCheck(value, 3)}
+                    />
                   )}
                 </div>
               </div>
@@ -191,16 +216,25 @@ const Step1_3 = () => {
               <div className="step1_3_switchContainer">
                 <p className="step1_3_text text_mobile">Entendido</p>
                 {simulador === "Fecha Elegida" && (
-                  <Switch click={(value) => handleCheck(value, 2)} />
+                  <Switch
+                    storage={storage}
+                    click={(value) => handleCheck(value, 2)}
+                  />
                 )}
                 {(simulador === "Dolares" ||
                   simulador === "Diferencial Dolares") && (
-                  <Switch click={(value) => handleCheck(value, 3)} />
+                  <Switch
+                    storage={storage}
+                    click={(value) => handleCheck(value, 3)}
+                  />
                 )}
                 {simulador != "Dolares" &&
                   simulador != "Diferencial Dolares" &&
                   simulador != "Fecha Elegida" && (
-                    <Switch click={(value) => handleCheck(value, 4)} />
+                    <Switch
+                      storage={storage}
+                      click={(value) => handleCheck(value, 4)}
+                    />
                   )}
               </div>
             </div>
@@ -226,16 +260,25 @@ const Step1_3 = () => {
               <div className="step1_3_switchContainer">
                 <p className="step1_3_text text_mobile">Entendido</p>
                 {simulador === "Fecha Elegida" && (
-                  <Switch click={(value) => handleCheck(value, 3)} />
+                  <Switch
+                    storage={storage}
+                    click={(value) => handleCheck(value, 3)}
+                  />
                 )}
                 {(simulador === "Dolares" ||
                   simulador === "Diferencial Dolares") && (
-                  <Switch click={(value) => handleCheck(value, 4)} />
+                  <Switch
+                    storage={storage}
+                    click={(value) => handleCheck(value, 4)}
+                  />
                 )}
                 {simulador != "Dolares" &&
                   simulador != "Diferencial Dolares" &&
                   simulador != "Fecha Elegida" && (
-                    <Switch click={(value) => handleCheck(value, 5)} />
+                    <Switch
+                      storage={storage}
+                      click={(value) => handleCheck(value, 5)}
+                    />
                   )}
               </div>
             </div>
@@ -253,7 +296,9 @@ const Step1_3 = () => {
           <Button
             text="Siguiente"
             click={() => {
-              dispatch(changePage(2)), useScrollTop();
+              dispatch(setAccept(switchCheck)),
+                dispatch(changePage(2)),
+                useScrollTop();
             }}
             disabled={disabled}
           />

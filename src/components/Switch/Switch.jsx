@@ -1,8 +1,12 @@
 import "./Switch.scss";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
-const Switch = ({ click }) => {
+const Switch = ({ click, storage }) => {
   const [check, setCheck] = useState(false);
+
+  useEffect(() => {
+    setCheck(storage);
+  }, [storage]);
 
   return (
     <label className="switch">

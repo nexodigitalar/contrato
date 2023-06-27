@@ -100,11 +100,11 @@ const Step1_1 = ({ changePage }) => {
                     titleGreen="Cuota"
                     title=" para el"
                     titleBold=" capital elegido"
-                    number={`<span class="step1_textCard">Espera</span> $${useFormatNumber(
+                    number={`<span class="step1_textCard">Espera</span> ${currency}${useFormatNumber(
                       espera
-                    )}<br/> <span class="step1_textCard">Normal</span> $${useFormatNumber(
+                    )}<br/> <span class="step1_textCard">Normal</span> ${currency}${useFormatNumber(
                       normal
-                    )}<br/> <span class="step1_textCard">Final</span> $${useFormatNumber(
+                    )}<br/> <span class="step1_textCard">Final</span> ${currency}${useFormatNumber(
                       final
                     )}`}
                     img={plazo == 200 ? cuota2 : cuota}
@@ -150,14 +150,14 @@ const Step1_1 = ({ changePage }) => {
                         titleGreen="Cuota"
                         title=""
                         titleBold=" entre"
-                        number={useFormatNumber(
+                        number={`${currency} ${useFormatNumber(
                           cuotasRango.InfoGrupoProducto?.CuotasRangos[0]
                             .CuotaMinima
-                        )}
-                        number2={useFormatNumber(
+                        )}`}
+                        number2={`${currency} ${useFormatNumber(
                           cuotasRango.InfoGrupoProducto?.CuotasRangos[0]
                             .CuotaMaxima
-                        )}
+                        )}`}
                         img={plazo == 200 ? cuotaEntre2 : cuotaEntre}
                         plazo={plazo}
                       />
@@ -175,14 +175,14 @@ const Step1_1 = ({ changePage }) => {
                         titleGreen="Capital"
                         title=""
                         titleBold=" entre"
-                        number={useFormatNumber(
+                        number={`${currency} ${useFormatNumber(
                           cuotasRango.InfoGrupoProducto?.CapitalesRangos[0]
                             .CapitalMinimo
-                        )}
-                        number2={useFormatNumber(
+                        )}`}
+                        number2={`${currency} ${useFormatNumber(
                           cuotasRango.InfoGrupoProducto?.CapitalesRangos[0]
                             .CapitalMaximo
-                        )}
+                        )}`}
                         img={plazo == 200 ? capitalEntre2 : capitalEntre}
                         plazo={plazo}
                       />

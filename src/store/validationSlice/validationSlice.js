@@ -1,6 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
+  accept: [],
   step2: [],
   step3: [],
 };
@@ -17,9 +18,13 @@ export const validationSlice = createSlice({
       state.step3 = action.payload;
       return state;
     },
+    setAccept: (state, action) => {
+      state.accept = action.payload;
+      return state;
+    },
   },
 });
 
-export const { setStep2, setStep3 } = validationSlice.actions;
+export const { setStep2, setStep3, setAccept } = validationSlice.actions;
 
 export default validationSlice.reducer;

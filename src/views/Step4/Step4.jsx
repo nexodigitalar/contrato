@@ -16,7 +16,7 @@ import SmsContainer from "./components/SmsContainer/SmsContainer";
 import { useSelector, useDispatch } from "react-redux";
 import useFormatNumber from "@/hooks/useFormatNumber";
 import { useState, useEffect } from "react";
-import { blockPages } from "@/store/pageSlice/pageSlice";
+import { blockPages, changePage } from "@/store/pageSlice/pageSlice";
 import { setError } from "@/store/errorSlice/errorSlice";
 
 const Step4 = ({ images }) => {
@@ -599,32 +599,6 @@ const Step4 = ({ images }) => {
         resolve(WSCedulaContratoOnLine(doc, "CI_DORSO", result));
       };
     });
-  }
-
-  async function convertFilesBase64(doc, index) {
-    let reader = new FileReader();
-    reader.readAsDataURL(images[index].ciFrente);
-
-    return new Promise((resolve, reject) => {
-      reader.onload = async function setFile() {
-        var arrayAux = [];
-        let base64 = reader.result;
-        arrayAux = base64.split(",");
-        let result = arrayAux[1];
-        await WSCedulaContratoOnLine(doc, "CI_FRENTE", result);
-      };
-    });
-
-    let readerDorso = new FileReader();
-    readerDorso.readAsDataURL(images[index].ciDorso);
-
-    readerDorso.onload = async function setFile() {
-      var arrayAux = [];
-      let base64 = reader.result;
-      arrayAux = base64.split(",");
-      let result = arrayAux[1];
-      await WSCedulaContratoOnLine(doc, "CI_DORSO", result);
-    };
   }
 
   async function WSCedulaContratoOnLine(doc, type, image) {

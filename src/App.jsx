@@ -38,21 +38,21 @@ const App = () => {
   }, [pathname]);
 
   useEffect(() => {
-    /*     getDataFromLocal(); */
+    getDataFromLocal();
   }, []);
 
   const getDataFromLocal = () => {
-    /*   let data = JSON.parse(localStorage.getItem("contrato")); */
+    /*     let data = JSON.parse(localStorage.getItem("contrato")); */
     let data = {
-      nombre: "Lanae",
-      apellido: "Shank",
-      email: "lshanka@github.com",
-      telefono: "1251822227",
+      nombre: "Marquita",
+      apellido: "Witt",
+      email: "mwitti@sourceforge.net",
+      telefono: "2294712186",
       cuoCap: "CAPITAL",
-      cuotas: "43400",
+      cuotas: "715",
       entrega: "17/02/23",
-      moneda: "UYU",
-      monto: "6200000",
+      moneda: "USD",
+      monto: "165000",
       plazo: "300",
       simulador: "Pesos Ajustables",
       codigo: "90",

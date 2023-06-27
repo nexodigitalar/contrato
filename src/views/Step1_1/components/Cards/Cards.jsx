@@ -25,7 +25,7 @@ const Cards = ({
         </h4>
         {number2 ? (
           <p className="cards_number">
-            ${ReactHtmlParser(number)} y ${number2}
+            {ReactHtmlParser(number)} y {number2}
           </p>
         ) : (
           <p className="cards_number">{ReactHtmlParser(number)}</p>
