@@ -1,1 +1,27 @@
-/*# sourceMappingURL=theme.css.map */
+/* Colors Var */
+:root {
+  --primary-color: #003090;
+  --bg-primary-color: #003090;
+  --secondary-color: #4986e8;
+  --bg-secondary-color: #4986e8;
+  --primary-gradient: linear-gradient(124.06deg, rgba(0, 48, 144, 0.878431) 7.23%, #4986e8 83.23%);
+  --underline: #b3ccf3;
+}
+
+[data-theme=cristal] {
+  --primary-color: #003090;
+  --bg-primary-color: #003090;
+  --secondary-color: #4986e8;
+  --bg-secondary-color: #4986e8;
+  --primary-gradient: linear-gradient(124.06deg, rgba(0, 48, 144, 0.878431) 7.23%, #4986e8 83.23%);
+  --underline: #b3ccf3;
+}
+
+[data-theme=pimba] {
+  --primary-color: #471c56;
+  --bg-primary-color: #471c56;
+  --secondary-color: #ffd500;
+  --bg-secondary-color: #ffd500;
+  --primary-gradient: linear-gradient(124.06deg, rgba(71, 28, 86, 0.878431) 7.23%, #de7eff 83.23%);
+  --underline: #fceb96;
+}/*# sourceMappingURL=theme.css.map */

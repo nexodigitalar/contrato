@@ -24,8 +24,9 @@ const Step1_2 = ({ changePage }) => {
         <div className="step1_2">
           <div className="step1_2_container">
             <Header
-              text="PRODUCTO"
-              bold="SELECCIONADO"
+              text="DETALLE"
+              text2="DEL"
+              bold="GRUPO"
               number={infoGrupo.Grupo}
             />
 

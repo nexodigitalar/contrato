@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   ids: {},
   grupo: {},
+  idConfirmation: "",
 };
 
 export const crmSlice = createSlice({
@@ -17,9 +18,13 @@ export const crmSlice = createSlice({
       state.grupo = action.payload;
       return state;
     },
+    setIdConfirmation: (state, action) => {
+      state.idConfirmation = action.payload;
+      return state;
+    },
   },
 });
 
-export const { setGrupo, setId } = crmSlice.actions;
+export const { setGrupo, setId, setIdConfirmation } = crmSlice.actions;
 
 export default crmSlice.reducer;

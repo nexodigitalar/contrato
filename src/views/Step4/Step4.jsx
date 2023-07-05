@@ -22,7 +22,7 @@ import { setError } from "@/store/errorSlice/errorSlice";
 const Step4 = ({ images }) => {
   const dispatch = useDispatch();
   const ids = useSelector((state) => state.crm.ids);
-  const { simulador, cuotas, plazo, monto } = useSelector(
+  const { simulador, cuotas, plazo, monto, moneda } = useSelector(
     (state) => state.data
   );
   const usuario = useSelector((state) => state.user.usuarios);
@@ -30,6 +30,13 @@ const Step4 = ({ images }) => {
   const data = useSelector((state) => state.data);
   const [confirmContract, setConfirmContract] = useState(true);
   const [spinner, setSpinner] = useState(true);
+  const [currency, setCurrency] = useState("$");
+
+  useEffect(() => {
+    if (moneda === "USD") {
+      setCurrency("U$S");
+    }
+  });
 
   useEffect(() => {
     dispatch(blockPages());
@@ -289,7 +296,7 @@ const Step4 = ({ images }) => {
           } else {
             sendFrenteFile(user.cedula, 0);
             sendDorsoFile(user.cedula, 0);
-            checkValidations();
+            setSpinner(false);
           }
         } else {
           dispatch(
@@ -701,18 +708,8 @@ const Step4 = ({ images }) => {
                   <p className="step4_text">
                     <span className="color_text">Monto</span> a{" "}
                     <span className="gray">
-                      recibir - $ {useFormatNumber(monto)}
+                      recibir - {currency} {useFormatNumber(monto)}
                     </span>
-                  </p>
-                </div>
-                <div className="step4_descriptionContainer">
-                  <FontAwesomeIcon
-                    className="step4_icon"
-                    icon={faChevronRight}
-                  />
-                  <p className="step4_text">
-                    <span className="color_text">Fecha</span> de{" "}
-                    <span className="gray">entrega - 17/02/2023</span>
                   </p>
                 </div>
                 <div className="step4_descriptionContainer">
@@ -723,7 +720,7 @@ const Step4 = ({ images }) => {
                   <p className="step4_text">
                     <span className="color_text">Valor</span> de{" "}
                     <span className="gray">
-                      cuota - $ {useFormatNumber(cuotas)}
+                      cuota - {currency} {useFormatNumber(cuotas)}
                     </span>
                   </p>
                 </div>

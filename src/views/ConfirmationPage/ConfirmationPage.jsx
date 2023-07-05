@@ -1,10 +1,18 @@
 import "./ConfirmationPage.scss";
 import check from "@/assets/img/check.png";
+import { useEffect } from "react";
+import { useSelector } from "react-redux";
 
 /* Components */
 import Button from "@/components/Button/Button";
 
+/* useEffect(() => {
+  localStorage.removeItem("contrato");
+}, []); */
+
 const ConfirmationPage = () => {
+  const idConfirmation = useSelector((state) => state.crm.idConfirmation);
+
   return (
     <div className="confirmation">
       <div className="confirmation_container">
@@ -18,7 +26,7 @@ const ConfirmationPage = () => {
 
           <h2 className="confirmation_title">
             <span className="gray">Felicitaciones</span>, su contrato{" "}
-            <span className="gray">570-179</span> ha finalizado con{" "}
+            <span className="gray">{idConfirmation}</span> ha finalizado con{" "}
             <span className="gray">éxito</span>.
           </h2>
           <p className="confirmation_text">

@@ -120,15 +120,13 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               op2="Masculino"
               error={amountValidations[index]?.sexo}
               click={(e) =>
-                setTimeout(() => {
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "sexo",
-                    setAmountValidations
-                  );
-                }, 500)
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "sexo",
+                  setAmountValidations
+                )
               }
               change={(e) => {
                 {
@@ -141,6 +139,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       setAmountValidations
                     );
                 }
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "sexo",
+                  setAmountValidations
+                );
               }}
             />
             <Input
@@ -158,6 +165,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     "nacionalidad",
                     setAmountValidations
                   );
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "nacionalidad",
+                  setAmountValidations
+                );
               }}
             />
           </div>
@@ -178,6 +194,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     setAmountValidations
                   );
               }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "email",
+                  setAmountValidations
+                );
+              }}
             />
           </div>
 
@@ -191,15 +216,13 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               op2="Argentina"
               error={amountValidations[index]?.pais}
               click={(e) =>
-                setTimeout(() => {
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "pais",
-                    setAmountValidations
-                  );
-                }, 1000)
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "pais",
+                  setAmountValidations
+                )
               }
               change={(e) => {
                 {
@@ -212,6 +235,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       setAmountValidations
                     );
                 }
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "pais",
+                  setAmountValidations
+                );
               }}
             />
             <Input
@@ -229,6 +261,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     "departamento",
                     setAmountValidations
                   );
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "departamento",
+                  setAmountValidations
+                );
               }}
             />
           </div>
@@ -249,6 +290,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     setAmountValidations
                   );
               }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "calle",
+                  setAmountValidations
+                );
+              }}
             />
             <Input
               placeholder="* Puerta Número"
@@ -266,6 +316,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     setAmountValidations
                   );
               }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "puertaNumero",
+                  setAmountValidations
+                );
+              }}
             />
           </div>
           <div className="inputForm_div">
@@ -280,15 +339,13 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               op4="Viudo/a"
               error={amountValidations[index]?.estadoCivil}
               click={(e) =>
-                setTimeout(() => {
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "estadoCivil",
-                    setAmountValidations
-                  );
-                }, 1000)
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "estadoCivil",
+                  setAmountValidations
+                )
               }
               change={(e) => {
                 {
@@ -301,6 +358,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       setAmountValidations
                     );
                 }
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "estadoCivil",
+                  setAmountValidations
+                );
               }}
             />
             <InputCheck
@@ -318,15 +384,13 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               op2="Dólares Americanos"
               error={amountValidations[index]?.monedaIngreso}
               click={(e) =>
-                setTimeout(() => {
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "monedaIngreso",
-                    setAmountValidations
-                  );
-                }, 1000)
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "monedaIngreso",
+                  setAmountValidations
+                )
               }
               change={(e) => {
                 {
@@ -339,6 +403,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       setAmountValidations
                     );
                 }
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "monedaIngreso",
+                  setAmountValidations
+                );
               }}
             />
             <Input
@@ -356,6 +429,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     "ingresosMensuales",
                     setAmountValidations
                   );
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "ingresosMensuales",
+                  setAmountValidations
+                );
               }}
             />
           </div>
@@ -376,6 +458,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     setAmountValidations
                   );
               }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "empresaTrabaja",
+                  setAmountValidations
+                );
+              }}
             />
             <Input
               placeholder="* Rubro de la Empresa"
@@ -392,6 +483,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     "rubroEmpresa",
                     setAmountValidations
                   );
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "rubroEmpresa",
+                  setAmountValidations
+                );
               }}
             />
           </div>
@@ -411,6 +511,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     setAmountValidations
                   );
               }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "actvidadPrincipal",
+                  setAmountValidations
+                );
+              }}
             />
             <Input
               placeholder="* Origen de fondos"
@@ -427,6 +536,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     "origenFondos",
                     setAmountValidations
                   );
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "origenFondos",
+                  setAmountValidations
+                );
               }}
             />
           </div>

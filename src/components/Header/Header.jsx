@@ -7,7 +7,7 @@ import pesosFijos2 from "@/assets/img/pesos-fijos2.png";
 import diferencial2 from "@/assets/img/diferencial2.png";
 import cuotaLibre2 from "@/assets/img/cuota-libre2.png";
 
-const Header = ({ text, bold, logo, number, plazo }) => {
+const Header = ({ text, text2, bold, logo, number, plazo }) => {
   return (
     <div className="header">
       <div className="header_container">
@@ -15,7 +15,7 @@ const Header = ({ text, bold, logo, number, plazo }) => {
           <p className="header_title">
             {text}
             <br />
-            <span className="header_titleBold">{bold}</span>
+            {text2} <span className="header_titleBold">{bold}</span>
           </p>
           <div className="header_line color_primary_background"></div>
           {logo && logo === "Pesos Fijos" && (

@@ -31,6 +31,13 @@ const InputForm = ({
   const savedValidations = useSelector((state) => state.validation.step2);
   const dispatch = useDispatch();
   const data = useSelector((state) => state.data);
+  const [titles] = useState([
+    "primer",
+    "segundo",
+    "tercer",
+    "cuarto",
+    "quinto",
+  ]);
 
   useEffect(() => {
     handleInitialValidations();
@@ -60,27 +67,17 @@ const InputForm = ({
     let validationCedula = editNumber.match(/^\d+$/);
 
     if (validationCedula || editNumber === "") {
-      if (editNumber.length === 8) {
-        editNumber =
-          editNumber.slice(0, editNumber.length - 1) +
-          "-" +
-          editNumber.slice(editNumber.length - 1);
-      } else if (editNumber.length === 9) {
-        editNumber = editNumber.slice(0, editNumber.length - 1);
-        editNumber =
-          editNumber.slice(0, editNumber.length - 1) +
-          "-" +
-          editNumber.slice(editNumber.length - 1);
-      }
+      editNumber =
+        editNumber.slice(0, editNumber.length - 1) +
+        "-" +
+        editNumber.slice(editNumber.length - 1);
 
-      if (editNumber.length <= 9) {
-        const updatedAreas = [...initialValues];
-        updatedAreas[i] = {
-          ...updatedAreas[i],
-          [e.target.name]: editNumber,
-        };
-        setInitialValues(updatedAreas);
-      }
+      const updatedAreas = [...initialValues];
+      updatedAreas[i] = {
+        ...updatedAreas[i],
+        [e.target.name]: editNumber,
+      };
+      setInitialValues(updatedAreas);
     }
   };
 
@@ -292,7 +289,7 @@ const InputForm = ({
           {Array.from({ length: amountUsers }, (_, index) => (
             <div key={index} className="inputForm_innerContainer">
               <h3 className="step2_title">
-                <span className="color_text">Datos </span>del{" "}
+                <span className="color_text">Datos </span>del {titles[index]}{" "}
                 <span className="gray">titular</span>
               </h3>
 

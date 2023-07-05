@@ -7,7 +7,7 @@ import Input from "@/components/Input/Input";
 import Timer from "../Timer/Timer";
 
 /* Hooks */
-import { useState } from "react";
+import { useState, useEffect } from "react";
 
 const PinInput = ({
   phone,
@@ -18,7 +18,10 @@ const PinInput = ({
 }) => {
   const [pinTyped, setPinTyped] = useState();
   const [error, setError] = useState(true);
-  console.log(numberValidation);
+
+  useEffect(() => {
+    console.log("Número para validar:", numberValidation);
+  }, [numberValidation]);
 
   const validatePin = () => {
     if (numberValidation == pinTyped) {

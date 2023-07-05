@@ -1,9 +1,15 @@
 import "./ErrorPage.scss";
 import error from "@/assets/img/error.png";
 import { useSelector } from "react-redux";
+import { useEffect } from "react";
 
 const ErrorPage = () => {
   const errorInfo = useSelector((state) => state.error);
+  const idConfirmation = useSelector((state) => state.crm.idConfirmation);
+
+  /*   useEffect(() => {
+    localStorage.removeItem("contrato");
+  }, []) */
 
   return (
     <div className="error">
@@ -17,8 +23,11 @@ const ErrorPage = () => {
           <img src={error} alt="check" className="error_img" />
 
           <h2 className="error_title">
-            Contrato <span className="gray">570-179</span> ha sido{" "}
-            <span className="gray">rechazado</span>.
+            Contrato{" "}
+            <span className="gray">
+              {idConfirmation === undefined ? "" : idConfirmation}
+            </span>{" "}
+            ha sido <span className="gray">rechazado</span>.
           </h2>
           <p className="error_text">{errorInfo.title}</p>
 

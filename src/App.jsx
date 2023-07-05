@@ -7,7 +7,7 @@ import { Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setData } from "@/store/dataSlice/dataSlice";
 import { setId } from "@/store/crmSlice/crmSlice";
-import { setGrupo } from "@/store/crmSlice/crmSlice";
+import { setGrupo, setIdConfirmation } from "@/store/crmSlice/crmSlice";
 import { setError } from "@/store/errorSlice/errorSlice";
 
 /* Components */
@@ -43,7 +43,7 @@ const App = () => {
 
   const getDataFromLocal = () => {
     let data = JSON.parse(localStorage.getItem("contrato"));
-    /*     let data = {
+    /* let data = {
       nombre: "Marquita",
       apellido: "Witt",
       email: "mwitti@sourceforge.net",
@@ -56,6 +56,7 @@ const App = () => {
       plazo: "300",
       simulador: "Pesos Ajustables",
       codigo: "90",
+      indice: "IPC"
     }; */
 
     dispatch(setData(data));
@@ -71,6 +72,9 @@ const App = () => {
   };
 
   const RegistrarClienteCRM = async (data) => {
+    console.log({
+      Indice: data.indice,
+    });
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteCRM",
       {
@@ -96,9 +100,10 @@ const App = () => {
             Plazo: data.plazo,
             PlazoEntrega: "0",
             Bonificadas: "0",
-            UTMSource: "PruebaReg1",
-            UTMMedium: "PruebaReg1",
-            UTMCampaign: "PruebaReg1",
+            Indice: data.indice,
+            UTMSource: "CONTRATO ONLINE",
+            UTMMedium: "https://consorcio.uy/contrato/",
+            UTMCampaign: "https://consorcio.uy/contrato/",
           },
         }),
       }
@@ -144,6 +149,7 @@ const App = () => {
         console.log("TomarNumeroCRM", data);
         if (data.pCodigoRespuesta == "00") {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
+          dispatch(setIdConfirmation(data.pGrupo + "-" + data.pGrupoNumero));
         } else {
           dispatch(
             setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
