@@ -47,7 +47,7 @@ const SmsContainer = ({ setConfirmContract }) => {
           pPassword: import.meta.env.VITE_PASSWORD,
           pVentaOLId: ids.ventaId,
           pTelMovil: usuario[0].telefono,
-          pMsjSMS: "Tu PIN de confirmación es: " + numberValidation,
+          pMsjSMS: "Tu PIN de validacion es: " + numberValidation,
         }),
       }
     )

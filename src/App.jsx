@@ -56,7 +56,10 @@ const App = () => {
       plazo: "300",
       simulador: "Pesos Ajustables",
       codigo: "90",
-      indice: "IPC"
+      indice: "IPC",
+        espera: "1000",
+      normal: "1200",
+      final: "1500", 
     }; */
 
     dispatch(setData(data));
