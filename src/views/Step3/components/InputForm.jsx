@@ -3,6 +3,7 @@ import "./InputForm.scss";
 /* Components */
 import Input from "@/components/Input/Input";
 import SelectInput from "@/components/SelectInput/SelectInput";
+import SelectCountry from "@/components/SelectCountry/SelectCountry";
 import InputCheck from "../../../components/InputCheck/InputCheck";
 
 /* Hooks */
@@ -207,13 +208,10 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
           </div>
 
           <div className="inputForm_div">
-            <SelectInput
-              placeholder="* País"
+            <SelectCountry
               name="pais"
               usuario={usuario}
               index={index}
-              op1="Uruguay"
-              op2="Argentina"
               error={amountValidations[index]?.pais}
               click={(e) =>
                 useValidate(

@@ -36,6 +36,7 @@ const Step4 = ({ images }) => {
     if (moneda === "USD") {
       setCurrency("U$S");
     }
+    console.log(usuario);
   });
 
   useEffect(() => {

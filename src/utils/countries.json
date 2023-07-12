@@ -1,0 +1,2417 @@
+[
+  {
+    "name": "Uruguay",
+    "alpha2": "UY",
+    "alpha3": "URY",
+    "numerico": 858,
+    "COI": "URU",
+    "Fips": "UY",
+    "Placa": "ROU",
+    "Domain": ".uy"
+  },
+  {
+    "name": "Afganistán",
+    "alpha2": "AF",
+    "alpha3": "AFG",
+    "numerico": 4,
+    "COI": "AFG",
+    "Fips": "AF",
+    "Placa": "AFG",
+    "Domain": ".af"
+  },
+  {
+    "name": "Albania",
+    "alpha2": "AL",
+    "alpha3": "ALB",
+    "numerico": 8,
+    "COI": "ALB",
+    "Fips": "AL",
+    "Placa": "AL",
+    "Domain": ".al"
+  },
+  {
+    "name": "Alemania",
+    "alpha2": "DE",
+    "alpha3": "DEU",
+    "numerico": 276,
+    "COI": "GER",
+    "Fips": "GM",
+    "Placa": "D",
+    "Domain": ".de"
+  },
+  {
+    "name": "Andorra",
+    "alpha2": "AD",
+    "alpha3": "AND",
+    "numerico": 20,
+    "COI": "AND",
+    "Fips": "AN",
+    "Placa": "AND",
+    "Domain": ".ad"
+  },
+  {
+    "name": "Angola",
+    "alpha2": "AO",
+    "alpha3": "AGO",
+    "numerico": 24,
+    "COI": "ANG",
+    "Fips": "AO",
+    "Placa": "ANG",
+    "Domain": ".ao"
+  },
+  {
+    "name": "Anguila",
+    "alpha2": "AI",
+    "alpha3": "AIA",
+    "numerico": 660,
+    "Fips": "AV",
+    "Placa": "AXA",
+    "Domain": ".ai"
+  },
+  {
+    "name": "Antártida",
+    "alpha2": "AQ",
+    "alpha3": "ATA",
+    "numerico": 10,
+    "Fips": "AY",
+    "Domain": ".aq"
+  },
+  {
+    "name": "Antigua y Barbuda",
+    "alpha2": "AG",
+    "alpha3": "ATG",
+    "numerico": 28,
+    "COI": "ANT",
+    "Fips": "AC",
+    "Placa": "AG",
+    "Domain": ".ag"
+  },
+  {
+    "name": "Arabia Saudita",
+    "alpha2": "SA",
+    "alpha3": "SAU",
+    "numerico": 682,
+    "COI": "KSA",
+    "Fips": "SA",
+    "Placa": "KSA",
+    "Domain": ".sa"
+  },
+  {
+    "name": "Argelia",
+    "alpha2": "DZ",
+    "alpha3": "DZA",
+    "numerico": 12,
+    "COI": "ALG",
+    "Fips": "AG",
+    "Placa": "DZ",
+    "Domain": ".dz"
+  },
+  {
+    "name": "Argentina",
+    "alpha2": "AR",
+    "alpha3": "ARG",
+    "numerico": 32,
+    "COI": "ARG",
+    "Fips": "AR",
+    "Placa": "RA",
+    "Domain": ".ar"
+  },
+  {
+    "name": "Armenia",
+    "alpha2": "AM",
+    "alpha3": "ARM",
+    "numerico": 51,
+    "COI": "ARM",
+    "Fips": "AM",
+    "Placa": "AM",
+    "Domain": ".am"
+  },
+  {
+    "name": "Aruba",
+    "alpha2": "AW",
+    "alpha3": "ABW",
+    "numerico": 533,
+    "COI": "ARU",
+    "Fips": "AA",
+    "Placa": "ARU",
+    "Domain": ".aw"
+  },
+  {
+    "name": "Australia",
+    "alpha2": "AU",
+    "alpha3": "AUS",
+    "numerico": 36,
+    "COI": "AUS",
+    "Fips": "AS",
+    "Placa": "AUS",
+    "Domain": ".au"
+  },
+  {
+    "name": "Austria",
+    "alpha2": "AT",
+    "alpha3": "AUT",
+    "numerico": 40,
+    "COI": "AUT",
+    "Fips": "AU",
+    "Placa": "A",
+    "Domain": ".at"
+  },
+  {
+    "name": "Azerbaiyán",
+    "alpha2": "AZ",
+    "alpha3": "AZE",
+    "numerico": 31,
+    "COI": "AZE",
+    "Fips": "AJ",
+    "Placa": "AZ",
+    "Domain": ".az"
+  },
+  {
+    "name": "Bahamas",
+    "alpha2": "BS",
+    "alpha3": "BHS",
+    "numerico": 44,
+    "COI": "BAH",
+    "Fips": "BF",
+    "Placa": "BS",
+    "Domain": ".bs"
+  },
+  {
+    "name": "Bahrein",
+    "alpha2": "BH",
+    "alpha3": "BHR",
+    "numerico": 48,
+    "COI": "BRN",
+    "Fips": "BA",
+    "Placa": "BRN",
+    "Domain": ".bh"
+  },
+  {
+    "name": "Bailía de Guernsey",
+    "alpha2": "GG",
+    "alpha3": "GGY",
+    "numerico": 831,
+    "Fips": "GK",
+    "Placa": "GBG",
+    "Domain": ".gg"
+  },
+  {
+    "name": "Bangladesh",
+    "alpha2": "BD",
+    "alpha3": "BGD",
+    "numerico": 50,
+    "COI": "BAN",
+    "Fips": "BG",
+    "Placa": "BD",
+    "Domain": ".bd"
+  },
+  {
+    "name": "Barbados",
+    "alpha2": "BB",
+    "alpha3": "BRB",
+    "numerico": 52,
+    "COI": "BAR",
+    "Fips": "BB",
+    "Placa": "BDS",
+    "Domain": ".bb"
+  },
+  {
+    "name": "Belarús",
+    "alpha2": "BY",
+    "alpha3": "BLR",
+    "numerico": 112,
+    "COI": "BLR",
+    "Fips": "BO",
+    "Placa": "BY",
+    "Domain": ".by"
+  },
+  {
+    "name": "Bélgica",
+    "alpha2": "BE",
+    "alpha3": "BEL",
+    "numerico": 56,
+    "COI": "BEL",
+    "Fips": "BE",
+    "Placa": "B",
+    "Domain": ".be"
+  },
+  {
+    "name": "Belice",
+    "alpha2": "BZ",
+    "alpha3": "BLZ",
+    "numerico": 84,
+    "COI": "BIZ",
+    "Fips": "BH",
+    "Placa": "BZ",
+    "Domain": ".bz"
+  },
+  {
+    "name": "Benín",
+    "alpha2": "BJ",
+    "alpha3": "BEN",
+    "numerico": 204,
+    "COI": "BEN",
+    "Fips": "BN",
+    "Placa": "BJ",
+    "Domain": ".bj"
+  },
+  {
+    "name": "Bermudas",
+    "alpha2": "BM",
+    "alpha3": "BMU",
+    "numerico": 60,
+    "COI": "BER",
+    "Fips": "BD",
+    "Domain": ".bm"
+  },
+  {
+    "name": "Bolivia",
+    "alpha2": "BO",
+    "alpha3": "BOL",
+    "numerico": 68,
+    "COI": "BOL",
+    "Fips": "BL",
+    "Placa": "BOL",
+    "Domain": ".bo"
+  },
+  {
+    "name": "Bosnia y Hercegovina",
+    "alpha2": "BA",
+    "alpha3": "BIH",
+    "numerico": 70,
+    "COI": "BIH",
+    "Fips": "BK",
+    "Placa": "BIH",
+    "Domain": ".ba"
+  },
+  {
+    "name": "Botsuana",
+    "alpha2": "BW",
+    "alpha3": "BWA",
+    "numerico": 72,
+    "COI": "BOT",
+    "Fips": "BC",
+    "Placa": "RB",
+    "Domain": ".bw"
+  },
+  {
+    "name": "Brasil",
+    "alpha2": "BR",
+    "alpha3": "BRA",
+    "numerico": 76,
+    "COI": "BRA",
+    "Fips": "BR",
+    "Placa": "BR",
+    "Domain": ".br"
+  },
+  {
+    "name": "Brunéi",
+    "alpha2": "BN",
+    "alpha3": "BRN",
+    "numerico": 96,
+    "COI": "BRU",
+    "Fips": "BX",
+    "Placa": "BRU",
+    "Domain": ".bn"
+  },
+  {
+    "name": "Bulgaria",
+    "alpha2": "BG",
+    "alpha3": "BGR",
+    "numerico": 100,
+    "COI": "BUL",
+    "Fips": "BU",
+    "Placa": "BG",
+    "Domain": ".bg"
+  },
+  {
+    "name": "Burkina Faso",
+    "alpha2": "BF",
+    "alpha3": "BFA",
+    "numerico": 854,
+    "COI": "BUR",
+    "Fips": "UV",
+    "Placa": "BF",
+    "Domain": ".bf"
+  },
+  {
+    "name": "Burundi",
+    "alpha2": "BI",
+    "alpha3": "BDI",
+    "numerico": 108,
+    "COI": "BDI",
+    "Fips": "BY",
+    "Placa": "RU",
+    "Domain": ".bi"
+  },
+  {
+    "name": "Bután",
+    "alpha2": "BT",
+    "alpha3": "BTN",
+    "numerico": 64,
+    "COI": "BHU",
+    "Fips": "BT",
+    "Placa": "BHT",
+    "Domain": ".bt"
+  },
+  {
+    "name": "Cabo Verde",
+    "alpha2": "CV",
+    "alpha3": "CPV",
+    "numerico": 132,
+    "COI": "CPV",
+    "Fips": "CV",
+    "Placa": "CV",
+    "Domain": ".cv"
+  },
+  {
+    "name": "Camboya",
+    "alpha2": "KH",
+    "alpha3": "KHM",
+    "numerico": 116,
+    "COI": "CAM",
+    "Fips": "CB",
+    "Placa": "K",
+    "Domain": ".kh"
+  },
+  {
+    "name": "Camerún",
+    "alpha2": "CM",
+    "alpha3": "CMR",
+    "numerico": 120,
+    "COI": "CMR",
+    "Fips": "CM",
+    "Placa": "CAM",
+    "Domain": ".cm"
+  },
+  {
+    "name": "Canadá",
+    "alpha2": "CA",
+    "alpha3": "CAN",
+    "numerico": 124,
+    "COI": "CAN",
+    "Fips": "CA",
+    "Placa": "CDN",
+    "Domain": ".ca"
+  },
+  {
+    "name": "Caribe Neerlandés",
+    "alpha2": "BQ",
+    "alpha3": "BES",
+    "numerico": 535,
+    "Placa": "NL",
+    "Domain": ".bq"
+  },
+  {
+    "name": "Catar",
+    "alpha2": "QA",
+    "alpha3": "QAT",
+    "numerico": 634,
+    "COI": "QAT",
+    "Fips": "QA",
+    "Placa": "Q",
+    "Domain": ".qa"
+  },
+  {
+    "name": "Chad",
+    "alpha2": "TD",
+    "alpha3": "TCD",
+    "numerico": 148,
+    "COI": "CHA",
+    "Fips": "CD",
+    "Placa": "TD",
+    "Domain": ".td"
+  },
+  {
+    "name": "Chequia",
+    "alpha2": "CZ",
+    "alpha3": "CZE",
+    "numerico": 203,
+    "COI": "CZE",
+    "Fips": "EZ",
+    "Placa": "CZ",
+    "Domain": ".cz"
+  },
+  {
+    "name": "Chile",
+    "alpha2": "CL",
+    "alpha3": "CHL",
+    "numerico": 152,
+    "COI": "CHI",
+    "Fips": "CI",
+    "Placa": "RCH",
+    "Domain": ".cl"
+  },
+  {
+    "name": "China",
+    "alpha2": "CN",
+    "alpha3": "CHN",
+    "numerico": 156,
+    "COI": "CHN",
+    "Fips": "CH",
+    "Placa": "CHN",
+    "Domain": ".cn"
+  },
+  {
+    "name": "Chipre",
+    "alpha2": "CY",
+    "alpha3": "CYP",
+    "numerico": 196,
+    "COI": "CYP",
+    "Fips": "CY",
+    "Placa": "CY",
+    "Domain": ".cy"
+  },
+  {
+    "name": "Ciudad del Vaticano",
+    "alpha2": "VA",
+    "alpha3": "VAT",
+    "numerico": 336,
+    "Fips": "VT",
+    "Placa": "V",
+    "Domain": ".va"
+  },
+  {
+    "name": "Colombia",
+    "alpha2": "CO",
+    "alpha3": "COL",
+    "numerico": 170,
+    "COI": "COL",
+    "Fips": "CO",
+    "Placa": "CO",
+    "Domain": ".co"
+  },
+  {
+    "name": "Comores",
+    "alpha2": "KM",
+    "alpha3": "COM",
+    "numerico": 174,
+    "COI": "COM",
+    "Fips": "CN",
+    "Placa": "COM",
+    "Domain": ".km"
+  },
+  {
+    "name": "Corea del Norte",
+    "alpha2": "KP",
+    "alpha3": "PRK",
+    "numerico": 408,
+    "COI": "PRK",
+    "Fips": "KN",
+    "Placa": "KP",
+    "Domain": ".kp"
+  },
+  {
+    "name": "Corea del Sur",
+    "alpha2": "KR",
+    "alpha3": "KOR",
+    "numerico": 410,
+    "COI": "KOR",
+    "Fips": "KS",
+    "Placa": "ROK",
+    "Domain": ".kr"
+  },
+  {
+    "name": "Costa de Marfil",
+    "alpha2": "CI",
+    "alpha3": "CIV",
+    "numerico": 384,
+    "COI": "CIV",
+    "Fips": "IV",
+    "Placa": "CI",
+    "Domain": ".ci"
+  },
+  {
+    "name": "Costa Rica",
+    "alpha2": "CR",
+    "alpha3": "CRI",
+    "numerico": 188,
+    "COI": "CRC",
+    "Fips": "CS",
+    "Placa": "CR",
+    "Domain": ".cr"
+  },
+  {
+    "name": "Croacia",
+    "alpha2": "HR",
+    "alpha3": "HRV",
+    "numerico": 191,
+    "COI": "CRO",
+    "Fips": "HR",
+    "Placa": "HR",
+    "Domain": ".hr"
+  },
+  {
+    "name": "Cuba",
+    "alpha2": "CU",
+    "alpha3": "CUB",
+    "numerico": 192,
+    "COI": "CUB",
+    "Fips": "CU",
+    "Placa": "C",
+    "Domain": ".cu"
+  },
+  {
+    "name": "Curaçao",
+    "alpha2": "CW",
+    "alpha3": "CUW",
+    "numerico": 531,
+    "Fips": "UC",
+    "Domain": ".cw"
+  },
+  {
+    "name": "Dinamarca",
+    "alpha2": "DK",
+    "alpha3": "DNK",
+    "numerico": 208,
+    "COI": "DEN",
+    "Fips": "DA",
+    "Placa": "DK",
+    "Domain": ".dk"
+  },
+  {
+    "name": "Dominica",
+    "alpha2": "DM",
+    "alpha3": "DMA",
+    "numerico": 212,
+    "COI": "DMA",
+    "Fips": "DO",
+    "Placa": "WD",
+    "Domain": ".dm"
+  },
+  {
+    "name": "Ecuador",
+    "alpha2": "EC",
+    "alpha3": "ECU",
+    "numerico": 218,
+    "COI": "ECU",
+    "Fips": "EC",
+    "Placa": "EC",
+    "Domain": ".ec"
+  },
+  {
+    "name": "Egipto",
+    "alpha2": "EG",
+    "alpha3": "EGY",
+    "numerico": 818,
+    "COI": "EGY",
+    "Fips": "EG",
+    "Placa": "ET",
+    "Domain": ".eg"
+  },
+  {
+    "name": "El Salvador",
+    "alpha2": "SV",
+    "alpha3": "SLV",
+    "numerico": 222,
+    "COI": "ESA",
+    "Fips": "ES",
+    "Placa": "ES",
+    "Domain": ".sv"
+  },
+  {
+    "name": "Emiratos Árabes Unidos",
+    "alpha2": "AE",
+    "alpha3": "ARE",
+    "numerico": 784,
+    "COI": "UAE",
+    "Fips": "AE",
+    "Placa": "UAE",
+    "Domain": ".ae"
+  },
+  {
+    "name": "Eritrea",
+    "alpha2": "ER",
+    "alpha3": "ERI",
+    "numerico": 232,
+    "COI": "ERI",
+    "Fips": "ER",
+    "Placa": "ER",
+    "Domain": ".er"
+  },
+  {
+    "name": "Eslovaquia",
+    "alpha2": "SK",
+    "alpha3": "SVK",
+    "numerico": 703,
+    "COI": "SVK",
+    "Fips": "LO",
+    "Placa": "SK",
+    "Domain": ".sk"
+  },
+  {
+    "name": "Eslovenia",
+    "alpha2": "SI",
+    "alpha3": "SVN",
+    "numerico": 705,
+    "COI": "SLO",
+    "Fips": "SI",
+    "Placa": "SLO",
+    "Domain": ".si"
+  },
+  {
+    "name": "España",
+    "alpha2": "ES",
+    "alpha3": "ESP",
+    "numerico": 724,
+    "COI": "ESP",
+    "Fips": "SP",
+    "Placa": "E",
+    "Domain": ".es"
+  },
+  {
+    "name": "Estados Federados de Micronesia",
+    "alpha2": "FM",
+    "alpha3": "FSM",
+    "numerico": 583,
+    "COI": "FSM",
+    "Fips": "FM",
+    "Placa": "FSM",
+    "Domain": ".fm"
+  },
+  {
+    "name": "Estados Unidos de América",
+    "alpha2": "US",
+    "alpha3": "USA",
+    "numerico": 840,
+    "COI": "USA",
+    "Fips": "US",
+    "Placa": "USA",
+    "Domain": ".us"
+  },
+  {
+    "name": "Estonia",
+    "alpha2": "EE",
+    "alpha3": "EST",
+    "numerico": 233,
+    "COI": "EST",
+    "Fips": "EN",
+    "Placa": "EST",
+    "Domain": ".ee"
+  },
+  {
+    "name": "Esuatini",
+    "alpha2": "SZ",
+    "alpha3": "SWZ",
+    "numerico": 748,
+    "COI": "SWZ",
+    "Fips": "WZ",
+    "Placa": "SD",
+    "Domain": ".sz"
+  },
+  {
+    "name": "Etiopía",
+    "alpha2": "ET",
+    "alpha3": "ETH",
+    "numerico": 231,
+    "COI": "ETH",
+    "Fips": "ET",
+    "Placa": "ETH",
+    "Domain": ".et"
+  },
+  {
+    "name": "Filipinas",
+    "alpha2": "PH",
+    "alpha3": "PHL",
+    "numerico": 608,
+    "COI": "PHI",
+    "Fips": "RP",
+    "Placa": "RP",
+    "Domain": ".ph"
+  },
+  {
+    "name": "Finlandia",
+    "alpha2": "FI",
+    "alpha3": "FIN",
+    "numerico": 246,
+    "COI": "FIN",
+    "Fips": "FI",
+    "Placa": "FIN",
+    "Domain": ".fi"
+  },
+  {
+    "name": "Fiyi",
+    "alpha2": "FJ",
+    "alpha3": "FJI",
+    "numerico": 242,
+    "COI": "FIJ",
+    "Fips": "FJ",
+    "Placa": "FJI",
+    "Domain": ".fj"
+  },
+  {
+    "name": "Francia",
+    "alpha2": "FR",
+    "alpha3": "FRA",
+    "numerico": 250,
+    "COI": "FRA",
+    "Fips": "FR",
+    "Placa": "F",
+    "Domain": ".fr"
+  },
+  {
+    "name": "Gabón",
+    "alpha2": "GA",
+    "alpha3": "GAB",
+    "numerico": 266,
+    "COI": "GAB",
+    "Fips": "GB",
+    "Placa": "G",
+    "Domain": ".ga"
+  },
+  {
+    "name": "Gambia",
+    "alpha2": "GM",
+    "alpha3": "GMB",
+    "numerico": 270,
+    "COI": "GAM",
+    "Fips": "GA",
+    "Placa": "WAG",
+    "Domain": ".gm"
+  },
+  {
+    "name": "Georgia",
+    "alpha2": "GE",
+    "alpha3": "GEO",
+    "numerico": 268,
+    "COI": "GEO",
+    "Fips": "GG",
+    "Placa": "GE",
+    "Domain": ".ge"
+  },
+  {
+    "name": "Georgia del Sur y las Islas Sandwich del Sur",
+    "alpha2": "GS",
+    "alpha3": "SGS",
+    "numerico": 239,
+    "Fips": "SX",
+    "Domain": ".gs"
+  },
+  {
+    "name": "Ghana",
+    "alpha2": "GH",
+    "alpha3": "GHA",
+    "numerico": 288,
+    "COI": "GHA",
+    "Fips": "GH",
+    "Placa": "GH",
+    "Domain": ".gh"
+  },
+  {
+    "name": "Gibraltar",
+    "alpha2": "GI",
+    "alpha3": "GIB",
+    "numerico": 292,
+    "Fips": "GI",
+    "Placa": "GBZ",
+    "Domain": ".gi"
+  },
+  {
+    "name": "Granada",
+    "alpha2": "GD",
+    "alpha3": "GRD",
+    "numerico": 308,
+    "COI": "GRN",
+    "Fips": "GJ",
+    "Placa": "WG",
+    "Domain": ".gd"
+  },
+  {
+    "name": "Grecia",
+    "alpha2": "GR",
+    "alpha3": "GRC",
+    "numerico": 300,
+    "COI": "GRE",
+    "Fips": "GR",
+    "Placa": "GR",
+    "Domain": ".gr"
+  },
+  {
+    "name": "Groenlandia",
+    "alpha2": "GL",
+    "alpha3": "GRL",
+    "numerico": 304,
+    "Fips": "GL",
+    "Placa": "KN",
+    "Domain": ".gl"
+  },
+  {
+    "name": "Guadalupe",
+    "alpha2": "GP",
+    "alpha3": "GLP",
+    "numerico": 312,
+    "Fips": "GP",
+    "Domain": ".gp"
+  },
+  {
+    "name": "Guam",
+    "alpha2": "GU",
+    "alpha3": "GUM",
+    "numerico": 316,
+    "COI": "GUM",
+    "Fips": "GQ",
+    "Domain": ".gu"
+  },
+  {
+    "name": "Guatemala",
+    "alpha2": "GT",
+    "alpha3": "GTM",
+    "numerico": 320,
+    "COI": "GUA",
+    "Fips": "GT",
+    "Placa": "GCA",
+    "Domain": ".gt"
+  },
+  {
+    "name": "Guayana",
+    "alpha2": "GY",
+    "alpha3": "GUY",
+    "numerico": 328,
+    "COI": "GUY",
+    "Fips": "GY",
+    "Placa": "GUY",
+    "Domain": ".gy"
+  },
+  {
+    "name": "Guayana Francesa",
+    "alpha2": "GF",
+    "alpha3": "GUF",
+    "numerico": 254,
+    "Fips": "FG",
+    "Domain": ".gf"
+  },
+  {
+    "name": "Guinea",
+    "alpha2": "GN",
+    "alpha3": "GIN",
+    "numerico": 324,
+    "COI": "GUI",
+    "Fips": "GV",
+    "Placa": "RG",
+    "Domain": ".gn"
+  },
+  {
+    "name": "Guinea Ecuatorial",
+    "alpha2": "GQ",
+    "alpha3": "GNQ",
+    "numerico": 226,
+    "COI": "GEQ",
+    "Fips": "EK",
+    "Placa": "GQ",
+    "Domain": ".gq"
+  },
+  {
+    "name": "Guinea-Bissau",
+    "alpha2": "GW",
+    "alpha3": "GNB",
+    "numerico": 624,
+    "COI": "GBS",
+    "Fips": "PU",
+    "Placa": "GUB",
+    "Domain": ".gw"
+  },
+  {
+    "name": "Haití",
+    "alpha2": "HT",
+    "alpha3": "HTI",
+    "numerico": 332,
+    "COI": "HAI",
+    "Fips": "HA",
+    "Placa": "RH",
+    "Domain": ".ht"
+  },
+  {
+    "name": "Honduras",
+    "alpha2": "HN",
+    "alpha3": "HND",
+    "numerico": 340,
+    "COI": "HON",
+    "Fips": "HO",
+    "Placa": "HN",
+    "Domain": ".hn"
+  },
+  {
+    "name": "Hong Kong",
+    "alpha2": "HK",
+    "alpha3": "HKG",
+    "numerico": 344,
+    "COI": "HKG",
+    "Fips": "HK",
+    "Placa": "HK",
+    "Domain": ".hk"
+  },
+  {
+    "name": "Hungría",
+    "alpha2": "HU",
+    "alpha3": "HUN",
+    "numerico": 348,
+    "COI": "HUN",
+    "Fips": "HU",
+    "Placa": "H",
+    "Domain": ".hu"
+  },
+  {
+    "name": "India",
+    "alpha2": "IN",
+    "alpha3": "IND",
+    "numerico": 356,
+    "COI": "IND",
+    "Fips": "IN",
+    "Placa": "IND",
+    "Domain": ".in"
+  },
+  {
+    "name": "Indonesia",
+    "alpha2": "ID",
+    "alpha3": "IDN",
+    "numerico": 360,
+    "COI": "INA",
+    "Fips": "ID",
+    "Placa": "RI",
+    "Domain": ".id"
+  },
+  {
+    "name": "Irán",
+    "alpha2": "IR",
+    "alpha3": "IRN",
+    "numerico": 364,
+    "COI": "IRI",
+    "Fips": "IR",
+    "Placa": "IR",
+    "Domain": ".ir"
+  },
+  {
+    "name": "Iraq",
+    "alpha2": "IQ",
+    "alpha3": "IRQ",
+    "numerico": 368,
+    "COI": "IRQ",
+    "Fips": "IZ",
+    "Placa": "IRQ",
+    "Domain": ".iq"
+  },
+  {
+    "name": "Irlanda",
+    "alpha2": "IE",
+    "alpha3": "IRL",
+    "numerico": 372,
+    "COI": "IRL",
+    "Fips": "EI",
+    "Placa": "IRL",
+    "Domain": ".ie"
+  },
+  {
+    "name": "Isla Bouvet",
+    "alpha2": "BV",
+    "alpha3": "BVT",
+    "numerico": 74,
+    "Fips": "BV",
+    "Domain": ".bv"
+  },
+  {
+    "name": "Isla de Man",
+    "alpha2": "IM",
+    "alpha3": "IMN",
+    "numerico": 833,
+    "Domain": ".im"
+  },
+  {
+    "name": "Isla de Navidad",
+    "alpha2": "CX",
+    "alpha3": "CXR",
+    "numerico": 162,
+    "Fips": "KT",
+    "Domain": ".cx"
+  },
+  {
+    "name": "Isla de San Martín",
+    "alpha2": "MF",
+    "alpha3": "MAF",
+    "numerico": 663,
+    "Fips": "RN",
+    "Placa": "F",
+    "Domain": ".mf"
+  },
+  {
+    "name": "Isla Mauricio",
+    "alpha2": "MU",
+    "alpha3": "MUS",
+    "numerico": 480,
+    "COI": "MRI",
+    "Fips": "MP",
+    "Placa": "MS",
+    "Domain": ".mu"
+  },
+  {
+    "name": "Isla Norfolk",
+    "alpha2": "NF",
+    "alpha3": "NFK",
+    "numerico": 574,
+    "Fips": "NF",
+    "Domain": ".nf"
+  },
+  {
+    "name": "Islandia",
+    "alpha2": "IS",
+    "alpha3": "ISL",
+    "numerico": 352,
+    "COI": "ISL",
+    "Fips": "IC",
+    "Placa": "IS",
+    "Domain": ".is"
+  },
+  {
+    "name": "Islas Åland",
+    "alpha2": "AX",
+    "alpha3": "ALA",
+    "numerico": 248,
+    "Placa": "AX",
+    "Domain": ".ax"
+  },
+  {
+    "name": "Islas Caimán",
+    "alpha2": "KY",
+    "alpha3": "CYM",
+    "numerico": 136,
+    "COI": "CAY",
+    "Fips": "CJ",
+    "Domain": ".ky"
+  },
+  {
+    "name": "Islas Cocos",
+    "alpha2": "CC",
+    "alpha3": "CCK",
+    "numerico": 166,
+    "Fips": "CK",
+    "Domain": ".cc"
+  },
+  {
+    "name": "Islas Cook",
+    "alpha2": "CK",
+    "alpha3": "COK",
+    "numerico": 184,
+    "COI": "COK",
+    "Fips": "CW",
+    "Domain": ".ck"
+  },
+  {
+    "name": "Islas Feroe",
+    "alpha2": "FO",
+    "alpha3": "FRO",
+    "numerico": 234,
+    "Fips": "FO",
+    "Placa": "FO",
+    "Domain": ".fo"
+  },
+  {
+    "name": "Islas Heard y McDonald",
+    "alpha2": "HM",
+    "alpha3": "HMD",
+    "numerico": 334,
+    "Fips": "HM",
+    "Domain": ".hm"
+  },
+  {
+    "name": "Islas Malvinas",
+    "alpha2": "FK",
+    "alpha3": "FLK",
+    "numerico": 238,
+    "Fips": "FK",
+    "Domain": ".fk"
+  },
+  {
+    "name": "Islas Marianas del Norte",
+    "alpha2": "MP",
+    "alpha3": "MNP",
+    "numerico": 580,
+    "Fips": "CQ",
+    "Domain": ".mp"
+  },
+  {
+    "name": "Islas Marshall",
+    "alpha2": "MH",
+    "alpha3": "MHL",
+    "numerico": 584,
+    "COI": "MHL",
+    "Fips": "RM",
+    "Placa": "MH",
+    "Domain": ".mh"
+  },
+  {
+    "name": "Islas Pitcairn",
+    "alpha2": "PN",
+    "alpha3": "PCN",
+    "numerico": 612,
+    "Fips": "PC",
+    "Domain": ".pn"
+  },
+  {
+    "name": "Islas Salomón",
+    "alpha2": "SB",
+    "alpha3": "SLB",
+    "numerico": 90,
+    "COI": "SOL",
+    "Fips": "BP",
+    "Placa": "SOL",
+    "Domain": ".sb"
+  },
+  {
+    "name": "Islas Turcas y Caicos",
+    "alpha2": "TC",
+    "alpha3": "TCA",
+    "numerico": 796,
+    "Fips": "TK",
+    "Domain": ".tc"
+  },
+  {
+    "name": "Islas ultramarinas menores de los Estados Unidos",
+    "alpha2": "UM",
+    "alpha3": "UMI",
+    "numerico": 581,
+    "Fips": "UM",
+    "Domain": ".us"
+  },
+  {
+    "name": "Islas Vírgenes (UK)",
+    "alpha2": "VG",
+    "alpha3": "VGB",
+    "numerico": 92,
+    "COI": "IVB",
+    "Fips": "VI",
+    "Placa": "VG",
+    "Domain": ".vg"
+  },
+  {
+    "name": "Islas Vírgenes Americanas",
+    "alpha2": "VI",
+    "alpha3": "VIR",
+    "numerico": 850,
+    "COI": "ISV",
+    "Fips": "VQ",
+    "Domain": ".vi"
+  },
+  {
+    "name": "Israel",
+    "alpha2": "IL",
+    "alpha3": "ISR",
+    "numerico": 376,
+    "COI": "ISR",
+    "Fips": "IS",
+    "Placa": "IL",
+    "Domain": ".il"
+  },
+  {
+    "name": "Italia",
+    "alpha2": "IT",
+    "alpha3": "ITA",
+    "numerico": 380,
+    "COI": "ITA",
+    "Fips": "IT",
+    "Placa": "I",
+    "Domain": ".it"
+  },
+  {
+    "name": "Jamaica",
+    "alpha2": "JM",
+    "alpha3": "JAM",
+    "numerico": 388,
+    "COI": "JAM",
+    "Fips": "JM",
+    "Placa": "JA",
+    "Domain": ".jm"
+  },
+  {
+    "name": "Japón",
+    "alpha2": "JP",
+    "alpha3": "JPN",
+    "numerico": 392,
+    "COI": "JPN",
+    "Fips": "JA",
+    "Placa": "J",
+    "Domain": ".jp"
+  },
+  {
+    "name": "Jersey",
+    "alpha2": "JE",
+    "alpha3": "JEY",
+    "numerico": 832,
+    "Fips": "JE",
+    "Placa": "GBJ",
+    "Domain": ".je"
+  },
+  {
+    "name": "Jordania",
+    "alpha2": "JO",
+    "alpha3": "JOR",
+    "numerico": 400,
+    "COI": "JOR",
+    "Fips": "JO",
+    "Placa": "JOR",
+    "Domain": ".jo"
+  },
+  {
+    "name": "Kazajistán​​​",
+    "alpha2": "KZ",
+    "alpha3": "KAZ",
+    "numerico": 398,
+    "COI": "KAZ",
+    "Fips": "KZ",
+    "Placa": "KZ",
+    "Domain": ".kz"
+  },
+  {
+    "name": "Kenia",
+    "alpha2": "KE",
+    "alpha3": "KEN",
+    "numerico": 404,
+    "COI": "KEN",
+    "Fips": "KE",
+    "Placa": "EAK",
+    "Domain": ".ke"
+  },
+  {
+    "name": "Kirguistán",
+    "alpha2": "KG",
+    "alpha3": "KGZ",
+    "numerico": 417,
+    "COI": "KGZ",
+    "Fips": "KG",
+    "Placa": "KS",
+    "Domain": ".kg"
+  },
+  {
+    "name": "Kiribati",
+    "alpha2": "KI",
+    "alpha3": "KIR",
+    "numerico": 296,
+    "COI": "KIR",
+    "Fips": "KR",
+    "Placa": "KIR",
+    "Domain": ".ki"
+  },
+  {
+    "name": "Kosovo",
+    "alpha2": "XK",
+    "alpha3": "XKX",
+    "numerico": 412,
+    "COI": "KOS",
+    "Fips": "KV",
+    "Placa": "RKS",
+    "Domain": ".ko"
+  },
+  {
+    "name": "Kuwait",
+    "alpha2": "KW",
+    "alpha3": "KWT",
+    "numerico": 414,
+    "COI": "KUW",
+    "Fips": "KU",
+    "Placa": "KWT",
+    "Domain": ".kw"
+  },
+  {
+    "name": "Laos",
+    "alpha2": "LA",
+    "alpha3": "LAO",
+    "numerico": 418,
+    "COI": "LAO",
+    "Fips": "LA",
+    "Placa": "LAO",
+    "Domain": ".la"
+  },
+  {
+    "name": "Lesotho",
+    "alpha2": "LS",
+    "alpha3": "LSO",
+    "numerico": 426,
+    "COI": "LES",
+    "Fips": "LT",
+    "Placa": "LS",
+    "Domain": ".ls"
+  },
+  {
+    "name": "Letonia",
+    "alpha2": "LV",
+    "alpha3": "LVA",
+    "numerico": 428,
+    "COI": "LAT",
+    "Fips": "LG",
+    "Placa": "LV",
+    "Domain": ".lv"
+  },
+  {
+    "name": "Líbano",
+    "alpha2": "LB",
+    "alpha3": "LBN",
+    "numerico": 422,
+    "COI": "LBN",
+    "Fips": "LE",
+    "Placa": "RL",
+    "Domain": ".lb"
+  },
+  {
+    "name": "Liberia",
+    "alpha2": "LR",
+    "alpha3": "LBR",
+    "numerico": 430,
+    "COI": "LBR",
+    "Fips": "LI",
+    "Placa": "LB",
+    "Domain": ".lr"
+  },
+  {
+    "name": "Libia",
+    "alpha2": "LY",
+    "alpha3": "LBY",
+    "numerico": 434,
+    "COI": "LBA",
+    "Fips": "LY",
+    "Placa": "LAR",
+    "Domain": ".ly"
+  },
+  {
+    "name": "Liechtenstein",
+    "alpha2": "LI",
+    "alpha3": "LIE",
+    "numerico": 438,
+    "COI": "LIE",
+    "Fips": "LS",
+    "Placa": "FL",
+    "Domain": ".li"
+  },
+  {
+    "name": "Lituania",
+    "alpha2": "LT",
+    "alpha3": "LTU",
+    "numerico": 440,
+    "COI": "LTU",
+    "Fips": "LH",
+    "Placa": "LT",
+    "Domain": ".lt"
+  },
+  {
+    "name": "Luxemburgo",
+    "alpha2": "LU",
+    "alpha3": "LUX",
+    "numerico": 442,
+    "COI": "LUX",
+    "Fips": "LU",
+    "Placa": "L",
+    "Domain": ".lu"
+  },
+  {
+    "name": "Macao",
+    "alpha2": "MO",
+    "alpha3": "MAC",
+    "numerico": 446,
+    "Fips": "MC",
+    "Domain": ".mo"
+  },
+  {
+    "name": "Macedonia del Norte",
+    "alpha2": "MK",
+    "alpha3": "MKD",
+    "numerico": 807,
+    "COI": "MKD",
+    "Fips": "MK",
+    "Placa": "MK",
+    "Domain": ".mk"
+  },
+  {
+    "name": "Madagascar",
+    "alpha2": "MG",
+    "alpha3": "MDG",
+    "numerico": 450,
+    "COI": "MAD",
+    "Fips": "MA",
+    "Placa": "RM",
+    "Domain": ".mg"
+  },
+  {
+    "name": "Malasia",
+    "alpha2": "MY",
+    "alpha3": "MYS",
+    "numerico": 458,
+    "COI": "MAS",
+    "Fips": "MY",
+    "Placa": "MAL",
+    "Domain": ".my"
+  },
+  {
+    "name": "Malaui",
+    "alpha2": "MW",
+    "alpha3": "MWI",
+    "numerico": 454,
+    "COI": "MAW",
+    "Fips": "MI",
+    "Placa": "MW",
+    "Domain": ".mw"
+  },
+  {
+    "name": "Maldivas",
+    "alpha2": "MV",
+    "alpha3": "MDV",
+    "numerico": 462,
+    "COI": "MDV",
+    "Fips": "MV",
+    "Placa": "MV",
+    "Domain": ".mv"
+  },
+  {
+    "name": "Malí",
+    "alpha2": "ML",
+    "alpha3": "MLI",
+    "numerico": 466,
+    "COI": "MLI",
+    "Fips": "ML",
+    "Placa": "RMM",
+    "Domain": ".ml"
+  },
+  {
+    "name": "Malta",
+    "alpha2": "MT",
+    "alpha3": "MLT",
+    "numerico": 470,
+    "COI": "MLT",
+    "Fips": "MT",
+    "Placa": "M",
+    "Domain": ".mt"
+  },
+  {
+    "name": "Marruecos",
+    "alpha2": "MA",
+    "alpha3": "MAR",
+    "numerico": 504,
+    "COI": "MAR",
+    "Fips": "MO",
+    "Placa": "MA",
+    "Domain": ".ma"
+  },
+  {
+    "name": "Martinica",
+    "alpha2": "MQ",
+    "alpha3": "MTQ",
+    "numerico": 474,
+    "Fips": "MB",
+    "Domain": ".mq"
+  },
+  {
+    "name": "Mauritania",
+    "alpha2": "MR",
+    "alpha3": "MRT",
+    "numerico": 478,
+    "COI": "MTN",
+    "Fips": "MR",
+    "Placa": "RIM",
+    "Domain": ".mr"
+  },
+  {
+    "name": "Mayotte",
+    "alpha2": "YT",
+    "alpha3": "MYT",
+    "numerico": 175,
+    "Fips": "MF",
+    "Domain": ".yt"
+  },
+  {
+    "name": "México",
+    "alpha2": "MX",
+    "alpha3": "MEX",
+    "numerico": 484,
+    "COI": "MEX",
+    "Fips": "MX",
+    "Placa": "MEX",
+    "Domain": ".mx"
+  },
+  {
+    "name": "Moldavia",
+    "alpha2": "MD",
+    "alpha3": "MDA",
+    "numerico": 498,
+    "COI": "MDA",
+    "Fips": "MD",
+    "Placa": "MD",
+    "Domain": ".md"
+  },
+  {
+    "name": "Mongolia",
+    "alpha2": "MN",
+    "alpha3": "MNG",
+    "numerico": 496,
+    "COI": "MGL",
+    "Fips": "MG",
+    "Placa": "MGL",
+    "Domain": ".mn"
+  },
+  {
+    "name": "Montenegro",
+    "alpha2": "ME",
+    "alpha3": "MNE",
+    "numerico": 499,
+    "COI": "MNE",
+    "Fips": "MJ",
+    "Placa": "MNE",
+    "Domain": ".me"
+  },
+  {
+    "name": "Montserrat",
+    "alpha2": "MS",
+    "alpha3": "MSR",
+    "numerico": 500,
+    "Fips": "MH",
+    "Domain": ".ms"
+  },
+  {
+    "name": "Mozambique",
+    "alpha2": "MZ",
+    "alpha3": "MOZ",
+    "numerico": 508,
+    "COI": "MOZ",
+    "Fips": "MZ",
+    "Placa": "MOC",
+    "Domain": ".mz"
+  },
+  {
+    "name": "Myanmar",
+    "alpha2": "MM",
+    "alpha3": "MMR",
+    "numerico": 104,
+    "COI": "MYA",
+    "Fips": "BM",
+    "Placa": "MYA",
+    "Domain": ".mm"
+  },
+  {
+    "name": "Namibia",
+    "alpha2": "NA",
+    "alpha3": "NAM",
+    "numerico": 516,
+    "COI": "NAM",
+    "Fips": "WA",
+    "Placa": "NAM",
+    "Domain": ".na"
+  },
+  {
+    "name": "Nauru",
+    "alpha2": "NR",
+    "alpha3": "NRU",
+    "numerico": 520,
+    "COI": "NRU",
+    "Fips": "NR",
+    "Placa": "NAU",
+    "Domain": ".nr"
+  },
+  {
+    "name": "Nepal",
+    "alpha2": "NP",
+    "alpha3": "NPL",
+    "numerico": 524,
+    "COI": "NEP",
+    "Fips": "NP",
+    "Placa": "NEP",
+    "Domain": ".np"
+  },
+  {
+    "name": "Nicaragua",
+    "alpha2": "NI",
+    "alpha3": "NIC",
+    "numerico": 558,
+    "COI": "NCA",
+    "Fips": "NU",
+    "Placa": "NIC",
+    "Domain": ".ni"
+  },
+  {
+    "name": "Níger",
+    "alpha2": "NE",
+    "alpha3": "NER",
+    "numerico": 562,
+    "COI": "NIG",
+    "Fips": "NG",
+    "Placa": "RN",
+    "Domain": ".ne"
+  },
+  {
+    "name": "Nigeria",
+    "alpha2": "NG",
+    "alpha3": "NGA",
+    "numerico": 566,
+    "COI": "NGR",
+    "Fips": "NI",
+    "Placa": "NGR",
+    "Domain": ".ng"
+  },
+  {
+    "name": "Niue",
+    "alpha2": "NU",
+    "alpha3": "NIU",
+    "numerico": 570,
+    "Fips": "NE",
+    "Domain": ".nu"
+  },
+  {
+    "name": "Noruega",
+    "alpha2": "NO",
+    "alpha3": "NOR",
+    "numerico": 578,
+    "COI": "NOR",
+    "Fips": "NO",
+    "Placa": "N",
+    "Domain": ".no"
+  },
+  {
+    "name": "Nueva Caledonia",
+    "alpha2": "NC",
+    "alpha3": "NCL",
+    "numerico": 540,
+    "Fips": "NC",
+    "Placa": "NCL",
+    "Domain": ".nc"
+  },
+  {
+    "name": "Nueva Zelandia",
+    "alpha2": "NZ",
+    "alpha3": "NZL",
+    "numerico": 554,
+    "COI": "NZL",
+    "Fips": "NZ",
+    "Placa": "NZ",
+    "Domain": ".nz"
+  },
+  {
+    "name": "Omán",
+    "alpha2": "OM",
+    "alpha3": "OMN",
+    "numerico": 512,
+    "COI": "OMA",
+    "Fips": "MU",
+    "Placa": "OM",
+    "Domain": ".om"
+  },
+  {
+    "name": "namees Bajos",
+    "alpha2": "NL",
+    "alpha3": "NLD",
+    "numerico": 528,
+    "COI": "NED",
+    "Fips": "NL",
+    "Placa": "NL",
+    "Domain": ".nl"
+  },
+  {
+    "name": "Pakistán",
+    "alpha2": "PK",
+    "alpha3": "PAK",
+    "numerico": 586,
+    "COI": "PAK",
+    "Fips": "PK",
+    "Placa": "PK",
+    "Domain": ".pk"
+  },
+  {
+    "name": "Palaos",
+    "alpha2": "PW",
+    "alpha3": "PLW",
+    "numerico": 585,
+    "COI": "PLW",
+    "Fips": "PS",
+    "Placa": "PAL",
+    "Domain": ".pw"
+  },
+  {
+    "name": "Palestina",
+    "alpha2": "PS",
+    "alpha3": "PSE",
+    "numerico": 275,
+    "COI": "PLE",
+    "Fips": "WE",
+    "Placa": "WB",
+    "Domain": ".ps"
+  },
+  {
+    "name": "Panamá",
+    "alpha2": "PA",
+    "alpha3": "PAN",
+    "numerico": 591,
+    "COI": "PAN",
+    "Fips": "PM",
+    "Placa": "PA",
+    "Domain": ".pa"
+  },
+  {
+    "name": "Papúa Nueva Guinea",
+    "alpha2": "PG",
+    "alpha3": "PNG",
+    "numerico": 598,
+    "COI": "PNG",
+    "Fips": "PP",
+    "Placa": "PNG",
+    "Domain": ".pg"
+  },
+  {
+    "name": "Paraguay",
+    "alpha2": "PY",
+    "alpha3": "PRY",
+    "numerico": 600,
+    "COI": "PAR",
+    "Fips": "PA",
+    "Placa": "PY",
+    "Domain": ".py"
+  },
+  {
+    "name": "Perú",
+    "alpha2": "PE",
+    "alpha3": "PER",
+    "numerico": 604,
+    "COI": "PER",
+    "Fips": "PE",
+    "Placa": "PE",
+    "Domain": ".pe"
+  },
+  {
+    "name": "Polinesia Francesa",
+    "alpha2": "PF",
+    "alpha3": "PYF",
+    "numerico": 258,
+    "Fips": "FP",
+    "Domain": ".pf"
+  },
+  {
+    "name": "Polonia",
+    "alpha2": "PL",
+    "alpha3": "POL",
+    "numerico": 616,
+    "COI": "POL",
+    "Fips": "PL",
+    "Placa": "PL",
+    "Domain": ".pl"
+  },
+  {
+    "name": "Portugal",
+    "alpha2": "PT",
+    "alpha3": "PRT",
+    "numerico": 620,
+    "COI": "POR",
+    "Fips": "PO",
+    "Placa": "P",
+    "Domain": ".pt"
+  },
+  {
+    "name": "Principado de Mónaco",
+    "alpha2": "MC",
+    "alpha3": "MCO",
+    "numerico": 492,
+    "COI": "MON",
+    "Fips": "MN",
+    "Placa": "MC",
+    "Domain": ".mc"
+  },
+  {
+    "name": "Puerto Rico",
+    "alpha2": "PR",
+    "alpha3": "PRI",
+    "numerico": 630,
+    "COI": "PUR",
+    "Fips": "RQ",
+    "Placa": "PRI",
+    "Domain": ".pr"
+  },
+  {
+    "name": "Reino Unido",
+    "alpha2": "GB",
+    "alpha3": "GBR",
+    "numerico": 826,
+    "COI": "GBR",
+    "Fips": "UK",
+    "Placa": "GBM",
+    "Domain": ".uk"
+  },
+  {
+    "name": "República Centroafricana",
+    "alpha2": "CF",
+    "alpha3": "CAF",
+    "numerico": 140,
+    "COI": "CAF",
+    "Fips": "CT",
+    "Placa": "RCA",
+    "Domain": ".cf"
+  },
+  {
+    "name": "República del Congo",
+    "alpha2": "CG",
+    "alpha3": "COG",
+    "numerico": 178,
+    "COI": "CGO",
+    "Fips": "CF",
+    "Placa": "RCB",
+    "Domain": ".cg"
+  },
+  {
+    "name": "República Democrática del Congo",
+    "alpha2": "CD",
+    "alpha3": "COD",
+    "numerico": 180,
+    "COI": "COD",
+    "Fips": "CG",
+    "Placa": "CGO",
+    "Domain": ".cd"
+  },
+  {
+    "name": "República Dominicana",
+    "alpha2": "DO",
+    "alpha3": "DOM",
+    "numerico": 214,
+    "COI": "DOM",
+    "Fips": "DR",
+    "Placa": "DOM",
+    "Domain": ".do"
+  },
+  {
+    "name": "Reunión",
+    "alpha2": "RE",
+    "alpha3": "REU",
+    "numerico": 638,
+    "Fips": "RE",
+    "Domain": ".re"
+  },
+  {
+    "name": "Ruanda",
+    "alpha2": "RW",
+    "alpha3": "RWA",
+    "numerico": 646,
+    "COI": "RWA",
+    "Fips": "RW",
+    "Placa": "RWA",
+    "Domain": ".rw"
+  },
+  {
+    "name": "Rumania",
+    "alpha2": "RO",
+    "alpha3": "ROU",
+    "numerico": 642,
+    "COI": "ROU",
+    "Fips": "RO",
+    "Placa": "RO",
+    "Domain": ".ro"
+  },
+  {
+    "name": "Rusia",
+    "alpha2": "RU",
+    "alpha3": "RUS",
+    "numerico": 643,
+    "COI": "RUS",
+    "Fips": "RS",
+    "Placa": "RUS",
+    "Domain": ".ru"
+  },
+  {
+    "name": "Sáhara Occidental",
+    "alpha2": "EH",
+    "alpha3": "ESH",
+    "numerico": 732,
+    "Fips": "WI",
+    "Placa": "WSA",
+    "Domain": ".eh"
+  },
+  {
+    "name": "Samoa",
+    "alpha2": "WS",
+    "alpha3": "WSM",
+    "numerico": 882,
+    "COI": "SAM",
+    "Fips": "WS",
+    "Placa": "WS",
+    "Domain": ".ws"
+  },
+  {
+    "name": "Samoa Americana",
+    "alpha2": "AS",
+    "alpha3": "ASM",
+    "numerico": 16,
+    "COI": "ASA",
+    "Fips": "AQ",
+    "Placa": "USA",
+    "Domain": ".as"
+  },
+  {
+    "name": "San Bartolomé",
+    "alpha2": "BL",
+    "alpha3": "BLM",
+    "numerico": 652,
+    "Fips": "TB",
+    "Domain": ".bl"
+  },
+  {
+    "name": "San Cristóbal y Nieves",
+    "alpha2": "KN",
+    "alpha3": "KNA",
+    "numerico": 659,
+    "COI": "SKN",
+    "Fips": "SC",
+    "Placa": "KAN",
+    "Domain": ".kn"
+  },
+  {
+    "name": "San Marino",
+    "alpha2": "SM",
+    "alpha3": "SMR",
+    "numerico": 674,
+    "COI": "SMR",
+    "Fips": "SM",
+    "Placa": "RSM",
+    "Domain": ".sm"
+  },
+  {
+    "name": "San Pedro y Miquelón",
+    "alpha2": "PM",
+    "alpha3": "SPM",
+    "numerico": 666,
+    "Fips": "SB",
+    "Domain": ".pm"
+  },
+  {
+    "name": "San Vicente y las Granadinas",
+    "alpha2": "VC",
+    "alpha3": "VCT",
+    "numerico": 670,
+    "COI": "VIN",
+    "Fips": "VC",
+    "Placa": "WV",
+    "Domain": ".vc"
+  },
+  {
+    "name": "Santa Elena, Ascensión y Tristán de Acuña",
+    "alpha2": "SH",
+    "alpha3": "SHN",
+    "numerico": 654,
+    "Fips": "SH",
+    "Domain": ".sh"
+  },
+  {
+    "name": "Santa Lucía",
+    "alpha2": "LC",
+    "alpha3": "LCA",
+    "numerico": 662,
+    "COI": "LCA",
+    "Fips": "ST",
+    "Placa": "WL",
+    "Domain": ".lc"
+  },
+  {
+    "name": "Santo Tomé y Príncipe",
+    "alpha2": "ST",
+    "alpha3": "STP",
+    "numerico": 678,
+    "COI": "STP",
+    "Fips": "TP",
+    "Placa": "STP",
+    "Domain": ".st"
+  },
+  {
+    "name": "Senegal",
+    "alpha2": "SN",
+    "alpha3": "SEN",
+    "numerico": 686,
+    "COI": "SEN",
+    "Fips": "SG",
+    "Placa": "SN",
+    "Domain": ".sn"
+  },
+  {
+    "name": "Serbia",
+    "alpha2": "RS",
+    "alpha3": "SRB",
+    "numerico": 688,
+    "COI": "SRB",
+    "Fips": "RI",
+    "Placa": "SRB",
+    "Domain": ".rs"
+  },
+  {
+    "name": "Seychelles",
+    "alpha2": "SC",
+    "alpha3": "SYC",
+    "numerico": 690,
+    "COI": "SEY",
+    "Fips": "SE",
+    "Placa": "SY",
+    "Domain": ".sc"
+  },
+  {
+    "name": "Sierra Leona",
+    "alpha2": "SL",
+    "alpha3": "SLE",
+    "numerico": 694,
+    "COI": "SLE",
+    "Fips": "SL",
+    "Placa": "WAL",
+    "Domain": ".sl"
+  },
+  {
+    "name": "Singapur",
+    "alpha2": "SG",
+    "alpha3": "SGP",
+    "numerico": 702,
+    "COI": "SGP",
+    "Fips": "SN",
+    "Placa": "SGP",
+    "Domain": ".sg"
+  },
+  {
+    "name": "Sint Maarten",
+    "alpha2": "SX",
+    "alpha3": "SXM",
+    "numerico": 534,
+    "Fips": "NN",
+    "Domain": ".sx"
+  },
+  {
+    "name": "Siria",
+    "alpha2": "SY",
+    "alpha3": "SYR",
+    "numerico": 760,
+    "COI": "SYR",
+    "Fips": "SY",
+    "Placa": "SYR",
+    "Domain": ".sy"
+  },
+  {
+    "name": "Somalia",
+    "alpha2": "SO",
+    "alpha3": "SOM",
+    "numerico": 706,
+    "COI": "SOM",
+    "Fips": "SO",
+    "Placa": "SO",
+    "Domain": ".so"
+  },
+  {
+    "name": "Sri Lanka",
+    "alpha2": "LK",
+    "alpha3": "LKA",
+    "numerico": 144,
+    "COI": "SRI",
+    "Fips": "CE",
+    "Placa": "CL",
+    "Domain": ".lk"
+  },
+  {
+    "name": "Sudáfrica",
+    "alpha2": "ZA",
+    "alpha3": "ZAF",
+    "numerico": 710,
+    "COI": "RSA",
+    "Fips": "SF",
+    "Placa": "ZA",
+    "Domain": ".za"
+  },
+  {
+    "name": "Sudán",
+    "alpha2": "SD",
+    "alpha3": "SDN",
+    "numerico": 729,
+    "COI": "SUD",
+    "Fips": "SU",
+    "Placa": "SUD",
+    "Domain": ".sd"
+  },
+  {
+    "name": "Sudán del Sur",
+    "alpha2": "SS",
+    "alpha3": "SSD",
+    "numerico": 728,
+    "Placa": "SSD",
+    "Domain": ".ss"
+  },
+  {
+    "name": "Suecia",
+    "alpha2": "SE",
+    "alpha3": "SWE",
+    "numerico": 752,
+    "COI": "SWE",
+    "Fips": "SW",
+    "Placa": "S",
+    "Domain": ".se"
+  },
+  {
+    "name": "Suiza",
+    "alpha2": "CH",
+    "alpha3": "CHE",
+    "numerico": 756,
+    "COI": "SUI",
+    "Fips": "SZ",
+    "Placa": "CH",
+    "Domain": ".ch"
+  },
+  {
+    "name": "Surinam",
+    "alpha2": "SR",
+    "alpha3": "SUR",
+    "numerico": 740,
+    "COI": "SUR",
+    "Fips": "NS",
+    "Placa": "SME",
+    "Domain": ".sr"
+  },
+  {
+    "name": "Svalbard y Jan Mayen",
+    "alpha2": "SJ",
+    "alpha3": "SJM",
+    "numerico": 744,
+    "Fips": "SV",
+    "Domain": ".sj"
+  },
+  {
+    "name": "Tailandia",
+    "alpha2": "TH",
+    "alpha3": "THA",
+    "numerico": 764,
+    "COI": "THA",
+    "Fips": "TH",
+    "Placa": "T",
+    "Domain": ".th"
+  },
+  {
+    "name": "Taiwán",
+    "alpha2": "TW",
+    "alpha3": "TWN",
+    "numerico": 158,
+    "COI": "TPE",
+    "Fips": "TW",
+    "Placa": "RC",
+    "Domain": ".tw"
+  },
+  {
+    "name": "Tanzania",
+    "alpha2": "TZ",
+    "alpha3": "TZA",
+    "numerico": 834,
+    "COI": "TAN",
+    "Fips": "TZ",
+    "Placa": "EAT",
+    "Domain": ".tz"
+  },
+  {
+    "name": "Tayikistán",
+    "alpha2": "TJ",
+    "alpha3": "TJK",
+    "numerico": 762,
+    "COI": "TJK",
+    "Fips": "TI",
+    "Placa": "TJ",
+    "Domain": ".tj"
+  },
+  {
+    "name": "Territorio Británico del Océano Índico",
+    "alpha2": "IO",
+    "alpha3": "IOT",
+    "numerico": 86,
+    "Fips": "IO",
+    "Domain": ".io"
+  },
+  {
+    "name": "Territorios Australes y Antárticos Franceses",
+    "alpha2": "TF",
+    "alpha3": "ATF",
+    "numerico": 260,
+    "Fips": "FS",
+    "Domain": ".tf"
+  },
+  {
+    "name": "Timor Oriental",
+    "alpha2": "TL",
+    "alpha3": "TLS",
+    "numerico": 626,
+    "COI": "TLS",
+    "Fips": "TT",
+    "Placa": "TL",
+    "Domain": ".tl"
+  },
+  {
+    "name": "Togo",
+    "alpha2": "TG",
+    "alpha3": "TGO",
+    "numerico": 768,
+    "COI": "TOG",
+    "Fips": "TO",
+    "Placa": "TG",
+    "Domain": ".tg"
+  },
+  {
+    "name": "Tokelau",
+    "alpha2": "TK",
+    "alpha3": "TKL",
+    "numerico": 772,
+    "Fips": "TL",
+    "Domain": ".tk"
+  },
+  {
+    "name": "Tonga",
+    "alpha2": "TO",
+    "alpha3": "TON",
+    "numerico": 776,
+    "COI": "TGA",
+    "Fips": "TN",
+    "Placa": "TON",
+    "Domain": ".to"
+  },
+  {
+    "name": "Trinidad y Tobago",
+    "alpha2": "TT",
+    "alpha3": "TTO",
+    "numerico": 780,
+    "COI": "TTO",
+    "Fips": "TD",
+    "Placa": "TT",
+    "Domain": ".tt"
+  },
+  {
+    "name": "Túnez",
+    "alpha2": "TN",
+    "alpha3": "TUN",
+    "numerico": 788,
+    "COI": "TUN",
+    "Fips": "TS",
+    "Placa": "TN",
+    "Domain": ".tn"
+  },
+  {
+    "name": "Turkmenistán",
+    "alpha2": "TM",
+    "alpha3": "TKM",
+    "numerico": 795,
+    "COI": "TKM",
+    "Fips": "TX",
+    "Placa": "TM",
+    "Domain": ".tm"
+  },
+  {
+    "name": "Turquía",
+    "alpha2": "TR",
+    "alpha3": "TUR",
+    "numerico": 792,
+    "COI": "TUR",
+    "Fips": "TU",
+    "Placa": "TR",
+    "Domain": ".tr"
+  },
+  {
+    "name": "Tuvalu",
+    "alpha2": "TV",
+    "alpha3": "TUV",
+    "numerico": 798,
+    "COI": "TUV",
+    "Fips": "TV",
+    "Placa": "TUV",
+    "Domain": ".tv"
+  },
+  {
+    "name": "Ucrania",
+    "alpha2": "UA",
+    "alpha3": "UKR",
+    "numerico": 804,
+    "COI": "UKR",
+    "Fips": "UP",
+    "Placa": "UA",
+    "Domain": ".ua"
+  },
+  {
+    "name": "Uganda",
+    "alpha2": "UG",
+    "alpha3": "UGA",
+    "numerico": 800,
+    "COI": "UGA",
+    "Fips": "UG",
+    "Placa": "EAU",
+    "Domain": ".ug"
+  },
+
+  {
+    "name": "Uzbekistán",
+    "alpha2": "UZ",
+    "alpha3": "UZB",
+    "numerico": 860,
+    "COI": "UZB",
+    "Fips": "UZ",
+    "Placa": "UZ",
+    "Domain": ".uz"
+  },
+  {
+    "name": "Vanuatu",
+    "alpha2": "VU",
+    "alpha3": "VUT",
+    "numerico": 548,
+    "COI": "VAN",
+    "Fips": "NH",
+    "Placa": "VAN",
+    "Domain": ".vu"
+  },
+  {
+    "name": "Venezuela",
+    "alpha2": "VE",
+    "alpha3": "VEN",
+    "numerico": 862,
+    "COI": "VEN",
+    "Fips": "VE",
+    "Placa": "YV",
+    "Domain": ".ve"
+  },
+  {
+    "name": "Vietnam",
+    "alpha2": "VN",
+    "alpha3": "VNM",
+    "numerico": 704,
+    "COI": "VIE",
+    "Fips": "VM",
+    "Placa": "VN",
+    "Domain": ".vn"
+  },
+  {
+    "name": "Wallis y Futuna",
+    "alpha2": "WF",
+    "alpha3": "WLF",
+    "numerico": 876,
+    "Fips": "WF",
+    "Domain": ".wf"
+  },
+  {
+    "name": "Yemen",
+    "alpha2": "YE",
+    "alpha3": "YEM",
+    "numerico": 887,
+    "COI": "YEM",
+    "Fips": "YM",
+    "Placa": "YEM",
+    "Domain": ".ye"
+  },
+  {
+    "name": "Yibuti",
+    "alpha2": "DJ",
+    "alpha3": "DJI",
+    "numerico": 262,
+    "COI": "DJI",
+    "Fips": "DJ",
+    "Placa": "DJI",
+    "Domain": ".dj"
+  },
+  {
+    "name": "Zambia",
+    "alpha2": "ZM",
+    "alpha3": "ZMB",
+    "numerico": 894,
+    "COI": "ZAM",
+    "Fips": "ZA",
+    "Placa": "Z",
+    "Domain": ".zm"
+  },
+  {
+    "name": "Zimbabue",
+    "alpha2": "ZW",
+    "alpha3": "ZWE",
+    "numerico": 716,
+    "COI": "ZIM",
+    "Fips": "ZI",
+    "Placa": "ZW",
+    "Domain": ".zw"
+  }
+]
