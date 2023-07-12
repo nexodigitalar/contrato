@@ -42,6 +42,7 @@
           @include flex(column, center, center);
           .cuotam_text {
             @include secondaryFont($size_xs);
+            text-align: center;
             margin: 0;
           }
         }

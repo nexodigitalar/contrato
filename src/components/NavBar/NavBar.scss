@@ -34,8 +34,9 @@
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .navBar {
-    padding: $padding_lg 0;
+    padding: $padding_md 0;
     .navBar_container {
+      @include flex(column, space-between, center);
       margin: 0 $margin_md;
       .navBar_logo {
         width: 120px;
