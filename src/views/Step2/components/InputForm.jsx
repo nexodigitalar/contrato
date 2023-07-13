@@ -10,6 +10,7 @@ import useValidate from "@/hooks/useValidate";
 import Input from "../../../components/Input/Input";
 import InputFile from "../../../components/InputFile/InputFile";
 import InputDate from "../../../components/InputDate/InputDate";
+import SelectPhone from "../../../components/SelectPhone/SelectPhone";
 
 const InputForm = ({
   initialValues,
@@ -122,6 +123,7 @@ const InputForm = ({
       primerApellido: "",
       segundoApellido: "",
       fechaNacimiento: "",
+      telefonoCod: 598,
       telefono: "",
       sexo: "",
       nacionalidad: "",
@@ -447,23 +449,62 @@ const InputForm = ({
                       );
                   }}
                 />
-                <Input
-                  placeholder="* Teléfono / Celular"
-                  name="telefono"
-                  value={initialValues[index]?.telefono || ""}
-                  error={amountValidations[index]?.telefono}
-                  type="number"
-                  click={(e) => {
-                    handleInput(e, index),
+
+                <div className="inputForm2_divPhone">
+                  <SelectPhone
+                    name="telefonoCod"
+                    usuario={initialValues}
+                    index={index}
+                    click={(e) =>
                       useValidate(
                         e.target.value,
                         amountValidations,
                         index,
-                        "telefono",
+                        "telefonoCod",
+                        setAmountValidations
+                      )
+                    }
+                    change={(e) => {
+                      {
+                        handleInput(e, index),
+                          useValidate(
+                            e.target.value,
+                            amountValidations,
+                            index,
+                            "telefonoCod",
+                            setAmountValidations
+                          );
+                      }
+                    }}
+                    onfocusout={(e) => {
+                      useValidate(
+                        e.target.value,
+                        amountValidations,
+                        index,
+                        "telefonoCod",
                         setAmountValidations
                       );
-                  }}
-                />
+                    }}
+                  />
+
+                  <Input
+                    placeholder="* Teléfono / Celular"
+                    name="telefono"
+                    value={initialValues[index]?.telefono || ""}
+                    error={amountValidations[index]?.telefono}
+                    type="number"
+                    click={(e) => {
+                      handleInput(e, index),
+                        useValidate(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "telefono",
+                          setAmountValidations
+                        );
+                    }}
+                  />
+                </div>
               </div>
             </div>
           ))}

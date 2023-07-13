@@ -3,2415 +3,2424 @@
     "name": "Uruguay",
     "alpha2": "UY",
     "alpha3": "URY",
-    "numerico": 858,
+    "num": 858,
     "COI": "URU",
-    "Fips": "UY",
-    "Placa": "ROU",
-    "Domain": ".uy"
+    "fips": "UY",
+    "car": "ROU",
+    "domain": ".uy"
   },
   {
     "name": "Afganistán",
     "alpha2": "AF",
     "alpha3": "AFG",
-    "numerico": 4,
+    "num": 4,
     "COI": "AFG",
-    "Fips": "AF",
-    "Placa": "AFG",
-    "Domain": ".af"
+    "fips": "AF",
+    "car": "AFG",
+    "domain": ".af"
   },
   {
     "name": "Albania",
     "alpha2": "AL",
     "alpha3": "ALB",
-    "numerico": 8,
+    "num": 8,
     "COI": "ALB",
-    "Fips": "AL",
-    "Placa": "AL",
-    "Domain": ".al"
+    "fips": "AL",
+    "car": "AL",
+    "domain": ".al"
   },
   {
     "name": "Alemania",
     "alpha2": "DE",
     "alpha3": "DEU",
-    "numerico": 276,
+    "num": 276,
     "COI": "GER",
-    "Fips": "GM",
-    "Placa": "D",
-    "Domain": ".de"
+    "fips": "GM",
+    "car": "D",
+    "domain": ".de"
   },
   {
     "name": "Andorra",
     "alpha2": "AD",
     "alpha3": "AND",
-    "numerico": 20,
+    "num": 20,
     "COI": "AND",
-    "Fips": "AN",
-    "Placa": "AND",
-    "Domain": ".ad"
+    "fips": "AN",
+    "car": "AND",
+    "domain": ".ad"
   },
   {
     "name": "Angola",
     "alpha2": "AO",
     "alpha3": "AGO",
-    "numerico": 24,
+    "num": 24,
     "COI": "ANG",
-    "Fips": "AO",
-    "Placa": "ANG",
-    "Domain": ".ao"
+    "fips": "AO",
+    "car": "ANG",
+    "domain": ".ao"
   },
   {
     "name": "Anguila",
     "alpha2": "AI",
     "alpha3": "AIA",
-    "numerico": 660,
-    "Fips": "AV",
-    "Placa": "AXA",
-    "Domain": ".ai"
+    "num": 660,
+    "fips": "AV",
+    "car": "AXA",
+    "domain": ".ai"
   },
   {
     "name": "Antártida",
     "alpha2": "AQ",
     "alpha3": "ATA",
-    "numerico": 10,
-    "Fips": "AY",
-    "Domain": ".aq"
+    "num": 10,
+    "fips": "AY",
+    "domain": ".aq"
   },
   {
     "name": "Antigua y Barbuda",
     "alpha2": "AG",
     "alpha3": "ATG",
-    "numerico": 28,
+    "num": 28,
     "COI": "ANT",
-    "Fips": "AC",
-    "Placa": "AG",
-    "Domain": ".ag"
+    "fips": "AC",
+    "car": "AG",
+    "domain": ".ag"
   },
   {
     "name": "Arabia Saudita",
     "alpha2": "SA",
     "alpha3": "SAU",
-    "numerico": 682,
+    "num": 682,
     "COI": "KSA",
-    "Fips": "SA",
-    "Placa": "KSA",
-    "Domain": ".sa"
+    "fips": "SA",
+    "car": "KSA",
+    "domain": ".sa"
   },
   {
     "name": "Argelia",
     "alpha2": "DZ",
     "alpha3": "DZA",
-    "numerico": 12,
+    "num": 12,
     "COI": "ALG",
-    "Fips": "AG",
-    "Placa": "DZ",
-    "Domain": ".dz"
+    "fips": "AG",
+    "car": "DZ",
+    "domain": ".dz"
   },
   {
     "name": "Argentina",
     "alpha2": "AR",
     "alpha3": "ARG",
-    "numerico": 32,
+    "num": 32,
     "COI": "ARG",
-    "Fips": "AR",
-    "Placa": "RA",
-    "Domain": ".ar"
+    "fips": "AR",
+    "car": "RA",
+    "domain": ".ar"
   },
   {
     "name": "Armenia",
     "alpha2": "AM",
     "alpha3": "ARM",
-    "numerico": 51,
+    "num": 51,
     "COI": "ARM",
-    "Fips": "AM",
-    "Placa": "AM",
-    "Domain": ".am"
+    "fips": "AM",
+    "car": "AM",
+    "domain": ".am"
   },
   {
     "name": "Aruba",
     "alpha2": "AW",
     "alpha3": "ABW",
-    "numerico": 533,
+    "num": 533,
     "COI": "ARU",
-    "Fips": "AA",
-    "Placa": "ARU",
-    "Domain": ".aw"
+    "fips": "AA",
+    "car": "ARU",
+    "domain": ".aw"
   },
   {
     "name": "Australia",
     "alpha2": "AU",
     "alpha3": "AUS",
-    "numerico": 36,
+    "num": 36,
     "COI": "AUS",
-    "Fips": "AS",
-    "Placa": "AUS",
-    "Domain": ".au"
+    "fips": "AS",
+    "car": "AUS",
+    "domain": ".au"
   },
   {
     "name": "Austria",
     "alpha2": "AT",
     "alpha3": "AUT",
-    "numerico": 40,
+    "num": 40,
     "COI": "AUT",
-    "Fips": "AU",
-    "Placa": "A",
-    "Domain": ".at"
+    "fips": "AU",
+    "car": "A",
+    "domain": ".at"
   },
   {
     "name": "Azerbaiyán",
     "alpha2": "AZ",
     "alpha3": "AZE",
-    "numerico": 31,
+    "num": 31,
     "COI": "AZE",
-    "Fips": "AJ",
-    "Placa": "AZ",
-    "Domain": ".az"
+    "fips": "AJ",
+    "car": "AZ",
+    "domain": ".az"
   },
   {
     "name": "Bahamas",
     "alpha2": "BS",
     "alpha3": "BHS",
-    "numerico": 44,
+    "num": 44,
     "COI": "BAH",
-    "Fips": "BF",
-    "Placa": "BS",
-    "Domain": ".bs"
+    "fips": "BF",
+    "car": "BS",
+    "domain": ".bs"
   },
   {
     "name": "Bahrein",
     "alpha2": "BH",
     "alpha3": "BHR",
-    "numerico": 48,
+    "num": 48,
     "COI": "BRN",
-    "Fips": "BA",
-    "Placa": "BRN",
-    "Domain": ".bh"
+    "fips": "BA",
+    "car": "BRN",
+    "domain": ".bh"
   },
   {
     "name": "Bailía de Guernsey",
     "alpha2": "GG",
     "alpha3": "GGY",
-    "numerico": 831,
-    "Fips": "GK",
-    "Placa": "GBG",
-    "Domain": ".gg"
+    "num": 831,
+    "fips": "GK",
+    "car": "GBG",
+    "domain": ".gg"
   },
   {
     "name": "Bangladesh",
     "alpha2": "BD",
     "alpha3": "BGD",
-    "numerico": 50,
+    "num": 50,
     "COI": "BAN",
-    "Fips": "BG",
-    "Placa": "BD",
-    "Domain": ".bd"
+    "fips": "BG",
+    "car": "BD",
+    "domain": ".bd"
   },
   {
     "name": "Barbados",
     "alpha2": "BB",
     "alpha3": "BRB",
-    "numerico": 52,
+    "num": 52,
     "COI": "BAR",
-    "Fips": "BB",
-    "Placa": "BDS",
-    "Domain": ".bb"
+    "fips": "BB",
+    "car": "BDS",
+    "domain": ".bb"
   },
   {
     "name": "Belarús",
     "alpha2": "BY",
     "alpha3": "BLR",
-    "numerico": 112,
+    "num": 112,
     "COI": "BLR",
-    "Fips": "BO",
-    "Placa": "BY",
-    "Domain": ".by"
+    "fips": "BO",
+    "car": "BY",
+    "domain": ".by"
   },
   {
     "name": "Bélgica",
     "alpha2": "BE",
     "alpha3": "BEL",
-    "numerico": 56,
+    "num": 56,
     "COI": "BEL",
-    "Fips": "BE",
-    "Placa": "B",
-    "Domain": ".be"
+    "fips": "BE",
+    "car": "B",
+    "domain": ".be"
   },
   {
     "name": "Belice",
     "alpha2": "BZ",
     "alpha3": "BLZ",
-    "numerico": 84,
+    "num": 84,
     "COI": "BIZ",
-    "Fips": "BH",
-    "Placa": "BZ",
-    "Domain": ".bz"
+    "fips": "BH",
+    "car": "BZ",
+    "domain": ".bz"
   },
   {
     "name": "Benín",
     "alpha2": "BJ",
     "alpha3": "BEN",
-    "numerico": 204,
+    "num": 204,
     "COI": "BEN",
-    "Fips": "BN",
-    "Placa": "BJ",
-    "Domain": ".bj"
+    "fips": "BN",
+    "car": "BJ",
+    "domain": ".bj"
   },
   {
     "name": "Bermudas",
     "alpha2": "BM",
     "alpha3": "BMU",
-    "numerico": 60,
+    "num": 60,
     "COI": "BER",
-    "Fips": "BD",
-    "Domain": ".bm"
+    "fips": "BD",
+    "domain": ".bm"
   },
   {
     "name": "Bolivia",
     "alpha2": "BO",
     "alpha3": "BOL",
-    "numerico": 68,
+    "num": 68,
     "COI": "BOL",
-    "Fips": "BL",
-    "Placa": "BOL",
-    "Domain": ".bo"
+    "fips": "BL",
+    "car": "BOL",
+    "domain": ".bo"
   },
   {
     "name": "Bosnia y Hercegovina",
     "alpha2": "BA",
     "alpha3": "BIH",
-    "numerico": 70,
+    "num": 70,
     "COI": "BIH",
-    "Fips": "BK",
-    "Placa": "BIH",
-    "Domain": ".ba"
+    "fips": "BK",
+    "car": "BIH",
+    "domain": ".ba"
   },
   {
     "name": "Botsuana",
     "alpha2": "BW",
     "alpha3": "BWA",
-    "numerico": 72,
+    "num": 72,
     "COI": "BOT",
-    "Fips": "BC",
-    "Placa": "RB",
-    "Domain": ".bw"
+    "fips": "BC",
+    "car": "RB",
+    "domain": ".bw"
   },
   {
     "name": "Brasil",
     "alpha2": "BR",
     "alpha3": "BRA",
-    "numerico": 76,
+    "num": 76,
     "COI": "BRA",
-    "Fips": "BR",
-    "Placa": "BR",
-    "Domain": ".br"
+    "fips": "BR",
+    "car": "BR",
+    "domain": ".br"
   },
   {
     "name": "Brunéi",
     "alpha2": "BN",
     "alpha3": "BRN",
-    "numerico": 96,
+    "num": 96,
     "COI": "BRU",
-    "Fips": "BX",
-    "Placa": "BRU",
-    "Domain": ".bn"
+    "fips": "BX",
+    "car": "BRU",
+    "domain": ".bn"
   },
   {
     "name": "Bulgaria",
     "alpha2": "BG",
     "alpha3": "BGR",
-    "numerico": 100,
+    "num": 100,
     "COI": "BUL",
-    "Fips": "BU",
-    "Placa": "BG",
-    "Domain": ".bg"
+    "fips": "BU",
+    "car": "BG",
+    "domain": ".bg"
   },
   {
     "name": "Burkina Faso",
     "alpha2": "BF",
     "alpha3": "BFA",
-    "numerico": 854,
+    "num": 854,
     "COI": "BUR",
-    "Fips": "UV",
-    "Placa": "BF",
-    "Domain": ".bf"
+    "fips": "UV",
+    "car": "BF",
+    "domain": ".bf"
   },
   {
     "name": "Burundi",
     "alpha2": "BI",
     "alpha3": "BDI",
-    "numerico": 108,
+    "num": 108,
     "COI": "BDI",
-    "Fips": "BY",
-    "Placa": "RU",
-    "Domain": ".bi"
+    "fips": "BY",
+    "car": "RU",
+    "domain": ".bi"
   },
   {
     "name": "Bután",
     "alpha2": "BT",
     "alpha3": "BTN",
-    "numerico": 64,
+    "num": 64,
     "COI": "BHU",
-    "Fips": "BT",
-    "Placa": "BHT",
-    "Domain": ".bt"
+    "fips": "BT",
+    "car": "BHT",
+    "domain": ".bt"
   },
   {
     "name": "Cabo Verde",
     "alpha2": "CV",
     "alpha3": "CPV",
-    "numerico": 132,
+    "num": 132,
     "COI": "CPV",
-    "Fips": "CV",
-    "Placa": "CV",
-    "Domain": ".cv"
+    "fips": "CV",
+    "car": "CV",
+    "domain": ".cv"
   },
   {
     "name": "Camboya",
     "alpha2": "KH",
     "alpha3": "KHM",
-    "numerico": 116,
+    "num": 116,
     "COI": "CAM",
-    "Fips": "CB",
-    "Placa": "K",
-    "Domain": ".kh"
+    "fips": "CB",
+    "car": "K",
+    "domain": ".kh"
   },
   {
     "name": "Camerún",
     "alpha2": "CM",
     "alpha3": "CMR",
-    "numerico": 120,
+    "num": 120,
     "COI": "CMR",
-    "Fips": "CM",
-    "Placa": "CAM",
-    "Domain": ".cm"
+    "fips": "CM",
+    "car": "CAM",
+    "domain": ".cm"
   },
   {
     "name": "Canadá",
     "alpha2": "CA",
     "alpha3": "CAN",
-    "numerico": 124,
+    "num": 124,
     "COI": "CAN",
-    "Fips": "CA",
-    "Placa": "CDN",
-    "Domain": ".ca"
+    "fips": "CA",
+    "car": "CDN",
+    "domain": ".ca"
   },
   {
     "name": "Caribe Neerlandés",
     "alpha2": "BQ",
     "alpha3": "BES",
-    "numerico": 535,
-    "Placa": "NL",
-    "Domain": ".bq"
+    "num": 535,
+    "car": "NL",
+    "domain": ".bq"
   },
   {
     "name": "Catar",
     "alpha2": "QA",
     "alpha3": "QAT",
-    "numerico": 634,
+    "num": 634,
     "COI": "QAT",
-    "Fips": "QA",
-    "Placa": "Q",
-    "Domain": ".qa"
+    "fips": "QA",
+    "car": "Q",
+    "domain": ".qa"
   },
   {
     "name": "Chad",
     "alpha2": "TD",
     "alpha3": "TCD",
-    "numerico": 148,
+    "num": 148,
     "COI": "CHA",
-    "Fips": "CD",
-    "Placa": "TD",
-    "Domain": ".td"
+    "fips": "CD",
+    "car": "TD",
+    "domain": ".td"
   },
   {
     "name": "Chequia",
     "alpha2": "CZ",
     "alpha3": "CZE",
-    "numerico": 203,
+    "num": 203,
     "COI": "CZE",
-    "Fips": "EZ",
-    "Placa": "CZ",
-    "Domain": ".cz"
+    "fips": "EZ",
+    "car": "CZ",
+    "domain": ".cz"
   },
   {
     "name": "Chile",
     "alpha2": "CL",
     "alpha3": "CHL",
-    "numerico": 152,
+    "num": 152,
     "COI": "CHI",
-    "Fips": "CI",
-    "Placa": "RCH",
-    "Domain": ".cl"
+    "fips": "CI",
+    "car": "RCH",
+    "domain": ".cl"
   },
   {
     "name": "China",
     "alpha2": "CN",
     "alpha3": "CHN",
-    "numerico": 156,
+    "num": 156,
     "COI": "CHN",
-    "Fips": "CH",
-    "Placa": "CHN",
-    "Domain": ".cn"
+    "fips": "CH",
+    "car": "CHN",
+    "domain": ".cn"
   },
   {
     "name": "Chipre",
     "alpha2": "CY",
     "alpha3": "CYP",
-    "numerico": 196,
+    "num": 196,
     "COI": "CYP",
-    "Fips": "CY",
-    "Placa": "CY",
-    "Domain": ".cy"
+    "fips": "CY",
+    "car": "CY",
+    "domain": ".cy"
   },
   {
     "name": "Ciudad del Vaticano",
     "alpha2": "VA",
     "alpha3": "VAT",
-    "numerico": 336,
-    "Fips": "VT",
-    "Placa": "V",
-    "Domain": ".va"
+    "num": 336,
+    "fips": "VT",
+    "car": "V",
+    "domain": ".va"
   },
   {
     "name": "Colombia",
     "alpha2": "CO",
     "alpha3": "COL",
-    "numerico": 170,
+    "num": 170,
     "COI": "COL",
-    "Fips": "CO",
-    "Placa": "CO",
-    "Domain": ".co"
+    "fips": "CO",
+    "car": "CO",
+    "domain": ".co"
   },
   {
     "name": "Comores",
     "alpha2": "KM",
     "alpha3": "COM",
-    "numerico": 174,
+    "num": 174,
     "COI": "COM",
-    "Fips": "CN",
-    "Placa": "COM",
-    "Domain": ".km"
+    "fips": "CN",
+    "car": "COM",
+    "domain": ".km"
   },
   {
     "name": "Corea del Norte",
     "alpha2": "KP",
     "alpha3": "PRK",
-    "numerico": 408,
+    "num": 408,
     "COI": "PRK",
-    "Fips": "KN",
-    "Placa": "KP",
-    "Domain": ".kp"
+    "fips": "KN",
+    "car": "KP",
+    "domain": ".kp"
   },
   {
     "name": "Corea del Sur",
     "alpha2": "KR",
     "alpha3": "KOR",
-    "numerico": 410,
+    "num": 410,
     "COI": "KOR",
-    "Fips": "KS",
-    "Placa": "ROK",
-    "Domain": ".kr"
+    "fips": "KS",
+    "car": "ROK",
+    "domain": ".kr"
   },
   {
     "name": "Costa de Marfil",
     "alpha2": "CI",
     "alpha3": "CIV",
-    "numerico": 384,
+    "num": 384,
     "COI": "CIV",
-    "Fips": "IV",
-    "Placa": "CI",
-    "Domain": ".ci"
+    "fips": "IV",
+    "car": "CI",
+    "domain": ".ci"
   },
   {
     "name": "Costa Rica",
     "alpha2": "CR",
     "alpha3": "CRI",
-    "numerico": 188,
+    "num": 188,
     "COI": "CRC",
-    "Fips": "CS",
-    "Placa": "CR",
-    "Domain": ".cr"
+    "fips": "CS",
+    "car": "CR",
+    "domain": ".cr"
   },
   {
     "name": "Croacia",
     "alpha2": "HR",
     "alpha3": "HRV",
-    "numerico": 191,
+    "num": 191,
     "COI": "CRO",
-    "Fips": "HR",
-    "Placa": "HR",
-    "Domain": ".hr"
+    "fips": "HR",
+    "car": "HR",
+    "domain": ".hr"
   },
   {
     "name": "Cuba",
     "alpha2": "CU",
     "alpha3": "CUB",
-    "numerico": 192,
+    "num": 192,
     "COI": "CUB",
-    "Fips": "CU",
-    "Placa": "C",
-    "Domain": ".cu"
+    "fips": "CU",
+    "car": "C",
+    "domain": ".cu"
   },
   {
     "name": "Curaçao",
     "alpha2": "CW",
     "alpha3": "CUW",
-    "numerico": 531,
-    "Fips": "UC",
-    "Domain": ".cw"
+    "num": 531,
+    "fips": "UC",
+    "domain": ".cw"
   },
   {
     "name": "Dinamarca",
     "alpha2": "DK",
     "alpha3": "DNK",
-    "numerico": 208,
+    "num": 208,
     "COI": "DEN",
-    "Fips": "DA",
-    "Placa": "DK",
-    "Domain": ".dk"
+    "fips": "DA",
+    "car": "DK",
+    "domain": ".dk"
   },
   {
     "name": "Dominica",
     "alpha2": "DM",
     "alpha3": "DMA",
-    "numerico": 212,
+    "num": 212,
     "COI": "DMA",
-    "Fips": "DO",
-    "Placa": "WD",
-    "Domain": ".dm"
+    "fips": "DO",
+    "car": "WD",
+    "domain": ".dm"
   },
   {
     "name": "Ecuador",
     "alpha2": "EC",
     "alpha3": "ECU",
-    "numerico": 218,
+    "num": 218,
     "COI": "ECU",
-    "Fips": "EC",
-    "Placa": "EC",
-    "Domain": ".ec"
+    "fips": "EC",
+    "car": "EC",
+    "domain": ".ec"
   },
   {
     "name": "Egipto",
     "alpha2": "EG",
     "alpha3": "EGY",
-    "numerico": 818,
+    "num": 818,
     "COI": "EGY",
-    "Fips": "EG",
-    "Placa": "ET",
-    "Domain": ".eg"
+    "fips": "EG",
+    "car": "ET",
+    "domain": ".eg"
   },
   {
     "name": "El Salvador",
     "alpha2": "SV",
     "alpha3": "SLV",
-    "numerico": 222,
+    "num": 222,
     "COI": "ESA",
-    "Fips": "ES",
-    "Placa": "ES",
-    "Domain": ".sv"
+    "fips": "ES",
+    "car": "ES",
+    "domain": ".sv"
   },
   {
     "name": "Emiratos Árabes Unidos",
     "alpha2": "AE",
     "alpha3": "ARE",
-    "numerico": 784,
+    "num": 784,
     "COI": "UAE",
-    "Fips": "AE",
-    "Placa": "UAE",
-    "Domain": ".ae"
+    "fips": "AE",
+    "car": "UAE",
+    "domain": ".ae"
   },
   {
     "name": "Eritrea",
     "alpha2": "ER",
     "alpha3": "ERI",
-    "numerico": 232,
+    "num": 232,
     "COI": "ERI",
-    "Fips": "ER",
-    "Placa": "ER",
-    "Domain": ".er"
+    "fips": "ER",
+    "car": "ER",
+    "domain": ".er"
   },
   {
     "name": "Eslovaquia",
     "alpha2": "SK",
     "alpha3": "SVK",
-    "numerico": 703,
+    "num": 703,
     "COI": "SVK",
-    "Fips": "LO",
-    "Placa": "SK",
-    "Domain": ".sk"
+    "fips": "LO",
+    "car": "SK",
+    "domain": ".sk"
   },
   {
     "name": "Eslovenia",
     "alpha2": "SI",
     "alpha3": "SVN",
-    "numerico": 705,
+    "num": 705,
     "COI": "SLO",
-    "Fips": "SI",
-    "Placa": "SLO",
-    "Domain": ".si"
+    "fips": "SI",
+    "car": "SLO",
+    "domain": ".si"
   },
   {
     "name": "España",
     "alpha2": "ES",
     "alpha3": "ESP",
-    "numerico": 724,
+    "num": 724,
     "COI": "ESP",
-    "Fips": "SP",
-    "Placa": "E",
-    "Domain": ".es"
+    "fips": "SP",
+    "car": "E",
+    "domain": ".es"
   },
   {
     "name": "Estados Federados de Micronesia",
     "alpha2": "FM",
     "alpha3": "FSM",
-    "numerico": 583,
+    "num": 583,
     "COI": "FSM",
-    "Fips": "FM",
-    "Placa": "FSM",
-    "Domain": ".fm"
+    "fips": "FM",
+    "car": "FSM",
+    "domain": ".fm"
   },
   {
     "name": "Estados Unidos de América",
     "alpha2": "US",
     "alpha3": "USA",
-    "numerico": 840,
+    "num": 840,
     "COI": "USA",
-    "Fips": "US",
-    "Placa": "USA",
-    "Domain": ".us"
+    "fips": "US",
+    "car": "USA",
+    "domain": ".us"
   },
   {
     "name": "Estonia",
     "alpha2": "EE",
     "alpha3": "EST",
-    "numerico": 233,
+    "num": 233,
     "COI": "EST",
-    "Fips": "EN",
-    "Placa": "EST",
-    "Domain": ".ee"
+    "fips": "EN",
+    "car": "EST",
+    "domain": ".ee"
   },
   {
     "name": "Esuatini",
     "alpha2": "SZ",
     "alpha3": "SWZ",
-    "numerico": 748,
+    "num": 748,
     "COI": "SWZ",
-    "Fips": "WZ",
-    "Placa": "SD",
-    "Domain": ".sz"
+    "fips": "WZ",
+    "car": "SD",
+    "domain": ".sz"
   },
   {
     "name": "Etiopía",
     "alpha2": "ET",
     "alpha3": "ETH",
-    "numerico": 231,
+    "num": 231,
     "COI": "ETH",
-    "Fips": "ET",
-    "Placa": "ETH",
-    "Domain": ".et"
+    "fips": "ET",
+    "car": "ETH",
+    "domain": ".et"
   },
   {
     "name": "Filipinas",
     "alpha2": "PH",
     "alpha3": "PHL",
-    "numerico": 608,
+    "num": 608,
     "COI": "PHI",
-    "Fips": "RP",
-    "Placa": "RP",
-    "Domain": ".ph"
+    "fips": "RP",
+    "car": "RP",
+    "domain": ".ph"
   },
   {
     "name": "Finlandia",
     "alpha2": "FI",
     "alpha3": "FIN",
-    "numerico": 246,
+    "num": 246,
     "COI": "FIN",
-    "Fips": "FI",
-    "Placa": "FIN",
-    "Domain": ".fi"
+    "fips": "FI",
+    "car": "FIN",
+    "domain": ".fi"
   },
   {
     "name": "Fiyi",
     "alpha2": "FJ",
     "alpha3": "FJI",
-    "numerico": 242,
+    "num": 242,
     "COI": "FIJ",
-    "Fips": "FJ",
-    "Placa": "FJI",
-    "Domain": ".fj"
+    "fips": "FJ",
+    "car": "FJI",
+    "domain": ".fj"
   },
   {
     "name": "Francia",
     "alpha2": "FR",
     "alpha3": "FRA",
-    "numerico": 250,
+    "num": 250,
     "COI": "FRA",
-    "Fips": "FR",
-    "Placa": "F",
-    "Domain": ".fr"
+    "fips": "FR",
+    "car": "F",
+    "domain": ".fr"
   },
   {
     "name": "Gabón",
     "alpha2": "GA",
     "alpha3": "GAB",
-    "numerico": 266,
+    "num": 266,
     "COI": "GAB",
-    "Fips": "GB",
-    "Placa": "G",
-    "Domain": ".ga"
+    "fips": "GB",
+    "car": "G",
+    "domain": ".ga"
   },
   {
     "name": "Gambia",
     "alpha2": "GM",
     "alpha3": "GMB",
-    "numerico": 270,
+    "num": 270,
     "COI": "GAM",
-    "Fips": "GA",
-    "Placa": "WAG",
-    "Domain": ".gm"
+    "fips": "GA",
+    "car": "WAG",
+    "domain": ".gm"
   },
   {
     "name": "Georgia",
     "alpha2": "GE",
     "alpha3": "GEO",
-    "numerico": 268,
+    "num": 268,
     "COI": "GEO",
-    "Fips": "GG",
-    "Placa": "GE",
-    "Domain": ".ge"
+    "fips": "GG",
+    "car": "GE",
+    "domain": ".ge"
   },
   {
     "name": "Georgia del Sur y las Islas Sandwich del Sur",
     "alpha2": "GS",
     "alpha3": "SGS",
-    "numerico": 239,
-    "Fips": "SX",
-    "Domain": ".gs"
+    "num": 239,
+    "fips": "SX",
+    "domain": ".gs"
   },
   {
     "name": "Ghana",
     "alpha2": "GH",
     "alpha3": "GHA",
-    "numerico": 288,
+    "num": 288,
     "COI": "GHA",
-    "Fips": "GH",
-    "Placa": "GH",
-    "Domain": ".gh"
+    "fips": "GH",
+    "car": "GH",
+    "domain": ".gh"
   },
   {
     "name": "Gibraltar",
     "alpha2": "GI",
     "alpha3": "GIB",
-    "numerico": 292,
-    "Fips": "GI",
-    "Placa": "GBZ",
-    "Domain": ".gi"
+    "num": 292,
+    "fips": "GI",
+    "car": "GBZ",
+    "domain": ".gi"
   },
   {
     "name": "Granada",
     "alpha2": "GD",
     "alpha3": "GRD",
-    "numerico": 308,
+    "num": 308,
     "COI": "GRN",
-    "Fips": "GJ",
-    "Placa": "WG",
-    "Domain": ".gd"
+    "fips": "GJ",
+    "car": "WG",
+    "domain": ".gd"
   },
   {
     "name": "Grecia",
     "alpha2": "GR",
     "alpha3": "GRC",
-    "numerico": 300,
+    "num": 300,
     "COI": "GRE",
-    "Fips": "GR",
-    "Placa": "GR",
-    "Domain": ".gr"
+    "fips": "GR",
+    "car": "GR",
+    "domain": ".gr"
   },
   {
     "name": "Groenlandia",
     "alpha2": "GL",
     "alpha3": "GRL",
-    "numerico": 304,
-    "Fips": "GL",
-    "Placa": "KN",
-    "Domain": ".gl"
+    "num": 304,
+    "fips": "GL",
+    "car": "KN",
+    "domain": ".gl"
   },
   {
     "name": "Guadalupe",
     "alpha2": "GP",
     "alpha3": "GLP",
-    "numerico": 312,
-    "Fips": "GP",
-    "Domain": ".gp"
+    "num": 312,
+    "fips": "GP",
+    "domain": ".gp"
   },
   {
     "name": "Guam",
     "alpha2": "GU",
     "alpha3": "GUM",
-    "numerico": 316,
+    "num": 316,
     "COI": "GUM",
-    "Fips": "GQ",
-    "Domain": ".gu"
+    "fips": "GQ",
+    "domain": ".gu"
   },
   {
     "name": "Guatemala",
     "alpha2": "GT",
     "alpha3": "GTM",
-    "numerico": 320,
+    "num": 320,
     "COI": "GUA",
-    "Fips": "GT",
-    "Placa": "GCA",
-    "Domain": ".gt"
+    "fips": "GT",
+    "car": "GCA",
+    "domain": ".gt"
   },
   {
     "name": "Guayana",
     "alpha2": "GY",
     "alpha3": "GUY",
-    "numerico": 328,
+    "num": 328,
     "COI": "GUY",
-    "Fips": "GY",
-    "Placa": "GUY",
-    "Domain": ".gy"
+    "fips": "GY",
+    "car": "GUY",
+    "domain": ".gy"
   },
   {
     "name": "Guayana Francesa",
     "alpha2": "GF",
     "alpha3": "GUF",
-    "numerico": 254,
-    "Fips": "FG",
-    "Domain": ".gf"
+    "num": 254,
+    "fips": "FG",
+    "domain": ".gf"
   },
   {
     "name": "Guinea",
     "alpha2": "GN",
     "alpha3": "GIN",
-    "numerico": 324,
+    "num": 324,
     "COI": "GUI",
-    "Fips": "GV",
-    "Placa": "RG",
-    "Domain": ".gn"
+    "fips": "GV",
+    "car": "RG",
+    "domain": ".gn"
   },
   {
     "name": "Guinea Ecuatorial",
     "alpha2": "GQ",
     "alpha3": "GNQ",
-    "numerico": 226,
+    "num": 226,
     "COI": "GEQ",
-    "Fips": "EK",
-    "Placa": "GQ",
-    "Domain": ".gq"
+    "fips": "EK",
+    "car": "GQ",
+    "domain": ".gq"
   },
   {
     "name": "Guinea-Bissau",
     "alpha2": "GW",
     "alpha3": "GNB",
-    "numerico": 624,
+    "num": 624,
     "COI": "GBS",
-    "Fips": "PU",
-    "Placa": "GUB",
-    "Domain": ".gw"
+    "fips": "PU",
+    "car": "GUB",
+    "domain": ".gw"
   },
   {
     "name": "Haití",
     "alpha2": "HT",
     "alpha3": "HTI",
-    "numerico": 332,
+    "num": 332,
     "COI": "HAI",
-    "Fips": "HA",
-    "Placa": "RH",
-    "Domain": ".ht"
+    "fips": "HA",
+    "car": "RH",
+    "domain": ".ht"
   },
   {
     "name": "Honduras",
     "alpha2": "HN",
     "alpha3": "HND",
-    "numerico": 340,
+    "num": 340,
     "COI": "HON",
-    "Fips": "HO",
-    "Placa": "HN",
-    "Domain": ".hn"
+    "fips": "HO",
+    "car": "HN",
+    "domain": ".hn"
   },
   {
     "name": "Hong Kong",
     "alpha2": "HK",
     "alpha3": "HKG",
-    "numerico": 344,
+    "num": 344,
     "COI": "HKG",
-    "Fips": "HK",
-    "Placa": "HK",
-    "Domain": ".hk"
+    "fips": "HK",
+    "car": "HK",
+    "domain": ".hk"
   },
   {
     "name": "Hungría",
     "alpha2": "HU",
     "alpha3": "HUN",
-    "numerico": 348,
+    "num": 348,
     "COI": "HUN",
-    "Fips": "HU",
-    "Placa": "H",
-    "Domain": ".hu"
+    "fips": "HU",
+    "car": "H",
+    "domain": ".hu"
   },
   {
     "name": "India",
     "alpha2": "IN",
     "alpha3": "IND",
-    "numerico": 356,
+    "num": 356,
     "COI": "IND",
-    "Fips": "IN",
-    "Placa": "IND",
-    "Domain": ".in"
+    "fips": "IN",
+    "car": "IND",
+    "domain": ".in"
   },
   {
     "name": "Indonesia",
     "alpha2": "ID",
     "alpha3": "IDN",
-    "numerico": 360,
+    "num": 360,
     "COI": "INA",
-    "Fips": "ID",
-    "Placa": "RI",
-    "Domain": ".id"
+    "fips": "ID",
+    "car": "RI",
+    "domain": ".id"
   },
   {
     "name": "Irán",
     "alpha2": "IR",
     "alpha3": "IRN",
-    "numerico": 364,
+    "num": 364,
     "COI": "IRI",
-    "Fips": "IR",
-    "Placa": "IR",
-    "Domain": ".ir"
+    "fips": "IR",
+    "car": "IR",
+    "domain": ".ir"
   },
   {
     "name": "Iraq",
     "alpha2": "IQ",
     "alpha3": "IRQ",
-    "numerico": 368,
+    "num": 368,
     "COI": "IRQ",
-    "Fips": "IZ",
-    "Placa": "IRQ",
-    "Domain": ".iq"
+    "fips": "IZ",
+    "car": "IRQ",
+    "domain": ".iq"
   },
   {
     "name": "Irlanda",
     "alpha2": "IE",
     "alpha3": "IRL",
-    "numerico": 372,
+    "num": 372,
     "COI": "IRL",
-    "Fips": "EI",
-    "Placa": "IRL",
-    "Domain": ".ie"
+    "fips": "EI",
+    "car": "IRL",
+    "domain": ".ie"
   },
   {
     "name": "Isla Bouvet",
     "alpha2": "BV",
     "alpha3": "BVT",
-    "numerico": 74,
-    "Fips": "BV",
-    "Domain": ".bv"
+    "num": 74,
+    "fips": "BV",
+    "domain": ".bv"
   },
   {
     "name": "Isla de Man",
     "alpha2": "IM",
     "alpha3": "IMN",
-    "numerico": 833,
-    "Domain": ".im"
+    "num": 833,
+    "domain": ".im"
   },
   {
     "name": "Isla de Navidad",
     "alpha2": "CX",
     "alpha3": "CXR",
-    "numerico": 162,
-    "Fips": "KT",
-    "Domain": ".cx"
+    "num": 162,
+    "fips": "KT",
+    "domain": ".cx"
   },
   {
     "name": "Isla de San Martín",
     "alpha2": "MF",
     "alpha3": "MAF",
-    "numerico": 663,
-    "Fips": "RN",
-    "Placa": "F",
-    "Domain": ".mf"
+    "num": 663,
+    "fips": "RN",
+    "car": "F",
+    "domain": ".mf"
   },
   {
     "name": "Isla Mauricio",
     "alpha2": "MU",
     "alpha3": "MUS",
-    "numerico": 480,
+    "num": 480,
     "COI": "MRI",
-    "Fips": "MP",
-    "Placa": "MS",
-    "Domain": ".mu"
+    "fips": "MP",
+    "car": "MS",
+    "domain": ".mu"
   },
   {
     "name": "Isla Norfolk",
     "alpha2": "NF",
     "alpha3": "NFK",
-    "numerico": 574,
-    "Fips": "NF",
-    "Domain": ".nf"
+    "num": 574,
+    "fips": "NF",
+    "domain": ".nf"
   },
   {
     "name": "Islandia",
     "alpha2": "IS",
     "alpha3": "ISL",
-    "numerico": 352,
+    "num": 352,
     "COI": "ISL",
-    "Fips": "IC",
-    "Placa": "IS",
-    "Domain": ".is"
+    "fips": "IC",
+    "car": "IS",
+    "domain": ".is"
   },
   {
     "name": "Islas Åland",
     "alpha2": "AX",
     "alpha3": "ALA",
-    "numerico": 248,
-    "Placa": "AX",
-    "Domain": ".ax"
+    "num": 248,
+    "car": "AX",
+    "domain": ".ax"
   },
   {
     "name": "Islas Caimán",
     "alpha2": "KY",
     "alpha3": "CYM",
-    "numerico": 136,
+    "num": 136,
     "COI": "CAY",
-    "Fips": "CJ",
-    "Domain": ".ky"
+    "fips": "CJ",
+    "domain": ".ky"
   },
   {
     "name": "Islas Cocos",
     "alpha2": "CC",
     "alpha3": "CCK",
-    "numerico": 166,
-    "Fips": "CK",
-    "Domain": ".cc"
+    "num": 166,
+    "fips": "CK",
+    "domain": ".cc"
   },
   {
     "name": "Islas Cook",
     "alpha2": "CK",
     "alpha3": "COK",
-    "numerico": 184,
+    "num": 184,
     "COI": "COK",
-    "Fips": "CW",
-    "Domain": ".ck"
+    "fips": "CW",
+    "domain": ".ck"
   },
   {
     "name": "Islas Feroe",
     "alpha2": "FO",
     "alpha3": "FRO",
-    "numerico": 234,
-    "Fips": "FO",
-    "Placa": "FO",
-    "Domain": ".fo"
+    "num": 234,
+    "fips": "FO",
+    "car": "FO",
+    "domain": ".fo"
   },
   {
     "name": "Islas Heard y McDonald",
     "alpha2": "HM",
     "alpha3": "HMD",
-    "numerico": 334,
-    "Fips": "HM",
-    "Domain": ".hm"
+    "num": 334,
+    "fips": "HM",
+    "domain": ".hm"
   },
   {
     "name": "Islas Malvinas",
     "alpha2": "FK",
     "alpha3": "FLK",
-    "numerico": 238,
-    "Fips": "FK",
-    "Domain": ".fk"
+    "num": 238,
+    "fips": "FK",
+    "domain": ".fk"
   },
   {
     "name": "Islas Marianas del Norte",
     "alpha2": "MP",
     "alpha3": "MNP",
-    "numerico": 580,
-    "Fips": "CQ",
-    "Domain": ".mp"
+    "num": 580,
+    "fips": "CQ",
+    "domain": ".mp"
   },
   {
     "name": "Islas Marshall",
     "alpha2": "MH",
     "alpha3": "MHL",
-    "numerico": 584,
+    "num": 584,
     "COI": "MHL",
-    "Fips": "RM",
-    "Placa": "MH",
-    "Domain": ".mh"
+    "fips": "RM",
+    "car": "MH",
+    "domain": ".mh"
   },
   {
     "name": "Islas Pitcairn",
     "alpha2": "PN",
     "alpha3": "PCN",
-    "numerico": 612,
-    "Fips": "PC",
-    "Domain": ".pn"
+    "num": 612,
+    "fips": "PC",
+    "domain": ".pn"
   },
   {
     "name": "Islas Salomón",
     "alpha2": "SB",
     "alpha3": "SLB",
-    "numerico": 90,
+    "num": 90,
     "COI": "SOL",
-    "Fips": "BP",
-    "Placa": "SOL",
-    "Domain": ".sb"
+    "fips": "BP",
+    "car": "SOL",
+    "domain": ".sb"
   },
   {
     "name": "Islas Turcas y Caicos",
     "alpha2": "TC",
     "alpha3": "TCA",
-    "numerico": 796,
-    "Fips": "TK",
-    "Domain": ".tc"
+    "num": 796,
+    "fips": "TK",
+    "domain": ".tc"
   },
   {
     "name": "Islas ultramarinas menores de los Estados Unidos",
     "alpha2": "UM",
     "alpha3": "UMI",
-    "numerico": 581,
-    "Fips": "UM",
-    "Domain": ".us"
+    "num": 581,
+    "fips": "UM",
+    "domain": ".us"
   },
   {
     "name": "Islas Vírgenes (UK)",
     "alpha2": "VG",
     "alpha3": "VGB",
-    "numerico": 92,
+    "num": 92,
     "COI": "IVB",
-    "Fips": "VI",
-    "Placa": "VG",
-    "Domain": ".vg"
+    "fips": "VI",
+    "car": "VG",
+    "domain": ".vg"
   },
   {
     "name": "Islas Vírgenes Americanas",
     "alpha2": "VI",
     "alpha3": "VIR",
-    "numerico": 850,
+    "num": 850,
     "COI": "ISV",
-    "Fips": "VQ",
-    "Domain": ".vi"
+    "fips": "VQ",
+    "domain": ".vi"
   },
   {
     "name": "Israel",
     "alpha2": "IL",
     "alpha3": "ISR",
-    "numerico": 376,
+    "num": 376,
     "COI": "ISR",
-    "Fips": "IS",
-    "Placa": "IL",
-    "Domain": ".il"
+    "fips": "IS",
+    "car": "IL",
+    "domain": ".il"
   },
   {
     "name": "Italia",
     "alpha2": "IT",
     "alpha3": "ITA",
-    "numerico": 380,
+    "num": 380,
     "COI": "ITA",
-    "Fips": "IT",
-    "Placa": "I",
-    "Domain": ".it"
+    "fips": "IT",
+    "car": "I",
+    "domain": ".it"
   },
   {
     "name": "Jamaica",
     "alpha2": "JM",
     "alpha3": "JAM",
-    "numerico": 388,
+    "num": 388,
     "COI": "JAM",
-    "Fips": "JM",
-    "Placa": "JA",
-    "Domain": ".jm"
+    "fips": "JM",
+    "car": "JA",
+    "domain": ".jm"
   },
   {
     "name": "Japón",
     "alpha2": "JP",
     "alpha3": "JPN",
-    "numerico": 392,
+    "num": 392,
     "COI": "JPN",
-    "Fips": "JA",
-    "Placa": "J",
-    "Domain": ".jp"
+    "fips": "JA",
+    "car": "J",
+    "domain": ".jp"
   },
   {
     "name": "Jersey",
     "alpha2": "JE",
     "alpha3": "JEY",
-    "numerico": 832,
-    "Fips": "JE",
-    "Placa": "GBJ",
-    "Domain": ".je"
+    "num": 832,
+    "fips": "JE",
+    "car": "GBJ",
+    "domain": ".je"
   },
   {
     "name": "Jordania",
     "alpha2": "JO",
     "alpha3": "JOR",
-    "numerico": 400,
+    "num": 400,
     "COI": "JOR",
-    "Fips": "JO",
-    "Placa": "JOR",
-    "Domain": ".jo"
+    "fips": "JO",
+    "car": "JOR",
+    "domain": ".jo"
   },
   {
     "name": "Kazajistán​​​",
     "alpha2": "KZ",
     "alpha3": "KAZ",
-    "numerico": 398,
+    "num": 398,
     "COI": "KAZ",
-    "Fips": "KZ",
-    "Placa": "KZ",
-    "Domain": ".kz"
+    "fips": "KZ",
+    "car": "KZ",
+    "domain": ".kz"
   },
   {
     "name": "Kenia",
     "alpha2": "KE",
     "alpha3": "KEN",
-    "numerico": 404,
+    "num": 404,
     "COI": "KEN",
-    "Fips": "KE",
-    "Placa": "EAK",
-    "Domain": ".ke"
+    "fips": "KE",
+    "car": "EAK",
+    "domain": ".ke"
   },
   {
     "name": "Kirguistán",
     "alpha2": "KG",
     "alpha3": "KGZ",
-    "numerico": 417,
+    "num": 417,
     "COI": "KGZ",
-    "Fips": "KG",
-    "Placa": "KS",
-    "Domain": ".kg"
+    "fips": "KG",
+    "car": "KS",
+    "domain": ".kg"
   },
   {
     "name": "Kiribati",
     "alpha2": "KI",
     "alpha3": "KIR",
-    "numerico": 296,
+    "num": 296,
     "COI": "KIR",
-    "Fips": "KR",
-    "Placa": "KIR",
-    "Domain": ".ki"
+    "fips": "KR",
+    "car": "KIR",
+    "domain": ".ki"
   },
   {
     "name": "Kosovo",
     "alpha2": "XK",
     "alpha3": "XKX",
-    "numerico": 412,
+    "num": 412,
     "COI": "KOS",
-    "Fips": "KV",
-    "Placa": "RKS",
-    "Domain": ".ko"
+    "fips": "KV",
+    "car": "RKS",
+    "domain": ".ko"
   },
   {
     "name": "Kuwait",
     "alpha2": "KW",
     "alpha3": "KWT",
-    "numerico": 414,
+    "num": 414,
     "COI": "KUW",
-    "Fips": "KU",
-    "Placa": "KWT",
-    "Domain": ".kw"
+    "fips": "KU",
+    "car": "KWT",
+    "domain": ".kw"
   },
   {
     "name": "Laos",
     "alpha2": "LA",
     "alpha3": "LAO",
-    "numerico": 418,
+    "num": 418,
     "COI": "LAO",
-    "Fips": "LA",
-    "Placa": "LAO",
-    "Domain": ".la"
+    "fips": "LA",
+    "car": "LAO",
+    "domain": ".la"
   },
   {
     "name": "Lesotho",
     "alpha2": "LS",
     "alpha3": "LSO",
-    "numerico": 426,
+    "num": 426,
     "COI": "LES",
-    "Fips": "LT",
-    "Placa": "LS",
-    "Domain": ".ls"
+    "fips": "LT",
+    "car": "LS",
+    "domain": ".ls"
   },
   {
     "name": "Letonia",
     "alpha2": "LV",
     "alpha3": "LVA",
-    "numerico": 428,
+    "num": 428,
     "COI": "LAT",
-    "Fips": "LG",
-    "Placa": "LV",
-    "Domain": ".lv"
+    "fips": "LG",
+    "car": "LV",
+    "domain": ".lv"
   },
   {
     "name": "Líbano",
     "alpha2": "LB",
     "alpha3": "LBN",
-    "numerico": 422,
+    "num": 422,
     "COI": "LBN",
-    "Fips": "LE",
-    "Placa": "RL",
-    "Domain": ".lb"
+    "fips": "LE",
+    "car": "RL",
+    "domain": ".lb"
   },
   {
     "name": "Liberia",
     "alpha2": "LR",
     "alpha3": "LBR",
-    "numerico": 430,
+    "num": 430,
     "COI": "LBR",
-    "Fips": "LI",
-    "Placa": "LB",
-    "Domain": ".lr"
+    "fips": "LI",
+    "car": "LB",
+    "domain": ".lr"
   },
   {
     "name": "Libia",
     "alpha2": "LY",
     "alpha3": "LBY",
-    "numerico": 434,
+    "num": 434,
     "COI": "LBA",
-    "Fips": "LY",
-    "Placa": "LAR",
-    "Domain": ".ly"
+    "fips": "LY",
+    "car": "LAR",
+    "domain": ".ly"
   },
   {
     "name": "Liechtenstein",
     "alpha2": "LI",
     "alpha3": "LIE",
-    "numerico": 438,
+    "num": 438,
     "COI": "LIE",
-    "Fips": "LS",
-    "Placa": "FL",
-    "Domain": ".li"
+    "fips": "LS",
+    "car": "FL",
+    "domain": ".li"
   },
   {
     "name": "Lituania",
     "alpha2": "LT",
     "alpha3": "LTU",
-    "numerico": 440,
+    "num": 440,
     "COI": "LTU",
-    "Fips": "LH",
-    "Placa": "LT",
-    "Domain": ".lt"
+    "fips": "LH",
+    "car": "LT",
+    "domain": ".lt"
   },
   {
     "name": "Luxemburgo",
     "alpha2": "LU",
     "alpha3": "LUX",
-    "numerico": 442,
+    "num": 442,
     "COI": "LUX",
-    "Fips": "LU",
-    "Placa": "L",
-    "Domain": ".lu"
+    "fips": "LU",
+    "car": "L",
+    "domain": ".lu"
   },
   {
     "name": "Macao",
     "alpha2": "MO",
     "alpha3": "MAC",
-    "numerico": 446,
-    "Fips": "MC",
-    "Domain": ".mo"
+    "num": 446,
+    "fips": "MC",
+    "domain": ".mo"
   },
   {
     "name": "Macedonia del Norte",
     "alpha2": "MK",
     "alpha3": "MKD",
-    "numerico": 807,
+    "num": 807,
     "COI": "MKD",
-    "Fips": "MK",
-    "Placa": "MK",
-    "Domain": ".mk"
+    "fips": "MK",
+    "car": "MK",
+    "domain": ".mk"
   },
   {
     "name": "Madagascar",
     "alpha2": "MG",
     "alpha3": "MDG",
-    "numerico": 450,
+    "num": 450,
     "COI": "MAD",
-    "Fips": "MA",
-    "Placa": "RM",
-    "Domain": ".mg"
+    "fips": "MA",
+    "car": "RM",
+    "domain": ".mg"
   },
   {
     "name": "Malasia",
     "alpha2": "MY",
     "alpha3": "MYS",
-    "numerico": 458,
+    "num": 458,
     "COI": "MAS",
-    "Fips": "MY",
-    "Placa": "MAL",
-    "Domain": ".my"
+    "fips": "MY",
+    "car": "MAL",
+    "domain": ".my"
   },
   {
     "name": "Malaui",
     "alpha2": "MW",
     "alpha3": "MWI",
-    "numerico": 454,
+    "num": 454,
     "COI": "MAW",
-    "Fips": "MI",
-    "Placa": "MW",
-    "Domain": ".mw"
+    "fips": "MI",
+    "car": "MW",
+    "domain": ".mw"
   },
   {
     "name": "Maldivas",
     "alpha2": "MV",
     "alpha3": "MDV",
-    "numerico": 462,
+    "num": 462,
     "COI": "MDV",
-    "Fips": "MV",
-    "Placa": "MV",
-    "Domain": ".mv"
+    "fips": "MV",
+    "car": "MV",
+    "domain": ".mv"
   },
   {
     "name": "Malí",
     "alpha2": "ML",
     "alpha3": "MLI",
-    "numerico": 466,
+    "num": 466,
     "COI": "MLI",
-    "Fips": "ML",
-    "Placa": "RMM",
-    "Domain": ".ml"
+    "fips": "ML",
+    "car": "RMM",
+    "domain": ".ml"
   },
   {
     "name": "Malta",
     "alpha2": "MT",
     "alpha3": "MLT",
-    "numerico": 470,
+    "num": 470,
     "COI": "MLT",
-    "Fips": "MT",
-    "Placa": "M",
-    "Domain": ".mt"
+    "fips": "MT",
+    "car": "M",
+    "domain": ".mt"
   },
   {
     "name": "Marruecos",
     "alpha2": "MA",
     "alpha3": "MAR",
-    "numerico": 504,
+    "num": 504,
     "COI": "MAR",
-    "Fips": "MO",
-    "Placa": "MA",
-    "Domain": ".ma"
+    "fips": "MO",
+    "car": "MA",
+    "domain": ".ma"
   },
   {
     "name": "Martinica",
     "alpha2": "MQ",
     "alpha3": "MTQ",
-    "numerico": 474,
-    "Fips": "MB",
-    "Domain": ".mq"
+    "num": 474,
+    "fips": "MB",
+    "domain": ".mq"
   },
   {
     "name": "Mauritania",
     "alpha2": "MR",
     "alpha3": "MRT",
-    "numerico": 478,
+    "num": 478,
     "COI": "MTN",
-    "Fips": "MR",
-    "Placa": "RIM",
-    "Domain": ".mr"
+    "fips": "MR",
+    "car": "RIM",
+    "domain": ".mr"
   },
   {
     "name": "Mayotte",
     "alpha2": "YT",
     "alpha3": "MYT",
-    "numerico": 175,
-    "Fips": "MF",
-    "Domain": ".yt"
+    "num": 175,
+    "fips": "MF",
+    "domain": ".yt"
   },
   {
     "name": "México",
     "alpha2": "MX",
     "alpha3": "MEX",
-    "numerico": 484,
+    "num": 484,
     "COI": "MEX",
-    "Fips": "MX",
-    "Placa": "MEX",
-    "Domain": ".mx"
+    "fips": "MX",
+    "car": "MEX",
+    "domain": ".mx"
   },
   {
     "name": "Moldavia",
     "alpha2": "MD",
     "alpha3": "MDA",
-    "numerico": 498,
+    "num": 498,
     "COI": "MDA",
-    "Fips": "MD",
-    "Placa": "MD",
-    "Domain": ".md"
+    "fips": "MD",
+    "car": "MD",
+    "domain": ".md"
   },
   {
     "name": "Mongolia",
     "alpha2": "MN",
     "alpha3": "MNG",
-    "numerico": 496,
+    "num": 496,
     "COI": "MGL",
-    "Fips": "MG",
-    "Placa": "MGL",
-    "Domain": ".mn"
+    "fips": "MG",
+    "car": "MGL",
+    "domain": ".mn"
   },
   {
     "name": "Montenegro",
     "alpha2": "ME",
     "alpha3": "MNE",
-    "numerico": 499,
+    "num": 499,
     "COI": "MNE",
-    "Fips": "MJ",
-    "Placa": "MNE",
-    "Domain": ".me"
+    "fips": "MJ",
+    "car": "MNE",
+    "domain": ".me"
   },
   {
     "name": "Montserrat",
     "alpha2": "MS",
     "alpha3": "MSR",
-    "numerico": 500,
-    "Fips": "MH",
-    "Domain": ".ms"
+    "num": 500,
+    "fips": "MH",
+    "domain": ".ms"
   },
   {
     "name": "Mozambique",
     "alpha2": "MZ",
     "alpha3": "MOZ",
-    "numerico": 508,
+    "num": 508,
     "COI": "MOZ",
-    "Fips": "MZ",
-    "Placa": "MOC",
-    "Domain": ".mz"
+    "fips": "MZ",
+    "car": "MOC",
+    "domain": ".mz"
   },
   {
     "name": "Myanmar",
     "alpha2": "MM",
     "alpha3": "MMR",
-    "numerico": 104,
+    "num": 104,
     "COI": "MYA",
-    "Fips": "BM",
-    "Placa": "MYA",
-    "Domain": ".mm"
+    "fips": "BM",
+    "car": "MYA",
+    "domain": ".mm"
   },
   {
     "name": "Namibia",
     "alpha2": "NA",
     "alpha3": "NAM",
-    "numerico": 516,
+    "num": 516,
     "COI": "NAM",
-    "Fips": "WA",
-    "Placa": "NAM",
-    "Domain": ".na"
+    "fips": "WA",
+    "car": "NAM",
+    "domain": ".na"
   },
   {
     "name": "Nauru",
     "alpha2": "NR",
     "alpha3": "NRU",
-    "numerico": 520,
+    "num": 520,
     "COI": "NRU",
-    "Fips": "NR",
-    "Placa": "NAU",
-    "Domain": ".nr"
+    "fips": "NR",
+    "car": "NAU",
+    "domain": ".nr"
   },
   {
     "name": "Nepal",
     "alpha2": "NP",
     "alpha3": "NPL",
-    "numerico": 524,
+    "num": 524,
     "COI": "NEP",
-    "Fips": "NP",
-    "Placa": "NEP",
-    "Domain": ".np"
+    "fips": "NP",
+    "car": "NEP",
+    "domain": ".np"
   },
   {
     "name": "Nicaragua",
     "alpha2": "NI",
     "alpha3": "NIC",
-    "numerico": 558,
+    "num": 558,
     "COI": "NCA",
-    "Fips": "NU",
-    "Placa": "NIC",
-    "Domain": ".ni"
+    "fips": "NU",
+    "car": "NIC",
+    "domain": ".ni"
   },
   {
     "name": "Níger",
     "alpha2": "NE",
     "alpha3": "NER",
-    "numerico": 562,
+    "num": 562,
     "COI": "NIG",
-    "Fips": "NG",
-    "Placa": "RN",
-    "Domain": ".ne"
+    "fips": "NG",
+    "car": "RN",
+    "domain": ".ne"
   },
   {
     "name": "Nigeria",
     "alpha2": "NG",
     "alpha3": "NGA",
-    "numerico": 566,
+    "num": 566,
     "COI": "NGR",
-    "Fips": "NI",
-    "Placa": "NGR",
-    "Domain": ".ng"
+    "fips": "NI",
+    "car": "NGR",
+    "domain": ".ng"
   },
   {
     "name": "Niue",
     "alpha2": "NU",
     "alpha3": "NIU",
-    "numerico": 570,
-    "Fips": "NE",
-    "Domain": ".nu"
+    "num": 570,
+    "fips": "NE",
+    "domain": ".nu"
   },
   {
     "name": "Noruega",
     "alpha2": "NO",
     "alpha3": "NOR",
-    "numerico": 578,
+    "num": 578,
     "COI": "NOR",
-    "Fips": "NO",
-    "Placa": "N",
-    "Domain": ".no"
+    "fips": "NO",
+    "car": "N",
+    "domain": ".no"
   },
   {
     "name": "Nueva Caledonia",
     "alpha2": "NC",
     "alpha3": "NCL",
-    "numerico": 540,
-    "Fips": "NC",
-    "Placa": "NCL",
-    "Domain": ".nc"
+    "num": 540,
+    "fips": "NC",
+    "car": "NCL",
+    "domain": ".nc"
   },
   {
     "name": "Nueva Zelandia",
     "alpha2": "NZ",
     "alpha3": "NZL",
-    "numerico": 554,
+    "num": 554,
     "COI": "NZL",
-    "Fips": "NZ",
-    "Placa": "NZ",
-    "Domain": ".nz"
+    "fips": "NZ",
+    "car": "NZ",
+    "domain": ".nz"
   },
   {
     "name": "Omán",
     "alpha2": "OM",
     "alpha3": "OMN",
-    "numerico": 512,
+    "num": 512,
     "COI": "OMA",
-    "Fips": "MU",
-    "Placa": "OM",
-    "Domain": ".om"
+    "fips": "MU",
+    "car": "OM",
+    "domain": ".om"
   },
   {
     "name": "namees Bajos",
     "alpha2": "NL",
     "alpha3": "NLD",
-    "numerico": 528,
+    "num": 528,
     "COI": "NED",
-    "Fips": "NL",
-    "Placa": "NL",
-    "Domain": ".nl"
+    "fips": "NL",
+    "car": "NL",
+    "domain": ".nl"
   },
   {
     "name": "Pakistán",
     "alpha2": "PK",
     "alpha3": "PAK",
-    "numerico": 586,
+    "num": 586,
     "COI": "PAK",
-    "Fips": "PK",
-    "Placa": "PK",
-    "Domain": ".pk"
+    "fips": "PK",
+    "car": "PK",
+    "domain": ".pk"
   },
   {
     "name": "Palaos",
     "alpha2": "PW",
     "alpha3": "PLW",
-    "numerico": 585,
+    "num": 585,
     "COI": "PLW",
-    "Fips": "PS",
-    "Placa": "PAL",
-    "Domain": ".pw"
+    "fips": "PS",
+    "car": "PAL",
+    "domain": ".pw"
   },
   {
     "name": "Palestina",
     "alpha2": "PS",
     "alpha3": "PSE",
-    "numerico": 275,
+    "num": 275,
     "COI": "PLE",
-    "Fips": "WE",
-    "Placa": "WB",
-    "Domain": ".ps"
+    "fips": "WE",
+    "car": "WB",
+    "domain": ".ps"
   },
   {
     "name": "Panamá",
     "alpha2": "PA",
     "alpha3": "PAN",
-    "numerico": 591,
+    "num": 591,
     "COI": "PAN",
-    "Fips": "PM",
-    "Placa": "PA",
-    "Domain": ".pa"
+    "fips": "PM",
+    "car": "PA",
+    "domain": ".pa"
   },
   {
     "name": "Papúa Nueva Guinea",
     "alpha2": "PG",
     "alpha3": "PNG",
-    "numerico": 598,
+    "num": 598,
     "COI": "PNG",
-    "Fips": "PP",
-    "Placa": "PNG",
-    "Domain": ".pg"
+    "fips": "PP",
+    "car": "PNG",
+    "domain": ".pg"
   },
   {
     "name": "Paraguay",
     "alpha2": "PY",
     "alpha3": "PRY",
-    "numerico": 600,
+    "num": 600,
     "COI": "PAR",
-    "Fips": "PA",
-    "Placa": "PY",
-    "Domain": ".py"
+    "fips": "PA",
+    "car": "PY",
+    "domain": ".py"
   },
   {
     "name": "Perú",
     "alpha2": "PE",
     "alpha3": "PER",
-    "numerico": 604,
+    "num": 604,
     "COI": "PER",
-    "Fips": "PE",
-    "Placa": "PE",
-    "Domain": ".pe"
+    "fips": "PE",
+    "car": "PE",
+    "domain": ".pe"
   },
   {
     "name": "Polinesia Francesa",
     "alpha2": "PF",
     "alpha3": "PYF",
-    "numerico": 258,
-    "Fips": "FP",
-    "Domain": ".pf"
+    "num": 258,
+    "fips": "FP",
+    "domain": ".pf"
   },
   {
     "name": "Polonia",
     "alpha2": "PL",
     "alpha3": "POL",
-    "numerico": 616,
+    "num": 616,
     "COI": "POL",
-    "Fips": "PL",
-    "Placa": "PL",
-    "Domain": ".pl"
+    "fips": "PL",
+    "car": "PL",
+    "domain": ".pl"
   },
   {
     "name": "Portugal",
     "alpha2": "PT",
     "alpha3": "PRT",
-    "numerico": 620,
+    "num": 620,
     "COI": "POR",
-    "Fips": "PO",
-    "Placa": "P",
-    "Domain": ".pt"
+    "fips": "PO",
+    "car": "P",
+    "domain": ".pt"
   },
   {
     "name": "Principado de Mónaco",
     "alpha2": "MC",
     "alpha3": "MCO",
-    "numerico": 492,
+    "num": 492,
     "COI": "MON",
-    "Fips": "MN",
-    "Placa": "MC",
-    "Domain": ".mc"
+    "fips": "MN",
+    "car": "MC",
+    "domain": ".mc"
   },
   {
     "name": "Puerto Rico",
     "alpha2": "PR",
     "alpha3": "PRI",
-    "numerico": 630,
+    "num": 630,
     "COI": "PUR",
-    "Fips": "RQ",
-    "Placa": "PRI",
-    "Domain": ".pr"
+    "fips": "RQ",
+    "car": "PRI",
+    "domain": ".pr"
   },
   {
     "name": "Reino Unido",
     "alpha2": "GB",
     "alpha3": "GBR",
-    "numerico": 826,
+    "num": 826,
     "COI": "GBR",
-    "Fips": "UK",
-    "Placa": "GBM",
-    "Domain": ".uk"
+    "fips": "UK",
+    "car": "GBM",
+    "domain": ".uk"
   },
   {
     "name": "República Centroafricana",
     "alpha2": "CF",
     "alpha3": "CAF",
-    "numerico": 140,
+    "num": 140,
     "COI": "CAF",
-    "Fips": "CT",
-    "Placa": "RCA",
-    "Domain": ".cf"
+    "fips": "CT",
+    "car": "RCA",
+    "domain": ".cf"
   },
   {
     "name": "República del Congo",
     "alpha2": "CG",
     "alpha3": "COG",
-    "numerico": 178,
+    "num": 178,
     "COI": "CGO",
-    "Fips": "CF",
-    "Placa": "RCB",
-    "Domain": ".cg"
+    "fips": "CF",
+    "car": "RCB",
+    "domain": ".cg"
   },
   {
     "name": "República Democrática del Congo",
     "alpha2": "CD",
     "alpha3": "COD",
-    "numerico": 180,
+    "num": 180,
     "COI": "COD",
-    "Fips": "CG",
-    "Placa": "CGO",
-    "Domain": ".cd"
+    "fips": "CG",
+    "car": "CGO",
+    "domain": ".cd"
   },
   {
     "name": "República Dominicana",
     "alpha2": "DO",
     "alpha3": "DOM",
-    "numerico": 214,
+    "num": 214,
     "COI": "DOM",
-    "Fips": "DR",
-    "Placa": "DOM",
-    "Domain": ".do"
+    "fips": "DR",
+    "car": "DOM",
+    "domain": ".do"
   },
   {
     "name": "Reunión",
     "alpha2": "RE",
     "alpha3": "REU",
-    "numerico": 638,
-    "Fips": "RE",
-    "Domain": ".re"
+    "num": 638,
+    "fips": "RE",
+    "domain": ".re"
   },
   {
     "name": "Ruanda",
     "alpha2": "RW",
     "alpha3": "RWA",
-    "numerico": 646,
+    "num": 646,
     "COI": "RWA",
-    "Fips": "RW",
-    "Placa": "RWA",
-    "Domain": ".rw"
+    "fips": "RW",
+    "car": "RWA",
+    "domain": ".rw"
   },
   {
     "name": "Rumania",
     "alpha2": "RO",
     "alpha3": "ROU",
-    "numerico": 642,
+    "num": 642,
     "COI": "ROU",
-    "Fips": "RO",
-    "Placa": "RO",
-    "Domain": ".ro"
+    "fips": "RO",
+    "car": "RO",
+    "domain": ".ro"
   },
   {
     "name": "Rusia",
     "alpha2": "RU",
     "alpha3": "RUS",
-    "numerico": 643,
+    "num": 643,
     "COI": "RUS",
-    "Fips": "RS",
-    "Placa": "RUS",
-    "Domain": ".ru"
+    "fips": "RS",
+    "car": "RUS",
+    "domain": ".ru"
   },
   {
     "name": "Sáhara Occidental",
     "alpha2": "EH",
     "alpha3": "ESH",
-    "numerico": 732,
-    "Fips": "WI",
-    "Placa": "WSA",
-    "Domain": ".eh"
+    "num": 732,
+    "fips": "WI",
+    "car": "WSA",
+    "domain": ".eh"
   },
   {
     "name": "Samoa",
     "alpha2": "WS",
     "alpha3": "WSM",
-    "numerico": 882,
+    "num": 882,
     "COI": "SAM",
-    "Fips": "WS",
-    "Placa": "WS",
-    "Domain": ".ws"
+    "fips": "WS",
+    "car": "WS",
+    "domain": ".ws"
   },
   {
     "name": "Samoa Americana",
     "alpha2": "AS",
     "alpha3": "ASM",
-    "numerico": 16,
+    "num": 16,
     "COI": "ASA",
-    "Fips": "AQ",
-    "Placa": "USA",
-    "Domain": ".as"
+    "fips": "AQ",
+    "car": "USA",
+    "domain": ".as"
   },
   {
     "name": "San Bartolomé",
     "alpha2": "BL",
     "alpha3": "BLM",
-    "numerico": 652,
-    "Fips": "TB",
-    "Domain": ".bl"
+    "num": 652,
+    "fips": "TB",
+    "domain": ".bl"
   },
   {
     "name": "San Cristóbal y Nieves",
     "alpha2": "KN",
     "alpha3": "KNA",
-    "numerico": 659,
+    "num": 659,
     "COI": "SKN",
-    "Fips": "SC",
-    "Placa": "KAN",
-    "Domain": ".kn"
+    "fips": "SC",
+    "car": "KAN",
+    "domain": ".kn"
   },
   {
     "name": "San Marino",
     "alpha2": "SM",
     "alpha3": "SMR",
-    "numerico": 674,
+    "num": 674,
     "COI": "SMR",
-    "Fips": "SM",
-    "Placa": "RSM",
-    "Domain": ".sm"
+    "fips": "SM",
+    "car": "RSM",
+    "domain": ".sm"
   },
   {
     "name": "San Pedro y Miquelón",
     "alpha2": "PM",
     "alpha3": "SPM",
-    "numerico": 666,
-    "Fips": "SB",
-    "Domain": ".pm"
+    "num": 666,
+    "fips": "SB",
+    "domain": ".pm"
   },
   {
     "name": "San Vicente y las Granadinas",
     "alpha2": "VC",
     "alpha3": "VCT",
-    "numerico": 670,
+    "num": 670,
     "COI": "VIN",
-    "Fips": "VC",
-    "Placa": "WV",
-    "Domain": ".vc"
+    "fips": "VC",
+    "car": "WV",
+    "domain": ".vc"
   },
   {
     "name": "Santa Elena, Ascensión y Tristán de Acuña",
     "alpha2": "SH",
     "alpha3": "SHN",
-    "numerico": 654,
-    "Fips": "SH",
-    "Domain": ".sh"
+    "num": 654,
+    "fips": "SH",
+    "domain": ".sh"
   },
   {
     "name": "Santa Lucía",
     "alpha2": "LC",
     "alpha3": "LCA",
-    "numerico": 662,
+    "num": 662,
     "COI": "LCA",
-    "Fips": "ST",
-    "Placa": "WL",
-    "Domain": ".lc"
+    "fips": "ST",
+    "car": "WL",
+    "domain": ".lc"
   },
   {
     "name": "Santo Tomé y Príncipe",
     "alpha2": "ST",
     "alpha3": "STP",
-    "numerico": 678,
+    "num": 678,
     "COI": "STP",
-    "Fips": "TP",
-    "Placa": "STP",
-    "Domain": ".st"
+    "fips": "TP",
+    "car": "STP",
+    "domain": ".st"
   },
   {
     "name": "Senegal",
     "alpha2": "SN",
     "alpha3": "SEN",
-    "numerico": 686,
+    "num": 686,
     "COI": "SEN",
-    "Fips": "SG",
-    "Placa": "SN",
-    "Domain": ".sn"
+    "fips": "SG",
+    "car": "SN",
+    "domain": ".sn"
   },
   {
     "name": "Serbia",
     "alpha2": "RS",
     "alpha3": "SRB",
-    "numerico": 688,
+    "num": 688,
     "COI": "SRB",
-    "Fips": "RI",
-    "Placa": "SRB",
-    "Domain": ".rs"
+    "fips": "RI",
+    "car": "SRB",
+    "domain": ".rs"
   },
   {
     "name": "Seychelles",
     "alpha2": "SC",
     "alpha3": "SYC",
-    "numerico": 690,
+    "num": 690,
     "COI": "SEY",
-    "Fips": "SE",
-    "Placa": "SY",
-    "Domain": ".sc"
+    "fips": "SE",
+    "car": "SY",
+    "domain": ".sc"
   },
   {
     "name": "Sierra Leona",
     "alpha2": "SL",
     "alpha3": "SLE",
-    "numerico": 694,
+    "num": 694,
     "COI": "SLE",
-    "Fips": "SL",
-    "Placa": "WAL",
-    "Domain": ".sl"
+    "fips": "SL",
+    "car": "WAL",
+    "domain": ".sl"
   },
   {
     "name": "Singapur",
     "alpha2": "SG",
     "alpha3": "SGP",
-    "numerico": 702,
+    "num": 702,
     "COI": "SGP",
-    "Fips": "SN",
-    "Placa": "SGP",
-    "Domain": ".sg"
+    "fips": "SN",
+    "car": "SGP",
+    "domain": ".sg"
   },
   {
     "name": "Sint Maarten",
     "alpha2": "SX",
     "alpha3": "SXM",
-    "numerico": 534,
-    "Fips": "NN",
-    "Domain": ".sx"
+    "num": 534,
+    "fips": "NN",
+    "domain": ".sx"
   },
   {
     "name": "Siria",
     "alpha2": "SY",
     "alpha3": "SYR",
-    "numerico": 760,
+    "num": 760,
     "COI": "SYR",
-    "Fips": "SY",
-    "Placa": "SYR",
-    "Domain": ".sy"
+    "fips": "SY",
+    "car": "SYR",
+    "domain": ".sy"
   },
   {
     "name": "Somalia",
     "alpha2": "SO",
     "alpha3": "SOM",
-    "numerico": 706,
+    "num": 706,
     "COI": "SOM",
-    "Fips": "SO",
-    "Placa": "SO",
-    "Domain": ".so"
+    "fips": "SO",
+    "car": "SO",
+    "domain": ".so"
   },
   {
     "name": "Sri Lanka",
     "alpha2": "LK",
     "alpha3": "LKA",
-    "numerico": 144,
+    "num": 144,
     "COI": "SRI",
-    "Fips": "CE",
-    "Placa": "CL",
-    "Domain": ".lk"
+    "fips": "CE",
+    "car": "CL",
+    "domain": ".lk"
   },
   {
     "name": "Sudáfrica",
     "alpha2": "ZA",
     "alpha3": "ZAF",
-    "numerico": 710,
+    "num": 710,
     "COI": "RSA",
-    "Fips": "SF",
-    "Placa": "ZA",
-    "Domain": ".za"
+    "fips": "SF",
+    "car": "ZA",
+    "domain": ".za"
   },
   {
     "name": "Sudán",
     "alpha2": "SD",
     "alpha3": "SDN",
-    "numerico": 729,
+    "num": 729,
     "COI": "SUD",
-    "Fips": "SU",
-    "Placa": "SUD",
-    "Domain": ".sd"
+    "fips": "SU",
+    "car": "SUD",
+    "domain": ".sd"
   },
   {
     "name": "Sudán del Sur",
     "alpha2": "SS",
     "alpha3": "SSD",
-    "numerico": 728,
-    "Placa": "SSD",
-    "Domain": ".ss"
+    "num": 728,
+    "car": "SSD",
+    "domain": ".ss"
   },
   {
     "name": "Suecia",
     "alpha2": "SE",
     "alpha3": "SWE",
-    "numerico": 752,
+    "num": 752,
     "COI": "SWE",
-    "Fips": "SW",
-    "Placa": "S",
-    "Domain": ".se"
+    "fips": "SW",
+    "car": "S",
+    "domain": ".se"
   },
   {
     "name": "Suiza",
     "alpha2": "CH",
     "alpha3": "CHE",
-    "numerico": 756,
+    "num": 756,
     "COI": "SUI",
-    "Fips": "SZ",
-    "Placa": "CH",
-    "Domain": ".ch"
+    "fips": "SZ",
+    "car": "CH",
+    "domain": ".ch"
   },
   {
     "name": "Surinam",
     "alpha2": "SR",
     "alpha3": "SUR",
-    "numerico": 740,
+    "num": 740,
     "COI": "SUR",
-    "Fips": "NS",
-    "Placa": "SME",
-    "Domain": ".sr"
+    "fips": "NS",
+    "car": "SME",
+    "domain": ".sr"
   },
   {
     "name": "Svalbard y Jan Mayen",
     "alpha2": "SJ",
     "alpha3": "SJM",
-    "numerico": 744,
-    "Fips": "SV",
-    "Domain": ".sj"
+    "num": 744,
+    "fips": "SV",
+    "domain": ".sj"
   },
   {
     "name": "Tailandia",
     "alpha2": "TH",
     "alpha3": "THA",
-    "numerico": 764,
+    "num": 764,
     "COI": "THA",
-    "Fips": "TH",
-    "Placa": "T",
-    "Domain": ".th"
+    "fips": "TH",
+    "car": "T",
+    "domain": ".th"
   },
   {
     "name": "Taiwán",
     "alpha2": "TW",
     "alpha3": "TWN",
-    "numerico": 158,
+    "num": 158,
     "COI": "TPE",
-    "Fips": "TW",
-    "Placa": "RC",
-    "Domain": ".tw"
+    "fips": "TW",
+    "car": "RC",
+    "domain": ".tw"
   },
   {
     "name": "Tanzania",
     "alpha2": "TZ",
     "alpha3": "TZA",
-    "numerico": 834,
+    "num": 834,
     "COI": "TAN",
-    "Fips": "TZ",
-    "Placa": "EAT",
-    "Domain": ".tz"
+    "fips": "TZ",
+    "car": "EAT",
+    "domain": ".tz"
   },
   {
     "name": "Tayikistán",
     "alpha2": "TJ",
     "alpha3": "TJK",
-    "numerico": 762,
+    "num": 762,
     "COI": "TJK",
-    "Fips": "TI",
-    "Placa": "TJ",
-    "Domain": ".tj"
+    "fips": "TI",
+    "car": "TJ",
+    "domain": ".tj"
   },
   {
     "name": "Territorio Británico del Océano Índico",
     "alpha2": "IO",
     "alpha3": "IOT",
-    "numerico": 86,
-    "Fips": "IO",
-    "Domain": ".io"
+    "num": 86,
+    "fips": "IO",
+    "domain": ".io"
   },
   {
     "name": "Territorios Australes y Antárticos Franceses",
     "alpha2": "TF",
     "alpha3": "ATF",
-    "numerico": 260,
-    "Fips": "FS",
-    "Domain": ".tf"
+    "num": 260,
+    "fips": "FS",
+    "domain": ".tf"
   },
   {
     "name": "Timor Oriental",
     "alpha2": "TL",
     "alpha3": "TLS",
-    "numerico": 626,
+    "num": 626,
     "COI": "TLS",
-    "Fips": "TT",
-    "Placa": "TL",
-    "Domain": ".tl"
+    "fips": "TT",
+    "car": "TL",
+    "domain": ".tl"
   },
   {
     "name": "Togo",
     "alpha2": "TG",
     "alpha3": "TGO",
-    "numerico": 768,
+    "num": 768,
     "COI": "TOG",
-    "Fips": "TO",
-    "Placa": "TG",
-    "Domain": ".tg"
+    "fips": "TO",
+    "car": "TG",
+    "domain": ".tg"
   },
   {
     "name": "Tokelau",
     "alpha2": "TK",
     "alpha3": "TKL",
-    "numerico": 772,
-    "Fips": "TL",
-    "Domain": ".tk"
+    "num": 772,
+    "fips": "TL",
+    "domain": ".tk"
   },
   {
     "name": "Tonga",
     "alpha2": "TO",
     "alpha3": "TON",
-    "numerico": 776,
+    "num": 776,
     "COI": "TGA",
-    "Fips": "TN",
-    "Placa": "TON",
-    "Domain": ".to"
+    "fips": "TN",
+    "car": "TON",
+    "domain": ".to"
   },
   {
     "name": "Trinidad y Tobago",
     "alpha2": "TT",
     "alpha3": "TTO",
-    "numerico": 780,
+    "num": 780,
     "COI": "TTO",
-    "Fips": "TD",
-    "Placa": "TT",
-    "Domain": ".tt"
+    "fips": "TD",
+    "car": "TT",
+    "domain": ".tt"
   },
   {
     "name": "Túnez",
     "alpha2": "TN",
     "alpha3": "TUN",
-    "numerico": 788,
+    "num": 788,
     "COI": "TUN",
-    "Fips": "TS",
-    "Placa": "TN",
-    "Domain": ".tn"
+    "fips": "TS",
+    "car": "TN",
+    "domain": ".tn"
   },
   {
     "name": "Turkmenistán",
     "alpha2": "TM",
     "alpha3": "TKM",
-    "numerico": 795,
+    "num": 795,
     "COI": "TKM",
-    "Fips": "TX",
-    "Placa": "TM",
-    "Domain": ".tm"
+    "fips": "TX",
+    "car": "TM",
+    "domain": ".tm"
   },
   {
     "name": "Turquía",
     "alpha2": "TR",
     "alpha3": "TUR",
-    "numerico": 792,
+    "num": 792,
     "COI": "TUR",
-    "Fips": "TU",
-    "Placa": "TR",
-    "Domain": ".tr"
+    "fips": "TU",
+    "car": "TR",
+    "domain": ".tr"
   },
   {
     "name": "Tuvalu",
     "alpha2": "TV",
     "alpha3": "TUV",
-    "numerico": 798,
+    "num": 798,
     "COI": "TUV",
-    "Fips": "TV",
-    "Placa": "TUV",
-    "Domain": ".tv"
+    "fips": "TV",
+    "car": "TUV",
+    "domain": ".tv"
   },
   {
     "name": "Ucrania",
     "alpha2": "UA",
     "alpha3": "UKR",
-    "numerico": 804,
+    "num": 804,
     "COI": "UKR",
-    "Fips": "UP",
-    "Placa": "UA",
-    "Domain": ".ua"
+    "fips": "UP",
+    "car": "UA",
+    "domain": ".ua"
   },
   {
     "name": "Uganda",
     "alpha2": "UG",
     "alpha3": "UGA",
-    "numerico": 800,
+    "num": 800,
     "COI": "UGA",
-    "Fips": "UG",
-    "Placa": "EAU",
-    "Domain": ".ug"
+    "fips": "UG",
+    "car": "EAU",
+    "domain": ".ug"
   },
-
+  {
+    "name": "Uruguay",
+    "alpha2": "UY",
+    "alpha3": "URY",
+    "num": 858,
+    "COI": "URU",
+    "fips": "UY",
+    "car": "ROU",
+    "domain": ".uy"
+  },
   {
     "name": "Uzbekistán",
     "alpha2": "UZ",
     "alpha3": "UZB",
-    "numerico": 860,
+    "num": 860,
     "COI": "UZB",
-    "Fips": "UZ",
-    "Placa": "UZ",
-    "Domain": ".uz"
+    "fips": "UZ",
+    "car": "UZ",
+    "domain": ".uz"
   },
   {
     "name": "Vanuatu",
     "alpha2": "VU",
     "alpha3": "VUT",
-    "numerico": 548,
+    "num": 548,
     "COI": "VAN",
-    "Fips": "NH",
-    "Placa": "VAN",
-    "Domain": ".vu"
+    "fips": "NH",
+    "car": "VAN",
+    "domain": ".vu"
   },
   {
     "name": "Venezuela",
     "alpha2": "VE",
     "alpha3": "VEN",
-    "numerico": 862,
+    "num": 862,
     "COI": "VEN",
-    "Fips": "VE",
-    "Placa": "YV",
-    "Domain": ".ve"
+    "fips": "VE",
+    "car": "YV",
+    "domain": ".ve"
   },
   {
     "name": "Vietnam",
     "alpha2": "VN",
     "alpha3": "VNM",
-    "numerico": 704,
+    "num": 704,
     "COI": "VIE",
-    "Fips": "VM",
-    "Placa": "VN",
-    "Domain": ".vn"
+    "fips": "VM",
+    "car": "VN",
+    "domain": ".vn"
   },
   {
     "name": "Wallis y Futuna",
     "alpha2": "WF",
     "alpha3": "WLF",
-    "numerico": 876,
-    "Fips": "WF",
-    "Domain": ".wf"
+    "num": 876,
+    "fips": "WF",
+    "domain": ".wf"
   },
   {
     "name": "Yemen",
     "alpha2": "YE",
     "alpha3": "YEM",
-    "numerico": 887,
+    "num": 887,
     "COI": "YEM",
-    "Fips": "YM",
-    "Placa": "YEM",
-    "Domain": ".ye"
+    "fips": "YM",
+    "car": "YEM",
+    "domain": ".ye"
   },
   {
     "name": "Yibuti",
     "alpha2": "DJ",
     "alpha3": "DJI",
-    "numerico": 262,
+    "num": 262,
     "COI": "DJI",
-    "Fips": "DJ",
-    "Placa": "DJI",
-    "Domain": ".dj"
+    "fips": "DJ",
+    "car": "DJI",
+    "domain": ".dj"
   },
   {
     "name": "Zambia",
     "alpha2": "ZM",
     "alpha3": "ZMB",
-    "numerico": 894,
+    "num": 894,
     "COI": "ZAM",
-    "Fips": "ZA",
-    "Placa": "Z",
-    "Domain": ".zm"
+    "fips": "ZA",
+    "car": "Z",
+    "domain": ".zm"
   },
   {
     "name": "Zimbabue",
     "alpha2": "ZW",
     "alpha3": "ZWE",
-    "numerico": 716,
+    "num": 716,
     "COI": "ZIM",
-    "Fips": "ZI",
-    "Placa": "ZW",
-    "Domain": ".zw"
+    "fips": "ZI",
+    "car": "ZW",
+    "domain": ".zw"
   }
 ]

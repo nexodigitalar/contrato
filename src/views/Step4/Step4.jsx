@@ -19,6 +19,8 @@ import { useState, useEffect } from "react";
 import { blockPages, changePage } from "@/store/pageSlice/pageSlice";
 import { setError } from "@/store/errorSlice/errorSlice";
 
+import countries from "@/utils/countries.json";
+
 const Step4 = ({ images }) => {
   const dispatch = useDispatch();
   const ids = useSelector((state) => state.crm.ids);
@@ -27,7 +29,6 @@ const Step4 = ({ images }) => {
   );
   const usuario = useSelector((state) => state.user.usuarios);
   const infoGrupo = useSelector((state) => state.crm.grupo);
-  const data = useSelector((state) => state.data);
   const [confirmContract, setConfirmContract] = useState(true);
   const [spinner, setSpinner] = useState(true);
   const [currency, setCurrency] = useState("$");
@@ -86,7 +87,7 @@ const Step4 = ({ images }) => {
             CliFchLlam: "0000-00-00T00:00:00",
             CliDir: user.calle + user.puertaNumero,
             CliTel: "",
-            CliMovil: user.telefono,
+            CliMovil: user.telefonoCod + user.telefono,
             CliTelTrb: "",
             CliTelInt: "",
             CliMail: user.email,
@@ -150,6 +151,7 @@ const Step4 = ({ images }) => {
   };
 
   const RegistrarClienteGestion = async (user) => {
+    let paisCod = countries.find((item) => item.name === user.pais);
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
       {
@@ -174,7 +176,7 @@ const Step4 = ({ images }) => {
             PersonaDireccion2: "",
             PersonaTelefono1: "",
             PersonaTelefono2: "",
-            PersonaTelefonoMovil1: user.telefono,
+            PersonaTelefonoMovil1: user.telefonoCod + user.telefono,
             PersonaTelefonoMovil2: "",
             PersonaFechaNacimiento: user.fechaNacimiento,
             EstadoCivilCodigo: 2,
@@ -184,7 +186,7 @@ const Step4 = ({ images }) => {
             PersonaMail1: user.email,
             PersonaMail2: "",
             PersonaSexo: user.sexo,
-            PersonaPaisResidenciaCodigo: "UY",
+            PersonaPaisResidenciaCodigo: paisCod.alpha2,
             PersonaPaisResidenciaNombre: user.pais,
             PersonaDepartamentoResCod: "MO",
             PersonaDepartamentoResNom: "",
@@ -219,7 +221,7 @@ const Step4 = ({ images }) => {
                   CliApe2: user.segundoApellido,
                   CliDir: user.calle + user.puertaNumero,
                   CliTel: "",
-                  CliMovil: user.telefono,
+                  CliMovil: user.telefonoCod + user.telefono,
                 },
               ],
             },
@@ -344,7 +346,7 @@ const Step4 = ({ images }) => {
               CliFchLlam: "0000-00-00T00:00:00",
               CliDir: user.calle + user.puertaNumero,
               CliTel: "",
-              CliMovil: user.telefono,
+              CliMovil: user.telefonoCod + user.telefono,
               CliTelTrb: "",
               CliTelInt: "",
               CliMail: user.email,
@@ -444,7 +446,7 @@ const Step4 = ({ images }) => {
               PersonaDireccion2: "",
               PersonaTelefono1: "",
               PersonaTelefono2: "",
-              PersonaTelefonoMovil1: user.telefono,
+              PersonaTelefonoMovil1: user.telefonoCod + user.telefono,
               PersonaTelefonoMovil2: "",
               PersonaFechaNacimiento: user.fechaNacimiento,
               EstadoCivilCodigo: 2,
@@ -489,7 +491,7 @@ const Step4 = ({ images }) => {
                     CliApe2: user.segundoApellido,
                     CliDir: user.calle + user.puertaNumero,
                     CliTel: "",
-                    CliMovil: user.telefono,
+                    CliMovil: user.telefonoCod + user.telefono,
                   },
                 ],
               },
