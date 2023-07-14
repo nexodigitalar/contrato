@@ -18,7 +18,7 @@ const SmsContainer = ({ setConfirmContract }) => {
   );
   const [phone, setPhone] = useState({
     validation: "",
-    number: usuario[0].telefono,
+    number: "+" + usuario[0].telefonoCod + " " + usuario[0].telefono,
   });
   const ids = useSelector((state) => state.crm.ids);
 
@@ -46,7 +46,7 @@ const SmsContainer = ({ setConfirmContract }) => {
           pUsuario: import.meta.env.VITE_USUARIO,
           pPassword: import.meta.env.VITE_PASSWORD,
           pVentaOLId: ids.ventaId,
-          pTelMovil: user[0].telefonoCod + user[0].telefono,
+          pTelMovil: usuario[0].telefonoCod + usuario[0].telefono,
           pMsjSMS: "Tu PIN de validacion es: " + numberValidation,
         }),
       }

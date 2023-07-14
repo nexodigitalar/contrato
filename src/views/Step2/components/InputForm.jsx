@@ -11,6 +11,7 @@ import Input from "../../../components/Input/Input";
 import InputFile from "../../../components/InputFile/InputFile";
 import InputDate from "../../../components/InputDate/InputDate";
 import SelectPhone from "../../../components/SelectPhone/SelectPhone";
+import InputPhone from "../../../components/InputPhone/InputPhone";
 
 const InputForm = ({
   initialValues,
@@ -103,7 +104,7 @@ const InputForm = ({
     // Convertimos la fecha en un string para que pueda ser guardado en redux
     const event = new Date(value);
     const jsonDate = event.toJSON();
-    const newDate = new Date(jsonDate).toUTCString();
+    const newDate = new Date(jsonDate).toISOString();
 
     const updatedAreas = [...initialValues];
     updatedAreas[i] = {
@@ -192,6 +193,8 @@ const InputForm = ({
         setAmountValidations([
           {
             cedula: "",
+            ciFrente: "",
+            ciDorso: "",
             primerNombre: true,
             primerApellido: true,
             fechaNacimiento: "",
@@ -487,7 +490,7 @@ const InputForm = ({
                     }}
                   />
 
-                  <Input
+                  <InputPhone
                     placeholder="* Teléfono / Celular"
                     name="telefono"
                     value={initialValues[index]?.telefono || ""}

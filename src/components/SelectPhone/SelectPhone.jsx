@@ -14,7 +14,7 @@ const SelectPhone = ({ name, click, change }) => {
         {phones.map((item, i) => {
           return (
             <option value={item.cod} key={i}>
-              {item.alpha2} - {item.cod}
+              {item.alpha2} +{item.cod}
             </option>
           );
         })}

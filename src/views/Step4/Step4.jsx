@@ -20,6 +20,7 @@ import { blockPages, changePage } from "@/store/pageSlice/pageSlice";
 import { setError } from "@/store/errorSlice/errorSlice";
 
 import countries from "@/utils/countries.json";
+import departamentos from "@/utils/departamentos.json";
 
 const Step4 = ({ images }) => {
   const dispatch = useDispatch();
@@ -96,7 +97,7 @@ const Step4 = ({ images }) => {
             DepartamentoNombre: user.departamento,
             LocalidadId: 0,
             LocalidadNombre: "",
-            CliBarrio: "Pocitos",
+            CliBarrio: "",
             CliTpoInt: "",
             CliMotivo: "",
             CliAsignado: "",
@@ -120,7 +121,7 @@ const Step4 = ({ images }) => {
             CliCargo: "",
             CliEmpAntiguedad: "",
             CliEmpTrabajoLugar: user.empresaTrabaja,
-            CliIngresos: "0.00",
+            CliIngresos: user.ingresosMensuales,
             CliDestino: "",
             CliOrigenFondo: user.origenFondos,
             CliConyugeIngreso: "0.00",
@@ -152,6 +153,9 @@ const Step4 = ({ images }) => {
 
   const RegistrarClienteGestion = async (user) => {
     let paisCod = countries.find((item) => item.name === user.pais);
+    let departamentoCod =
+      departamentos.fin((item) => item.name === user.departamento) || 0;
+    console.log(departamentoCod);
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
       {
@@ -172,7 +176,7 @@ const Step4 = ({ images }) => {
             PersonaNombre2: user.segundoNombre,
             PersonaApellido1: user.primerApellido,
             PersonaApellido2: user.segundoApellido,
-            PersonaDireccion1: "Rincon649",
+            PersonaDireccion1: user.calle + " " + user.puertaNumero,
             PersonaDireccion2: "",
             PersonaTelefono1: "",
             PersonaTelefono2: "",
@@ -188,7 +192,7 @@ const Step4 = ({ images }) => {
             PersonaSexo: user.sexo,
             PersonaPaisResidenciaCodigo: paisCod.alpha2,
             PersonaPaisResidenciaNombre: user.pais,
-            PersonaDepartamentoResCod: "MO",
+            PersonaDepartamentoResCod: departamentoCod.cod,
             PersonaDepartamentoResNom: "",
             PersonaCiudadResCod: "",
             PersonaCiudadResNom: user.departamento,
@@ -260,8 +264,8 @@ const Step4 = ({ images }) => {
             PersonaRiesgoLavado: 0,
             PersonaResidente: false,
             PersonaLugarTrabajoNombre: user.empresaTrabaja,
-            PersonaLugarTrabajoDireccion: "Rincon 649",
-            PersonaLugarTrabajoCargo: "TI",
+            PersonaLugarTrabajoDireccion: "",
+            PersonaLugarTrabajoCargo: "",
             PersonaOrigenDeFondos: user.origenFondos,
             PersonaRubroEmpresa: user.rubroEmpresa,
             PersonaConyugeCodigo: 0,
@@ -355,7 +359,7 @@ const Step4 = ({ images }) => {
               DepartamentoNombre: user.departamento,
               LocalidadId: 0,
               LocalidadNombre: "",
-              CliBarrio: "Pocitos",
+              CliBarrio: "",
               CliTpoInt: "",
               CliMotivo: "",
               CliAsignado: "",
@@ -379,7 +383,7 @@ const Step4 = ({ images }) => {
               CliCargo: "",
               CliEmpAntiguedad: "",
               CliEmpTrabajoLugar: user.empresaTrabaja,
-              CliIngresos: "0.00",
+              CliIngresos: user.ingresosMensuales,
               CliDestino: "",
               CliOrigenFondo: user.origenFondos,
               CliConyugeIngreso: "0.00",
@@ -421,6 +425,9 @@ const Step4 = ({ images }) => {
   }
 
   async function RegistrarClienteGestionOther(user, idUser, idEmpresa, i) {
+    let paisCod = countries.find((item) => item.name === user.pais);
+    let departamentoCod =
+      departamentos.fin((item) => item.name === user.departamento) || 0;
     try {
       const responseUser = await fetch(
         "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
@@ -442,7 +449,7 @@ const Step4 = ({ images }) => {
               PersonaNombre2: user.segundoNombre,
               PersonaApellido1: user.primerApellido,
               PersonaApellido2: user.segundoApellido,
-              PersonaDireccion1: "Rincon649",
+              PersonaDireccion1: user.calle + " " + user.puertaNumero,
               PersonaDireccion2: "",
               PersonaTelefono1: "",
               PersonaTelefono2: "",
@@ -456,9 +463,9 @@ const Step4 = ({ images }) => {
               PersonaMail1: user.email,
               PersonaMail2: "",
               PersonaSexo: user.sexo,
-              PersonaPaisResidenciaCodigo: "UY",
+              PersonaPaisResidenciaCodigo: paisCod.alpha2,
               PersonaPaisResidenciaNombre: user.pais,
-              PersonaDepartamentoResCod: "MO",
+              PersonaDepartamentoResCod: departamentoCod.cod,
               PersonaDepartamentoResNom: "",
               PersonaCiudadResCod: "",
               PersonaCiudadResNom: user.departamento,

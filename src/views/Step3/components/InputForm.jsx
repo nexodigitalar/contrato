@@ -3,7 +3,7 @@ import "./InputForm.scss";
 /* Components */
 import Input from "@/components/Input/Input";
 import SelectInput from "@/components/SelectInput/SelectInput";
-import SelectCountry from "@/components/SelectCountry/SelectCountry";
+import SelectMap from "@/components/SelectMap/SelectMap";
 import InputCheck from "../../../components/InputCheck/InputCheck";
 
 /* Hooks */
@@ -11,6 +11,9 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUsers } from "@/store/userSlice/userSlice";
 import useValidate from "@/hooks/useValidate";
+
+import countries from "@/utils/countries.json";
+import departamentos from "@/utils/departamentos.json";
 
 const InputForm = ({ index, setAmountValidations, amountValidations }) => {
   const [checkUruguayo, setCheckUruguayo] = useState(true);
@@ -87,6 +90,26 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     dispatch(
       updateUsers({ name: e.target.name, index: i, value: e.target.value })
     );
+  };
+
+  const handleInputPais = (e, i) => {
+    if (e.target.value === "Uruguay") {
+      let findDepartamento = departamentos.find(
+        (item) => item.name === usuario[i]["departamento"]
+      );
+      if (!findDepartamento) {
+        dispatch(updateUsers({ name: e.target.name, index: i, value: "" }));
+        let newArr = [...amountValidations];
+        let newObj = newArr[i];
+        newObj = { ...newObj, ["departamento"]: false };
+        newArr[i] = newObj;
+        setAmountValidations(newArr);
+      }
+    }
+    if (usuario[i])
+      dispatch(
+        updateUsers({ name: e.target.name, index: i, value: e.target.value })
+      );
   };
 
   const handleCheckboxUruguayo = (i) => {
@@ -208,7 +231,9 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
           </div>
 
           <div className="inputForm_div">
-            <SelectCountry
+            <SelectMap
+              placeholder="* País"
+              toMap={countries}
               name="pais"
               usuario={usuario}
               index={index}
@@ -224,7 +249,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               }
               change={(e) => {
                 {
-                  handleInput(e, index),
+                  handleInputPais(e, index),
                     useValidate(
                       e.target.value,
                       amountValidations,
@@ -244,14 +269,37 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                 );
               }}
             />
-            <Input
-              placeholder="* Departamento"
-              name="departamento"
-              value={usuario[index]?.departamento || ""}
-              error={amountValidations[index]?.departamento}
-              type="text"
-              click={(e) => {
-                handleInput(e, index),
+            {usuario[index]?.pais === "Uruguay" ? (
+              <SelectMap
+                toMap={departamentos}
+                usuario={usuario}
+                index={index}
+                error={amountValidations[index]?.departamento}
+                placeholder="* Departamento"
+                name="departamento"
+                change={(e) => {
+                  {
+                    handleInput(e, index),
+                      useValidate(
+                        e.target.value,
+                        amountValidations,
+                        index,
+                        "departamento",
+                        setAmountValidations
+                      );
+                  }
+                }}
+                click={(e) => {
+                  handleInput(e, index),
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "departamento",
+                      setAmountValidations
+                    );
+                }}
+                onfocusout={(e) => {
                   useValidate(
                     e.target.value,
                     amountValidations,
@@ -259,17 +307,36 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                     "departamento",
                     setAmountValidations
                   );
-              }}
-              onfocusout={(e) => {
-                useValidate(
-                  e.target.value,
-                  amountValidations,
-                  index,
-                  "departamento",
-                  setAmountValidations
-                );
-              }}
-            />
+                }}
+              />
+            ) : (
+              <Input
+                placeholder="* Departamento"
+                name="departamento"
+                value={usuario[index]?.departamento || ""}
+                error={amountValidations[index]?.departamento}
+                type="text"
+                click={(e) => {
+                  handleInput(e, index),
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "departamento",
+                      setAmountValidations
+                    );
+                }}
+                onfocusout={(e) => {
+                  useValidate(
+                    e.target.value,
+                    amountValidations,
+                    index,
+                    "departamento",
+                    setAmountValidations
+                  );
+                }}
+              />
+            )}
           </div>
           <div className="inputForm_div">
             <Input

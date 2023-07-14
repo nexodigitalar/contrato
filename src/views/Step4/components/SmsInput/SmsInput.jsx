@@ -5,7 +5,7 @@ import "./SmsInput.scss";
 import Button from "@/components/Button/Button";
 
 const SmsInput = ({ setSmsSent, phone, setPhone }) => {
-  const validatePhone = () => {
+  /*   const validatePhone = () => {
     let lengthValidation =
       phone.number.length <= 12 && phone.number.length >= 8;
     if (phone.number === "" || phone.number === "placeholder") {
@@ -20,12 +20,10 @@ const SmsInput = ({ setSmsSent, phone, setPhone }) => {
         return false;
       }
     }
-  };
+  }; */
 
   const submitPhone = () => {
-    if (validatePhone()) {
-      setSmsSent(true);
-    }
+    setSmsSent(true);
   };
 
   return (

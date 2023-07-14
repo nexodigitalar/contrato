@@ -1,8 +1,7 @@
-import "./SelectCountry.scss";
+import "./SelectMap.scss";
 import { useEffect, useState } from "react";
-import countries from "@/utils/countries.json";
 
-const SelectCountry = ({
+const SelectMap = ({
   placeholder,
   name,
   usuario,
@@ -10,6 +9,7 @@ const SelectCountry = ({
   click,
   change,
   error,
+  toMap,
 }) => {
   const [styles, setStyles] = useState("selectInput border_empty");
 
@@ -31,18 +31,16 @@ const SelectCountry = ({
       <select
         id={name}
         name={name}
-        defaultValue={
-          usuario[index][name] != "" ? usuario[index][name] : "placeholder"
-        }
+        defaultValue={usuario[index][name] != "" ? usuario[index][name] : ""}
         className={styles}
         onChange={change}
         onClick={click}
       >
-        <option value="placeholder" className="prueba" hidden>
-          * País{" "}
+        <option value="" className="prueba" hidden>
+          {placeholder}{" "}
         </option>
 
-        {countries.map((item, i) => {
+        {toMap.map((item, i) => {
           return (
             <option value={item.name} key={i}>
               {item.name.length > 30
@@ -57,4 +55,4 @@ const SelectCountry = ({
   );
 };
 
-export default SelectCountry;
+export default SelectMap;

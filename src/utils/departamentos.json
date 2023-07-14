@@ -1,0 +1,78 @@
+[
+  {
+    "cod": "AR",
+    "name": "Artigas"
+  },
+  {
+    "cod": "CA",
+    "name": "Canelones"
+  },
+  {
+    "cod": "CL",
+    "name": "Cerro Largo"
+  },
+  {
+    "cod": "CO",
+    "name": "Colonia"
+  },
+  {
+    "cod": "DU ",
+    "name": "Durazno"
+  },
+  {
+    "cod": "FD",
+    "name": "Florida"
+  },
+  {
+    "cod": "FS",
+    "name": "Flores"
+  },
+  {
+    "cod": "LA",
+    "name": "Lavalleja"
+  },
+  {
+    "cod": "MA",
+    "name": "Maldonado"
+  },
+  {
+    "cod": "MO",
+    "name": "Montevideo"
+  },
+  {
+    "cod": "PA",
+    "name": "Paysandu"
+  },
+  {
+    "cod": "RN",
+    "name": "Río Negro"
+  },
+  {
+    "cod": "RO",
+    "name": "Rocha"
+  },
+  {
+    "cod": "RV",
+    "name": "Rivera"
+  },
+  {
+    "cod": "SA",
+    "name": "Salto"
+  },
+  {
+    "cod": "SJ",
+    "name": "San José"
+  },
+  {
+    "cod": "SO",
+    "name": "Soriano"
+  },
+  {
+    "cod": "TA",
+    "name": "Tacuarembo"
+  },
+  {
+    "cod": "TT",
+    "name": "Treinta y tres "
+  }
+]

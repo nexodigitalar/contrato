@@ -1,10 +1,10 @@
 @import "@/utils/theme.scss";
 
-.inputContainer {
+.inputPhoneContainer {
   @include flex(column, flex-start, flex-start);
-  width: 100%;
+  width: auto;
   height: 85px;
-  .input {
+  .inputPhone {
     background-color: $tertiary;
     border: none;
     border-bottom: 2px solid var(--primary-color);
@@ -13,7 +13,7 @@
     @include primaryFont($size_sm);
     color: $neutral_dark;
     margin: $margin_md 0 0 0;
-    width: 90%;
+    width: 84%;
     &::placeholder {
       color: $neutral;
     }

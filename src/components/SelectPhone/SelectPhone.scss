@@ -2,9 +2,8 @@
 
 .selectPhone_container {
   @include flex(column, flex-start, flex-start);
-  width: 230px;
+  width: 130px;
   height: 85px;
-  margin-right: 20px;
 }
 
 .selectPhone {
