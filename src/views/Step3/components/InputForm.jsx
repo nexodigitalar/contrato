@@ -16,7 +16,6 @@ import countries from "@/utils/countries.json";
 import departamentos from "@/utils/departamentos.json";
 
 const InputForm = ({ index, setAmountValidations, amountValidations }) => {
-  const [checkUruguayo, setCheckUruguayo] = useState(true);
   const [check, setCheck] = useState(false);
   const usuario = useSelector((state) => state.user.usuarios);
   const savedValidations = useSelector((state) => state.validation.step3);
@@ -25,7 +24,6 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
 
   useEffect(() => {
     handleInitialValidations();
-    handleSetInputs(index);
   }, []);
 
   const handleInitialValidations = () => {
@@ -79,13 +77,6 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     }
   };
 
-  const handleSetInputs = (i) => {
-    usuario[i]?.residenteUruguayo === "No"
-      ? setCheckUruguayo(false)
-      : setCheckUruguayo(true);
-    usuario[i]?.pep === "No" ? setCheck(false) : setCheck(true);
-  };
-
   const handleInput = (e, i) => {
     dispatch(
       updateUsers({ name: e.target.name, index: i, value: e.target.value })
@@ -112,17 +103,16 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
       );
   };
 
-  const handleCheckboxUruguayo = (i) => {
-    setCheckUruguayo(!checkUruguayo);
-    dispatch(updateUsers({ name: "pep", index: i, value: checkUruguayo }));
-  };
+  const handleCheckbox = (name, i) => {
+    let value = usuario[i][name] === true ? false : true;
 
-  const handleCheckbox = (i) => {
-    setCheck(!check);
-    let newValue = !check === false ? "No" : "Si";
-    dispatch(
-      updateUsers({ name: "residenteUruguayo", index: i, value: newValue })
-    );
+    let newArr = [...amountValidations];
+    let newObj = newArr[i];
+    newObj = { ...newObj, [name]: value };
+    newArr[index] = newObj;
+
+    setAmountValidations(newArr);
+    dispatch(updateUsers({ name: name, index: i, value: value }));
   };
 
   return (
@@ -435,8 +425,8 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               }}
             />
             <InputCheck
-              check={checkUruguayo}
-              click={() => handleCheckboxUruguayo(index)}
+              check={amountValidations[index]?.residenteUruguayo}
+              click={(e) => handleCheckbox("residenteUruguayo", index)}
             />
           </div>
           <div className="inputForm_div">
@@ -618,12 +608,12 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               <input
                 type="checkbox"
                 value="second_checkbox"
-                checked={check}
-                onChange={() => handleCheckbox(index)}
+                checked={amountValidations[index]?.pep}
+                onChange={(e) => handleCheckbox("pep", index)}
               />
-              Marcar la opción en caso de que usted haya desempeñado o
-              desempeña, o parientes suyos dentro del primer grado de
-              consanguinidad, funciones públicas o cargos políticos.
+              Marcar la opción en caso de que usted o parientes suyos dentro del
+              primer grado de consanguinidad desempeñen o hayan desempeñado
+              funciones públicas o cargos políticos.
             </label>
           </div>
           <p className="inputForm_mandatory">* Campos obligatorios</p>

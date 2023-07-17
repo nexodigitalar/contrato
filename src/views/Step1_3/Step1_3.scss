@@ -18,18 +18,16 @@
         color: $neutral_light;
         margin: 0 $margin_md;
         align-self: flex-start;
+        width: 8%;
       }
 
       .step1_3_infoContainer {
         width: 100%;
-        .step1_3_nav {
-          @include flex(row, space-between, center);
-          width: 100%;
-          .step1_3_title {
-            @include primaryFont($size_lg);
-            color: $neutral_dark;
-            margin: $margin_sm 0;
-          }
+        @include flex(column, center, flex-start);
+        .step1_3_title {
+          @include primaryFont($size_lg);
+          color: $neutral_dark;
+          margin: $margin_sm 0;
         }
 
         .step1_3_switchContainer {
@@ -46,8 +44,9 @@
     }
 
     .step1_3_buttonContainer {
-      @include flex(row, center, center);
-      gap: 16px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
       align-self: flex-end;
     }
     .step1_3_subtext {
@@ -69,25 +68,12 @@
         .step1_3_watermark {
           display: none;
         }
-
         .step1_3_infoContainer {
-          width: 100%;
-          .step1_3_nav {
-            @include flex(row, space-between, center);
-            width: 100%;
-            .step1_3_title {
-              @include primaryFont($size_md);
-              margin: $margin_sm 0;
-            }
-          }
-
-          .step1_3_switchContainer {
-            @include flex(column, center, center);
-            gap: 5px;
-            width: 30%;
+          .step1_3_title {
+            @include primaryFont($size_md);
           }
           .text_mobile {
-            @include primaryFont($size_xs);
+            @include primaryFont($size_md);
             margin: 0;
           }
         }
@@ -95,9 +81,7 @@
 
       .step1_3_buttonContainer {
         margin: 0 $margin_md;
-        @include flex(row, center, center);
-        gap: 16px;
-        align-self: flex-end;
+        width: 90%;
       }
       .step1_3_subtext {
         @include primaryFont($size_xxs);

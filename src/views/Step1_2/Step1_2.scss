@@ -47,6 +47,9 @@
       }
     }
     .step1_2_buttonContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
       align-self: flex-end;
     }
   }

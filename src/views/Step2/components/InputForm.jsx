@@ -134,14 +134,14 @@ const InputForm = ({
       calle: "",
       puertaNumero: "",
       estadoCivil: "",
-      residenteUruguayo: "No",
+      residenteUruguayo: true,
       monedaIngreso: "",
       ingresosMensuales: "",
       empresaTrabaja: "",
       rubroEmpresa: "",
       actividadPrincipal: "",
       origenFondos: "",
-      pep: "No",
+      pep: true,
     };
 
     let imgValue = {

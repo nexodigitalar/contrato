@@ -53,7 +53,7 @@ const PinInput = ({
           click={(e) => setPinTyped(e.target.value)}
           error={error}
         />
-        <Button text="VALIDAR" type="secondary" click={() => validatePin()} />
+        <Button text="VALIDAR" next={false} click={() => validatePin()} />
       </div>
 
       <Timer

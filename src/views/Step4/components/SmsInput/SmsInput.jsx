@@ -29,7 +29,7 @@ const SmsInput = ({ setSmsSent, phone, setPhone }) => {
   return (
     <div className="smsInput">
       <p className="smsInput_number">{phone.number}</p>
-      <Button text="ENVIAR" type="secondary" click={() => submitPhone()} />
+      <Button text="ENVIAR" next={false} click={() => submitPhone()} />
     </div>
   );
 };

@@ -73,16 +73,6 @@ const Step1_1 = ({ changePage }) => {
 
           {simulador != "Fecha Elegida" ? (
             <>
-              {/*   <h3 className="step1_title ">
-                <span className="color_text">Contrato</span> con modalidad{" "}
-                <span className="color_text">
-                  {text[simulador].step1_title}
-                </span>
-              </h3>
-              <p className="step1_text">
-                {ReactHtmlParser(text[simulador].step1_text)}
-              </p>
-
               {/* Sección 1 */}
               <section className="step1_imgContainer">
                 <Cards
@@ -163,15 +153,6 @@ const Step1_1 = ({ changePage }) => {
                       />
 
                       <Cards
-                        titleGreen={text[simulador].step1_lastCard_green}
-                        title={text[simulador].step1_lastCard}
-                        titleBold=""
-                        number={text[simulador].step1_lastCard_value}
-                        img={plazo == 200 ? indice2 : indice}
-                        plazo={plazo}
-                      />
-
-                      <Cards
                         titleGreen="Capital"
                         title=""
                         titleBold=" entre"
@@ -242,14 +223,6 @@ const Step1_1 = ({ changePage }) => {
                     </p>
                   </>
                 )}
-              <section className="step1_rightContainer">
-                <h3 className="step1_title step1_right ">
-                  <span className="color_text">En la próxima página</span> verás
-                  más detalles
-                </h3>
-                <p className="step1_textSm">* Ver términos y condiciones</p>
-                <Button text="Siguiente" click={() => changePage(2)} />
-              </section>
             </>
           ) : (
             <>
@@ -295,17 +268,18 @@ const Step1_1 = ({ changePage }) => {
                   plazo={plazo}
                 />
               </section>
-
-              <section className="step1_rightContainer">
-                <h3 className="step1_title step1_right ">
-                  <span className="color_text">En la próxima página</span> verás
-                  más detalles
-                </h3>
-                <p className="step1_textSm">* Ver términos y condiciones</p>
-                <Button text="Siguiente" click={() => changePage(2)} />
-              </section>
             </>
           )}
+          <section className="step1_rightContainer">
+            <h3 className="step1_title step1_right ">
+              <span className="color_text">En la próxima página</span> verás más
+              detalles
+            </h3>
+            <div className="buttonContainer_steps">
+              <p className="mobileOnly">Paso 1.1 de 4</p>
+              <Button text="Siguiente" click={() => changePage(2)} />
+            </div>
+          </section>
         </div>
       )}
     </div>

@@ -87,11 +87,14 @@ const Step3 = () => {
           </p>
 
           <div className="step3_buttonContainer">
-            <Button
-              text="Siguiente"
-              click={() => setShowPopUp(true)}
-              disabled={disabled}
-            />
+            <div className="buttonContainer_steps">
+              <p className="mobileOnly">Paso 3 de 4</p>
+              <Button
+                text="Siguiente"
+                click={() => setShowPopUp(true)}
+                disabled={disabled}
+              />
+            </div>
           </div>
         </div>
       </div>

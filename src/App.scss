@@ -14,6 +14,9 @@ p {
   margin: 0;
 }
 
+a {
+  text-decoration: none;
+}
 .color_text {
   color: var(--primary-color);
   font-family: "GilroyBold", Arial, sans-serif;
@@ -49,6 +52,24 @@ p {
 }
 .empty {
   border-bottom: 2px solid $neutral;
+}
+
+.buttonContainer_steps {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.mobileOnly {
+  display: none;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .mobileOnly {
+    display: block;
+    @include primaryFont($size_xxs);
+    color: $neutral;
+  }
 }
 
 @font-face {

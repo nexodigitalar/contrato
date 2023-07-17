@@ -12,6 +12,7 @@ import { useSelector } from "react-redux";
 const Step1_2 = ({ changePage }) => {
   const [date, setDate] = useState("");
   const infoGrupo = useSelector((state) => state.crm.grupo);
+  const { plazo } = useSelector((state) => state.data);
 
   useEffect(() => {
     if (infoGrupo.FechaProximoSorteo)
@@ -58,7 +59,7 @@ const Step1_2 = ({ changePage }) => {
                 <div className="step1_2_textContainer">
                   <p className="step1_2_watermark">c</p>
                   <p className="step1_2_text">
-                    Primer sorteo:{" "}
+                    Próximo sorteo:{" "}
                     <span className="color_text">
                       {date.toLocaleDateString()}
                     </span>
@@ -84,37 +85,162 @@ const Step1_2 = ({ changePage }) => {
                   <p className="step1_2_text">
                     <span className="color_text">
                       {" "}
-                      Itinerario de adjudcaciones:{" "}
+                      Itinerario de adjudicaciones:{" "}
                     </span>
-                    El primer año (mes 1 al mes 12): 4 ganadores mensuales: 1
-                    por sorteo, 2 por licitación libre y 1 por licitación base,
-                    la cual comenzará con 99 cuotas en el primer mes y luego irá
-                    decreciendo a razón de una cuota por mes todos los meses. El
-                    primer año habrá 48 ganadores.
+                    Los Grupos de Ahorro tienen un{" "}
+                    <span className="color_text">
+                      ágil ritmo de adjudicación o de selección de ganadores por
+                      sorteo, licitación y fecha elegida
+                    </span>{" "}
+                    que hace que el plazo final de entrega se adelante a la
+                    finalización del grupo.
                   </p>
                   <p className="step1_2_text">
-                    El segundo año (meses 13 al 24): 3 ganadores por mes, 1 por
-                    sorteo y 2 por licitación libre. Esto implica que habrá 36
-                    ganadores en el segundo año.
+                    El ritmo o itinerario de ganadores estimado en los grupos es
+                    el siguiente:
+                  </p>
+                  <p className="step1_2_text color_text">
+                    Para los Grupos de {plazo} meses:
+                  </p>
+
+                  {plazo === 200 ? (
+                    <>
+                      <p className="step1_2_text">
+                        El{" "}
+                        <span className="color_text">primer año del grupo</span>{" "}
+                        (mes 1 al mes 12):{" "}
+                        <span className="color_text">
+                          4 ganadores mensuales
+                        </span>
+                        : 1 por sorteo, 2 por licitación libre y 1 por
+                        licitación base, la cual comenzará con 99 cuotas en el
+                        primer mes y luego irá decreciendo a razón de una cuota
+                        por mes todos los meses.
+                      </p>
+                      <p className="step1_2_text color_text">
+                        El primer año habrá 48 ganadores.
+                      </p>
+                      <p className="step1_2_text">
+                        El{" "}
+                        <span className="color_text">
+                          segundo año del grupo
+                        </span>{" "}
+                        (meses 13 al 24):{" "}
+                        <span className="color_text">3 ganadores por mes</span>,
+                        1 por sorteo y 2 por licitación libre.
+                      </p>
+                      <p className="step1_2_text color_text">
+                        Esto implica que habrá 36 ganadores en el segundo año.
+                      </p>
+                      <p className="step1_2_text color_text">
+                        ¡En los primeros dos años habrá 84 ganadores!
+                      </p>
+                      <p className="step1_2_text">
+                        Desde el{" "}
+                        <span className="color_text">tercer año del grupo</span>{" "}
+                        hasta el final (meses 25 al 200):
+                        <span className="color_text">
+                          2 ganadores mensuales
+                        </span>
+                        , 1 por sorteo y 1 por licitación libre.
+                      </p>
+                      <p className="step1_2_text">
+                        Adicionalmente, se prevén adjudicaciones por Fecha
+                        Elegida (con números entre el 1 y 400) que repercutirán
+                        en
+                        <span className="color_text">
+                          una aceleración en el ritmo
+                        </span>{" "}
+                        de ganadores.
+                      </p>
+                    </>
+                  ) : (
+                    <>
+                      <p className="step1_2_text">
+                        El{" "}
+                        <span className="color_text">primer año del grupo</span>{" "}
+                        (mes 1 al mes 12):{" "}
+                        <span className="color_text">
+                          5 ganadores mensuales
+                        </span>
+                        : 1 por sorteo, 1 por licitación libre y 3 por
+                        licitación base, la cual comenzará con 135 cuotas en el
+                        primer mes y luego irá decreciendo.
+                      </p>
+                      <p className="step1_2_text color_text">
+                        El primer año habrá 60 ganadores.
+                      </p>
+                      <p className="step1_2_text">
+                        El{" "}
+                        <span className="color_text">
+                          segundo año del grupo
+                        </span>{" "}
+                        (meses 13 al 24):{" "}
+                        <span className="color_text">4 ganadores por mes</span>,
+                        1 por sorteo y 1 por licitación libre y 2 con licitación
+                        con base.
+                      </p>
+                      <p className="step1_2_text color_text">
+                        Esto implica que habrá 48 ganadores en el segundo año.
+                        ¡En los primeros dos años habrá 108 ganadores!
+                      </p>
+                      <p className="step1_2_text">
+                        El{" "}
+                        <span className="color_text">
+                          tercer año (meses 25 al 36)
+                        </span>
+                        :{" "}
+                        <span className="color_text">
+                          3 ganadores mensuales
+                        </span>
+                        : 1 por sorteo y 1 por licitación libre y 1 por
+                        licitación con base.
+                      </p>
+                      <p className="step1_2_text color_text">
+                        Luego del tercer año habría, de esta manera, 36
+                        ganadores. Esto llevaría a acumular 144 ganadores en
+                        tres años.
+                      </p>
+                      <p className="step1_2_text">
+                        Desde el{" "}
+                        <span className="color_text">
+                          cuarto año del grupo y en adelante
+                        </span>{" "}
+                        (meses 37 a 300):{" "}
+                        <span className="color_text">
+                          2 ganadores mensuales
+                        </span>
+                        , 1 por sorteo y 1 por licitación alternándose,
+                        mensualmente, una licitación libre y una con base.
+                      </p>
+                      <p className="step1_2_text color_text">
+                        El cuarto año habría, de esta manera, 24 ganadores. Por
+                        lo tanto ¡se acumulan 168 ganadores en los primeros 4
+                        años del grupo!
+                      </p>
+                      <p className="step1_2_text">
+                        Este régimen estimado adelanta considerablemente el
+                        plazo para ser ganador. En el grupo,{" "}
+                        <span className="color_text">
+                          todos obtienen su capital antes
+                        </span>
+                        .
+                      </p>
+                    </>
+                  )}
+                  <p className="step1_2_text">
+                    Como ves,{" "}
+                    <span className="color_text">
+                      todos ganan, todos concretan su proyecto. Con Consorcio
+                      nadie pierde.
+                    </span>
                   </p>
                   <p className="step1_2_text">
-                    ¡En los primeros dos años habrá 84 ganadores!
-                  </p>
-                  <p className="step1_2_text">
-                    Desde el tercer año hasta el final (meses 25 al 200) 2
-                    ganadores mensuales 1 por sorteo y 1 por licitación libre.
-                  </p>
-                  <p className="step1_2_text">
-                    Adicionalmente, se prevén en el entorno de las 40
-                    adjudicaciones por Fecha Elegida (butacas asignadas entre el
-                    1 y 400) que repercutirán en una aceleración en el ritmo de
-                    ganadores.
-                  </p>
-                  <p className="step1_2_text">
-                    Esto adelanta considerablemente el plazo para ser ganador.
-                    En grupo, todos obtienen su capital antes. Como ves, todos
-                    ganan, todos concretan su proyecto. En Consorcio nadie
-                    pierde.
+                    Este ha sido el ritmo de Adjudicaciones dispuesto como
+                    estimado hasta el presente. Podrá variar en más o en menos
+                    en función de las necesidades y conveniencias de cada Grupo
+                    de Ahorro Previo, de acuerdo a lo previsto en la cláusula
+                    10.3 y 1 9 de las Condiciones Generales del Contrato.
                   </p>
                 </div>
               </div>
@@ -157,7 +283,16 @@ const Step1_2 = ({ changePage }) => {
               )}
             </section>
             <div className="step1_2_buttonContainer">
-              <Button text="Siguiente" click={() => changePage(3)} />
+              <Button
+                text="Atrás"
+                back={true}
+                next={false}
+                click={() => changePage(1)}
+              />
+              <div className="buttonContainer_steps">
+                <p className="mobileOnly">Paso 1.2 de 4</p>
+                <Button text="Siguiente" click={() => changePage(3)} />
+              </div>
             </div>
           </div>
         </div>

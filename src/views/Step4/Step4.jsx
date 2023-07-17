@@ -820,11 +820,14 @@ const Step4 = ({ images }) => {
             )}
 
             <div className="step4_buttonContainer">
-              <Button
-                text="Confirmar contrato"
-                click={() => AltaContratoGestion()}
-                disabled={confirmContract}
-              />
+              <div className="buttonContainer_steps">
+                <p className="mobileOnly">Paso 4 de 4</p>
+                <Button
+                  text="Confirmar contrato"
+                  click={() => AltaContratoGestion()}
+                  disabled={confirmContract}
+                />
+              </div>
             </div>
           </div>
         </div>

@@ -75,9 +75,6 @@ const App = () => {
   };
 
   const RegistrarClienteCRM = async (data) => {
-    console.log({
-      Indice: data.indice,
-    });
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteCRM",
       {

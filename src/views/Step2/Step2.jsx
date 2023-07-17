@@ -92,16 +92,19 @@ const Step2 = ({ setImages, images }) => {
         )}
 
         <div className="step2_buttonContainer">
-          <Button
-            text="Siguiente"
-            click={() => {
-              dispatch(changePage(3)),
-                useScrollTop(),
-                dispatch(setUsers(initialValues)),
-                dispatch(setStep2(amountValidations));
-            }}
-            disabled={disabled}
-          />
+          <div className="buttonContainer_steps">
+            <p className="mobileOnly">Paso 2 de 4</p>
+            <Button
+              text="Siguiente"
+              click={() => {
+                dispatch(changePage(3)),
+                  useScrollTop(),
+                  dispatch(setUsers(initialValues)),
+                  dispatch(setStep2(amountValidations));
+              }}
+              disabled={disabled}
+            />
+          </div>
         </div>
       </div>
     </div>
