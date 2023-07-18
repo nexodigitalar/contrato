@@ -40,3 +40,14 @@
     }
   }
 }
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .popup {
+    .popup_container {
+      width: 280px;
+      .popup_text {
+        @include primaryFont($size_xs);
+      }
+    }
+  }
+}

@@ -141,7 +141,7 @@ const InputForm = ({
       rubroEmpresa: "",
       actividadPrincipal: "",
       origenFondos: "",
-      pep: true,
+      pep: false,
     };
 
     let imgValue = {

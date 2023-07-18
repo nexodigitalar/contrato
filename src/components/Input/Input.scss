@@ -10,7 +10,7 @@
     border-bottom: 2px solid var(--primary-color);
     border-radius: 3px 3px 0px 0px;
     padding: $padding_md;
-    @include primaryFont($size_sm);
+    @include primaryFont($size_xs);
     color: $neutral_dark;
     margin: $margin_md 0 0 0;
     width: 90%;
@@ -34,7 +34,6 @@
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .inputContainer {
     .input {
-      @include primaryFont($size_xs);
       width: 90%;
     }
   }

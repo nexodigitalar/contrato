@@ -42,7 +42,10 @@
     .step4_buttonContainer {
       align-self: flex-end;
     }
-
+    .step4_label {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+    }
     .step4_finalText {
       @include primaryFont($size_xs);
       color: $neutral_dark;
@@ -72,6 +75,9 @@
       .step4_finalText {
         @include primaryFont($size_xs);
         margin-bottom: $margin_md;
+      }
+      .step3_label {
+        @include primaryFont($size_xs);
       }
     }
   }

@@ -41,6 +41,9 @@
         color: $neutral_dark;
         margin: $margin_md 0;
         width: 80%;
+        .confirmation_anchor {
+          text-decoration: underline;
+        }
       }
       .confirmation_img {
         position: absolute;

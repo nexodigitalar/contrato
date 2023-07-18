@@ -4,32 +4,23 @@ import "./SmsInput.scss";
 /* Components */
 import Button from "@/components/Button/Button";
 
-const SmsInput = ({ setSmsSent, phone, setPhone }) => {
-  /*   const validatePhone = () => {
-    let lengthValidation =
-      phone.number.length <= 12 && phone.number.length >= 8;
-    if (phone.number === "" || phone.number === "placeholder") {
-      setPhone({ ...phone, validation: false });
-      return false;
-    } else {
-      if (lengthValidation) {
-        setPhone({ ...phone, validation: true });
-        return true;
-      } else {
-        setPhone({ ...phone, validation: false });
-        return false;
-      }
-    }
-  }; */
+import { useState, useEffect } from "react";
 
-  const submitPhone = () => {
-    setSmsSent(true);
-  };
+const SmsInput = ({ setSmsSent, validatePdf }) => {
+  const [disabled, setDisabled] = useState(true);
+
+  useEffect(() => {
+    setDisabled(validatePdf.includes(false));
+  }, [validatePdf]);
 
   return (
-    <div className="smsInput">
-      <p className="smsInput_number">{phone.number}</p>
-      <Button text="ENVIAR" next={false} click={() => submitPhone()} />
+    <div className="smsinput_button">
+      <Button
+        text="OK"
+        next={false}
+        disabled={disabled}
+        click={() => setSmsSent(true)}
+      />
     </div>
   );
 };

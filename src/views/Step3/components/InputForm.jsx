@@ -14,6 +14,7 @@ import useValidate from "@/hooks/useValidate";
 
 import countries from "@/utils/countries.json";
 import departamentos from "@/utils/departamentos.json";
+import tipoIngreso from "@/utils/tipoIngreso.json";
 
 const InputForm = ({ index, setAmountValidations, amountValidations }) => {
   const [check, setCheck] = useState(false);
@@ -43,7 +44,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
       rubroEmpresa: "",
       actividadPrincipal: "",
       origenFondos: "",
-      pep: true,
+      pep: false,
     };
 
     if (amountValidations.length === 0) {
@@ -117,7 +118,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
 
   return (
     <>
-      {usuario && (
+      {usuario && amountValidations && (
         <section>
           <h3 className="inputForm_title">
             <span className="color_text">Datos </span>de{" "}
@@ -576,21 +577,34 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                 );
               }}
             />
-            <Input
-              placeholder="* Origen de fondos"
+
+            <SelectMap
+              placeholder="* Tipo de ingreso"
+              toMap={tipoIngreso}
               name="origenFondos"
-              value={usuario[index]?.origenFondos || ""}
+              usuario={usuario}
+              index={index}
               error={amountValidations[index]?.origenFondos}
-              type="text"
-              click={(e) => {
-                handleInput(e, index),
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "origenFondos",
-                    setAmountValidations
-                  );
+              click={(e) =>
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "origenFondos",
+                  setAmountValidations
+                )
+              }
+              change={(e) => {
+                {
+                  handleInput(e, index),
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "origenFondos",
+                      setAmountValidations
+                    );
+                }
               }}
               onfocusout={(e) => {
                 useValidate(
@@ -608,7 +622,11 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               <input
                 type="checkbox"
                 value="second_checkbox"
-                checked={amountValidations[index]?.pep}
+                checked={
+                  amountValidations[index]?.pep === undefined
+                    ? false
+                    : amountValidations[index]?.pep
+                }
                 onChange={(e) => handleCheckbox("pep", index)}
               />
               Marcar la opción en caso de que usted o parientes suyos dentro del

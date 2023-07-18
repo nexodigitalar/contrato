@@ -1,9 +1,9 @@
 @import "@/utils/theme.scss";
 
 .smsInput {
-  @include flex(row, space-between, center);
+  @include flex(row, flex-start, center);
   gap: 21px;
-  width: 55%;
+  width: 100%;
 }
 
 .smsInput_number {
@@ -12,8 +12,11 @@
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {
-  .smsInput {
+  .smsinput_button {
     @include flex(row, space-between, center);
     gap: 20px;
+  }
+  .smsinput_button {
+    margin-left: 15px;
   }
 }

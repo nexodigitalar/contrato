@@ -31,10 +31,11 @@ const Step4 = ({ images }) => {
   const usuario = useSelector((state) => state.user.usuarios);
   const infoGrupo = useSelector((state) => state.crm.grupo);
   const [confirmContract, setConfirmContract] = useState(true);
-  const [spinner, setSpinner] = useState(true);
+  const [spinner, setSpinner] = useState(false);
   const [currency, setCurrency] = useState("$");
+  const [validatePdf, setValidatePdf] = useState([false, false]);
 
-  useEffect(() => {
+  /*  useEffect(() => {
     if (moneda === "USD") {
       setCurrency("U$S");
     }
@@ -44,7 +45,18 @@ const Step4 = ({ images }) => {
   useEffect(() => {
     dispatch(blockPages());
     ActualizarClienteCRM(usuario[0]);
-  }, []);
+  }, []); */
+
+  const handleValidationsPdf = (i) => {
+    const newArr = validatePdf.map((item, index) => {
+      if (i === index) {
+        return !item;
+      } else {
+        return item;
+      }
+    });
+    setValidatePdf(newArr);
+  };
 
   async function mapUsers(user) {
     let otherUsers = usuario.slice(1, usuario.length);
@@ -802,12 +814,38 @@ const Step4 = ({ images }) => {
             </div>
 
             <h3 className="step4_title">
+              <span className="color_text">Aceptación </span>de{" "}
+              <span className="gray">condiciones</span>
+            </h3>
+
+            <label className="step4_label">
+              <input
+                type="checkbox"
+                checked={validatePdf[0]}
+                onChange={() => handleValidationsPdf(0)}
+              />
+              Condiciones generales
+            </label>
+
+            <label className="step4_label">
+              <input
+                type="checkbox"
+                checked={validatePdf[1]}
+                onChange={() => handleValidationsPdf(1)}
+              />
+              Condiciones particulares y anexo, Condiciones electrónicas
+            </label>
+
+            <h3 className="step4_title">
               <span className="color_text">Validación </span>del{" "}
               <span className="gray">celular</span>
             </h3>
-            <SmsContainer setConfirmContract={setConfirmContract} />
+            <SmsContainer
+              setConfirmContract={setConfirmContract}
+              validatePdf={validatePdf}
+            />
 
-            {infoGrupo.InfoGrupoProducto.Observaciones != "" && (
+            {infoGrupo.InfoGrupoProducto?.Observaciones != "" && (
               <>
                 <h3 className="step4_title">
                   <span className="color_text">Observaciones </span>del{" "}

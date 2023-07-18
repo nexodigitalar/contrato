@@ -2,46 +2,11 @@
 
 .pinInput_container {
   @include flex(column, center, flex-start);
-  width: 100%;
-  .pinInput_titleContainer {
-    @include flex(row, flex-start, center);
-    gap: 10px;
-    width: 100%;
-    .pinInput_title {
-      @include primaryFont($size_md);
-      color: $neutral_dark;
-      margin: $margin_sm 0;
-    }
-    .pinInput_subtitle {
-      @include primaryFont($size_xxs);
-      color: $neutral_dark;
-      text-decoration: underline;
-      &:hover {
-        cursor: pointer;
-      }
-    }
-  }
-  .pinInput {
-    @include flex(row, space-between, center);
-    gap: 21px;
-    width: 55%;
-  }
-  .pinInput_error {
-    @include primaryFont($size_xxs);
-    color: $error;
-    margin-bottom: 10px;
-  }
+  width: auto;
 }
 
 @media screen and (min-width: 200px) and (max-width: 1024px) {
   .pinInput_container {
-    .pinInput_titleContainer {
-      gap: 5px;
-    }
-    .pinInput {
-      @include flex(row, space-between, center);
-      gap: 20px;
-      width: 100%;
-    }
+    width: 147px;
   }
 }

@@ -1,15 +1,19 @@
 import "./ErrorPage.scss";
 import error from "@/assets/img/error.png";
+import wp from "@/assets/img/whatsapp.svg";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
+
+/* Components */
+import Button from "@/components/Button/Button";
 
 const ErrorPage = () => {
   const errorInfo = useSelector((state) => state.error);
   const idConfirmation = useSelector((state) => state.crm.idConfirmation);
 
-  /*   useEffect(() => {
+  useEffect(() => {
     localStorage.removeItem("contrato");
-  }, []) */
+  }, []);
 
   return (
     <div className="error">
@@ -36,6 +40,20 @@ const ErrorPage = () => {
             comercial o nuestro equipo de Servicio al Cliente llamando al 2915
             2295 o mediante el chat en nuestra pagina consorcio.uy
           </p>
+
+          <div className="error_buttonContainer">
+            <a target="_blank" href="https://consorcio.uy/">
+              <Button text="INTENTAR NUEVAMENTE" back={true} next={false} />
+            </a>
+            <a
+              target="_blank"
+              href="https://wa.me/+59894627000"
+              className="error_button color_primary_gradient"
+            >
+              CONTACTANOS{" "}
+              <img src={wp} alt="icono whatsapp" className="button_icon" />
+            </a>
+          </div>
         </section>
       </div>
     </div>

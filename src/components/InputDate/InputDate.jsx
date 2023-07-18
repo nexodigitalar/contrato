@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 const InputDate = ({ name, placeholder, click, valueFecha, error }) => {
   const [styles, setStyles] = useState("input empty");
   const [date, setDate] = useState();
+  /*   const [minMax, setMinMax] = useState({ min: 0, max: 0 }); */
 
   useEffect(() => {
     if (error === false) {
@@ -15,6 +16,20 @@ const InputDate = ({ name, placeholder, click, valueFecha, error }) => {
       setStyles("inputDate_container border_empty");
     }
   }, [valueFecha, error]);
+
+  const subtractYears = (name, years) => {
+    const date = new Date();
+    let newDate = date.setFullYear(date.getFullYear() - years);
+    setMinMax({ ...minMax, [name]: newDate });
+  };
+
+  /*  useEffect(() => {
+    subtractYears("min", 18);
+  }, []);
+
+  useEffect(() => {
+    console.log(minMax);
+  }, [minMax]); */
 
   useEffect(() => {
     if (valueFecha) {
@@ -34,6 +49,8 @@ const InputDate = ({ name, placeholder, click, valueFecha, error }) => {
           name={name}
           wrapperClassName="datePicker"
           dateFormat="dd/MM/yyyy"
+          /*   minDate={new Date(minMax.min)}
+          maxDate={new Date(minMax.max)}  */
         />
       </div>
       {error === false && <p className="input_error">Campo obligatorio</p>}

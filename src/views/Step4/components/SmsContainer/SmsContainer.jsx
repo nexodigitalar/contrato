@@ -4,12 +4,13 @@ import "./SmsContainer.scss";
 /* Components */
 import SmsInput from "../SmsInput/SmsInput";
 import PinInput from "../PinInput/PinInput";
+import Timer from "../Timer/Timer";
 
 /* Hooks */
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
 
-const SmsContainer = ({ setConfirmContract }) => {
+const SmsContainer = ({ setConfirmContract, validatePdf }) => {
   const [smsSent, setSmsSent] = useState(false);
   const [validated, setValidated] = useState(false);
   const usuario = useSelector((state) => state.user.usuarios);
@@ -69,21 +70,29 @@ const SmsContainer = ({ setConfirmContract }) => {
         </p>
       ) : (
         <>
-          {smsSent ? (
-            <PinInput
-              phone={phone}
-              setSmsSent={setSmsSent}
-              numberValidation={numberValidation}
-              envioSms={() => EnvioSMSContratoOnLine()}
-              setValidated={setValidated}
-            />
-          ) : (
-            <SmsInput
-              setSmsSent={setSmsSent}
-              setPhone={setPhone}
-              phone={phone}
-            />
-          )}
+          <div className="smsInput">
+            <p className="smsInput_number">Recibir Token por SMS</p>
+            {smsSent ? (
+              <PinInput
+                numberValidation={numberValidation}
+                setValidated={setValidated}
+              />
+            ) : (
+              <SmsInput setSmsSent={setSmsSent} validatePdf={validatePdf} />
+            )}
+          </div>
+
+          <div className="timerContainer">
+            <p className="sms_text">
+              Tu código será enviado al número {phone.number}
+            </p>
+            {smsSent && (
+              <Timer
+                countdown={new Date(new Date().getTime() + 31000)}
+                envioSms={() => EnvioSMSContratoOnLine()}
+              />
+            )}
+          </div>
           <p className="sms_warning">
             * La validación del celular es una acción obligatoria antes de
             realizar la confirmación del contrato adquirido

@@ -36,7 +36,9 @@ const ConfirmationPage = () => {
           <p className="confirmation_text">
             Usted puede hacerlo ya mismo online, haciendo clic aquí debajo.
           </p>
-          <Button text="PAGAR MI CUOTA" />
+          <a target="_blank" href="https://reporteconsorcio.com.uy">
+            <Button text="PAGAR MI CUOTA" />
+          </a>
           <p className="confirmation_text">
             También puede pagar en cualquiera de los locales de Red Pagos o
             Abitab.
@@ -49,12 +51,15 @@ const ConfirmationPage = () => {
           </p>
           <p className="confirmation_text">
             Puedes <span className="gray">gestionar</span> y ver toda la
-            información de tu contrato en el
-            <span className="gray"> reporte online</span>.
-          </p>
-          <p className="confirmation_text">
-            Descargar <span className="gray">PDF</span> de herramientas
-            electrónicas y condiciones particulares completas
+            información de tu contrato en el{" "}
+            <a
+              className="confirmation_anchor gray"
+              target="_blank"
+              href="https://reporteconsorcio.com.uy"
+            >
+              reporte online
+            </a>
+            .
           </p>
         </section>
       </div>

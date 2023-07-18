@@ -4,7 +4,12 @@ const InputCheck = ({ check, click }) => {
   return (
     <div className="inputCheck">
       <p className="inputCheck_p">¿Es residente de Uruguay?</p>
-      <input type="checkbox" id="cbox1" checked={check} onChange={click} />
+      <input
+        type="checkbox"
+        id="cbox1"
+        checked={check === undefined ? true : check}
+        onChange={click}
+      />
     </div>
   );
 };
