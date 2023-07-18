@@ -300,6 +300,7 @@ const InputForm = ({
 
               <div className="inputForm2_div inputForm2_mobile">
                 <Input
+                  max={true}
                   placeholder="* Cédula"
                   name="cedula"
                   value={initialValues[index]?.cedula || ""}

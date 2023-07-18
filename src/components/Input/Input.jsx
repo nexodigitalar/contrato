@@ -1,7 +1,16 @@
 import "./Input.scss";
 import { useEffect, useState } from "react";
 
-const Input = ({ placeholder, click, name, value, error, type, disabled }) => {
+const Input = ({
+  placeholder,
+  click,
+  name,
+  value,
+  error,
+  type,
+  disabled,
+  max = false,
+}) => {
   const [styles, setStyles] = useState("input empty");
 
   useEffect(() => {
@@ -24,6 +33,7 @@ const Input = ({ placeholder, click, name, value, error, type, disabled }) => {
         onChange={click}
         type={type}
         disabled={disabled}
+        maxLength={max ? "9" : undefined}
       />
       {error === false &&
         name != "telefono" &&

@@ -1,3 +1,4 @@
+import { useValidateCedula } from "@/hooks/useValidateCedula.js";
 let timer;
 
 const useValidateInput = (
@@ -9,7 +10,7 @@ const useValidateInput = (
   setMessageFile,
   messageFile
 ) => {
-  clearTimeout(position);
+  clearTimeout(timer);
   timer = setTimeout(() => {
     let newArr = [...amountValidations];
     let newObj = newArr[index];
@@ -111,6 +112,8 @@ const useValidateInput = (
         }
       }
     } else if (position === "cedula") {
+      let validate = useValidateCedula(e);
+
       let editNumber = e.replaceAll("-", "");
       let validationCedula = editNumber.match(/^\d+$/);
 
@@ -119,7 +122,7 @@ const useValidateInput = (
         newArr[index] = newObj;
         setAmountValidations(newArr);
       } else {
-        if (validationCedula && editNumber.length === 8) {
+        if (validate) {
           newObj = { ...newObj, [position]: true };
           newArr[index] = newObj;
 
