@@ -61,11 +61,7 @@ const InputForm = ({
   const handleCedula = (e, i) => {
     let editNumber = e.target.value;
     let checkMark = editNumber.includes("-");
-
-    if (checkMark) {
-      editNumber = editNumber.replaceAll("-", "");
-    }
-
+    if (checkMark) editNumber = editNumber.replaceAll("-", "");
     let validationCedula = editNumber.match(/^\d+$/);
 
     if (validationCedula || editNumber === "") {

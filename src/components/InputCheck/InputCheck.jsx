@@ -7,7 +7,8 @@ const InputCheck = ({ check, click }) => {
       <input
         type="checkbox"
         id="cbox1"
-        checked={check === undefined ? true : check}
+        defaultChecked={true}
+        checked={check}
         onChange={click}
       />
     </div>

@@ -35,6 +35,14 @@ const Step4 = ({ images }) => {
   const [currency, setCurrency] = useState("$");
   const [validatePdf, setValidatePdf] = useState([false, false]);
 
+  const checkLengthCedula = (user) => {
+    if (user.cedula.length === 8) {
+      return `0${user.cedula}`;
+    } else {
+      return user.cedula;
+    }
+  };
+
   /*  useEffect(() => {
     if (moneda === "USD") {
       setCurrency("U$S");
@@ -59,10 +67,11 @@ const Step4 = ({ images }) => {
   };
 
   async function mapUsers(user) {
+    let userDoc = checkLengthCedula(user);
     let otherUsers = usuario.slice(1, usuario.length);
 
-    await sendFrenteFile(user.cedula, 0);
-    await sendDorsoFile(user.cedula, 0);
+    await sendFrenteFile(userDoc, 0);
+    await sendDorsoFile(userDoc, 0);
 
     for (let i = 0; i < otherUsers.length; i++) {
       await ActualizarClienteCRMOther(otherUsers[i], i);
@@ -71,6 +80,7 @@ const Step4 = ({ images }) => {
   }
 
   const ActualizarClienteCRM = async (user) => {
+    let userDoc = checkLengthCedula(user);
     console.log("ID primer cliente:", ids.cliId);
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
@@ -94,7 +104,7 @@ const Step4 = ({ images }) => {
             CliApe2: user.segundoApellido,
             CliSexo: user.sexo,
             CliEdadRango: 0,
-            CliDoc: user.cedula,
+            CliDoc: userDoc,
             CliOcupacion: "",
             CliProf: "",
             CliFchLlam: "0000-00-00T00:00:00",
@@ -164,6 +174,7 @@ const Step4 = ({ images }) => {
   };
 
   const RegistrarClienteGestion = async (user) => {
+    let userDoc = checkLengthCedula(user);
     let paisCod = countries.find((item) => item.name === user.pais);
     let departamentoCod =
       departamentos.fin((item) => item.name === user.departamento) || 0;
@@ -223,7 +234,7 @@ const Step4 = ({ images }) => {
             PersonaZonaNombre: "",
             PersonaApellidosyNombres: "",
             PersonaLocalidadNombre: "",
-            PersonaDocumento: user.cedula,
+            PersonaDocumento: userDoc,
             PersonaOrigenInfo: "",
             PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
             PersonaEsPEP: false,
@@ -259,7 +270,7 @@ const Step4 = ({ images }) => {
                 {
                   PersonaTipoDocumentoCodigo: "CI",
                   PersonaTipoDocumentoNombre: "CI",
-                  PersonaNumeroDocumento: user.cedula,
+                  PersonaNumeroDocumento: userDoc,
                   PersonaDocumentoFechaVencimineto: "2028-05-02T00:00:00",
                   PersonaDocumentoBlobOrdinal: 0,
                   PersonaDocumentoOrigenInfo: "",
@@ -313,8 +324,8 @@ const Step4 = ({ images }) => {
           if (usuario.length > 1) {
             mapUsers(user);
           } else {
-            sendFrenteFile(user.cedula, 0);
-            sendDorsoFile(user.cedula, 0);
+            sendFrenteFile(userDoc, 0);
+            sendDorsoFile(userDoc, 0);
             setSpinner(false);
           }
         } else {
@@ -332,6 +343,7 @@ const Step4 = ({ images }) => {
   /* Para otros clientes */
 
   async function ActualizarClienteCRMOther(user, i) {
+    let userDoc = checkLengthCedula(user);
     console.log("Actualizar otro cliente");
     try {
       const responseUser = await fetch(
@@ -356,7 +368,7 @@ const Step4 = ({ images }) => {
               CliApe2: user.segundoApellido,
               CliSexo: user.sexo,
               CliEdadRango: 0,
-              CliDoc: user.cedula,
+              CliDoc: userDoc,
               CliOcupacion: "",
               CliProf: "",
               CliFchLlam: "0000-00-00T00:00:00",
@@ -437,6 +449,7 @@ const Step4 = ({ images }) => {
   }
 
   async function RegistrarClienteGestionOther(user, idUser, idEmpresa, i) {
+    let userDoc = checkLengthCedula(user);
     let paisCod = countries.find((item) => item.name === user.pais);
     let departamentoCod =
       departamentos.fin((item) => item.name === user.departamento) || 0;
@@ -496,7 +509,7 @@ const Step4 = ({ images }) => {
               PersonaZonaNombre: "",
               PersonaApellidosyNombres: "",
               PersonaLocalidadNombre: "",
-              PersonaDocumento: user.cedula,
+              PersonaDocumento: userDoc,
               PersonaOrigenInfo: "",
               PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
               PersonaEsPEP: false,
@@ -532,7 +545,7 @@ const Step4 = ({ images }) => {
                   {
                     PersonaTipoDocumentoCodigo: "CI",
                     PersonaTipoDocumentoNombre: "CI",
-                    PersonaNumeroDocumento: user.cedula,
+                    PersonaNumeroDocumento: userDoc,
                     PersonaDocumentoFechaVencimineto: "2028-05-02T00:00:00",
                     PersonaDocumentoBlobOrdinal: 0,
                     PersonaDocumentoOrigenInfo: "",
@@ -585,8 +598,8 @@ const Step4 = ({ images }) => {
 
       if (info.pCodigoRespuesta === "00") {
         console.log("Terminado cliente:", idUser);
-        await sendFrenteFile(user.cedula, i + 1);
-        await sendDorsoFile(user.cedula, i + 1);
+        await sendFrenteFile(userDoc, i + 1);
+        await sendDorsoFile(userDoc, i + 1);
       } else {
         dispatch(
           setError(`${info.pCodigoRespuesta}: ${info.pMensajeRespuesta}`)

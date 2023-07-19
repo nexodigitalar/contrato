@@ -17,7 +17,6 @@ import departamentos from "@/utils/departamentos.json";
 import tipoIngreso from "@/utils/tipoIngreso.json";
 
 const InputForm = ({ index, setAmountValidations, amountValidations }) => {
-  const [check, setCheck] = useState(false);
   const usuario = useSelector((state) => state.user.usuarios);
   const savedValidations = useSelector((state) => state.validation.step3);
   const dispatch = useDispatch();
@@ -44,7 +43,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
       rubroEmpresa: "",
       actividadPrincipal: "",
       origenFondos: "",
-      pep: false,
+      pep: true,
     };
 
     if (amountValidations.length === 0) {
@@ -72,7 +71,6 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
         Array.from({ length: usuario.length }, (_, index) =>
           newArr.push(values)
         );
-        newArr[0].email = true;
         setAmountValidations(newArr);
       }
     }
@@ -104,16 +102,9 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
       );
   };
 
-  const handleCheckbox = (name, i) => {
-    let value = usuario[i][name] === true ? false : true;
-
-    let newArr = [...amountValidations];
-    let newObj = newArr[i];
-    newObj = { ...newObj, [name]: value };
-    newArr[index] = newObj;
-
-    setAmountValidations(newArr);
-    dispatch(updateUsers({ name: name, index: i, value: value }));
+  const handleCheckbox = (e, name, i) => {
+    const { checked } = e.target;
+    dispatch(updateUsers({ name: name, index: i, value: checked }));
   };
 
   return (
@@ -426,8 +417,8 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               }}
             />
             <InputCheck
-              check={amountValidations[index]?.residenteUruguayo}
-              click={(e) => handleCheckbox("residenteUruguayo", index)}
+              checked={usuario[index]?.residenteUruguayo}
+              onChange={(e) => handleCheckbox(e, "residenteUruguayo", index)}
             />
           </div>
           <div className="inputForm_div">
@@ -622,12 +613,8 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               <input
                 type="checkbox"
                 value="second_checkbox"
-                checked={
-                  amountValidations[index]?.pep === undefined
-                    ? false
-                    : amountValidations[index]?.pep
-                }
-                onChange={(e) => handleCheckbox("pep", index)}
+                checked={usuario[index]?.pep}
+                onChange={(e) => handleCheckbox(e, "pep", index)}
               />
               Marcar la opción en caso de que usted o parientes suyos dentro del
               primer grado de consanguinidad desempeñen o hayan desempeñado

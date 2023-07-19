@@ -30,7 +30,7 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
   }, [smsSent]);
 
   useEffect(() => {
-    if (validated) {
+    if (validated && validatePdf) {
       setConfirmContract(false);
     }
   }, [validated]);

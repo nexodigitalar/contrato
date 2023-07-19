@@ -31,6 +31,7 @@
         }
 
         .step1_3_switchContainer {
+          align-self: flex-end;
           @include flex(row, center, center);
           gap: 16px;
         }
@@ -38,7 +39,7 @@
         .step1_3_text {
           @include primaryFont($size_sm);
           color: $neutral_dark;
-          margin: $margin_md 0;
+          margin: $margin_xs 0;
         }
       }
     }
