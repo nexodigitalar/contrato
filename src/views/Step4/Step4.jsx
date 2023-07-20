@@ -43,7 +43,7 @@ const Step4 = ({ images }) => {
     }
   };
 
-  /*  useEffect(() => {
+  useEffect(() => {
     if (moneda === "USD") {
       setCurrency("U$S");
     }
@@ -53,7 +53,7 @@ const Step4 = ({ images }) => {
   useEffect(() => {
     dispatch(blockPages());
     ActualizarClienteCRM(usuario[0]);
-  }, []); */
+  }, []);
 
   const handleValidationsPdf = (i) => {
     const newArr = validatePdf.map((item, index) => {
