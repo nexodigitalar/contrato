@@ -18,7 +18,7 @@ import Switch from "@/components/Switch/Switch";
 import Button from "@/components/Button/Button";
 import CuotaMinMax from "./components/CuotaMinMax";
 
-const Step1_3 = () => {
+const Step1_3 = ({ goBack }) => {
   const { simulador, plazo } = useSelector((state) => state.data);
   const accept = useSelector((state) => state.validation.accept);
   const [switchCheck, setSwitchCheck] = useState();
@@ -259,7 +259,7 @@ const Step1_3 = () => {
             text="Atrás"
             back={true}
             next={false}
-            click={() => changePage(1)}
+            click={() => goBack(2)}
           />
           <div className="buttonContainer_steps">
             <p className="mobileOnly">Paso 1.3 de 4</p>

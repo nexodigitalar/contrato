@@ -97,9 +97,8 @@ const InputForm = ({
   };
 
   const handleDate = (value, i) => {
-    // Convertimos la fecha en un string para que pueda ser guardado en redux
     const event = new Date(value);
-    const jsonDate = event.toJSON();
+    const jsonDate = event.setUTCHours(0, 0, 0, 0);
     const newDate = new Date(jsonDate).toISOString();
 
     const updatedAreas = [...initialValues];
@@ -123,7 +122,7 @@ const InputForm = ({
       telefonoCod: 598,
       telefono: "",
       sexo: "",
-      nacionalidad: "",
+      nacionalidad: "Uruguayo",
       email: "",
       pais: "",
       departamento: "",

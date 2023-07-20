@@ -7,7 +7,7 @@ import SelectMap from "@/components/SelectMap/SelectMap";
 import InputCheck from "../../../components/InputCheck/InputCheck";
 
 /* Hooks */
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUsers } from "@/store/userSlice/userSlice";
 import useValidate from "@/hooks/useValidate";
@@ -29,7 +29,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
   const handleInitialValidations = () => {
     let values = {
       sexo: "",
-      nacionalidad: "",
+      nacionalidad: true,
       email: true,
       pais: "",
       departamento: "",
@@ -91,7 +91,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
         dispatch(updateUsers({ name: e.target.name, index: i, value: "" }));
         let newArr = [...amountValidations];
         let newObj = newArr[i];
-        newObj = { ...newObj, ["departamento"]: false };
+        newObj = { ...newObj, ["departamento"]: "" };
         newArr[i] = newObj;
         setAmountValidations(newArr);
       }
@@ -126,13 +126,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               op2="Masculino"
               error={amountValidations[index]?.sexo}
               click={(e) =>
-                useValidate(
-                  e.target.value,
-                  amountValidations,
-                  index,
-                  "sexo",
-                  setAmountValidations
-                )
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidations,
+                    index,
+                    "sexo",
+                    setAmountValidations
+                  );
+                }, 800)
               }
               change={(e) => {
                 {
@@ -221,13 +223,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               index={index}
               error={amountValidations[index]?.pais}
               click={(e) =>
-                useValidate(
-                  e.target.value,
-                  amountValidations,
-                  index,
-                  "pais",
-                  setAmountValidations
-                )
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidations,
+                    index,
+                    "pais",
+                    setAmountValidations
+                  );
+                }, 800)
               }
               change={(e) => {
                 {
@@ -272,7 +276,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                   }
                 }}
                 click={(e) => {
-                  handleInput(e, index),
+                  setTimeout(() => {
                     useValidate(
                       e.target.value,
                       amountValidations,
@@ -280,6 +284,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       "departamento",
                       setAmountValidations
                     );
+                  }, 800);
                 }}
                 onfocusout={(e) => {
                   useValidate(
@@ -352,7 +357,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               name="puertaNumero"
               value={usuario[index]?.puertaNumero || ""}
               error={amountValidations[index]?.puertaNumero}
-              type="text"
+              type="number"
               click={(e) => {
                 handleInput(e, index),
                   useValidate(
@@ -386,13 +391,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               op4="Viudo/a"
               error={amountValidations[index]?.estadoCivil}
               click={(e) =>
-                useValidate(
-                  e.target.value,
-                  amountValidations,
-                  index,
-                  "estadoCivil",
-                  setAmountValidations
-                )
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidations,
+                    index,
+                    "estadoCivil",
+                    setAmountValidations
+                  );
+                }, 800)
               }
               change={(e) => {
                 {
@@ -431,13 +438,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               op2="Dólares Americanos"
               error={amountValidations[index]?.monedaIngreso}
               click={(e) =>
-                useValidate(
-                  e.target.value,
-                  amountValidations,
-                  index,
-                  "monedaIngreso",
-                  setAmountValidations
-                )
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidations,
+                    index,
+                    "monedaIngreso",
+                    setAmountValidations
+                  );
+                }, 800)
               }
               change={(e) => {
                 {
@@ -577,13 +586,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               index={index}
               error={amountValidations[index]?.origenFondos}
               click={(e) =>
-                useValidate(
-                  e.target.value,
-                  amountValidations,
-                  index,
-                  "origenFondos",
-                  setAmountValidations
-                )
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidations,
+                    index,
+                    "origenFondos",
+                    setAmountValidations
+                  );
+                }, 800)
               }
               change={(e) => {
                 {

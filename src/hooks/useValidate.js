@@ -10,7 +10,7 @@ const useValidateInput = (
   setMessageFile,
   messageFile
 ) => {
-  clearTimeout(timer);
+  clearTimeout(position);
   timer = setTimeout(() => {
     let newArr = [...amountValidations];
     let newObj = newArr[index];

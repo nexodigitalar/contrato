@@ -23,7 +23,7 @@ const Step1 = ({ spinner }) => {
         <>
           {page === 1 && <Step1_1 changePage={changePage} />}
           {page === 2 && <Step1_2 changePage={changePage} />}
-          {page === 3 && <Step1_3 />}
+          {page === 3 && <Step1_3 goBack={changePage} />}
         </>
       )}
     </>

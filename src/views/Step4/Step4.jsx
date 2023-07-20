@@ -47,7 +47,6 @@ const Step4 = ({ images }) => {
     if (moneda === "USD") {
       setCurrency("U$S");
     }
-    console.log(usuario);
   });
 
   useEffect(() => {
@@ -81,7 +80,7 @@ const Step4 = ({ images }) => {
 
   const ActualizarClienteCRM = async (user) => {
     let userDoc = checkLengthCedula(user);
-    console.log("ID primer cliente:", ids.cliId);
+    /* console.log("ID primer cliente:", ids.cliId); */
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
       {
@@ -177,8 +176,8 @@ const Step4 = ({ images }) => {
     let userDoc = checkLengthCedula(user);
     let paisCod = countries.find((item) => item.name === user.pais);
     let departamentoCod =
-      departamentos.fin((item) => item.name === user.departamento) || 0;
-    console.log(departamentoCod);
+      departamentos.find((item) => item.name === user.departamento) || 0;
+
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
       {
@@ -216,9 +215,9 @@ const Step4 = ({ images }) => {
             PersonaPaisResidenciaCodigo: paisCod.alpha2,
             PersonaPaisResidenciaNombre: user.pais,
             PersonaDepartamentoResCod: departamentoCod.cod,
-            PersonaDepartamentoResNom: "",
+            PersonaDepartamentoResNom: user.departamento,
             PersonaCiudadResCod: "",
-            PersonaCiudadResNom: user.departamento,
+            PersonaCiudadResNom: "",
             PersonaCalle: user.calle,
             PersonaPuerta: user.puertaNumero,
             PersonaApartamento: "",
@@ -237,7 +236,7 @@ const Step4 = ({ images }) => {
             PersonaDocumento: userDoc,
             PersonaOrigenInfo: "",
             PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
-            PersonaEsPEP: false,
+            PersonaEsPEP: user.pep,
             PersonaRelacionContacto: {
               PersonaRelacionContactoItems: [
                 {
@@ -285,10 +284,10 @@ const Step4 = ({ images }) => {
             PersonaIngresosMonedaCodigo: 1,
             PersonaIngresosMonedaNombre: user.monedaIngreso,
             PersonaRiesgoLavado: 0,
-            PersonaResidente: false,
+            PersonaResidente: user.residenteUruguayo,
             PersonaLugarTrabajoNombre: user.empresaTrabaja,
-            PersonaLugarTrabajoDireccion: "",
-            PersonaLugarTrabajoCargo: "",
+            PersonaLugarTrabajoDireccion: "Rincon 649",
+            PersonaLugarTrabajoCargo: "TI",
             PersonaOrigenDeFondos: user.origenFondos,
             PersonaRubroEmpresa: user.rubroEmpresa,
             PersonaConyugeCodigo: 0,
@@ -452,7 +451,7 @@ const Step4 = ({ images }) => {
     let userDoc = checkLengthCedula(user);
     let paisCod = countries.find((item) => item.name === user.pais);
     let departamentoCod =
-      departamentos.fin((item) => item.name === user.departamento) || 0;
+      departamentos.find((item) => item.name === user.departamento) || 0;
     try {
       const responseUser = await fetch(
         "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
@@ -491,9 +490,9 @@ const Step4 = ({ images }) => {
               PersonaPaisResidenciaCodigo: paisCod.alpha2,
               PersonaPaisResidenciaNombre: user.pais,
               PersonaDepartamentoResCod: departamentoCod.cod,
-              PersonaDepartamentoResNom: "",
+              PersonaDepartamentoResNom: user.departamento,
               PersonaCiudadResCod: "",
-              PersonaCiudadResNom: user.departamento,
+              PersonaCiudadResNom: "",
               PersonaCalle: user.calle,
               PersonaPuerta: user.puertaNumero,
               PersonaApartamento: "",
@@ -512,7 +511,7 @@ const Step4 = ({ images }) => {
               PersonaDocumento: userDoc,
               PersonaOrigenInfo: "",
               PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
-              PersonaEsPEP: false,
+              PersonaEsPEP: user.pep,
               PersonaRelacionContacto: {
                 PersonaRelacionContactoItems: [
                   {
@@ -560,7 +559,7 @@ const Step4 = ({ images }) => {
               PersonaIngresosMonedaCodigo: 1,
               PersonaIngresosMonedaNombre: user.monedaIngreso,
               PersonaRiesgoLavado: 0,
-              PersonaResidente: false,
+              PersonaResidente: user.residenteUruguayo,
               PersonaLugarTrabajoNombre: user.empresaTrabaja,
               PersonaLugarTrabajoDireccion: "Rincon 649",
               PersonaLugarTrabajoCargo: "TI",
