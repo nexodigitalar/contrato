@@ -105,7 +105,8 @@ const useValidateInput = (
           }
         }
       } else if (position === "cedula") {
-        let validate = useValidateCedula(e);
+        let editNumber = e.replaceAll("-", "");
+        let validate = useValidateCedula(editNumber);
 
         if (validate) {
           newObj = { ...newObj, [position]: true };

@@ -50,7 +50,7 @@ const Input = ({
         <p className="input_error">En PIN no es válido</p>
       )}
       {error === false && name === "cedula" && (
-        <p className="input_error">Ingrese una cédula de 8 números</p>
+        <p className="input_error">Ingrese una cédula válida</p>
       )}
     </div>
   );

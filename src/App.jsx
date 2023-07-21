@@ -42,8 +42,8 @@ const App = () => {
   }, []);
 
   const getDataFromLocal = () => {
-    let data = JSON.parse(localStorage.getItem("contrato"));
-    /*     let data = {
+    /*  let data = JSON.parse(localStorage.getItem("contrato")); */
+    let data = {
       nombre: "Kailey",
       apellido: "Gotthard",
       email: "kgotthardsf1j@boston.com",
@@ -60,7 +60,7 @@ const App = () => {
       espera: "",
       normal: "",
       final: "",
-    }; */
+    };
 
     dispatch(setData(data));
     if (!registrarCliente.ventaId) {

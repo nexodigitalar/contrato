@@ -96,20 +96,21 @@ const Step1_3 = ({ goBack }) => {
 
             <div>
               {ReactHtmlParser(text[simulador].step1_3_text1)}
-              <a
-                href="https://consorcio.uy/preguntas-frecuentes/"
-                target="_blank"
-              >
-                <Button text="Ampliar información" />
-              </a>
-            </div>
-
-            <div className="step1_3_switchContainer">
-              <p className="step1_3_text text_mobile">Entendido</p>
-              <Switch
-                storage={storage}
-                click={(value) => handleCheck(value, 0)}
-              />
+              <div className="step1_3_buttonContainer">
+                <a
+                  href="https://consorcio.uy/preguntas-frecuentes/"
+                  target="_blank"
+                >
+                  <Button text="Ampliar información" />
+                </a>
+                <div className="step1_3_switchContainer">
+                  <p className="step1_3_text text_mobile">Entendido</p>
+                  <Switch
+                    storage={storage}
+                    click={(value) => handleCheck(value, 0)}
+                  />
+                </div>
+              </div>
             </div>
           </section>
         </section>
@@ -162,23 +163,34 @@ const Step1_3 = ({ goBack }) => {
               </h3>
 
               <div>{ReactHtmlParser(text[simulador].step1_3_text4)}</div>
-              {simulador != "Pesos Fijos" && (
-                <a
-                  href="https://consorcio.uy/preguntas-frecuentes/"
-                  target="_blank"
-                >
-                  <Button text="Más información" />
-                </a>
+              {simulador != "Pesos Fijos" ? (
+                <div className="step1_3_buttonContainer">
+                  <a
+                    href="https://consorcio.uy/preguntas-frecuentes/"
+                    target="_blank"
+                  >
+                    <Button text="Más información" />
+                  </a>
+
+                  <div className="step1_3_switchContainer">
+                    <p className="step1_3_text text_mobile">Entendido</p>
+
+                    <Switch
+                      storage={storage}
+                      click={(value) => handleCheck(value, 3)}
+                    />
+                  </div>
+                </div>
+              ) : (
+                <div className="step1_3_switchContainer">
+                  <p className="step1_3_text text_mobile">Entendido</p>
+
+                  <Switch
+                    storage={storage}
+                    click={(value) => handleCheck(value, 3)}
+                  />
+                </div>
               )}
-
-              <div className="step1_3_switchContainer">
-                <p className="step1_3_text text_mobile">Entendido</p>
-
-                <Switch
-                  storage={storage}
-                  click={(value) => handleCheck(value, 3)}
-                />
-              </div>
             </section>
           </section>
         )}

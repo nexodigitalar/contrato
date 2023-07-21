@@ -19,10 +19,6 @@ const InputDate = ({ name, placeholder, click, valueFecha, error }) => {
   useEffect(() => {
     if (valueFecha) {
       setDate(new Date(valueFecha));
-    } else {
-      const date = new Date();
-      let newDate = date.setFullYear(date.getFullYear() - 18);
-      setDate(new Date(newDate));
     }
   }, []);
 
