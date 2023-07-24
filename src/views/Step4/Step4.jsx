@@ -175,9 +175,10 @@ const Step4 = ({ images }) => {
   const RegistrarClienteGestion = async (user) => {
     let userDoc = checkLengthCedula(user);
     let paisCod = countries.find((item) => item.name === user.pais);
-    let departamentoCod =
-      departamentos.find((item) => item.name === user.departamento) || 0;
-
+    let departamentoCod = departamentos.find(
+      (item) => item.name === user.departamento
+    );
+    departamentoCod = departamentoCod ? departamentoCod.cod : 0;
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
       {
@@ -214,7 +215,7 @@ const Step4 = ({ images }) => {
             PersonaSexo: user.sexo,
             PersonaPaisResidenciaCodigo: paisCod.alpha2,
             PersonaPaisResidenciaNombre: user.pais,
-            PersonaDepartamentoResCod: departamentoCod.cod,
+            PersonaDepartamentoResCod: departamentoCod,
             PersonaDepartamentoResNom: user.departamento,
             PersonaCiudadResCod: "",
             PersonaCiudadResNom: "",
@@ -450,8 +451,10 @@ const Step4 = ({ images }) => {
   async function RegistrarClienteGestionOther(user, idUser, idEmpresa, i) {
     let userDoc = checkLengthCedula(user);
     let paisCod = countries.find((item) => item.name === user.pais);
-    let departamentoCod =
-      departamentos.find((item) => item.name === user.departamento) || 0;
+    let departamentoCod = departamentos.find(
+      (item) => item.name === user.departamento
+    );
+    departamentoCod = departamentoCod ? departamentoCod.cod : 0;
     try {
       const responseUser = await fetch(
         "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
@@ -489,7 +492,7 @@ const Step4 = ({ images }) => {
               PersonaSexo: user.sexo,
               PersonaPaisResidenciaCodigo: paisCod.alpha2,
               PersonaPaisResidenciaNombre: user.pais,
-              PersonaDepartamentoResCod: departamentoCod.cod,
+              PersonaDepartamentoResCod: departamentoCod,
               PersonaDepartamentoResNom: user.departamento,
               PersonaCiudadResCod: "",
               PersonaCiudadResNom: "",

@@ -42,12 +42,12 @@ const App = () => {
   }, []);
 
   const getDataFromLocal = () => {
-    /*  let data = JSON.parse(localStorage.getItem("contrato")); */
-    let data = {
-      nombre: "Kailey",
-      apellido: "Gotthard",
-      email: "kgotthardsf1j@boston.com",
-      telefono: "9019265113",
+    let data = JSON.parse(localStorage.getItem("contrato"));
+    /*   let data = {
+      nombre: "Sherilyn",
+      apellido: "Jobb",
+      email: "sjobb1p@simplemachines.org",
+      telefono: "7401665811",
       cuoCap: "CAPITAL",
       cuotas: "715",
       entrega: "17/02/23",
@@ -60,7 +60,7 @@ const App = () => {
       espera: "",
       normal: "",
       final: "",
-    };
+    }; */
 
     dispatch(setData(data));
     if (!registrarCliente.ventaId) {

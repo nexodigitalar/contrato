@@ -92,6 +92,14 @@ const Step2 = ({ setImages, images }) => {
         )}
 
         <div className="step2_buttonContainer">
+          <Button
+            text="Atrás"
+            back={true}
+            next={false}
+            click={() => {
+              dispatch(changePage(1)), useScrollTop();
+            }}
+          />
           <div className="buttonContainer_steps">
             <p className="mobileOnly">Paso 2 de 4</p>
             <Button

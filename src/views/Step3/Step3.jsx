@@ -87,6 +87,14 @@ const Step3 = () => {
           </p>
 
           <div className="step3_buttonContainer">
+            <Button
+              text="Atrás"
+              back={true}
+              next={false}
+              click={() => {
+                dispatch(changePage(2)), useScrollTop();
+              }}
+            />
             <div className="buttonContainer_steps">
               <p className="mobileOnly">Paso 3 de 4</p>
               <Button

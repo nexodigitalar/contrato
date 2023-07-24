@@ -29,9 +29,11 @@
           color: $neutral_dark;
           margin: $margin_sm 0;
         }
-        .step1_3_buttonContainer {
+        .step1_3_buttonInnercontainer {
           @include flex(row, space-between, center);
-          .step1_3_switchContainer {
+          width: 100%;
+          margin: 0 auto;
+          .step1_3_switchInnercontainer {
             @include flex(row, center, center);
             gap: 16px;
           }
@@ -40,6 +42,7 @@
           align-self: flex-end;
           @include flex(row, center, center);
           gap: 16px;
+          margin-top: 10px;
         }
         .step1_3_text {
           @include primaryFont($size_sm);
@@ -81,6 +84,12 @@
           .text_mobile {
             @include primaryFont($size_md);
             margin: 0;
+          }
+          .step1_3_buttonInnercontainer {
+            @include flex(column, center, flex-start);
+            .step1_3_switchInnercontainer {
+              align-self: flex-end;
+            }
           }
         }
       }

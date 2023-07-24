@@ -290,7 +290,7 @@ const Step1_2 = ({ changePage }) => {
                 click={() => changePage(1)}
               />
               <div className="buttonContainer_steps">
-                <p className="mobileOnly">Paso 1.2 de 4</p>
+                <p className="mobileOnly">Paso 1.1 de 4</p>
                 <Button text="Siguiente" click={() => changePage(3)} />
               </div>
             </div>

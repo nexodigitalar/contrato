@@ -96,14 +96,14 @@ const Step1_3 = ({ goBack }) => {
 
             <div>
               {ReactHtmlParser(text[simulador].step1_3_text1)}
-              <div className="step1_3_buttonContainer">
+              <div className="step1_3_buttonInnercontainer">
                 <a
                   href="https://consorcio.uy/preguntas-frecuentes/"
                   target="_blank"
                 >
                   <Button text="Ampliar información" />
                 </a>
-                <div className="step1_3_switchContainer">
+                <div className="step1_3_switchInnercontainer">
                   <p className="step1_3_text text_mobile">Entendido</p>
                   <Switch
                     storage={storage}
@@ -164,7 +164,7 @@ const Step1_3 = ({ goBack }) => {
 
               <div>{ReactHtmlParser(text[simulador].step1_3_text4)}</div>
               {simulador != "Pesos Fijos" ? (
-                <div className="step1_3_buttonContainer">
+                <div className="step1_3_buttonInnercontainer">
                   <a
                     href="https://consorcio.uy/preguntas-frecuentes/"
                     target="_blank"
@@ -172,7 +172,7 @@ const Step1_3 = ({ goBack }) => {
                     <Button text="Más información" />
                   </a>
 
-                  <div className="step1_3_switchContainer">
+                  <div className="step1_3_switchInnercontainer">
                     <p className="step1_3_text text_mobile">Entendido</p>
 
                     <Switch
@@ -274,7 +274,7 @@ const Step1_3 = ({ goBack }) => {
             click={() => goBack(2)}
           />
           <div className="buttonContainer_steps">
-            <p className="mobileOnly">Paso 1.3 de 4</p>
+            <p className="mobileOnly">Paso 1.2 de 4</p>
             <Button
               text="Siguiente"
               click={() => {

@@ -276,7 +276,7 @@ const Step1_1 = ({ changePage }) => {
               detalles
             </h3>
             <div className="buttonContainer_steps">
-              <p className="mobileOnly">Paso 1.1 de 4</p>
+              <p className="mobileOnly">Paso 1 de 4</p>
               <Button text="Siguiente" click={() => changePage(2)} />
             </div>
           </section>
