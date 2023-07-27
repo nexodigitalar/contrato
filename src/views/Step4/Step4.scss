@@ -45,6 +45,11 @@
     .step4_label {
       @include primaryFont($size_xs);
       color: $neutral_dark;
+      @include flex(row, flex-start, center);
+      .step4_link {
+        text-decoration: underline;
+        cursor: pointer;
+      }
     }
     .step4_finalText {
       @include primaryFont($size_xs);
