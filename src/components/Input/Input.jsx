@@ -9,6 +9,7 @@ const Input = ({
   error,
   type,
   disabled,
+  onfocusout,
   max = false,
 }) => {
   const [styles, setStyles] = useState("input empty");
@@ -31,6 +32,7 @@ const Input = ({
         value={value}
         name={name}
         onChange={click}
+        onBlur={onfocusout}
         type={type}
         disabled={disabled}
         maxLength={max ? "9" : undefined}

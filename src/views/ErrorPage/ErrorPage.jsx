@@ -42,7 +42,7 @@ const ErrorPage = () => {
           </p>
 
           <div className="error_buttonContainer">
-            <a target="_blank" href="https://consorcio.uy/">
+            <a target="_blank" href="http://webtest.consorciouruguay.com/">
               <Button text="INTENTAR NUEVAMENTE" back={true} next={false} />
             </a>
             <a

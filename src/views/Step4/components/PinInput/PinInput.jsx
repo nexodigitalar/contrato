@@ -18,14 +18,25 @@ const PinInput = ({ numberValidation, setValidated }) => {
   const validatePin = (e) => {
     setPinTyped(e);
     setError(true);
-    setTimeout(() => {
-      if (numberValidation == e) {
-        setValidated(true);
-        setError(true);
-      } else {
-        setError(false);
-      }
-    }, 2000);
+    if (e.length == 6) {
+      setTimeout(() => {
+        if (numberValidation == e) {
+          setValidated(true);
+          setError(true);
+        } else {
+          setError(false);
+        }
+      }, 300);
+    } else {
+      setTimeout(() => {
+        if (numberValidation == e) {
+          setValidated(true);
+          setError(true);
+        } else {
+          setError(false);
+        }
+      }, 2000);
+    }
   };
 
   return (

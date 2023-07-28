@@ -13,7 +13,8 @@
     .sms_text {
       @include primaryFont($size_xs);
       color: $neutral_dark;
-      margin: 15px 0;
+      margin: 0 0 15px 0;
+      font-weight: bold;
     }
   }
   .sms_warning {
@@ -24,7 +25,7 @@
   .smsInput {
     @include flex(row, flex-start, center);
     gap: 21px;
-    height: 90px;
+    height: 70px;
     .smsInput_number {
       @include primaryFont($size_sm);
       color: $neutral_dark;

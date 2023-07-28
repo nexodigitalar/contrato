@@ -42,6 +42,10 @@ const InputForm = ({
   ]);
 
   useEffect(() => {
+    console.log(amountValidations);
+  }, [amountValidations]);
+
+  useEffect(() => {
     handleInitialValidations();
     handleInitialValues();
     if (defaultAmount != 1) {
@@ -303,13 +307,24 @@ const InputForm = ({
                   type="text"
                   click={(e) => {
                     handleCedula(e, index),
-                      useValidate(
-                        e.target.value,
-                        amountValidations,
-                        index,
-                        "cedula",
-                        setAmountValidations
-                      );
+                      setTimeout(() => {
+                        useValidate(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "cedula",
+                          setAmountValidations
+                        );
+                      }, 400);
+                  }}
+                  onfocusout={(e) => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "cedula",
+                      setAmountValidations
+                    );
                   }}
                 />
               </div>
@@ -388,13 +403,24 @@ const InputForm = ({
                   type="text"
                   click={(e) => {
                     handleInput(e, index),
-                      useValidate(
-                        e.target.value,
-                        amountValidations,
-                        index,
-                        "primerNombre",
-                        setAmountValidations
-                      );
+                      setTimeout(() => {
+                        useValidate(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "primerNombre",
+                          setAmountValidations
+                        );
+                      }, 400);
+                  }}
+                  onfocusout={(e) => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "primerNombre",
+                      setAmountValidations
+                    );
                   }}
                 />
                 <Input
@@ -414,13 +440,24 @@ const InputForm = ({
                   type="text"
                   click={(e) => {
                     handleInput(e, index),
-                      useValidate(
-                        e.target.value,
-                        amountValidations,
-                        index,
-                        "primerApellido",
-                        setAmountValidations
-                      );
+                      setTimeout(() => {
+                        useValidate(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "primerApellido",
+                          setAmountValidations
+                        );
+                      }, 400);
+                  }}
+                  onfocusout={(e) => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "primerApellido",
+                      setAmountValidations
+                    );
                   }}
                 />
                 <Input
@@ -501,6 +538,15 @@ const InputForm = ({
                           "telefono",
                           setAmountValidations
                         );
+                    }}
+                    onfocusout={(e) => {
+                      useValidate(
+                        e.target.value,
+                        amountValidations,
+                        index,
+                        "telefono",
+                        setAmountValidations
+                      );
                     }}
                   />
                 </div>

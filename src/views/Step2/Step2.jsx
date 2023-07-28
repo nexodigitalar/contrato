@@ -97,7 +97,10 @@ const Step2 = ({ setImages, images }) => {
             back={true}
             next={false}
             click={() => {
-              dispatch(changePage(1)), useScrollTop();
+              dispatch(setUsers(initialValues)),
+                dispatch(setStep2(amountValidations)),
+                dispatch(changePage(1)),
+                useScrollTop();
             }}
           />
           <div className="buttonContainer_steps">

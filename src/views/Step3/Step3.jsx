@@ -92,7 +92,9 @@ const Step3 = () => {
               back={true}
               next={false}
               click={() => {
-                dispatch(changePage(2)), useScrollTop();
+                dispatch(setStep3(amountValidations)),
+                  dispatch(changePage(2)),
+                  useScrollTop();
               }}
             />
             <div className="buttonContainer_steps">

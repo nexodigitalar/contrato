@@ -770,13 +770,13 @@ const Step4 = ({ images }) => {
 
   /* Download pdf */
 
-  const downloadPdf = (url) => {
+  const downloadPdf = (url, name) => {
     fetch(url).then((response) => {
       response.blob().then((blob) => {
         let url = window.URL.createObjectURL(blob);
         let a = document.createElement("a");
         a.href = url;
-        a.download = "ContratoAdhesion.pdf";
+        a.download = `${name}.pdf`;
         a.click();
       });
     });
@@ -899,39 +899,48 @@ const Step4 = ({ images }) => {
               <span className="gray">condiciones</span>
             </h3>
 
-            <label className="step4_label">
-              <input
-                type="checkbox"
-                checked={validatePdf[0]}
-                onChange={() => handleValidationsPdf(0)}
-              />
+            <div className="step4_labelContainer">
+              <label className="step4_label">
+                <input
+                  type="checkbox"
+                  checked={validatePdf[0]}
+                  onChange={() => handleValidationsPdf(0)}
+                />
+              </label>
 
               <p
                 className="step4_link"
                 onClick={() =>
-                  downloadPdf(`${import.meta.env.VITE_PDF_1}${contratoId}.pdf`)
+                  downloadPdf(
+                    `${import.meta.env.VITE_PDF_1}${contratoId}.pdf`,
+                    "CondicionesParticulares"
+                  )
                 }
               >
-                Condiciones particulares, Anexos y Condiciones generales:
+                Condiciones particulares, Anexos y Condiciones generales
               </p>
-            </label>
+            </div>
 
-            <label className="step4_label">
-              <input
-                type="checkbox"
-                checked={validatePdf[1]}
-                onChange={() => handleValidationsPdf(1)}
-              />
-
+            <div className="step4_labelContainer">
+              <label className="step4_label">
+                <input
+                  type="checkbox"
+                  checked={validatePdf[1]}
+                  onChange={() => handleValidationsPdf(1)}
+                />
+              </label>
               <p
                 className="step4_link"
                 onClick={() =>
-                  downloadPdf(`${import.meta.env.VITE_PDF_2}${contratoId}.pdf`)
+                  downloadPdf(
+                    `${import.meta.env.VITE_PDF_2}${contratoId}.pdf`,
+                    "ServiciosElectronicosYPoliticaDePrivacidad"
+                  )
                 }
               >
-                SERVICIOS ELECTRÓNICOS Y POLÍTICA DE PRIVACIDAD:
+                Servicios Electrónicos y Política de Privacidad
               </p>
-            </label>
+            </div>
 
             <h3 className="step4_title">
               <span className="color_text">Validación </span>del{" "}

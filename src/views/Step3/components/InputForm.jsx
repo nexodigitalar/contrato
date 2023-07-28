@@ -26,11 +26,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     handleInitialValidations();
   }, []);
 
+  useEffect(() => {
+    console.log(amountValidations);
+  }, [amountValidations]);
+
   const handleInitialValidations = () => {
     let values = {
       sexo: "",
       nacionalidad: true,
-      email: true,
+      email: "",
       pais: "",
       departamento: "",
       calle: "",
@@ -71,6 +75,9 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
         Array.from({ length: usuario.length }, (_, index) =>
           newArr.push(values)
         );
+
+        newArr[0].email = true;
+
         setAmountValidations(newArr);
       }
     }
@@ -166,13 +173,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               type="text"
               click={(e) => {
                 handleInput(e, index),
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "nacionalidad",
-                    setAmountValidations
-                  );
+                  setTimeout(() => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "nacionalidad",
+                      setAmountValidations
+                    );
+                  }, 400);
               }}
               onfocusout={(e) => {
                 useValidate(
@@ -194,13 +203,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               type="email"
               click={(e) => {
                 handleInput(e, index),
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "email",
-                    setAmountValidations
-                  );
+                  setTimeout(() => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "email",
+                      setAmountValidations
+                    );
+                  }, 400);
               }}
               onfocusout={(e) => {
                 useValidate(
@@ -305,13 +316,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                 type="text"
                 click={(e) => {
                   handleInput(e, index),
-                    useValidate(
-                      e.target.value,
-                      amountValidations,
-                      index,
-                      "departamento",
-                      setAmountValidations
-                    );
+                    setTimeout(() => {
+                      useValidate(
+                        e.target.value,
+                        amountValidations,
+                        index,
+                        "departamento",
+                        setAmountValidations
+                      );
+                    }, 400);
                 }}
                 onfocusout={(e) => {
                   useValidate(
@@ -334,13 +347,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               type="text"
               click={(e) => {
                 handleInput(e, index),
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "calle",
-                    setAmountValidations
-                  );
+                  setTimeout(() => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "calle",
+                      setAmountValidations
+                    );
+                  }, 400);
               }}
               onfocusout={(e) => {
                 useValidate(
@@ -360,13 +375,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               type="number"
               click={(e) => {
                 handleInput(e, index),
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "puertaNumero",
-                    setAmountValidations
-                  );
+                  setTimeout(() => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "puertaNumero",
+                      setAmountValidations
+                    );
+                  }, 400);
               }}
               onfocusout={(e) => {
                 useValidate(
@@ -478,13 +495,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               type="number"
               click={(e) => {
                 handleInput(e, index),
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "ingresosMensuales",
-                    setAmountValidations
-                  );
+                  setTimeout(() => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "ingresosMensuales",
+                      setAmountValidations
+                    );
+                  }, 400);
               }}
               onfocusout={(e) => {
                 useValidate(
@@ -506,13 +525,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               type="text"
               click={(e) => {
                 handleInput(e, index),
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "empresaTrabaja",
-                    setAmountValidations
-                  );
+                  setTimeout(() => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "empresaTrabaja",
+                      setAmountValidations
+                    );
+                  }, 400);
               }}
               onfocusout={(e) => {
                 useValidate(
@@ -532,13 +553,15 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               type="text"
               click={(e) => {
                 handleInput(e, index),
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "rubroEmpresa",
-                    setAmountValidations
-                  );
+                  setTimeout(() => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "rubroEmpresa",
+                      setAmountValidations
+                    );
+                  }, 400);
               }}
               onfocusout={(e) => {
                 useValidate(
@@ -559,20 +582,22 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               error={amountValidations[index]?.actividadPrincipal}
               click={(e) => {
                 handleInput(e, index),
-                  useValidate(
-                    e.target.value,
-                    amountValidations,
-                    index,
-                    "actividadPrincipal",
-                    setAmountValidations
-                  );
+                  setTimeout(() => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "actividadPrincipal",
+                      setAmountValidations
+                    );
+                  }, 400);
               }}
               onfocusout={(e) => {
                 useValidate(
                   e.target.value,
                   amountValidations,
                   index,
-                  "actvidadPrincipal",
+                  "actividadPrincipal",
                   setAmountValidations
                 );
               }}

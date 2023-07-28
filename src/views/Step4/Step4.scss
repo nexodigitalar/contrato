@@ -42,10 +42,11 @@
     .step4_buttonContainer {
       align-self: flex-end;
     }
-    .step4_label {
+    .step4_labelContainer {
+      @include flex(row, flex-start, center);
+      margin-bottom: 5px;
       @include primaryFont($size_xs);
       color: $neutral_dark;
-      @include flex(row, flex-start, center);
       .step4_link {
         text-decoration: underline;
         cursor: pointer;
@@ -81,8 +82,10 @@
         @include primaryFont($size_xs);
         margin-bottom: $margin_md;
       }
-      .step3_label {
-        @include primaryFont($size_xs);
+      .step4_labelContainer {
+        .step4_link {
+          @include primaryFont($size_xs);
+        }
       }
     }
   }
