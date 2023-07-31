@@ -329,8 +329,8 @@ const Step4 = ({ images }) => {
         if (usuario.length > 1) {
           mapUsers(user);
         } else {
-          await sendFrenteFile(userDoc, 0);
-          await sendDorsoFile(userDoc, 0);
+          /*     await sendFrenteFile(userDoc, 0);
+          await sendDorsoFile(userDoc, 0); */
           await AltaContratoGestion();
           setSpinner(false);
         }
@@ -917,7 +917,8 @@ const Step4 = ({ images }) => {
                   )
                 }
               >
-                Condiciones particulares, Anexos y Condiciones generales
+                Condiciones particulares, Anexos y Condiciones generales -
+                Descargar PDF
               </p>
             </div>
 
@@ -938,7 +939,7 @@ const Step4 = ({ images }) => {
                   )
                 }
               >
-                Servicios Electrónicos y Política de Privacidad
+                Servicios Electrónicos y Política de Privacidad - Descargar PDF
               </p>
             </div>
 

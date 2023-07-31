@@ -81,11 +81,6 @@ const Step3 = () => {
             </div>
           </div>
 
-          <p className="step3_important">
-            Importante: Verifique que todos los datos sean correctos, antes de
-            seguir avanzando.
-          </p>
-
           <div className="step3_buttonContainer">
             <Button
               text="Atrás"

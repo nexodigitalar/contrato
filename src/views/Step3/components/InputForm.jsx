@@ -26,10 +26,6 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     handleInitialValidations();
   }, []);
 
-  useEffect(() => {
-    console.log(amountValidations);
-  }, [amountValidations]);
-
   const handleInitialValidations = () => {
     let values = {
       sexo: "",

@@ -11,7 +11,40 @@
   color: $neutral_dark;
 }
 
-@media screen and (min-width: 200px) and (max-width: 1024px) {
+.loaderContainer {
+  @include flex(row, center, center);
+  padding: 7px 20px;
+}
+
+.loader {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  background: #fff;
+  box-shadow: -12px 0 #fff, 12px 0 #fff;
+  box-sizing: border-box;
+  animation: shadowPulse 2s linear infinite;
+}
+
+@keyframes shadowPulse {
+  33% {
+    background: #fff;
+    box-shadow: -12px 0 #797979, 12px 0 #fff;
+  }
+  66% {
+    background: #797979;
+    box-shadow: -12px 0 #fff, 12px 0 #fff;
+  }
+  100% {
+    background: #fff;
+    box-shadow: -12px 0 #fff, 12px 0 #797979;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1012px) {
   .smsinput_button {
     @include flex(row, space-between, center);
     gap: 20px;

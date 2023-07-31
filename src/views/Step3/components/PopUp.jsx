@@ -6,8 +6,8 @@ const PopUp = ({ setShowPopUp, handlePage4 }) => {
       <div className="popup_container">
         <p className="popup_text">
           ¿Estás seguro que tus datos son correctos?
-          <br />A partir del siguiente paso no se van a poder hacer
-          modificaciones
+          <br />
+          En el paso siguiente no se van a poder hacer modificaciones.
         </p>
         <div className="popup_buttonContainer">
           <button

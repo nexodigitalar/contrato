@@ -262,8 +262,8 @@ const Step1_3 = ({ goBack }) => {
         </section>
 
         <p className="step1_3_subtext">
-          * Para continuar, debe confirmar con el botón entendido cada uno de
-          los {numValidations} puntos.
+          * Para <b>continuar</b>, debe <b>confirmar</b> con el botón entendido
+          cada uno de los {numValidations} puntos.
         </p>
 
         <div className="step1_3_buttonContainer">

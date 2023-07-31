@@ -1,6 +1,7 @@
 import "./ConfirmationPage.scss";
 import check from "@/assets/img/check.png";
 import { useEffect } from "react";
+import wp from "@/assets/img/whatsapp.svg";
 import { useSelector } from "react-redux";
 
 /* Components */
@@ -36,9 +37,21 @@ const ConfirmationPage = () => {
           <p className="confirmation_text">
             Usted puede hacerlo ya mismo online, haciendo clic aquí debajo.
           </p>
-          <a target="_blank" href="https://reporteconsorcio.com.uy">
-            <Button text="PAGAR MI CUOTA" />
-          </a>
+
+          <div className="confirmation_buttonContainer">
+            <a target="_blank" href="https://reporteconsorcio.com.uy">
+              <Button text="PAGAR MI CUOTA" />
+            </a>
+            <a
+              target="_blank"
+              href="https://wa.me/+59894627000"
+              className="confirmation_button color_primary_gradient"
+            >
+              CONTACTANOS{" "}
+              <img src={wp} alt="icono whatsapp" className="button_icon" />
+            </a>
+          </div>
+
           <p className="confirmation_text">
             También puede pagar en cualquiera de los locales de Red Pagos o
             Abitab.

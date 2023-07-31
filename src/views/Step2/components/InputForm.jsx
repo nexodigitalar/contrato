@@ -42,10 +42,6 @@ const InputForm = ({
   ]);
 
   useEffect(() => {
-    console.log(amountValidations);
-  }, [amountValidations]);
-
-  useEffect(() => {
     handleInitialValidations();
     handleInitialValues();
     if (defaultAmount != 1) {

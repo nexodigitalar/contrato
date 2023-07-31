@@ -51,6 +51,36 @@
         right: 0;
         width: 150px;
       }
+      .confirmation_buttonContainer {
+        @include flex(row, flex-start, center);
+        gap: 20px;
+        width: 100%;
+        .confirmation_button {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 5px;
+          @include primaryFont($size_xs);
+          border: none;
+          border-radius: 40px;
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: cover;
+          color: $tertiary;
+          padding: $padding_md $padding_lg;
+          margin: $margin_md 0;
+          cursor: pointer;
+          transition: all 0.4s;
+          &:hover {
+            box-shadow: 2px 2px 8px #888888;
+          }
+          .button_icon {
+            width: $size_md;
+            height: $size_md;
+            object-fit: contain;
+          }
+        }
+      }
     }
   }
 }
@@ -82,6 +112,18 @@
         }
         .confirmation_img {
           position: inherit;
+        }
+        .confirmation_buttonContainer {
+          @include flex(column, center, center);
+          gap: 0px;
+          margin: 20px 0 0 0;
+          button {
+            margin: 0px;
+          }
+          .confirmation_button {
+            @include primaryFont($size_xs);
+            padding: $padding_sm $padding_md;
+          }
         }
       }
     }
