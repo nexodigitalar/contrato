@@ -18,8 +18,8 @@ const SmsInput = ({ setSending, sending, validatePdf }) => {
       <Button
         text={
           sending ? (
-            <p className="loaderContainer">
-              <span className="loader"></span>
+            <p className="smsinput_loaderContainer">
+              <span className="smsinput_loader"></span>
             </p>
           ) : (
             "Enviar"

@@ -1,7 +1,7 @@
 import Step1_1 from "@/views/Step1_1/Step1_1";
 import Step1_2 from "@/views/Step1_2/Step1_2";
 import Step1_3 from "@/views/Step1_3/Step1_3";
-import Spinner from "@/components/Spinner/Spinner";
+import Loader from "@/components/Loader/Loader";
 
 /* Hooks */
 import { useState } from "react";
@@ -18,7 +18,7 @@ const Step1 = ({ spinner }) => {
   return (
     <>
       {spinner ? (
-        <Spinner />
+        <Loader lastStep={false} />
       ) : (
         <>
           {page === 1 && <Step1_1 changePage={changePage} />}

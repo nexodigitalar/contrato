@@ -9,7 +9,7 @@ import { faChevronRight } from "@fortawesome/free-solid-svg-icons";
 import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import Button from "@/components/Button/Button";
-import Spinner from "@/components/Spinner/Spinner";
+import Loader from "@/components/Loader/Loader";
 import SmsContainer from "./components/SmsContainer/SmsContainer";
 
 /* Hooks */
@@ -329,8 +329,8 @@ const Step4 = ({ images }) => {
         if (usuario.length > 1) {
           mapUsers(user);
         } else {
-          /*     await sendFrenteFile(userDoc, 0);
-          await sendDorsoFile(userDoc, 0); */
+          await sendFrenteFile(userDoc, 0);
+          await sendDorsoFile(userDoc, 0);
           await AltaContratoGestion();
           setSpinner(false);
         }
@@ -624,13 +624,23 @@ const Step4 = ({ images }) => {
     let reader = new FileReader();
     reader.readAsDataURL(images[index].ciFrente);
 
+    console.log(images[index].ciFrente);
+
     return new Promise((resolve, reject) => {
       reader.onload = async function setFile() {
         var arrayAux = [];
         let base64 = reader.result;
         arrayAux = base64.split(",");
         let result = arrayAux[1];
-        resolve(WSCedulaContratoOnLine(doc, "CI_FRENTE", result));
+        resolve(
+          WSCedulaContratoOnLine(
+            doc,
+            "CI_FRENTE",
+            result,
+            images[index].ciFrente.name,
+            images[index].ciFrente.type
+          )
+        );
       };
     });
   }
@@ -645,12 +655,21 @@ const Step4 = ({ images }) => {
         let base64 = readerDorso.result;
         arrayAux = base64.split(",");
         let result = arrayAux[1];
-        resolve(WSCedulaContratoOnLine(doc, "CI_DORSO", result));
+        resolve(
+          WSCedulaContratoOnLine(
+            doc,
+            "CI_DORSO",
+            result,
+            images[index].ciDorso.name,
+            images[index].ciDorso.type
+          )
+        );
       };
     });
   }
 
-  async function WSCedulaContratoOnLine(doc, type, image) {
+  async function WSCedulaContratoOnLine(doc, type, image, name, extension) {
+    let cropExtension = extension.replace("image/", "");
     try {
       const response = await fetch(
         "http://190.64.74.3:8234/rest/APIConsorcio/WSCedulaContratoOnLine",
@@ -666,6 +685,8 @@ const Step4 = ({ images }) => {
             pNroDoc: doc,
             pTipoDoc: type,
             pDocBase64: image,
+            pDocNombre: name,
+            pDocExtension: cropExtension,
           }),
         }
       );
@@ -785,7 +806,7 @@ const Step4 = ({ images }) => {
   return (
     <>
       {spinner ? (
-        <Spinner />
+        <Loader lastStep={true} />
       ) : (
         <div className="step4">
           <div className="step4_container">

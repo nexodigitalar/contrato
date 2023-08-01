@@ -1,0 +1,85 @@
+@import "@/utils/theme.scss";
+
+.loaderContainer {
+  @include flex(column, center, center);
+  gap: 30px;
+  margin-top: 150px;
+  width: 100%;
+  .loaderInnerContainer {
+    position: relative;
+    .loader {
+      position: absolute;
+      width: 150px;
+      height: auto;
+      object-fit: contain;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+    .loaderBack {
+      animation: loading 18s linear;
+      clip-path: polygon(0 100%, 100% 100%, 100% 15%, 0 15%);
+    }
+    .loaderBack_lastStep {
+      animation: loading 35s linear;
+      clip-path: polygon(0 100%, 100% 100%, 100% 15%, 0 15%);
+    }
+  }
+  .loaderText {
+    @include primaryFont(18px);
+    color: $neutral_darker;
+    text-align: center;
+    animation: scaleFont 2s linear infinite;
+    margin-top: 110px;
+  }
+}
+
+@keyframes loading {
+  0% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+
+  25% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 60%, 0 60%);
+  }
+
+  50% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 55%, 0 55%);
+  }
+
+  60% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 50%, 0 50%);
+  }
+
+  85% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 47%, 0 47%);
+  }
+
+  90% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 33%, 0 33%);
+  }
+
+  100% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 15%, 0 15%);
+  }
+}
+
+@keyframes scaleFont {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.99);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .loaderText {
+    /*     padding: 0 20px; */
+    width: 300px;
+  }
+}

@@ -17,6 +17,14 @@ p {
 a {
   text-decoration: none;
 }
+
+/* Para solucionar el problema en IOS */
+input[select] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+}
+
 .color_text {
   color: var(--primary-color);
   font-family: "GilroyBold", Arial, sans-serif;
