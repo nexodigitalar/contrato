@@ -1,5 +1,6 @@
 import "./SelectInput.scss";
 import { useEffect, useState } from "react";
+import useBrowser from "@/hooks/useBrowser";
 
 const SelectInput = ({
   placeholder,
@@ -37,7 +38,7 @@ const SelectInput = ({
         defaultValue={
           usuario[index][name] != "" ? usuario[index][name] : "placeholder"
         }
-        className={styles}
+        className={`${styles} ${useBrowser() && "selectIos"}`}
         onChange={change}
         onClick={click}
       >

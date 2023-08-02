@@ -1,5 +1,6 @@
 import "./SelectMap.scss";
 import { useEffect, useState } from "react";
+import useBrowser from "@/hooks/useBrowser";
 
 const SelectMap = ({
   placeholder,
@@ -32,7 +33,7 @@ const SelectMap = ({
         id={name}
         name={name}
         defaultValue={usuario[index][name] != "" ? usuario[index][name] : ""}
-        className={styles}
+        className={`${styles} ${useBrowser() && "selectIos"}`}
         onChange={change}
         onClick={click}
       >
