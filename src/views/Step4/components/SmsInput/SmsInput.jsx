@@ -16,7 +16,7 @@ const SmsInput = ({ setSmsSent, validatePdf }) => {
   return (
     <div className="smsinput_button">
       <Button
-        text="OK"
+        text="Enviar"
         next={false}
         disabled={disabled}
         click={() => setSmsSent(true)}
