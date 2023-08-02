@@ -29,7 +29,7 @@
       @include primaryFont($size_xs);
       color: $error;
       margin-top: $margin_md;
-      align-self: flex-end;
+      align-self: flex-start;
     }
     .step2_buttonContainer {
       width: 100%;

@@ -81,6 +81,10 @@ const Step3 = () => {
             </div>
           </div>
 
+          {disabled && (
+            <p className="inputForm_mandatory">* Campos obligatorios</p>
+          )}
+
           <div className="step3_buttonContainer">
             <Button
               text="Atrás"

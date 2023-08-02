@@ -653,7 +653,6 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               funciones públicas o cargos políticos.
             </label>
           </div>
-          <p className="inputForm_mandatory">* Campos obligatorios</p>
         </section>
       )}
     </>
