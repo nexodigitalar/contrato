@@ -43,11 +43,11 @@ const App = () => {
 
   const getDataFromLocal = () => {
     let data = JSON.parse(localStorage.getItem("contrato"));
-    /*     let data = {
-      nombre: "Townsend",
-      apellido: "O'Hartnett",
-      email: "tohartnett26@cam.ac.uk",
-      telefono: "9494518414",
+    /*  let data = {
+      nombre: "Alwyn",
+      apellido: "Mimmack",
+      email: "amimmack2j@businesswire.com",
+      telefono: "4438698453",
       cuoCap: "CAPITAL",
       cuotas: "715",
       entrega: "17/02/23",
@@ -60,8 +60,8 @@ const App = () => {
       espera: "",
       normal: "",
       final: "",
-    }; */
-
+    };
+ */
     dispatch(setData(data));
     if (!registrarCliente.ventaId) {
       RegistrarClienteCRM(data);

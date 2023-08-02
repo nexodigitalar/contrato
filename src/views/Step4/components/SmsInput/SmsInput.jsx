@@ -6,7 +6,7 @@ import Button from "@/components/Button/Button";
 
 import { useState, useEffect } from "react";
 
-const SmsInput = ({ setSending, sending, validatePdf }) => {
+const SmsInput = ({ setSmsSent, validatePdf }) => {
   const [disabled, setDisabled] = useState(true);
 
   useEffect(() => {
@@ -16,18 +16,10 @@ const SmsInput = ({ setSending, sending, validatePdf }) => {
   return (
     <div className="smsinput_button">
       <Button
-        text={
-          sending ? (
-            <p className="smsinput_loaderContainer">
-              <span className="smsinput_loader"></span>
-            </p>
-          ) : (
-            "Enviar"
-          )
-        }
+        text="OK"
         next={false}
         disabled={disabled}
-        click={() => setSending(true)}
+        click={() => setSmsSent(true)}
       />
     </div>
   );

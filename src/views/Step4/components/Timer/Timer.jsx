@@ -4,9 +4,12 @@ import "./Timer.scss";
 import { useState, useEffect } from "react";
 import dayjs from "dayjs";
 
-const Timer = ({ countdown, envioSms }) => {
+const Timer = ({ envioSms }) => {
   const [disabled, setDisabled] = useState(true);
   const [remainingTime, setRemainingTime] = useState(30);
+  const [countdown, setCountdown] = useState(
+    new Date(new Date().getTime() + 31000)
+  );
 
   useEffect(() => {
     const intervalId = setInterval(() => {
@@ -14,6 +17,11 @@ const Timer = ({ countdown, envioSms }) => {
     }, 1000);
     return () => clearInterval(intervalId);
   }, [countdown]);
+
+  const resetTimer = () => {
+    setDisabled(true);
+    setCountdown(new Date(new Date().getTime() + 31000));
+  };
 
   const handleCountdown = (timestamp) => {
     const timestampDay = dayjs(timestamp);
@@ -36,7 +44,9 @@ const Timer = ({ countdown, envioSms }) => {
       <span className="timer_span">{remainingTime}</span>
       <button
         className="timer_buttonSubtitle"
-        onClick={envioSms}
+        onClick={() => {
+          envioSms(), resetTimer();
+        }}
         disabled={disabled}
       >
         Volver a enviar PIN

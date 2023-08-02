@@ -7,12 +7,6 @@
   width: 100%;
 }
 
-.inputForm_mandatory {
-  @include primaryFont($size_xs);
-  color: $neutral_dark;
-  margin-top: $margin_md;
-}
-
 input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button {
   -webkit-appearance: none;

@@ -1,7 +1,7 @@
 import "./Loader.scss";
 import { useEffect, useState } from "react";
 
-const Loader = (lastStep) => {
+const Loader = ({ lastStep }) => {
   const [show, setShow] = useState(false);
 
   useEffect(() => {

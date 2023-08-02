@@ -549,7 +549,6 @@ const InputForm = ({
               </div>
             </div>
           ))}
-          <p className="inputForm_mandatory">* Campos obligatorios</p>
         </section>
       )}
     </>

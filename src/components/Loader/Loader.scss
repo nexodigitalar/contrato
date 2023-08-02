@@ -7,16 +7,17 @@
   width: 100%;
   .loaderInnerContainer {
     position: relative;
+    height: 150px;
     .loader {
       position: absolute;
-      width: 150px;
+      width: 180px;
       height: auto;
       object-fit: contain;
       left: 50%;
       transform: translate(-50%, 0);
     }
     .loaderBack {
-      animation: loading 18s linear;
+      animation: loading 5s linear;
       clip-path: polygon(0 100%, 100% 100%, 100% 15%, 0 15%);
     }
     .loaderBack_lastStep {
@@ -24,18 +25,34 @@
       clip-path: polygon(0 100%, 100% 100%, 100% 15%, 0 15%);
     }
   }
+
   .loaderText {
     @include primaryFont(18px);
     color: $neutral_darker;
     text-align: center;
     animation: scaleFont 2s linear infinite;
-    margin-top: 110px;
   }
 }
 
 @keyframes loading {
   0% {
     clip-path: polygon(0 100%, 100% 100%, 100% 100%, 0% 100%);
+  }
+
+  1% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 90%, 0% 90%);
+  }
+
+  2% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 85%, 0% 85%);
+  }
+
+  5% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 80%, 0% 80%);
+  }
+
+  10% {
+    clip-path: polygon(0 100%, 100% 100%, 100% 70%, 0% 70%);
   }
 
   25% {
