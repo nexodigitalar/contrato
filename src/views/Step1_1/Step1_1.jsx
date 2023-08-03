@@ -197,32 +197,30 @@ const Step1_1 = ({ changePage }) => {
                 </section>
               </>
 
-              {(simulador != "Pesos Ajustables" ||
-                simulador != "Pesos Fijos") &&
-                infoGrupo.InfoGrupoProducto.CuotasBonificadas.length != 0 && (
-                  <>
-                    <h3 className="step1_title2">
-                      Detalle <span className="color_text">cuotas </span>
-                      <span className="gray">bonificadas</span>
-                    </h3>
-                    <p className="step1_text">
-                      Acá van todas las observaciones de las condiciones
-                      particularesAcá van todas las observaciones de las
-                      condiciones particularesAcá van todas las observaciones de
-                      las condiciones particularesAcá van todas las
-                      observaciones de las condiciones particularesAcá van todas
-                      las observaciones de las condiciones particularesAcá van
-                      todas las observaciones de las condiciones particularesAcá
-                      van todas las observaciones de las condiciones
-                      particularesAcá van todas las observaciones de las
-                      condiciones particularesAcá van todas las observaciones de
-                      las condiciones particularesAcá van todas las
-                      observaciones de las condiciones particularesAcá van todas
-                      las observaciones de las condiciones particularesAcá van
-                      todas las observaciones de las condiciones particulares
-                    </p>
-                  </>
-                )}
+              {infoGrupo.InfoGrupoProducto.CuotasBonificadas.length != 0 && (
+                <>
+                  <h3 className="step1_2_title step1_2_detail">
+                    Detalle <span className="color_text">cuotas</span>{" "}
+                    <span className="gray">bonificadas</span>
+                  </h3>
+                  <p className="step1_2_text">
+                    Tipo de Bonificación:{" "}
+                    {infoGrupo.InfoGrupoProducto.BonificacionTipo}
+                  </p>
+                  <p className="step1_2_text">
+                    Bonificación Nombre:{" "}
+                    {infoGrupo.InfoGrupoProducto.BonificacionNombre}
+                  </p>
+                  <p className="step1_2_text">
+                    Cuotas bonificadas:{" "}
+                    {infoGrupo.InfoGrupoProducto.CuotasBonificadas}
+                  </p>
+                  <p className="step1_2_text">
+                    Total de cuotas bonificadas:{" "}
+                    {infoGrupo.InfoGrupoProducto.TotalCuotasBonificadas}
+                  </p>
+                </>
+              )}
             </>
           ) : (
             <>

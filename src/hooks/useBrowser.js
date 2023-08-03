@@ -1,15 +1,8 @@
 const useBrowser = () => {
-  var test = function (regexp) {
-    return regexp.test(window.navigator.userAgent);
-  };
-  let answer;
-  switch (true) {
-    case test(/safari/i):
-      answer = true;
-    default:
-      answer = false;
-  }
-  return answer;
+  var OSName;
+  if (window.navigator.userAgent.indexOf("Mac") != -1) OSName = true;
+  else OSName = false;
+  return OSName;
 };
 
 export default useBrowser;

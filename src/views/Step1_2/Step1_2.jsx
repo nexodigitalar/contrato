@@ -252,20 +252,20 @@ const Step1_2 = ({ changePage }) => {
                     <span className="gray">bonificadas</span>
                   </h3>
                   <p className="step1_2_text">
-                    Acá van todas las observaciones de las condiciones
-                    particularesAcá van todas las observaciones de las
-                    condiciones particularesAcá van todas las observaciones de
-                    las condiciones particularesAcá van todas las observaciones
-                    de las condiciones particularesAcá van todas las
-                    observaciones de las condiciones particularesAcá van todas
-                    las observaciones de las condiciones particularesAcá van
-                    todas las observaciones de las condiciones particularesAcá
-                    van todas las observaciones de las condiciones
-                    particularesAcá van todas las observaciones de las
-                    condiciones particularesAcá van todas las observaciones de
-                    las condiciones particularesAcá van todas las observaciones
-                    de las condiciones particularesAcá van todas las
-                    observaciones de las condiciones particulares
+                    Tipo de Bonificación:{" "}
+                    {infoGrupo.InfoGrupoProducto.BonificacionTipo}
+                  </p>
+                  <p className="step1_2_text">
+                    Bonificación Nombre:{" "}
+                    {infoGrupo.InfoGrupoProducto.BonificacionNombre}
+                  </p>
+                  <p className="step1_2_text">
+                    Cuotas bonificadas:{" "}
+                    {infoGrupo.InfoGrupoProducto.CuotasBonificadas}
+                  </p>
+                  <p className="step1_2_text">
+                    Total de cuotas bonificadas:{" "}
+                    {infoGrupo.InfoGrupoProducto.TotalCuotasBonificadas}
                   </p>
                 </>
               )}

@@ -624,8 +624,6 @@ const Step4 = ({ images }) => {
     let reader = new FileReader();
     reader.readAsDataURL(images[index].ciFrente);
 
-    console.log(images[index].ciFrente);
-
     return new Promise((resolve, reject) => {
       reader.onload = async function setFile() {
         var arrayAux = [];

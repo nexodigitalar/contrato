@@ -24,6 +24,15 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
   const ids = useSelector((state) => state.crm.ids);
 
   useEffect(() => {
+    let tel = usuario[0].telefono.toString();
+    if (tel.charAt(0) == 0) tel = tel.slice(1, tel.length);
+    setPhone({
+      ...phone,
+      number: "+" + usuario[0].telefonoCod + " " + parseInt(tel),
+    });
+  }, []);
+
+  useEffect(() => {
     if (smsSent) {
       EnvioSMSContratoOnLine();
     }
@@ -36,7 +45,11 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
   }, [validated]);
 
   const EnvioSMSContratoOnLine = async () => {
-    console.log("Enviando mensaje...");
+    let tel = usuario[0].telefono.toString();
+    if (tel.charAt(0) == 0) tel = tel.slice(1, tel.length);
+
+    console.log("El código se manda al:", usuario[0].telefonoCod + tel);
+
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/EnvioSMSContratoOnLine",
       {
@@ -48,7 +61,7 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
           pUsuario: import.meta.env.VITE_USUARIO,
           pPassword: import.meta.env.VITE_PASSWORD,
           pVentaOLId: ids.ventaId,
-          pTelMovil: usuario[0].telefonoCod + usuario[0].telefono,
+          pTelMovil: usuario[0].telefonoCod + tel,
           pMsjSMS: "Tu PIN de validacion es: " + numberValidation,
         }),
       }
