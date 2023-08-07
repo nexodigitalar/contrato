@@ -49,7 +49,7 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
     if (tel.charAt(0) == 0) tel = tel.slice(1, tel.length);
 
     await fetch(
-      "http://190.64.74.3:8234/rest/APIConsorcio/EnvioSMSContratoOnLine",
+      "https://reporteconsorcio.com.uy/rest/APIConsorcio/EnvioSMSContratoOnLine",
       {
         method: "POST",
         headers: {

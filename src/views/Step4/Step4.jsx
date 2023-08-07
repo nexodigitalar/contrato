@@ -82,7 +82,7 @@ const Step4 = ({ images }) => {
     let userDoc = checkLengthCedula(user);
     try {
       const response = await fetch(
-        "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
+        "https://reporteconsorcio.com.uy/rest/APIConsorcio/ActualizarClienteCRM",
         {
           method: "POST",
           headers: {
@@ -177,7 +177,7 @@ const Step4 = ({ images }) => {
     departamentoCod = departamentoCod ? departamentoCod.cod : 0;
     try {
       const response = await fetch(
-        "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
+        "https://reporteconsorcio.com.uy/rest/APIConsorcio/RegistrarClienteGestion",
         {
           method: "POST",
           headers: {
@@ -339,7 +339,7 @@ const Step4 = ({ images }) => {
     let userDoc = checkLengthCedula(user);
     try {
       const responseUser = await fetch(
-        "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
+        "https://reporteconsorcio.com.uy/rest/APIConsorcio/ActualizarClienteCRM",
         {
           method: "POST",
           headers: {
@@ -439,7 +439,7 @@ const Step4 = ({ images }) => {
     departamentoCod = departamentoCod ? departamentoCod.cod : 0;
     try {
       const responseUser = await fetch(
-        "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteGestion",
+        "https://reporteconsorcio.com.uy/rest/APIConsorcio/RegistrarClienteGestion",
         {
           method: "POST",
           headers: {
@@ -641,7 +641,7 @@ const Step4 = ({ images }) => {
     let cropExtension = extension.replace("image/", "");
     try {
       const response = await fetch(
-        "http://190.64.74.3:8234/rest/APIConsorcio/WSCedulaContratoOnLine",
+        "https://reporteconsorcio.com.uy/rest/APIConsorcio/WSCedulaContratoOnLine",
         {
           method: "POST",
           headers: {
@@ -674,7 +674,7 @@ const Step4 = ({ images }) => {
   async function AltaContratoGestion() {
     try {
       const response = await fetch(
-        "http://190.64.74.3:8234/rest/APIConsorcio/AltaContratoGestion",
+        "https://reporteconsorcio.com.uy/rest/APIConsorcio/AltaContratoGestion",
         {
           method: "POST",
           headers: {
@@ -706,7 +706,7 @@ const Step4 = ({ images }) => {
     let userDoc = checkLengthCedula(usuario[0]);
     try {
       const response = await fetch(
-        "http://190.64.74.3:8234/rest/APIConsorcio/ConfirmarRechazarContrato",
+        "https://reporteconsorcio.com.uy/rest/APIConsorcio/ConfirmarRechazarContrato",
         {
           method: "POST",
           headers: {

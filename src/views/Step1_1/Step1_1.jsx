@@ -18,7 +18,6 @@ import indice2 from "@/assets/img/indice2.png";
 
 /* Data JSON */
 import text from "@/utils/text.json";
-import ReactHtmlParser from "react-html-parser";
 
 /* Components */
 import Header from "@/components/Header/Header";

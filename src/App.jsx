@@ -54,24 +54,6 @@ const App = () => {
 
   const getDataFromLocal = () => {
     let data = JSON.parse(localStorage.getItem("contrato"));
-    /*     let data = {
-      nombre: "Alwyn",
-      apellido: "Mimmack",
-      email: "amimmack2j@businesswire.com",
-      telefono: "4438698453",
-      cuoCap: "CAPITAL",
-      cuotas: "715",
-      entrega: "17/02/23",
-      moneda: "USD",
-      monto: "165000",
-      plazo: "300",
-      simulador: "Diferencial Dolares",
-      codigo: "92",
-      indice: "0",
-      espera: "1200",
-      normal: "1300",
-      final: "1500",
-    }; */
 
     if (data) {
       dispatch(setData(data));
@@ -91,7 +73,7 @@ const App = () => {
 
   const RegistrarClienteCRM = async (data) => {
     await fetch(
-      "http://190.64.74.3:8234/rest/APIConsorcio/RegistrarClienteCRM",
+      "https://reporteconsorcio.com.uy/rest/APIConsorcio/RegistrarClienteCRM",
       {
         method: "POST",
         headers: {
@@ -144,17 +126,20 @@ const App = () => {
   };
 
   const TomarNumeroCRM = async (venta) => {
-    await fetch("http://190.64.74.3:8234/rest/APIConsorcio/TomarNumeroCRM", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        pUsuario: import.meta.env.VITE_USUARIO,
-        pPassword: import.meta.env.VITE_PASSWORD,
-        pVentaOLId: venta,
-      }),
-    })
+    await fetch(
+      "https://reporteconsorcio.com.uy/rest/APIConsorcio/TomarNumeroCRM",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          pUsuario: import.meta.env.VITE_USUARIO,
+          pPassword: import.meta.env.VITE_PASSWORD,
+          pVentaOLId: venta,
+        }),
+      }
+    )
       .then((response) => response.json())
       .then((data) => {
         if (data.pCodigoRespuesta == "00") {
@@ -171,7 +156,7 @@ const App = () => {
 
   const InformacionGrupoContratoOnLine = async (grupoId, venta) => {
     await fetch(
-      "http://190.64.74.3:8234/rest/APIConsorcio/InformacionGrupoContratoOnLine",
+      "https://reporteconsorcio.com.uy/rest/APIConsorcio/InformacionGrupoContratoOnLine",
       {
         method: "POST",
         headers: {
