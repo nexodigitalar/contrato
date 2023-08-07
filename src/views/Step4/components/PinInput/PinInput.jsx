@@ -5,15 +5,11 @@ import "./PinInput.scss";
 import Input from "@/components/Input/Input";
 
 /* Hooks */
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const PinInput = ({ numberValidation, setValidated }) => {
   const [pinTyped, setPinTyped] = useState();
   const [error, setError] = useState(true);
-
-  useEffect(() => {
-    console.log("Número para validar:", numberValidation);
-  }, [numberValidation]);
 
   const validatePin = (e) => {
     setPinTyped(e);

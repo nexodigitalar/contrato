@@ -2,13 +2,12 @@
 import "./App.scss";
 
 /* Hooks */
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setData } from "@/store/dataSlice/dataSlice";
 import { setId } from "@/store/crmSlice/crmSlice";
 import { setGrupo, setIdConfirmation } from "@/store/crmSlice/crmSlice";
-import { setError } from "@/store/errorSlice/errorSlice";
 
 /* Components */
 import Step1 from "@/views/Step1/Step1";
@@ -41,9 +40,21 @@ const App = () => {
     getDataFromLocal();
   }, []);
 
+  useEffect(() => {
+    window.addEventListener("beforeunload", removeLocalStorage);
+    return () => {
+      window.removeEventListener("beforeunload", removeLocalStorage);
+    };
+  }, []);
+
+  const removeLocalStorage = (e) => {
+    localStorage.removeItem("contrato");
+    e.returnValue = "";
+  };
+
   const getDataFromLocal = () => {
     let data = JSON.parse(localStorage.getItem("contrato"));
-    /* let data = {
+    /*     let data = {
       nombre: "Alwyn",
       apellido: "Mimmack",
       email: "amimmack2j@businesswire.com",
@@ -62,15 +73,19 @@ const App = () => {
       final: "1500",
     }; */
 
-    dispatch(setData(data));
-    if (!registrarCliente.ventaId) {
-      RegistrarClienteCRM(data);
-    }
+    if (data) {
+      dispatch(setData(data));
+      if (!registrarCliente.ventaId) {
+        RegistrarClienteCRM(data);
+      }
 
-    if (data.plazo == 200) {
-      document.documentElement.setAttribute("data-theme", "cristal");
+      if (data.plazo == 200) {
+        document.documentElement.setAttribute("data-theme", "cristal");
+      } else {
+        document.documentElement.setAttribute("data-theme", "pimba");
+      }
     } else {
-      document.documentElement.setAttribute("data-theme", "pimba");
+      window.location.href = "https://consorcio.uy/";
     }
   };
 
@@ -110,7 +125,6 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("Registrar cliente CRM", data);
         if (data.pCodigoRespuesta == "00") {
           dispatch(
             setId({
@@ -121,14 +135,11 @@ const App = () => {
           );
           TomarNumeroCRM(data.pVentaOLId);
         } else {
-          dispatch(
-            setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
-          );
           dispatch(changePage(5));
         }
       })
-      .catch((err) => {
-        console.log(err.message);
+      .catch(() => {
+        dispatch(changePage(5));
       });
   };
 
@@ -146,19 +157,15 @@ const App = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("TomarNumeroCRM", data);
         if (data.pCodigoRespuesta == "00") {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
           dispatch(setIdConfirmation(data.pGrupo + "-" + data.pGrupoNumero));
         } else {
-          dispatch(
-            setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
-          );
           dispatch(changePage(5));
         }
       })
-      .catch((err) => {
-        console.log(err.message);
+      .catch(() => {
+        dispatch(changePage(5));
       });
   };
 
@@ -180,19 +187,15 @@ const App = () => {
     )
       .then((response) => response.json())
       .then((data) => {
-        console.log("InformacionGrupoContratoOnLine", data);
         if (data.pCodigoRespuesta == "00") {
           dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
         } else {
-          dispatch(
-            setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
-          );
           dispatch(changePage(5));
         }
         setSpinner(false);
       })
-      .catch((err) => {
-        console.log(err.message);
+      .catch(() => {
+        dispatch(changePage(5));
       });
   };
 

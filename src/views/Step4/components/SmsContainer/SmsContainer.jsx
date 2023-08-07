@@ -48,8 +48,6 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
     let tel = usuario[0].telefono.toString();
     if (tel.charAt(0) == 0) tel = tel.slice(1, tel.length);
 
-    console.log("El código se manda al:", usuario[0].telefonoCod + tel);
-
     await fetch(
       "http://190.64.74.3:8234/rest/APIConsorcio/EnvioSMSContratoOnLine",
       {
@@ -67,9 +65,6 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
       }
     )
       .then((response) => response.json())
-      .then((data) => {
-        console.log(data);
-      })
       .catch((err) => {
         console.log(err.message);
       });

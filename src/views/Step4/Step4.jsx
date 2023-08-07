@@ -17,7 +17,6 @@ import { useSelector, useDispatch } from "react-redux";
 import useFormatNumber from "@/hooks/useFormatNumber";
 import { useState, useEffect } from "react";
 import { blockPages, changePage } from "@/store/pageSlice/pageSlice";
-import { setError } from "@/store/errorSlice/errorSlice";
 
 import countries from "@/utils/countries.json";
 import departamentos from "@/utils/departamentos.json";
@@ -81,7 +80,6 @@ const Step4 = ({ images }) => {
 
   async function ActualizarClienteCRM(user) {
     let userDoc = checkLengthCedula(user);
-    /* console.log("ID primer cliente:", ids.cliId); */
     try {
       const response = await fetch(
         "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
@@ -160,18 +158,13 @@ const Step4 = ({ images }) => {
 
       const data = await response.json();
 
-      console.log("RESPUESTA ActualizarClienteCRM primer cliente:", data);
-
       if (data.pCodigoRespuesta == "00") {
         RegistrarClienteGestion(user);
       } else {
-        dispatch(
-          setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
-        );
         dispatch(changePage(5));
       }
     } catch (error) {
-      console.error("Ocurrió un error:", error);
+      dispatch(changePage(5));
     }
   }
 
@@ -323,8 +316,6 @@ const Step4 = ({ images }) => {
 
       const data = await response.json();
 
-      console.log("RESPUESTA RegistrarClienteGestion primer cliente:", data);
-
       if (data.pCodigoRespuesta == "00") {
         if (usuario.length > 1) {
           mapUsers(user);
@@ -335,13 +326,10 @@ const Step4 = ({ images }) => {
           setSpinner(false);
         }
       } else {
-        dispatch(
-          setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
-        );
         dispatch(changePage(5));
       }
     } catch (error) {
-      console.error("Ocurrió un error:", error);
+      dispatch(changePage(5));
     }
   }
 
@@ -349,7 +337,6 @@ const Step4 = ({ images }) => {
 
   async function ActualizarClienteCRMOther(user, i) {
     let userDoc = checkLengthCedula(user);
-    console.log("Actualizar otro cliente");
     try {
       const responseUser = await fetch(
         "http://190.64.74.3:8234/rest/APIConsorcio/ActualizarClienteCRM",
@@ -428,11 +415,6 @@ const Step4 = ({ images }) => {
 
       const infoUser = await responseUser.json();
 
-      console.log(
-        "RESPUESTA ActualizarClienteCRMOther otro cliente:",
-        infoUser
-      );
-
       if (infoUser.pCodigoRespuesta === "00") {
         await RegistrarClienteGestionOther(
           user,
@@ -441,15 +423,10 @@ const Step4 = ({ images }) => {
           i
         );
       } else {
-        dispatch(
-          setError(
-            `${infoUser.pCodigoRespuesta}: ${infoUser.pMensajeRespuesta}`
-          )
-        );
         dispatch(changePage(5));
       }
     } catch (error) {
-      console.error("Ocurrió un error:", error);
+      dispatch(changePage(5));
     }
   }
 
@@ -601,20 +578,14 @@ const Step4 = ({ images }) => {
 
       const info = await responseUser.json();
 
-      console.log("RESPUESTA RegistrarClienteGestionOther otro cliente:", info);
-
       if (info.pCodigoRespuesta === "00") {
-        console.log("Terminado cliente:", idUser);
         await sendFrenteFile(userDoc, i + 1);
         await sendDorsoFile(userDoc, i + 1);
       } else {
-        dispatch(
-          setError(`${info.pCodigoRespuesta}: ${info.pMensajeRespuesta}`)
-        );
         dispatch(changePage(5));
       }
     } catch (error) {
-      console.error("Ocurrió un error:", error);
+      dispatch(changePage(5));
     }
   }
 
@@ -691,18 +662,12 @@ const Step4 = ({ images }) => {
 
       const info = await response.json();
 
-      console.log("WSCedulaContratoOnLine:", info);
-
       if (info.pCodigoRespuesta == "00") {
-        console.log("ok", type);
       } else {
-        dispatch(
-          setError(`${info.pCodigoRespuesta}: ${info.pMensajeRespuesta}`)
-        );
         dispatch(changePage(5));
       }
     } catch (error) {
-      console.error("Ocurrió un error:", error);
+      dispatch(changePage(5));
     }
   }
 
@@ -725,31 +690,20 @@ const Step4 = ({ images }) => {
 
       const data = await response.json();
 
-      console.log("AltaContratoGestion:", data);
-
       if (data.pCodigoRespuesta === "00") {
         setContratoId(data.pContratoCodigo);
         setSpinner(false);
       } else {
-        dispatch(
-          setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
-        );
         dispatch(changePage(5));
       }
     } catch (error) {
-      console.error("Ocurrió un error:", error);
+      dispatch(changePage(5));
     }
   }
 
   async function ConfirmarRechazarContrato() {
     setSpinner(true);
     let userDoc = checkLengthCedula(usuario[0]);
-    console.log("ConfirmarRechazarContrato", {
-      pVentaOLId: ids.ventaId,
-      pNroDoc: userDoc,
-      pContratoCodigo: contratoId,
-      pConfirmarRechazar: "C",
-    });
     try {
       const response = await fetch(
         "http://190.64.74.3:8234/rest/APIConsorcio/ConfirmarRechazarContrato",
@@ -771,19 +725,14 @@ const Step4 = ({ images }) => {
 
       const data = await response.json();
 
-      console.log("ConfirmarRechazarContrato:", data);
-
       if (data.pCodigoRespuesta === "00") {
         dispatch(changePage(6));
         setSpinner(false);
       } else {
-        dispatch(
-          setError(`${data.pCodigoRespuesta}: ${data.pMensajeRespuesta}`)
-        );
         dispatch(changePage(5));
       }
     } catch (error) {
-      console.error("Ocurrió un error:", error);
+      dispatch(changePage(5));
     }
   }
 

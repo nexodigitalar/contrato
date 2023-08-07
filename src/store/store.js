@@ -4,7 +4,6 @@ import dataSlice from "./dataSlice/dataSlice";
 import userSlice from "./userSlice/userSlice";
 import validationSlice from "./validationSlice/validationSlice";
 import crmSlice from "./crmSlice/crmSlice";
-import errorSlice from "./errorSlice/errorSlice";
 
 export const store = configureStore({
   reducer: {
@@ -13,7 +12,6 @@ export const store = configureStore({
     user: userSlice,
     validation: validationSlice,
     crm: crmSlice,
-    error: errorSlice,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware({

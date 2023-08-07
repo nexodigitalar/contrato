@@ -8,7 +8,6 @@ import { useEffect } from "react";
 import Button from "@/components/Button/Button";
 
 const ErrorPage = () => {
-  const errorInfo = useSelector((state) => state.error);
   const idConfirmation = useSelector((state) => state.crm.idConfirmation);
 
   useEffect(() => {
@@ -33,7 +32,6 @@ const ErrorPage = () => {
             </span>{" "}
             ha sido <span className="gray">rechazado</span>.
           </h2>
-          <p className="error_text">{errorInfo.title}</p>
 
           <p className="error_text">
             Ante cualquier dificultad no dude en consultar con su asesor
@@ -42,7 +40,7 @@ const ErrorPage = () => {
           </p>
 
           <div className="error_buttonContainer">
-            <a href="http://webtest.consorciouruguay.com/">
+            <a href="https://consorcio.uy/">
               <Button text="INTENTAR NUEVAMENTE" back={true} next={false} />
             </a>
             <a
