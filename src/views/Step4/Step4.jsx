@@ -93,8 +93,8 @@ const Step4 = ({ images }) => {
             pPassword: import.meta.env.VITE_PASSWORD,
             pVentaOLId: ids.ventaId,
             pSDTActualizarClienteCRM: {
-              EmpresaId: 0,
-              CliId: 0,
+              EmpresaId: ids.empresaId,
+              CliId: ids.cliId,
               EmpresaNombre: "",
               EmpresaClienteUlt: 0,
               CliNom: user.primerNombre,
@@ -350,8 +350,8 @@ const Step4 = ({ images }) => {
             pPassword: import.meta.env.VITE_PASSWORD,
             pVentaOLId: ids.ventaId,
             pSDTActualizarClienteCRM: {
-              EmpresaId: 0,
-              CliId: 0,
+              EmpresaId: ids.empresaId,
+              CliId: ids.cliId,
               EmpresaNombre: "",
               EmpresaClienteUlt: 0,
               CliNom: user.primerNombre,
