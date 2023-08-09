@@ -26,7 +26,7 @@ const ErrorPage = () => {
           <img src={error} alt="check" className="error_img" />
 
           <h2 className="error_title">
-            Contrato{" "}
+            El contrato{" "}
             <span className="gray">
               {idConfirmation === undefined ? "" : idConfirmation}
             </span>{" "}

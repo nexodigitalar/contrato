@@ -2,7 +2,7 @@
 import "./App.scss";
 
 /* Hooks */
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect } from "react";
 import { Routes, Route, useLocation } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { setData } from "@/store/dataSlice/dataSlice";
@@ -54,7 +54,7 @@ const App = () => {
 
   const getDataFromLocal = () => {
     let data = JSON.parse(localStorage.getItem("contrato"));
-    /*    let data = {
+    /* let data = {
       nombre: "Evania",
       apellido: "Flook",
       email: "eflook5@webeden.co.uk",
@@ -65,7 +65,7 @@ const App = () => {
       monto: "165000",
       plazo: "300",
       simulador: "Diferencial Dolares",
-      codigo: "92",
+      codigo: "90",
       indice: "0",
       espera: "",
       normal: "",
@@ -135,8 +135,7 @@ const App = () => {
           );
           TomarNumeroCRM(data.pVentaOLId);
         } else {
-          console.log(data);
-          /*    dispatch(changePage(5)); */
+          dispatch(changePage(5));
         }
       })
       .catch(() => {
@@ -162,8 +161,7 @@ const App = () => {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
           dispatch(setIdConfirmation(data.pGrupo + "-" + data.pGrupoNumero));
         } else {
-          console.log(data);
-          /* dispatch(changePage(5)); */
+          dispatch(changePage(5));
         }
       })
       .catch(() => {
@@ -189,8 +187,7 @@ const App = () => {
         if (data.pCodigoRespuesta == "00") {
           dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
         } else {
-          console.log(data);
-          /*           dispatch(changePage(5)); */
+          dispatch(changePage(5));
         }
         setSpinner(false);
       })

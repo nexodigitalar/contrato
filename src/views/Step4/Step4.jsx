@@ -164,8 +164,7 @@ const Step4 = ({ images }) => {
       if (data.pCodigoRespuesta == "00") {
         RegistrarClienteGestion(user);
       } else {
-        console.log(data);
-        /*      dispatch(changePage(5)); */
+        dispatch(changePage(5));
       }
     } catch (error) {
       dispatch(changePage(5));
@@ -465,8 +464,7 @@ const Step4 = ({ images }) => {
           setSpinner(false);
         }
       } else {
-        console.log(data);
-        /*         dispatch(changePage(5)); */
+        dispatch(changePage(5));
       }
     } catch (error) {
       dispatch(changePage(5));
@@ -811,8 +809,7 @@ const Step4 = ({ images }) => {
 
       if (info.pCodigoRespuesta == "00") {
       } else {
-        console.log(info);
-        /*   dispatch(changePage(5)); */
+        dispatch(changePage(5));
       }
     } catch (error) {
       dispatch(changePage(5));
@@ -843,8 +840,7 @@ const Step4 = ({ images }) => {
         dispatch(setCodContrato(data.pContratoCodigo));
         setSpinner(false);
       } else {
-        console.log(data);
-        /*   dispatch(changePage(5)); */
+        dispatch(changePage(5));
       }
     } catch (error) {
       dispatch(changePage(5));
@@ -879,8 +875,7 @@ const Step4 = ({ images }) => {
         dispatch(changePage(6));
         setSpinner(false);
       } else {
-        console.log(data);
-        /*         dispatch(changePage(5)); */
+        dispatch(changePage(5));
       }
     } catch (error) {
       dispatch(changePage(5));
