@@ -36,6 +36,17 @@
         margin-bottom: $margin_lg;
         width: 80%;
       }
+      .confirmation_pdfContainer {
+        @include flex(column, center, flex-start);
+        gap: 16px;
+        margin-bottom: 32px;
+        .confirmation_link {
+          @include primaryFont($size_xs);
+          color: $neutral_dark;
+          cursor: pointer;
+          text-decoration: underline;
+        }
+      }
       .confirmation_text {
         @include primaryFont($size_sm);
         color: $neutral_dark;
@@ -104,6 +115,9 @@
           @include primaryFont($size_md);
           margin: $margin_sm 0;
           width: 100%;
+        }
+        .confirmation_pdfContainer {
+          margin: 22px 0;
         }
         .confirmation_text {
           @include primaryFont($size_sm);

@@ -54,6 +54,24 @@ const App = () => {
 
   const getDataFromLocal = () => {
     let data = JSON.parse(localStorage.getItem("contrato"));
+    /*  let data = {
+      nombre: "Odo",
+      apellido: "Clelle",
+      email: "oclelle4@1688.com",
+      telefono: "9361989725",
+      cuoCap: "CAPITAL",
+      cuotas: "715",
+      entrega: "17/02/23",
+      moneda: "USD",
+      monto: "165000",
+      plazo: "300",
+      simulador: "Pesos Ajustables",
+      codigo: "90",
+      indice: "0",
+      espera: "",
+      normal: "",
+      final: "",
+    }; */
 
     if (data) {
       dispatch(setData(data));
@@ -73,7 +91,8 @@ const App = () => {
 
   const RegistrarClienteCRM = async (data) => {
     await fetch(
-      "https://reporteconsorcio.com.uy/rest/APIConsorcio/RegistrarClienteCRM",
+      `${import.meta.env.VITE_URL}/RegistrarClienteCRM`,
+
       {
         method: "POST",
         headers: {
@@ -117,7 +136,8 @@ const App = () => {
           );
           TomarNumeroCRM(data.pVentaOLId);
         } else {
-          dispatch(changePage(5));
+          console.log(data);
+          /*    dispatch(changePage(5)); */
         }
       })
       .catch(() => {
@@ -126,27 +146,25 @@ const App = () => {
   };
 
   const TomarNumeroCRM = async (venta) => {
-    await fetch(
-      "https://reporteconsorcio.com.uy/rest/APIConsorcio/TomarNumeroCRM",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          pUsuario: import.meta.env.VITE_USUARIO,
-          pPassword: import.meta.env.VITE_PASSWORD,
-          pVentaOLId: venta,
-        }),
-      }
-    )
+    await fetch(`${import.meta.env.VITE_URL}/TomarNumeroCRM`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pUsuario: import.meta.env.VITE_USUARIO,
+        pPassword: import.meta.env.VITE_PASSWORD,
+        pVentaOLId: venta,
+      }),
+    })
       .then((response) => response.json())
       .then((data) => {
         if (data.pCodigoRespuesta == "00") {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
           dispatch(setIdConfirmation(data.pGrupo + "-" + data.pGrupoNumero));
         } else {
-          dispatch(changePage(5));
+          console.log(data);
+          /* dispatch(changePage(5)); */
         }
       })
       .catch(() => {
@@ -155,27 +173,25 @@ const App = () => {
   };
 
   const InformacionGrupoContratoOnLine = async (grupoId, venta) => {
-    await fetch(
-      "https://reporteconsorcio.com.uy/rest/APIConsorcio/InformacionGrupoContratoOnLine",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          pUsuario: import.meta.env.VITE_USUARIO,
-          pPassword: import.meta.env.VITE_PASSWORD,
-          pGrupo: grupoId,
-          pVentaOLId: venta,
-        }),
-      }
-    )
+    await fetch(`${import.meta.env.VITE_URL}/InformacionGrupoContratoOnLine`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pUsuario: import.meta.env.VITE_USUARIO,
+        pPassword: import.meta.env.VITE_PASSWORD,
+        pGrupo: grupoId,
+        pVentaOLId: venta,
+      }),
+    })
       .then((response) => response.json())
       .then((data) => {
         if (data.pCodigoRespuesta == "00") {
           dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
         } else {
-          dispatch(changePage(5));
+          console.log(data);
+          /*           dispatch(changePage(5)); */
         }
         setSpinner(false);
       })

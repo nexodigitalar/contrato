@@ -15,6 +15,8 @@ import useValidate from "@/hooks/useValidate";
 import countries from "@/utils/countries.json";
 import departamentos from "@/utils/departamentos.json";
 import tipoIngreso from "@/utils/tipoIngreso.json";
+import estadoCivil from "@/utils/estadoCivil.json";
+import actividad from "@/utils/actividad.json";
 
 const InputForm = ({ index, setAmountValidations, amountValidations }) => {
   const usuario = useSelector((state) => state.user.usuarios);
@@ -393,15 +395,12 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
             />
           </div>
           <div className="inputForm_div">
-            <SelectInput
+            <SelectMap
               placeholder="* Estado Civíl"
+              toMap={estadoCivil}
               name="estadoCivil"
               usuario={usuario}
               index={index}
-              op1="Soltero/a"
-              op2="Casado/a"
-              op3="Divorciado/a"
-              op4="Viudo/a"
               error={amountValidations[index]?.estadoCivil}
               click={(e) =>
                 setTimeout(() => {
@@ -571,14 +570,27 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
             />
           </div>
           <div className="inputForm_div">
-            <Input
+            <SelectMap
               placeholder="* Actividad principal"
+              toMap={actividad}
               name="actividadPrincipal"
-              value={usuario[index]?.actividadPrincipal || ""}
+              usuario={usuario}
+              index={index}
               error={amountValidations[index]?.actividadPrincipal}
-              click={(e) => {
-                handleInput(e, index),
-                  setTimeout(() => {
+              click={(e) =>
+                setTimeout(() => {
+                  useValidate(
+                    e.target.value,
+                    amountValidations,
+                    index,
+                    "actividadPrincipal",
+                    setAmountValidations
+                  );
+                }, 800)
+              }
+              change={(e) => {
+                {
+                  handleInput(e, index),
                     useValidate(
                       e.target.value,
                       amountValidations,
@@ -586,7 +598,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       "actividadPrincipal",
                       setAmountValidations
                     );
-                  }, 400);
+                }
               }}
               onfocusout={(e) => {
                 useValidate(

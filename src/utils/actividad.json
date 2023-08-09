@@ -1,0 +1,26 @@
+[
+  {
+    "cod": "81",
+    "name": "Empleado"
+  },
+  {
+    "cod": "82",
+    "name": "Empresario"
+  },
+  {
+    "cod": "121",
+    "name": "Jubilado"
+  },
+  {
+    "cod": "152",
+    "name": "Pensionista"
+  },
+  {
+    "cod": "222",
+    "name": "Desocupado"
+  },
+  {
+    "cod": "164",
+    "name": "Profesional"
+  }
+]

@@ -4,6 +4,7 @@ const initialState = {
   ids: {},
   grupo: {},
   idConfirmation: "",
+  codigoContrato: "",
 };
 
 export const crmSlice = createSlice({
@@ -22,9 +23,14 @@ export const crmSlice = createSlice({
       state.idConfirmation = action.payload;
       return state;
     },
+    setCodContrato: (state, action) => {
+      state.codigoContrato = action.payload;
+      return state;
+    },
   },
 });
 
-export const { setGrupo, setId, setIdConfirmation } = crmSlice.actions;
+export const { setGrupo, setId, setIdConfirmation, setCodContrato } =
+  crmSlice.actions;
 
 export default crmSlice.reducer;

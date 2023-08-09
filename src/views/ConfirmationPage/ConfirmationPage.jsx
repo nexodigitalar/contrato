@@ -1,18 +1,26 @@
 import "./ConfirmationPage.scss";
 import check from "@/assets/img/check.png";
-import { useEffect } from "react";
 import wp from "@/assets/img/whatsapp.svg";
 import { useSelector } from "react-redux";
 
 /* Components */
 import Button from "@/components/Button/Button";
 
-/* useEffect(() => {
-  localStorage.removeItem("contrato");
-}, []); */
-
 const ConfirmationPage = () => {
   const idConfirmation = useSelector((state) => state.crm.idConfirmation);
+  const codContrato = useSelector((state) => state.crm.codigoContrato);
+
+  const downloadPdf = (url, name) => {
+    fetch(url).then((response) => {
+      response.blob().then((blob) => {
+        let url = window.URL.createObjectURL(blob);
+        let a = document.createElement("a");
+        a.href = url;
+        a.download = `${name}.pdf`;
+        a.click();
+      });
+    });
+  };
 
   return (
     <div className="confirmation">
@@ -30,6 +38,32 @@ const ConfirmationPage = () => {
             <span className="gray">{idConfirmation}</span> ha finalizado con{" "}
             <span className="gray">éxito</span>.
           </h2>
+
+          <div className="confirmation_pdfContainer">
+            <p
+              className="confirmation_link"
+              onClick={() =>
+                downloadPdf(
+                  `${import.meta.env.VITE_PDF_1}${codContrato}.pdf`,
+                  "CondicionesParticulares"
+                )
+              }
+            >
+              Descargar Condiciones particulares, Anexos y Condiciones generales
+            </p>
+            <p
+              className="confirmation_link"
+              onClick={() =>
+                downloadPdf(
+                  `${import.meta.env.VITE_PDF_2}${codContrato}.pdf`,
+                  "ServiciosElectronicosYPoliticaDePrivacidad"
+                )
+              }
+            >
+              Descargar Servicios Electrónicos y Política de Privacidad
+            </p>
+          </div>
+
           <p className="confirmation_text">
             Ahora resta realizar el pago de la primera cuota para participar del
             próximo sorteo.

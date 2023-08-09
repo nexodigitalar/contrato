@@ -39,6 +39,10 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
   }, [smsSent]);
 
   useEffect(() => {
+    console.log("cod numero", numberValidation);
+  }, [numberValidation]);
+
+  useEffect(() => {
     if (validated && validatePdf) {
       setConfirmContract(false);
     }
@@ -48,22 +52,19 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
     let tel = usuario[0].telefono.toString();
     if (tel.charAt(0) == 0) tel = tel.slice(1, tel.length);
 
-    await fetch(
-      "https://reporteconsorcio.com.uy/rest/APIConsorcio/EnvioSMSContratoOnLine",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          pUsuario: import.meta.env.VITE_USUARIO,
-          pPassword: import.meta.env.VITE_PASSWORD,
-          pVentaOLId: ids.ventaId,
-          pTelMovil: usuario[0].telefonoCod + tel,
-          pMsjSMS: "Tu PIN de validacion es: " + numberValidation,
-        }),
-      }
-    )
+    await fetch(`${import.meta.env.VITE_URL}/EnvioSMSContratoOnLine`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pUsuario: import.meta.env.VITE_USUARIO,
+        pPassword: import.meta.env.VITE_PASSWORD,
+        pVentaOLId: ids.ventaId,
+        pTelMovil: usuario[0].telefonoCod + tel,
+        pMsjSMS: "Tu PIN de validacion es: " + numberValidation,
+      }),
+    })
       .then((response) => response.json())
       .catch((err) => {
         console.log(err.message);
