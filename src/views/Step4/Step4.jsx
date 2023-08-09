@@ -957,8 +957,7 @@ const Step4 = ({ images }) => {
                   </p>
                 </div>
                 {(simulador === "Pesos Ajustables" ||
-                  simulador === "Diferencial Pesos Ajustables" ||
-                  simulador === "Fecha Elegida") && (
+                  simulador === "Diferencial Pesos Ajustables") && (
                   <div className="step4_descriptionContainer">
                     <FontAwesomeIcon
                       className="step4_icon"
