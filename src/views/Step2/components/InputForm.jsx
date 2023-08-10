@@ -99,13 +99,15 @@ const InputForm = ({
   const handleDate = (value, i) => {
     const event = new Date(value);
     const jsonDate = event.setUTCHours(0, 0, 0, 0);
-    const newDate = new Date(jsonDate).toISOString();
+    const newDate = new Date(event).toISOString().replace("Z", "");
 
     const updatedAreas = [...initialValues];
     updatedAreas[i] = {
       ...updatedAreas[i],
       fechaNacimiento: newDate,
     };
+
+    console.log(newDate);
     setInitialValues(updatedAreas);
   };
 

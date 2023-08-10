@@ -164,6 +164,7 @@ const Step4 = ({ images }) => {
       if (data.pCodigoRespuesta == "00") {
         RegistrarClienteGestion(user);
       } else {
+        console.log(data);
         dispatch(changePage(5));
       }
     } catch (error) {
@@ -185,134 +186,6 @@ const Step4 = ({ images }) => {
       (item) => item.name === user.actividadPrincipal
     );
     let monedaCod = user.monedaIngreso === "Pesos Uruguayos" ? 1 : 2;
-    console.log({
-      pUsuario: import.meta.env.VITE_USUARIO,
-      pPassword: import.meta.env.VITE_PASSWORD,
-      pVentaOLId: ids.ventaId,
-      pEmpresaId: ids.empresaId,
-      pCliId: ids.cliId,
-      pSDTRegistrarClienteGestion: {
-        LicenciaCodigo: 1,
-        PersonaCodigo: 0,
-        PersonaNombre1: user.primerNombre,
-        PersonaNombre2: user.segundoNombre,
-        PersonaApellido1: user.primerApellido,
-        PersonaApellido2: user.segundoApellido,
-        PersonaDireccion1: user.calle + " " + user.puertaNumero,
-        PersonaDireccion2: "",
-        PersonaTelefono1: "",
-        PersonaTelefono2: "",
-        PersonaTelefonoMovil1: user.telefonoCod + user.telefono,
-        PersonaTelefonoMovil2: "",
-        PersonaFechaNacimiento: user.fechaNacimiento,
-        EstadoCivilCodigo: estadoCivilCod.cod,
-        EstadoCivilNombre: user.estadoCivil,
-        PersonaPaisCodigo: "",
-        PersonaPaisNombre: user.nacionalidad,
-        PersonaMail1: user.email,
-        PersonaMail2: "",
-        PersonaSexo: user.sexo,
-        PersonaPaisResidenciaCodigo: paisCod.alpha2,
-        PersonaPaisResidenciaNombre: user.pais,
-        PersonaDepartamentoResCod: departamentoCod,
-        PersonaDepartamentoResNom: user.departamento,
-        PersonaCiudadResCod: "",
-        PersonaCiudadResNom: "",
-        PersonaCalle: user.calle,
-        PersonaPuerta: user.puertaNumero,
-        PersonaApartamento: "",
-        PersonaCodigoPostal: "",
-        PersonaSectorActividadCodigo: actividadCod.cod,
-        PersonaSectorActividadNombre: user.actividadPrincipal,
-        PersonaSectorActividadBCUCodigo: 0,
-        PersonaSectorActividadBCUNombre: "",
-        PersonaSectorActividadCIIuCodigo: 0,
-        PersonaSectorActividadCIIUNombre: "",
-        PersonaSeparacionBienes: false,
-        PersonaZonaCodigo: 0,
-        PersonaZonaNombre: "",
-        PersonaApellidosyNombres: "",
-        PersonaLocalidadNombre: "",
-        PersonaDocumento: userDoc,
-        PersonaOrigenInfo: "",
-        PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
-        PersonaEsPEP: user.pep,
-        PersonaRelacionContacto: {
-          PersonaRelacionContactoItems: [
-            {
-              EmpresaId: ids.empresaId,
-              CliId: ids.cliId,
-              CliNom: user.primerNombre,
-              CliApe1: user.primerApellido,
-              CliApe2: user.segundoApellido,
-              CliDir: user.calle + user.puertaNumero,
-              CliTel: "",
-              CliMovil: user.telefonoCod + user.telefono,
-            },
-          ],
-        },
-        PersonasRelacion: {
-          PersonasRelacionItems: [
-            {
-              PersonaCodigoRelacion: 0,
-              PersonaApellidoRelacion: "",
-              PersonaNombreRelacion: "",
-              PersonaRelacionCodigo: "",
-              PersonaRelacionNumeroDocumento: "",
-              PersonaRelacionOrigenInfo: "",
-              PersonaRelacionOrigenFechaAlta: "0000-00-00T00:00:00",
-            },
-          ],
-        },
-        TipoDocumento: {
-          TipoDocumentoItems: [
-            {
-              PersonaTipoDocumentoCodigo: "CI",
-              PersonaTipoDocumentoNombre: "CI",
-              PersonaNumeroDocumento: userDoc,
-              PersonaDocumentoFechaVencimineto: "2028-05-02T00:00:00",
-              PersonaDocumentoBlobOrdinal: 0,
-              PersonaDocumentoOrigenInfo: "",
-              PersonaDocumentoFechaAltaOrigen: "0000-00-00T00:00:00",
-              PersonaDocumentoPrincipal: true,
-            },
-          ],
-        },
-        PersonaFechaAlta: "0000-00-00T00:00:00",
-        PersonaFechaModificacion: "0000-00-00T00:00:00",
-        PersonaIngresosImporte: user.ingresosMensuales,
-        PersonaIngresosMonedaCodigo: monedaCod,
-        PersonaIngresosMonedaNombre: user.monedaIngreso,
-        PersonaRiesgoLavado: 0,
-        PersonaResidente: user.residenteUruguayo,
-        PersonaLugarTrabajoNombre: user.empresaTrabaja,
-        PersonaLugarTrabajoDireccion: "Rincon 649",
-        PersonaLugarTrabajoCargo: "TI",
-        PersonaOrigenDeFondos: user.origenFondos,
-        PersonaRubroEmpresa: user.rubroEmpresa,
-        PersonaConyugeCodigo: 0,
-        PersonaConyugeTipoDocumento: "",
-        PersonaConyugeDocumento: "",
-        PersonaConyugeNombre1: "",
-        PersonaConyugeNombre2: "",
-        PersonaConyugeApellido1: "",
-        PersonaConyugeApellido2: "",
-        PersonaConyugeSexo: "",
-        PersonaConyugeFechaNac: "0000-00-00T00:00:00",
-        PersonaConyugeMail: "",
-        PersonaConyugeCelular: "",
-        PersonaConyugeSectorActCod: 0,
-        PersonaConyugeSectorActNombre: "",
-        PersonaConyugeMonedaIngreso: 0,
-        PersonaConyugeMonedaSimbolo: "",
-        PersonaConyugeIngresos: 0,
-        PersonaConyugeTrabajoNombre: "",
-        PersonaConyugeTrabajoDireccion: "",
-        PersonaConyugeTrabajoCargo: "",
-        PersonaConyugeOrigenFondo: "",
-        PersonaConyugeRubro: "",
-      },
-    });
     try {
       const response = await fetch(
         `${import.meta.env.VITE_URL}/RegistrarClienteGestion`,
@@ -422,8 +295,8 @@ const Step4 = ({ images }) => {
               PersonaRiesgoLavado: 0,
               PersonaResidente: user.residenteUruguayo,
               PersonaLugarTrabajoNombre: user.empresaTrabaja,
-              PersonaLugarTrabajoDireccion: "Rincon 649",
-              PersonaLugarTrabajoCargo: "TI",
+              PersonaLugarTrabajoDireccion: "-",
+              PersonaLugarTrabajoCargo: "-",
               PersonaOrigenDeFondos: user.origenFondos,
               PersonaRubroEmpresa: user.rubroEmpresa,
               PersonaConyugeCodigo: 0,
@@ -464,6 +337,7 @@ const Step4 = ({ images }) => {
           setSpinner(false);
         }
       } else {
+        console.log(data);
         dispatch(changePage(5));
       }
     } catch (error) {
@@ -551,16 +425,17 @@ const Step4 = ({ images }) => {
         }
       );
 
-      const infoUser = await responseUser.json();
+      const data = await responseUser.json();
 
-      if (infoUser.pCodigoRespuesta === "00") {
+      if (data.pCodigoRespuesta === "00") {
         await RegistrarClienteGestionOther(
           user,
-          infoUser.pCliId,
-          infoUser.pEmpresaId,
+          data.pCliId,
+          data.pEmpresaId,
           i
         );
       } else {
+        console.log(data);
         dispatch(changePage(5));
       }
     } catch (error) {
@@ -691,8 +566,8 @@ const Step4 = ({ images }) => {
               PersonaRiesgoLavado: 0,
               PersonaResidente: user.residenteUruguayo,
               PersonaLugarTrabajoNombre: user.empresaTrabaja,
-              PersonaLugarTrabajoDireccion: "Rincon 649",
-              PersonaLugarTrabajoCargo: "TI",
+              PersonaLugarTrabajoDireccion: "-",
+              PersonaLugarTrabajoCargo: "-",
               PersonaOrigenDeFondos: user.origenFondos,
               PersonaRubroEmpresa: user.rubroEmpresa,
               PersonaConyugeCodigo: 0,
@@ -721,12 +596,13 @@ const Step4 = ({ images }) => {
         }
       );
 
-      const info = await responseUser.json();
+      const data = await responseUser.json();
 
-      if (info.pCodigoRespuesta === "00") {
+      if (data.pCodigoRespuesta === "00") {
         await sendFrenteFile(userDoc, i + 1);
         await sendDorsoFile(userDoc, i + 1);
       } else {
+        console.log(data);
         dispatch(changePage(5));
       }
     } catch (error) {
@@ -805,10 +681,11 @@ const Step4 = ({ images }) => {
         }
       );
 
-      const info = await response.json();
+      const data = await response.json();
 
-      if (info.pCodigoRespuesta == "00") {
+      if (data.pCodigoRespuesta == "00") {
       } else {
+        console.log(data);
         dispatch(changePage(5));
       }
     } catch (error) {
@@ -840,6 +717,7 @@ const Step4 = ({ images }) => {
         dispatch(setCodContrato(data.pContratoCodigo));
         setSpinner(false);
       } else {
+        console.log(data);
         dispatch(changePage(5));
       }
     } catch (error) {
@@ -875,6 +753,7 @@ const Step4 = ({ images }) => {
         dispatch(changePage(6));
         setSpinner(false);
       } else {
+        console.log(data);
         dispatch(changePage(5));
       }
     } catch (error) {

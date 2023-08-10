@@ -55,10 +55,10 @@ const App = () => {
   const getDataFromLocal = () => {
     let data = JSON.parse(localStorage.getItem("contrato"));
     /* let data = {
-      nombre: "Evania",
-      apellido: "Flook",
-      email: "eflook5@webeden.co.uk",
-      telefono: "4963016740",
+      nombre: "Micky",
+      apellido: "Greensite",
+      email: "mgreensite7@nps.gov",
+      telefono: "3516038709",
       cuoCap: "CAPITAL",
       cuotas: "715",
       moneda: "USD",
@@ -135,6 +135,7 @@ const App = () => {
           );
           TomarNumeroCRM(data.pVentaOLId);
         } else {
+          console.log(data);
           dispatch(changePage(5));
         }
       })
@@ -161,6 +162,7 @@ const App = () => {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
           dispatch(setIdConfirmation(data.pGrupo + "-" + data.pGrupoNumero));
         } else {
+          console.log(data);
           dispatch(changePage(5));
         }
       })
@@ -187,6 +189,7 @@ const App = () => {
         if (data.pCodigoRespuesta == "00") {
           dispatch(setGrupo(data.pSDTInformacionGrupoContratoOnLine));
         } else {
+          console.log(data);
           dispatch(changePage(5));
         }
         setSpinner(false);
