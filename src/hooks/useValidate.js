@@ -73,7 +73,7 @@ const useValidateInput = (
 
         setAmountValidations(newArr);
       } else {
-        if (e[0].size > 10000000) {
+        if (e[0].size > 5000000) {
           newObj = { ...newObj, [position]: false };
           newArr[index] = newObj;
 
@@ -81,14 +81,14 @@ const useValidateInput = (
             const updatedFiles = [...messageFile];
             updatedFiles[index] = {
               ...updatedFiles[index],
-              frente: "El archvio debe pesar menos de 10MB",
+              frente: "El archvio debe pesar menos de 5MB",
             };
             setMessageFile(updatedFiles);
           } else {
             const updatedFiles = [...messageFile];
             updatedFiles[index] = {
               ...updatedFiles[index],
-              dorso: "El archvio debe pesar menos de 10MB",
+              dorso: "El archvio debe pesar menos de 5MB",
             };
             setMessageFile(updatedFiles);
           }

@@ -54,24 +54,24 @@ const App = () => {
 
   const getDataFromLocal = () => {
     let data = JSON.parse(localStorage.getItem("contrato"));
-    /* let data = {
-      nombre: "Micky",
-      apellido: "Greensite",
-      email: "mgreensite7@nps.gov",
-      telefono: "3516038709",
+    /*  let data = {
+      nombre: "Carilyn",
+      apellido: "Hamerton",
+      email: "chamertonc@upenn.edu",
+      telefono: "7072016229",
       cuoCap: "CAPITAL",
       cuotas: "715",
       moneda: "USD",
       monto: "165000",
       plazo: "300",
-      simulador: "Diferencial Dolares",
-      codigo: "90",
+      simulador: "Pesos Fijos",
+      codigo: "91",
       indice: "0",
       espera: "",
       normal: "",
       final: "",
-    }; */
-
+    };
+ */
     if (data) {
       dispatch(setData(data));
       if (!registrarCliente.ventaId) {

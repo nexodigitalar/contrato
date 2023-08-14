@@ -112,7 +112,7 @@ const Step4 = ({ images }) => {
               CliFchLlam: "0000-00-00T00:00:00",
               CliDir: user.calle + user.puertaNumero,
               CliTel: "",
-              CliMovil: user.telefonoCod + user.telefono,
+              CliMovil: user.telefono,
               CliTelTrb: "",
               CliTelInt: "",
               CliMail: user.email,
@@ -211,7 +211,7 @@ const Step4 = ({ images }) => {
               PersonaDireccion2: "",
               PersonaTelefono1: "",
               PersonaTelefono2: "",
-              PersonaTelefonoMovil1: user.telefonoCod + user.telefono,
+              PersonaTelefonoMovil1: user.telefono,
               PersonaTelefonoMovil2: "",
               PersonaFechaNacimiento: user.fechaNacimiento,
               EstadoCivilCodigo: estadoCivilCod.cod,
@@ -256,7 +256,7 @@ const Step4 = ({ images }) => {
                     CliApe2: user.segundoApellido,
                     CliDir: user.calle + user.puertaNumero,
                     CliTel: "",
-                    CliMovil: user.telefonoCod + user.telefono,
+                    CliMovil: user.telefono,
                   },
                 ],
               },
@@ -378,7 +378,7 @@ const Step4 = ({ images }) => {
               CliFchLlam: "0000-00-00T00:00:00",
               CliDir: user.calle + user.puertaNumero,
               CliTel: "",
-              CliMovil: user.telefonoCod + user.telefono,
+              CliMovil: user.telefono,
               CliTelTrb: "",
               CliTelInt: "",
               CliMail: user.email,
@@ -482,7 +482,7 @@ const Step4 = ({ images }) => {
               PersonaDireccion2: "",
               PersonaTelefono1: "",
               PersonaTelefono2: "",
-              PersonaTelefonoMovil1: user.telefonoCod + user.telefono,
+              PersonaTelefonoMovil1: user.telefono,
               PersonaTelefonoMovil2: "",
               PersonaFechaNacimiento: user.fechaNacimiento,
               EstadoCivilCodigo: estadoCivilCod.cod,
@@ -527,7 +527,7 @@ const Step4 = ({ images }) => {
                     CliApe2: user.segundoApellido,
                     CliDir: user.calle + user.puertaNumero,
                     CliTel: "",
-                    CliMovil: user.telefonoCod + user.telefono,
+                    CliMovil: user.telefono,
                   },
                 ],
               },
@@ -660,6 +660,15 @@ const Step4 = ({ images }) => {
 
   async function WSCedulaContratoOnLine(doc, type, image, name, extension) {
     let cropExtension = extension.replace("image/", "");
+
+    console.log("Request de Cedula:", {
+      pVentaOLId: ids.ventaId,
+      pNroDoc: doc,
+      pTipoDoc: type,
+      pDocBase64: image,
+      pDocNombre: name,
+      pDocExtension: cropExtension,
+    });
     try {
       const response = await fetch(
         `${import.meta.env.VITE_URL}/WSCedulaContratoOnLine`,
@@ -684,8 +693,9 @@ const Step4 = ({ images }) => {
       const data = await response.json();
 
       if (data.pCodigoRespuesta == "00") {
+        console.log("Respuesta Cedula", data);
       } else {
-        console.log(data);
+        console.log("Error Cedula", data);
         dispatch(changePage(5));
       }
     } catch (error) {
