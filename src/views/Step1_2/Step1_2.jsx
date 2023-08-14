@@ -248,24 +248,37 @@ const Step1_2 = ({ changePage }) => {
               {infoGrupo.InfoGrupoProducto.CuotasBonificadas.length != 0 && (
                 <>
                   <h3 className="step1_2_title step1_2_detail">
-                    Detalle <span className="color_text">cuotas</span>{" "}
+                    <span className="gray">Detalle</span>{" "}
+                    <span className="color_text">cuotas</span>{" "}
                     <span className="gray">bonificadas</span>
                   </h3>
-                  <p className="step1_2_text">
+                  <p className="step1_2_textSm">
                     Tipo de Bonificación:{" "}
-                    {infoGrupo.InfoGrupoProducto.BonificacionTipo}
+                    {
+                      infoGrupo.InfoGrupoProducto.CuotasBonificadas[0]
+                        .BonificacionTipo
+                    }
                   </p>
-                  <p className="step1_2_text">
+                  <p className="step1_2_textSm">
                     Bonificación Nombre:{" "}
-                    {infoGrupo.InfoGrupoProducto.BonificacionNombre}
+                    {
+                      infoGrupo.InfoGrupoProducto.CuotasBonificadas[0]
+                        .BonificacionNombre
+                    }
                   </p>
-                  <p className="step1_2_text">
+                  <p className="step1_2_textSm">
                     Cuotas bonificadas:{" "}
-                    {infoGrupo.InfoGrupoProducto.CuotasBonificadas}
+                    {
+                      infoGrupo.InfoGrupoProducto.CuotasBonificadas[0]
+                        .CuotasBonificadas
+                    }
                   </p>
-                  <p className="step1_2_text">
+                  <p className="step1_2_textSm">
                     Total de cuotas bonificadas:{" "}
-                    {infoGrupo.InfoGrupoProducto.TotalCuotasBonificadas}
+                    {
+                      infoGrupo.InfoGrupoProducto.CuotasBonificadas[0]
+                        .TotalCuotasBonificadas
+                    }
                   </p>
                 </>
               )}
