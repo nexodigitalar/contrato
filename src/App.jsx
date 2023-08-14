@@ -70,8 +70,8 @@ const App = () => {
       espera: "",
       normal: "",
       final: "",
-    };
- */
+    }; */
+
     if (data) {
       dispatch(setData(data));
       if (!registrarCliente.ventaId) {
