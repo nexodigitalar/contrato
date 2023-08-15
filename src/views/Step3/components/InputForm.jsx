@@ -29,6 +29,10 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     handleInitialValidations();
   }, []);
 
+  useEffect(() => {
+    console.log(amountValidations);
+  }, [amountValidations]);
+
   const handleInitialValidations = () => {
     let values = {
       sexo: "",
@@ -139,6 +143,33 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     const newDate = new Date(event).toISOString().replace("Z", "");
 
     dispatch(updateUsers({ name: e.target.name, index: i, value: newDate }));
+  };
+
+  const checkEstadoCivil = (value, index) => {
+    let newArr = [...amountValidations];
+
+    if (value === "Casado/a" || value === "Concubino/a") {
+      let newObj = newArr[index];
+      newObj = {
+        ...newObj,
+        cedulaConyuge: "",
+        fechaNacimientoConyuge: "",
+        primerNombreConyuge: "",
+        primerApellidoConyuge: "",
+        actividadPrincipalConyuge: "",
+      };
+      newArr[index] = newObj;
+
+      setAmountValidations(newArr);
+    } else {
+      delete newArr[index].cedulaConyuge;
+      delete newArr[index].fechaNacimientoConyuge;
+      delete newArr[index].primerNombreConyuge;
+      delete newArr[index].primerApellidoConyuge;
+      delete newArr[index].actividadPrincipalConyuge;
+
+      setAmountValidations(newArr);
+    }
   };
 
   return (
@@ -452,6 +483,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       "estadoCivil",
                       setAmountValidations
                     );
+                  checkEstadoCivil(e.target.value, index);
                 }
               }}
               onfocusout={(e) => {
