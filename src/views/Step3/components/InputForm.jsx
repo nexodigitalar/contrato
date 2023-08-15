@@ -17,6 +17,7 @@ import departamentos from "@/utils/departamentos.json";
 import tipoIngreso from "@/utils/tipoIngreso.json";
 import estadoCivil from "@/utils/estadoCivil.json";
 import actividad from "@/utils/actividad.json";
+import InputDate from "../../../components/InputDate/InputDate";
 
 const InputForm = ({ index, setAmountValidations, amountValidations }) => {
   const usuario = useSelector((state) => state.user.usuarios);
@@ -125,13 +126,19 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
         "-" +
         editNumber.slice(editNumber.length - 1);
 
-      const updatedAreas = [...initialValues];
-      updatedAreas[i] = {
-        ...updatedAreas[i],
-        [e.target.name]: editNumber,
-      };
-      setInitialValues(updatedAreas);
+      dispatch(
+        updateUsers({ name: e.target.name, index: i, value: editNumber })
+      );
     }
+  };
+
+  const handleDate = (value, i) => {
+    const event = new Date(value);
+    /* Hay que comentarlo para webtest */
+    /*   event.setUTCHours(0, 0, 0, 0); */
+    const newDate = new Date(event).toISOString().replace("Z", "");
+
+    dispatch(updateUsers({ name: e.target.name, index: i, value: newDate }));
   };
 
   return (
@@ -732,7 +739,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                   max={true}
                   placeholder="* Cédula"
                   name="cedulaConyuge"
-                  value={initialValues[index]?.cedulaConyuge || ""}
+                  value={usuario[index]?.cedulaConyuge || ""}
                   error={amountValidations[index]?.cedulaConyuge}
                   type="text"
                   click={(e) => {
@@ -753,6 +760,138 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       amountValidations,
                       index,
                       "cedulaConyuge",
+                      setAmountValidations
+                    );
+                  }}
+                />
+                <InputDate
+                  placeholder="* Fecha de nacimiento"
+                  name="fechaNacimientoConyuge"
+                  valueFecha={usuario[index]?.fechaNacimientoConyuge}
+                  error={amountValidations[index]?.fechaNacimientoConyuge}
+                  click={(value) => {
+                    handleDate(value, index),
+                      useValidate(
+                        value,
+                        amountValidations,
+                        index,
+                        "fechaNacimientoConyuge",
+                        setAmountValidations
+                      );
+                  }}
+                />
+              </div>
+              <div className="inputForm_div">
+                <Input
+                  placeholder="* Primer Nombre"
+                  name="primerNombreConyuge"
+                  value={usuario[index]?.primerNombreConyuge || ""}
+                  error={amountValidations[index]?.primerNombreConyuge}
+                  type="text"
+                  click={(e) => {
+                    handleInput(e, index),
+                      setTimeout(() => {
+                        useValidate(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "primerNombreConyuge",
+                          setAmountValidations
+                        );
+                      }, 400);
+                  }}
+                  onfocusout={(e) => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "primerNombreConyuge",
+                      setAmountValidations
+                    );
+                  }}
+                />
+                <Input
+                  placeholder="Segundo Nombre"
+                  name="segundoNombreConyuge"
+                  value={usuario[index]?.segundoNombreConyuge || ""}
+                  type="text"
+                  click={(e) => handleInput(e, index)}
+                />
+              </div>
+              <div className="inputForm_div">
+                <Input
+                  placeholder="* Primer Apellido"
+                  name="primerApellidoConyuge"
+                  value={usuario[index]?.primerApellidoConyuge || ""}
+                  error={amountValidations[index]?.primerApellidoConyuge}
+                  type="text"
+                  click={(e) => {
+                    handleInput(e, index),
+                      setTimeout(() => {
+                        useValidate(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "primerApellidoConyuge",
+                          setAmountValidations
+                        );
+                      }, 400);
+                  }}
+                  onfocusout={(e) => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "primerApellidoConyuge",
+                      setAmountValidations
+                    );
+                  }}
+                />
+                <Input
+                  placeholder="Segundo Apellido"
+                  name="segundoApellidoConyuge"
+                  value={usuario[index]?.segundoApellidoConyuge || ""}
+                  type="text"
+                  click={(e) => handleInput(e, index)}
+                />
+              </div>
+              <div className="inputForm_div">
+                <SelectMap
+                  placeholder="* Actividad principal"
+                  toMap={actividad}
+                  name="actividadPrincipalConyuge"
+                  usuario={usuario}
+                  index={index}
+                  error={amountValidations[index]?.actividadPrincipalConyuge}
+                  click={(e) =>
+                    setTimeout(() => {
+                      useValidate(
+                        e.target.value,
+                        amountValidations,
+                        index,
+                        "actividadPrincipalConyuge",
+                        setAmountValidations
+                      );
+                    }, 800)
+                  }
+                  change={(e) => {
+                    {
+                      handleInput(e, index),
+                        useValidate(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "actividadPrincipalConyuge",
+                          setAmountValidations
+                        );
+                    }
+                  }}
+                  onfocusout={(e) => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "actividadPrincipalConyuge",
                       setAmountValidations
                     );
                   }}
