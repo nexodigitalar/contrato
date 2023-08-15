@@ -1,7 +1,7 @@
 @import "@/utils/theme.scss";
 
 .inputFile_form {
-  height: 85px;
+  height: 100px;
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -44,6 +44,12 @@
 
   .border_empty {
     border-bottom: 2px solid $neutral;
+  }
+
+  .inputFile_message {
+    @include primaryFont(13px);
+    margin: $margin_xs 0;
+    color: $neutral_dark;
   }
 }
 

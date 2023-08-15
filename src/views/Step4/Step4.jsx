@@ -660,6 +660,15 @@ const Step4 = ({ images }) => {
 
   async function WSCedulaContratoOnLine(doc, type, image, name, extension) {
     let cropExtension = extension.replace("image/", "");
+
+    console.log("Request de Cedula:", {
+      pVentaOLId: ids.ventaId,
+      pNroDoc: doc,
+      pTipoDoc: type,
+      pDocBase64: image,
+      pDocNombre: name,
+      pDocExtension: cropExtension,
+    });
     try {
       const response = await fetch(
         `${import.meta.env.VITE_URL}/WSCedulaContratoOnLine`,
@@ -684,8 +693,9 @@ const Step4 = ({ images }) => {
       const data = await response.json();
 
       if (data.pCodigoRespuesta == "00") {
+        console.log("Respuesta Cedula", data);
       } else {
-        console.log(data);
+        console.log("Error Cedula", data);
         dispatch(changePage(5));
       }
     } catch (error) {

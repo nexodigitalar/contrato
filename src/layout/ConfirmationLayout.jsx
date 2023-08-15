@@ -6,12 +6,12 @@ import NavBar from "@/components/NavBar/NavBar";
 
 const ConfirmationLayout = () => {
   const { plazo } = useSelector((state) => state.data);
-  const { value } = useSelector((state) => state.page.value);
+  const { value } = useSelector((state) => state.page);
 
   return (
     <div>
       <NavBar
-        title={value === 5 ? "Confirmación de" : "Error de"}
+        title={value === 6 ? "Confirmación de" : "Error de"}
         underline="contrato"
         plazo={plazo}
         image={false}

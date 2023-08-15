@@ -53,7 +53,7 @@ a {
 }
 
 .input_error {
-  @include primaryFont($size_xxs);
+  @include primaryFont(13px);
   color: $error;
   margin: $margin_xs 0;
 }

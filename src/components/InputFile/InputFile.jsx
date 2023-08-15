@@ -40,7 +40,15 @@ const InputFile = ({
         />
         <label className="color_primary_background">Examinar</label>
       </div>
-      {error === false && <p className="input_error">{message}</p>}
+      {error === false ? (
+        <p className="input_error">{message}</p>
+      ) : (
+        <p className="inputFile_message">
+          {name === "ciFrente"
+            ? "Tome foto del frente de su CI y adjúntela aquí"
+            : "Tome foto del dorso de su CI y adjúntela aquí"}
+        </p>
+      )}
     </form>
   );
 };
