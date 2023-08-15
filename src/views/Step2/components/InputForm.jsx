@@ -28,6 +28,7 @@ const InputForm = ({
       dorso: "Campo obligatorio",
     },
   ]);
+  const [ejecuteValidation, setEjecuteValidation] = useState(false);
   const [messagePhone, setMessagePhone] = useState(["Campo obligatorio"]);
   const usuarios = useSelector((state) => state.user.usuarios);
   const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
@@ -48,7 +49,12 @@ const InputForm = ({
     if (defaultAmount != 1) {
       setAmountUsers(defaultAmount);
     }
+    setEjecuteValidation(true);
   }, [amountUsers]);
+
+  useEffect(() => {
+    if (ejecuteValidation) onLoadCheckPhone();
+  }, [ejecuteValidation]);
 
   const handleInput = (e, i) => {
     const updatedAreas = [...initialValues];
@@ -141,6 +147,13 @@ const InputForm = ({
       actividadPrincipal: "",
       origenFondos: "",
       pep: false,
+      cedulaConyuge: "",
+      fechaNacimientoConyuge: "",
+      primerNombreConyuge: "",
+      segundoNombreConyue: "",
+      primerApellidoConyuge: "",
+      segundoApellidoConyuge: "",
+      actividadPrincipalConyuge: "",
     };
 
     let imgValue = {
@@ -159,7 +172,6 @@ const InputForm = ({
       if (usuarios.length >= 1) {
         setAmountUsers(usuarios.length);
         setInitialValues(usuarios);
-        onLoadCheckPhone(usuarios);
 
         let arrayFilesMessages = [];
         let arrayPhoneMessages = [];
@@ -210,7 +222,6 @@ const InputForm = ({
 
         setImages(imgValues);
         setInitialValues(arrayValues);
-        onLoadCheckPhone(arrayValues);
       }
     } else {
       let newNumber = new Array(Number(amountUsers))
@@ -241,7 +252,6 @@ const InputForm = ({
 
       setImages(imgValues);
       setInitialValues(arrayValues);
-      onLoadCheckPhone(arrayValues);
       setMessageFile(arrayFilesMessages);
       setMessagePhone(arrayPhoneMessages);
     }
@@ -297,16 +307,19 @@ const InputForm = ({
     }
   };
 
-  const onLoadCheckPhone = (value) => {
+  const onLoadCheckPhone = () => {
+    let telCod = initialValues[0].telefonoCod
+      ? initialValues[0].telefonoCod
+      : 598;
     useValidate(
-      value[0].telefono,
+      initialValues[0].telefono,
       amountValidations,
       0,
       "telefono",
       setAmountValidations,
       setMessagePhone,
       messagePhone,
-      598
+      telCod
     );
   };
 
@@ -530,7 +543,7 @@ const InputForm = ({
                 <div className="inputForm2_divPhone">
                   <SelectPhone
                     name="telefonoCod"
-                    usuario={initialValues}
+                    value={initialValues[index]?.telefonoCod || ""}
                     index={index}
                     click={(e) =>
                       useValidate(

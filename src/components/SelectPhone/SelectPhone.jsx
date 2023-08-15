@@ -2,12 +2,13 @@ import "./SelectPhone.scss";
 import phones from "@/utils/phoneNumber.json";
 import useBrowser from "@/hooks/useBrowser";
 
-const SelectPhone = ({ name, click, change }) => {
+const SelectPhone = ({ name, value, click, change }) => {
   return (
     <div className="selectPhone_container">
       <select
         id={name}
         name={name}
+        defaultValue={value}
         className={`selectPhone ${useBrowser() && "selectIos"}`}
         onChange={change}
         onClick={click}

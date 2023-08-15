@@ -29,10 +29,6 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     handleInitialValidations();
   }, []);
 
-  useEffect(() => {
-    console.log(amountValidations);
-  }, [amountValidations]);
-
   const handleInitialValidations = () => {
     let values = {
       sexo: "",
@@ -142,7 +138,9 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     /*   event.setUTCHours(0, 0, 0, 0); */
     const newDate = new Date(event).toISOString().replace("Z", "");
 
-    dispatch(updateUsers({ name: e.target.name, index: i, value: newDate }));
+    dispatch(
+      updateUsers({ name: "fechaNacimientoConyuge", index: i, value: newDate })
+    );
   };
 
   const checkEstadoCivil = (value, index) => {

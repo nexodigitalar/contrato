@@ -55,17 +55,17 @@ const App = () => {
   const getDataFromLocal = () => {
     /*  let data = JSON.parse(localStorage.getItem("contrato")); */
     let data = {
-      nombre: "Micky",
-      apellido: "Greensite",
-      email: "mgreensite7@nps.gov",
-      telefono: "3516038709",
+      nombre: "Janessa",
+      apellido: "Munning",
+      email: "jmunningf@ocn.ne.jp",
+      telefono: "9264038890",
       cuoCap: "CAPITAL",
       cuotas: "715",
       moneda: "USD",
       monto: "165000",
       plazo: "300",
-      simulador: "Diferencial Pesos Ajustables",
-      codigo: "92",
+      simulador: "Pesos Ajustables",
+      codigo: "90",
       indice: "0",
       espera: "",
       normal: "",
