@@ -43,6 +43,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
       ingresosMensuales: "",
       empresaTrabaja: "",
       rubroEmpresa: "",
+      cargoEmpresa: "",
       actividadPrincipal: "",
       origenFondos: "",
       pep: true,
@@ -564,6 +565,36 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                   amountValidations,
                   index,
                   "rubroEmpresa",
+                  setAmountValidations
+                );
+              }}
+            />
+          </div>
+          <div className="inputForm_div">
+            <Input
+              placeholder="* Cargo en Empresa"
+              name="cargoEmpresa"
+              value={usuario[index]?.cargoEmpresa || ""}
+              error={amountValidations[index]?.cargoEmpresa}
+              type="text"
+              click={(e) => {
+                handleInput(e, index),
+                  setTimeout(() => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "cargoEmpresa",
+                      setAmountValidations
+                    );
+                  }, 400);
+              }}
+              onfocusout={(e) => {
+                useValidate(
+                  e.target.value,
+                  amountValidations,
+                  index,
+                  "cargoEmpresa",
                   setAmountValidations
                 );
               }}

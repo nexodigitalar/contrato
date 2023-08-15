@@ -136,6 +136,7 @@ const InputForm = ({
       ingresosMensuales: "",
       empresaTrabaja: "",
       rubroEmpresa: "",
+      cargoEmpresa: "",
       actividadPrincipal: "",
       origenFondos: "",
       pep: false,
