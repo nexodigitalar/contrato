@@ -159,6 +159,7 @@ const InputForm = ({
       if (usuarios.length >= 1) {
         setAmountUsers(usuarios.length);
         setInitialValues(usuarios);
+        onLoadCheckPhone(usuarios);
 
         let arrayFilesMessages = [];
         let arrayPhoneMessages = [];
@@ -209,6 +210,7 @@ const InputForm = ({
 
         setImages(imgValues);
         setInitialValues(arrayValues);
+        onLoadCheckPhone(arrayValues);
       }
     } else {
       let newNumber = new Array(Number(amountUsers))
@@ -239,6 +241,7 @@ const InputForm = ({
 
       setImages(imgValues);
       setInitialValues(arrayValues);
+      onLoadCheckPhone(arrayValues);
       setMessageFile(arrayFilesMessages);
       setMessagePhone(arrayPhoneMessages);
     }
@@ -279,7 +282,6 @@ const InputForm = ({
     }
   };
 
-  //revisar
   const onChangeTelCod = (i, value) => {
     if (initialValues[i]?.telefono != "") {
       useValidate(
@@ -293,6 +295,19 @@ const InputForm = ({
         value
       );
     }
+  };
+
+  const onLoadCheckPhone = (value) => {
+    useValidate(
+      value[0].telefono,
+      amountValidations,
+      0,
+      "telefono",
+      setAmountValidations,
+      setMessagePhone,
+      messagePhone,
+      598
+    );
   };
 
   return (
@@ -528,15 +543,15 @@ const InputForm = ({
                     }
                     change={(e) => {
                       {
-                        onChangeTelCod(index, e.target.value),
-                          handleInput(e, index),
+                        handleInput(e, index),
                           useValidate(
                             e.target.value,
                             amountValidations,
                             index,
                             "telefonoCod",
                             setAmountValidations
-                          );
+                          ),
+                          onChangeTelCod(index, e.target.value);
                       }
                     }}
                     onfocusout={(e) => {
