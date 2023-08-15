@@ -8,7 +8,9 @@ const InputPhone = ({
   value,
   error,
   type,
+  message,
   disabled,
+  onfocusout,
 }) => {
   const [styles, setStyles] = useState("inputPhone empty");
 
@@ -30,11 +32,12 @@ const InputPhone = ({
         value={value}
         name={name}
         onChange={click}
+        onBlur={onfocusout}
         type={type}
         disabled={disabled}
       />
       {error === false && name === "telefono" && (
-        <p className="input_error">Ingrese un número válido</p>
+        <p className="input_error">{message}</p>
       )}
     </div>
   );

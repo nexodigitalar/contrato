@@ -28,6 +28,7 @@ const InputForm = ({
       dorso: "Campo obligatorio",
     },
   ]);
+  const [messagePhone, setMessagePhone] = useState(["Campo obligatorio"]);
   const usuarios = useSelector((state) => state.user.usuarios);
   const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
   const savedValidations = useSelector((state) => state.validation.step2);
@@ -98,7 +99,7 @@ const InputForm = ({
 
   const handleDate = (value, i) => {
     const event = new Date(value);
-    const jsonDate = event.setUTCHours(0, 0, 0, 0);
+    /*     const jsonDate = event.setUTCHours(0, 0, 0, 0); */
     const newDate = new Date(event).toISOString().replace("Z", "");
 
     const updatedAreas = [...initialValues];
@@ -107,7 +108,6 @@ const InputForm = ({
       fechaNacimiento: newDate,
     };
 
-    console.log(newDate);
     setInitialValues(updatedAreas);
   };
 
@@ -152,21 +152,27 @@ const InputForm = ({
       dorso: "Campo obligatorio",
     };
 
+    let phoneMessages = "Ingrese un número válido";
+
     if (!initialValues) {
       if (usuarios.length >= 1) {
         setAmountUsers(usuarios.length);
         setInitialValues(usuarios);
 
-        let arrayFilesImages = [];
+        let arrayFilesMessages = [];
+        let arrayPhoneMessages = [];
+
         let newNumber = new Array(Number(usuarios.length))
           .fill("")
           .map((_, i) => i + 1);
 
         newNumber.map((page) => {
-          arrayFilesImages.push(fileMessages);
+          arrayFilesMessages.push(fileMessages);
+          arrayPhoneMessages.push(phoneMessages);
         });
 
-        setMessageFile(arrayFilesImages);
+        setMessagePhone(arrayPhoneMessages);
+        setMessageFile(arrayFilesMessages);
       } else {
         let newNumber = new Array(Number(amountUsers))
           .fill("")
@@ -210,7 +216,8 @@ const InputForm = ({
 
       let arrayValues = [...initialValues];
       let imgValues = [...images];
-      let arrayFilesImages = [...messageFile];
+      let arrayFilesMessages = [...messageFile];
+      let arrayPhoneMessages = [...messagePhone];
 
       /* Cut or add to the array depens of user */
       if (newNumber.length > arrayValues.length) {
@@ -218,18 +225,21 @@ const InputForm = ({
           if (page > arrayValues.length) {
             arrayValues.push(originalValues);
             imgValues.push(imgValue);
-            arrayFilesImages.push(fileMessages);
+            arrayFilesMessages.push(fileMessages);
+            arrayPhoneMessages.push(phoneMessages);
           }
         });
       } else if (newNumber.length < arrayValues.length) {
         arrayValues = arrayValues.slice(0, newNumber.length);
         imgValues = imgValues.slice(0, newNumber.length);
-        arrayFilesImages = arrayFilesImages.slice(0, newNumber.length);
+        arrayFilesMessages = arrayFilesMessages.slice(0, newNumber.length);
+        arrayPhoneMessages = arrayPhoneMessages.slice(0, newNumber.length);
       }
 
       setImages(imgValues);
       setInitialValues(arrayValues);
-      setMessageFile(arrayFilesImages);
+      setMessageFile(arrayFilesMessages);
+      setMessagePhone(arrayPhoneMessages);
     }
   };
 
@@ -265,6 +275,22 @@ const InputForm = ({
         let newArr = copyAmountValidations.slice(0, amountUsers);
         setAmountValidations(newArr);
       }
+    }
+  };
+
+  //revisar
+  const onChangeTelCod = (i, value) => {
+    if (initialValues[i]?.telefono != "") {
+      useValidate(
+        initialValues[i].telefono,
+        amountValidations,
+        i,
+        "telefono",
+        setAmountValidations,
+        setMessagePhone,
+        messagePhone,
+        value
+      );
     }
   };
 
@@ -501,7 +527,8 @@ const InputForm = ({
                     }
                     change={(e) => {
                       {
-                        handleInput(e, index),
+                        onChangeTelCod(index, e.target.value),
+                          handleInput(e, index),
                           useValidate(
                             e.target.value,
                             amountValidations,
@@ -528,6 +555,7 @@ const InputForm = ({
                     value={initialValues[index]?.telefono || ""}
                     error={amountValidations[index]?.telefono}
                     type="number"
+                    message={messagePhone[index]}
                     click={(e) => {
                       handleInput(e, index),
                         useValidate(
@@ -535,7 +563,10 @@ const InputForm = ({
                           amountValidations,
                           index,
                           "telefono",
-                          setAmountValidations
+                          setAmountValidations,
+                          setMessagePhone,
+                          messagePhone,
+                          initialValues[index].telefonoCod
                         );
                     }}
                     onfocusout={(e) => {
@@ -544,7 +575,10 @@ const InputForm = ({
                         amountValidations,
                         index,
                         "telefono",
-                        setAmountValidations
+                        setAmountValidations,
+                        setMessagePhone,
+                        messagePhone,
+                        initialValues[index].telefonoCod
                       );
                     }}
                   />

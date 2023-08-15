@@ -6,8 +6,9 @@ const useValidateInput = (
   index,
   position,
   setAmountValidations,
-  setMessageFile,
-  messageFile
+  setMessageError,
+  messageError,
+  initialValues
 ) => {
   let newArr = [...amountValidations];
   let newObj = newArr[index];
@@ -22,11 +23,33 @@ const useValidateInput = (
       let lengthValidation = e.length <= 12 && e.length >= 8;
 
       if (lengthValidation) {
-        newObj = { ...newObj, [position]: true };
-        newArr[index] = newObj;
+        if (initialValues == 598) {
+          if (e[0] == 0 && e[1] == 9) {
+            newObj = { ...newObj, [position]: true };
+            newArr[index] = newObj;
 
-        setAmountValidations(newArr);
+            setAmountValidations(newArr);
+          } else {
+            const updatedFiles = [...messageError];
+            updatedFiles[index] = "Ingrese una característica válida";
+            setMessageError(updatedFiles);
+
+            newObj = { ...newObj, [position]: false };
+            newArr[index] = newObj;
+
+            setAmountValidations(newArr);
+          }
+        } else {
+          newObj = { ...newObj, [position]: true };
+          newArr[index] = newObj;
+
+          setAmountValidations(newArr);
+        }
       } else {
+        const updatedFiles = [...messageError];
+        updatedFiles[index] = "Ingrese un número válido";
+        setMessageError(updatedFiles);
+
         newObj = { ...newObj, [position]: false };
         newArr[index] = newObj;
 
@@ -56,41 +79,41 @@ const useValidateInput = (
         newArr[index] = newObj;
 
         if (position === "ciFrente") {
-          const updatedFiles = [...messageFile];
+          const updatedFiles = [...messageError];
           updatedFiles[index] = {
             ...updatedFiles[index],
             frente: "Campo obligatorio",
           };
-          setMessageFile(updatedFiles);
+          setMessageError(updatedFiles);
         } else {
-          const updatedFiles = [...messageFile];
+          const updatedFiles = [...messageError];
           updatedFiles[index] = {
             ...updatedFiles[index],
             dorso: "Campo obligatorio",
           };
-          setMessageFile(updatedFiles);
+          setMessageError(updatedFiles);
         }
 
         setAmountValidations(newArr);
       } else {
-        if (e[0].size > 10000000) {
+        if (e[0].size > 5000000) {
           newObj = { ...newObj, [position]: false };
           newArr[index] = newObj;
 
           if (position === "ciFrente") {
-            const updatedFiles = [...messageFile];
+            const updatedFiles = [...messageError];
             updatedFiles[index] = {
               ...updatedFiles[index],
-              frente: "El archvio debe pesar menos de 10MB",
+              frente: "El archvio debe pesar menos de 5MB",
             };
-            setMessageFile(updatedFiles);
+            setMessageError(updatedFiles);
           } else {
-            const updatedFiles = [...messageFile];
+            const updatedFiles = [...messageError];
             updatedFiles[index] = {
               ...updatedFiles[index],
-              dorso: "El archvio debe pesar menos de 10MB",
+              dorso: "El archvio debe pesar menos de 5MB",
             };
-            setMessageFile(updatedFiles);
+            setMessageError(updatedFiles);
           }
 
           setAmountValidations(newArr);
@@ -101,7 +124,7 @@ const useValidateInput = (
           setAmountValidations(newArr);
         }
       }
-    } else if (position === "cedula") {
+    } else if (position === "cedula" || position === "cedulaConyuge") {
       let editNumber = e.replaceAll("-", "");
       let validate = useValidateCedula(editNumber);
 
@@ -115,7 +138,10 @@ const useValidateInput = (
 
         setAmountValidations(newArr);
       }
-    } else if (position === "fechaNacimiento") {
+    } else if (
+      position === "fechaNacimiento" ||
+      position === "fechaNacimientoConyuge"
+    ) {
       const date = new Date();
       let minDate = date.setFullYear(date.getFullYear() - 18);
       if (e <= minDate) {

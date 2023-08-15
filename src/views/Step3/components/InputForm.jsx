@@ -113,6 +113,27 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     dispatch(updateUsers({ name: name, index: i, value: checked }));
   };
 
+  const handleCedula = (e, i) => {
+    let editNumber = e.target.value;
+    let checkMark = editNumber.includes("-");
+    if (checkMark) editNumber = editNumber.replaceAll("-", "");
+    let validationCedula = editNumber.match(/^\d+$/);
+
+    if (validationCedula || editNumber === "") {
+      editNumber =
+        editNumber.slice(0, editNumber.length - 1) +
+        "-" +
+        editNumber.slice(editNumber.length - 1);
+
+      const updatedAreas = [...initialValues];
+      updatedAreas[i] = {
+        ...updatedAreas[i],
+        [e.target.name]: editNumber,
+      };
+      setInitialValues(updatedAreas);
+    }
+  };
+
   return (
     <>
       {usuario && amountValidations && (
@@ -696,6 +717,49 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               funciones públicas o cargos políticos.
             </label>
           </div>
+
+          {/* Conyuge */}
+          {(usuario[index].estadoCivil === "Casado/a" ||
+            usuario[index].estadoCivil === "Concubino/a") && (
+            <section>
+              <h3 className="inputForm_title">
+                <span className="color_text">Datos </span>del Conyuge de{" "}
+                <span className="gray">{usuario[index]?.primerNombre}</span>
+              </h3>
+
+              <div className="inputForm_div">
+                <Input
+                  max={true}
+                  placeholder="* Cédula"
+                  name="cedulaConyuge"
+                  value={initialValues[index]?.cedulaConyuge || ""}
+                  error={amountValidations[index]?.cedulaConyuge}
+                  type="text"
+                  click={(e) => {
+                    handleCedula(e, index),
+                      setTimeout(() => {
+                        useValidate(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "cedulaConyuge",
+                          setAmountValidations
+                        );
+                      }, 400);
+                  }}
+                  onfocusout={(e) => {
+                    useValidate(
+                      e.target.value,
+                      amountValidations,
+                      index,
+                      "cedulaConyuge",
+                      setAmountValidations
+                    );
+                  }}
+                />
+              </div>
+            </section>
+          )}
         </section>
       )}
     </>
