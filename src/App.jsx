@@ -27,6 +27,7 @@ const App = () => {
   const dispatch = useDispatch();
   const page = useSelector((state) => state.page.value);
   const registrarCliente = useSelector((state) => state.crm.ids);
+  let mountedRef = useMountedRef();
 
   useEffect(() => {
     document.documentElement.scrollTo({
@@ -158,6 +159,7 @@ const App = () => {
     })
       .then((response) => response.json())
       .then((data) => {
+        console.log("estoy tomando numero");
         if (data.pCodigoRespuesta == "00") {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
           dispatch(setIdConfirmation(data.pGrupo + "-" + data.pGrupoNumero));
