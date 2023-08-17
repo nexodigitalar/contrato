@@ -37,6 +37,7 @@ const Step4 = ({ images }) => {
   const [currency, setCurrency] = useState("$");
   const [validatePdf, setValidatePdf] = useState([false, false]);
   const [contratoId, setContratoId] = useState();
+  const [usersLength, setUserLength] = useState(1);
 
   const checkLengthCedula = (user) => {
     if (user.cedula.length === 8) {
@@ -50,11 +51,11 @@ const Step4 = ({ images }) => {
     if (moneda === "USD") {
       setCurrency("U$S");
     }
-  });
+  }, []);
 
   useEffect(() => {
     dispatch(blockPages());
-    ActualizarClienteCRM(usuario[0]);
+    mapUsers();
   }, []);
 
   const handleValidationsPdf = (i) => {
@@ -68,18 +69,19 @@ const Step4 = ({ images }) => {
     setValidatePdf(newArr);
   };
 
-  async function mapUsers(user) {
-    let userDoc = checkLengthCedula(user);
-    let otherUsers = usuario.slice(1, usuario.length);
+  async function mapUsers() {
+    for (let i = 0; i < usuario.length; i++) {
+      await ActualizarClienteCRMOther(usuario[i], i);
+    }
+  }
 
-    await sendFrenteFile(userDoc, 0);
-    await sendDorsoFile(userDoc, 0);
+  /*   async function mapUsers() {
+    let otherUsers = usuario.slice(1, usuario.length);
 
     for (let i = 0; i < otherUsers.length; i++) {
       await ActualizarClienteCRMOther(otherUsers[i], i);
-      await AltaContratoGestion();
     }
-  }
+  } */
 
   async function ActualizarClienteCRM(user) {
     let userDoc = checkLengthCedula(user);
@@ -162,6 +164,7 @@ const Step4 = ({ images }) => {
       const data = await response.json();
 
       if (data.pCodigoRespuesta == "00") {
+        console.log("se actualizo primer cliente");
         RegistrarClienteGestion(user);
       } else {
         console.log(data);
@@ -191,134 +194,6 @@ const Step4 = ({ images }) => {
     actividadCodConyuge = actividadCodConyuge ? actividadCodConyuge.cod : 0;
     let monedaCod = user.monedaIngreso === "Pesos Uruguayos" ? 1 : 2;
 
-    console.log("Registro cliente se mando:", {
-      pUsuario: import.meta.env.VITE_USUARIO,
-      pPassword: import.meta.env.VITE_PASSWORD,
-      pVentaOLId: ids.ventaId,
-      pEmpresaId: ids.empresaId,
-      pCliId: ids.cliId,
-      pSDTRegistrarClienteGestion: {
-        LicenciaCodigo: 1,
-        PersonaCodigo: 0,
-        PersonaNombre1: user.primerNombre,
-        PersonaNombre2: user.segundoNombre,
-        PersonaApellido1: user.primerApellido,
-        PersonaApellido2: user.segundoApellido,
-        PersonaDireccion1: user.calle + " " + user.puertaNumero,
-        PersonaDireccion2: "",
-        PersonaTelefono1: "",
-        PersonaTelefono2: "",
-        PersonaTelefonoMovil1: user.telefono,
-        PersonaTelefonoMovil2: "",
-        PersonaFechaNacimiento: user.fechaNacimiento,
-        EstadoCivilCodigo: estadoCivilCod.cod,
-        EstadoCivilNombre: user.estadoCivil,
-        PersonaPaisCodigo: "",
-        PersonaPaisNombre: user.nacionalidad,
-        PersonaMail1: user.email,
-        PersonaMail2: "",
-        PersonaSexo: user.sexo,
-        PersonaPaisResidenciaCodigo: paisCod.alpha2,
-        PersonaPaisResidenciaNombre: user.pais,
-        PersonaDepartamentoResCod: departamentoCod,
-        PersonaDepartamentoResNom: user.departamento,
-        PersonaCiudadResCod: "",
-        PersonaCiudadResNom: "",
-        PersonaCalle: user.calle,
-        PersonaPuerta: user.puertaNumero,
-        PersonaApartamento: "",
-        PersonaCodigoPostal: "",
-        PersonaSectorActividadCodigo: actividadCod.cod,
-        PersonaSectorActividadNombre: user.actividadPrincipal,
-        PersonaSectorActividadBCUCodigo: 0,
-        PersonaSectorActividadBCUNombre: "",
-        PersonaSectorActividadCIIuCodigo: 0,
-        PersonaSectorActividadCIIUNombre: "",
-        PersonaSeparacionBienes: false,
-        PersonaZonaCodigo: 0,
-        PersonaZonaNombre: "",
-        PersonaApellidosyNombres: "",
-        PersonaLocalidadNombre: "",
-        PersonaDocumento: userDoc,
-        PersonaOrigenInfo: "",
-        PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
-        PersonaEsPEP: user.pep,
-        PersonaRelacionContacto: {
-          PersonaRelacionContactoItems: [
-            {
-              EmpresaId: ids.empresaId,
-              CliId: ids.cliId,
-              CliNom: user.primerNombre,
-              CliApe1: user.primerApellido,
-              CliApe2: user.segundoApellido,
-              CliDir: user.calle + user.puertaNumero,
-              CliTel: "",
-              CliMovil: user.telefono,
-            },
-          ],
-        },
-        PersonasRelacion: {
-          PersonasRelacionItems: [
-            {
-              PersonaCodigoRelacion: 0,
-              PersonaApellidoRelacion: "",
-              PersonaNombreRelacion: "",
-              PersonaRelacionCodigo: "",
-              PersonaRelacionNumeroDocumento: "",
-              PersonaRelacionOrigenInfo: "",
-              PersonaRelacionOrigenFechaAlta: "0000-00-00T00:00:00",
-            },
-          ],
-        },
-        TipoDocumento: {
-          TipoDocumentoItems: [
-            {
-              PersonaTipoDocumentoCodigo: "CI",
-              PersonaTipoDocumentoNombre: "CI",
-              PersonaNumeroDocumento: userDoc,
-              PersonaDocumentoFechaVencimineto: "2028-05-02T00:00:00",
-              PersonaDocumentoBlobOrdinal: 0,
-              PersonaDocumentoOrigenInfo: "",
-              PersonaDocumentoFechaAltaOrigen: "0000-00-00T00:00:00",
-              PersonaDocumentoPrincipal: true,
-            },
-          ],
-        },
-        PersonaFechaAlta: "0000-00-00T00:00:00",
-        PersonaFechaModificacion: "0000-00-00T00:00:00",
-        PersonaIngresosImporte: user.ingresosMensuales,
-        PersonaIngresosMonedaCodigo: monedaCod,
-        PersonaIngresosMonedaNombre: user.monedaIngreso,
-        PersonaRiesgoLavado: 0,
-        PersonaResidente: user.residenteUruguayo,
-        PersonaLugarTrabajoNombre: user.empresaTrabaja,
-        PersonaLugarTrabajoDireccion: "-",
-        PersonaLugarTrabajoCargo: "-",
-        PersonaOrigenDeFondos: user.origenFondos,
-        PersonaRubroEmpresa: user.rubroEmpresa,
-        PersonaConyugeCodigo: 0,
-        PersonaConyugeTipoDocumento: "",
-        PersonaConyugeDocumento: user.cedulaConyuge,
-        PersonaConyugeNombre1: user.primerNombreConyuge,
-        PersonaConyugeNombre2: user.segundoNombreConyue,
-        PersonaConyugeApellido1: user.primerApellidoConyuge,
-        PersonaConyugeApellido2: user.segundoApellidoConyuge,
-        PersonaConyugeSexo: "",
-        PersonaConyugeFechaNac: user.fechaNacimientoConyuge,
-        PersonaConyugeMail: "",
-        PersonaConyugeCelular: "",
-        PersonaConyugeSectorActCod: actividadCodConyuge,
-        PersonaConyugeSectorActNombre: user.actividadPrincipalConyuge,
-        PersonaConyugeMonedaIngreso: 0,
-        PersonaConyugeMonedaSimbolo: "",
-        PersonaConyugeIngresos: 0,
-        PersonaConyugeTrabajoNombre: "",
-        PersonaConyugeTrabajoDireccion: "",
-        PersonaConyugeTrabajoCargo: "",
-        PersonaConyugeOrigenFondo: "",
-        PersonaConyugeRubro: "",
-      },
-    });
     try {
       const response = await fetch(
         `${import.meta.env.VITE_URL}/RegistrarClienteGestion`,
@@ -461,14 +336,8 @@ const Step4 = ({ images }) => {
       const data = await response.json();
 
       if (data.pCodigoRespuesta == "00") {
-        if (usuario.length > 1) {
-          mapUsers(user);
-        } else {
-          await sendFrenteFile(userDoc, 0);
-          await sendDorsoFile(userDoc, 0);
-          await AltaContratoGestion();
-          setSpinner(false);
-        }
+        console.log("se registro primer cliente");
+        sendFrenteFile(userDoc, 0);
       } else {
         console.log(data);
         dispatch(changePage(5));
@@ -561,6 +430,7 @@ const Step4 = ({ images }) => {
       const data = await responseUser.json();
 
       if (data.pCodigoRespuesta === "00") {
+        console.log("se actualizo cliente:", i);
         await RegistrarClienteGestionOther(
           user,
           data.pCliId,
@@ -576,7 +446,13 @@ const Step4 = ({ images }) => {
     }
   }
 
-  async function RegistrarClienteGestionOther(user, idUser, idEmpresa, i) {
+  async function RegistrarClienteGestionOther(user, idUsers, idEmpresas, i) {
+    let idUser = i == 0 ? ids.cliId : idUsers;
+    let idEmpresa = i == 0 ? ids.empresaId : idEmpresas;
+
+    console.log("usuario servicio:", i, idUsers, idEmpresas);
+    console.log("usuario redux:", i, ids.cliId, ids.empresaId);
+
     let userDoc = checkLengthCedula(user);
     let paisCod = countries.find((item) => item.name === user.pais);
     let departamentoCod = departamentos.find(
@@ -735,8 +611,8 @@ const Step4 = ({ images }) => {
       const data = await responseUser.json();
 
       if (data.pCodigoRespuesta === "00") {
-        await sendFrenteFile(userDoc, i + 1);
-        await sendDorsoFile(userDoc, i + 1);
+        console.log("se registro cliente:", i);
+        await sendFrenteFile(userDoc, i);
       } else {
         console.log(data);
         dispatch(changePage(5));
@@ -759,9 +635,9 @@ const Step4 = ({ images }) => {
         arrayAux = base64.split(",");
         let result = arrayAux[1];
         resolve(
-          WSCedulaContratoOnLine(
+          await WSCedulaContratoOnLineFrente(
             doc,
-            "CI_FRENTE",
+            index,
             result,
             images[index].ciFrente.name,
             images[index].ciFrente.type
@@ -782,19 +658,25 @@ const Step4 = ({ images }) => {
         arrayAux = base64.split(",");
         let result = arrayAux[1];
         resolve(
-          WSCedulaContratoOnLine(
+          await WSCedulaContratoOnLineDorso(
             doc,
-            "CI_DORSO",
             result,
             images[index].ciDorso.name,
-            images[index].ciDorso.type
+            images[index].ciDorso.type,
+            index
           )
         );
       };
     });
   }
 
-  async function WSCedulaContratoOnLine(doc, type, image, name, extension) {
+  async function WSCedulaContratoOnLineFrente(
+    doc,
+    index,
+    image,
+    name,
+    extension
+  ) {
     let cropExtension = extension.replace("image/", "");
     try {
       const response = await fetch(
@@ -809,7 +691,7 @@ const Step4 = ({ images }) => {
             pPassword: import.meta.env.VITE_PASSWORD,
             pVentaOLId: ids.ventaId,
             pNroDoc: doc,
-            pTipoDoc: type,
+            pTipoDoc: "CI_FRENTE",
             pDocBase64: image,
             pDocNombre: name,
             pDocExtension: cropExtension,
@@ -820,7 +702,54 @@ const Step4 = ({ images }) => {
       const data = await response.json();
 
       if (data.pCodigoRespuesta == "00") {
-        console.log("Respuesta Cedula", data);
+        console.log("se envio doc frente");
+        await sendDorsoFile(doc, index);
+      } else {
+        console.log("Error Cedula", data);
+        dispatch(changePage(5));
+      }
+    } catch (error) {
+      dispatch(changePage(5));
+    }
+  }
+
+  async function WSCedulaContratoOnLineDorso(
+    doc,
+    image,
+    name,
+    extension,
+    index
+  ) {
+    let cropExtension = extension.replace("image/", "");
+    try {
+      const response = await fetch(
+        `${import.meta.env.VITE_URL}/WSCedulaContratoOnLine`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            pUsuario: import.meta.env.VITE_USUARIO,
+            pPassword: import.meta.env.VITE_PASSWORD,
+            pVentaOLId: ids.ventaId,
+            pNroDoc: doc,
+            pTipoDoc: "CI_DORSO",
+            pDocBase64: image,
+            pDocNombre: name,
+            pDocExtension: cropExtension,
+          }),
+        }
+      );
+
+      const data = await response.json();
+
+      if (data.pCodigoRespuesta == "00") {
+        console.log("se envio doc dorso");
+        console.log(index);
+        if (usuario.length === index + 1) {
+          await AltaContratoGestion();
+        }
       } else {
         console.log("Error Cedula", data);
         dispatch(changePage(5));
