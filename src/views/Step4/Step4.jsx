@@ -37,7 +37,6 @@ const Step4 = ({ images }) => {
   const [currency, setCurrency] = useState("$");
   const [validatePdf, setValidatePdf] = useState([false, false]);
   const [contratoId, setContratoId] = useState();
-  const [usersLength, setUserLength] = useState(1);
 
   const checkLengthCedula = (user) => {
     if (user.cedula.length === 8) {
@@ -71,13 +70,13 @@ const Step4 = ({ images }) => {
 
   async function mapUsers() {
     for (let i = 0; i < usuario.length; i++) {
-      await ActualizarClienteCRMOther(usuario[i], i);
+      await ActualizarClienteCRM(usuario[i], i);
     }
   }
 
   /* Para otros clientes */
 
-  async function ActualizarClienteCRMOther(user, i) {
+  async function ActualizarClienteCRM(user, i) {
     let userDoc = checkLengthCedula(user);
     let clientIdNumber = i == 0 ? ids.cliId : "0";
 
@@ -161,12 +160,7 @@ const Step4 = ({ images }) => {
 
       if (data.pCodigoRespuesta === "00") {
         console.log("se actualizo cliente:", i);
-        await RegistrarClienteGestionOther(
-          user,
-          data.pCliId,
-          data.pEmpresaId,
-          i
-        );
+        await RegistrarClienteGestion(user, data.pCliId, data.pEmpresaId, i);
       } else {
         console.log(data);
         dispatch(changePage(5));
@@ -176,7 +170,7 @@ const Step4 = ({ images }) => {
     }
   }
 
-  async function RegistrarClienteGestionOther(user, idUsers, idEmpresas, i) {
+  async function RegistrarClienteGestion(user, idUsers, idEmpresas, i) {
     let idUser = i == 0 ? ids.cliId : idUsers;
     let idEmpresa = i == 0 ? ids.empresaId : idEmpresas;
 
