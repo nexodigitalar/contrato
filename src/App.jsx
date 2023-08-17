@@ -27,7 +27,6 @@ const App = () => {
   const dispatch = useDispatch();
   const page = useSelector((state) => state.page.value);
   const registrarCliente = useSelector((state) => state.crm.ids);
-  let mountedRef = useMountedRef();
 
   useEffect(() => {
     document.documentElement.scrollTo({
@@ -56,10 +55,10 @@ const App = () => {
   const getDataFromLocal = () => {
     /*  let data = JSON.parse(localStorage.getItem("contrato")); */
     let data = {
-      nombre: "Marleen",
-      apellido: "Acomb",
-      email: "macombh@amazonaws.com",
-      telefono: "7275782850",
+      nombre: "Rickey",
+      apellido: "Jehaes",
+      email: "rjehaes17@moonfruit.com",
+      telefono: "4338414555",
       cuoCap: "CAPITAL",
       cuotas: "715",
       moneda: "USD",
@@ -159,7 +158,6 @@ const App = () => {
     })
       .then((response) => response.json())
       .then((data) => {
-        console.log("estoy tomando numero");
         if (data.pCodigoRespuesta == "00") {
           InformacionGrupoContratoOnLine(data.pGrupo, venta);
           dispatch(setIdConfirmation(data.pGrupo + "-" + data.pGrupoNumero));
