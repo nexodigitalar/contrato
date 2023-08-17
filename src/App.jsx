@@ -55,10 +55,10 @@ const App = () => {
   const getDataFromLocal = () => {
     /*  let data = JSON.parse(localStorage.getItem("contrato")); */
     let data = {
-      nombre: "Eleanore",
-      apellido: "Clemmens",
-      email: "eclemmensz@dagondesign.com",
-      telefono: "4808480519",
+      nombre: "Constancia",
+      apellido: "Pellew",
+      email: "cpellew19@engadget.com",
+      telefono: "1035527199",
       cuoCap: "CAPITAL",
       cuotas: "715",
       moneda: "USD",
