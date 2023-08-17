@@ -41,6 +41,7 @@ const Input = ({
         name != "telefono" &&
         name != "email" &&
         name != "cedula" &&
+        name != "cedulaConyuge" &&
         name != "pin" && <p className="input_error">Campo obligatorio</p>}
       {error === false && name === "telefono" && (
         <p className="input_error">Ingrese un número válido</p>
@@ -52,6 +53,9 @@ const Input = ({
         <p className="input_error">En PIN no es válido</p>
       )}
       {error === false && name === "cedula" && (
+        <p className="input_error">Ingrese una cédula válida</p>
+      )}
+      {error === false && name === "cedulaConyuge" && (
         <p className="input_error">Ingrese una cédula válida</p>
       )}
     </div>
