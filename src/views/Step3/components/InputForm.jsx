@@ -780,7 +780,10 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                           amountValidations,
                           index,
                           "cedulaConyuge",
-                          setAmountValidations
+                          setAmountValidations,
+                          null,
+                          null,
+                          usuario[index].cedula
                         );
                       }, 400);
                   }}
@@ -790,7 +793,10 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       amountValidations,
                       index,
                       "cedulaConyuge",
-                      setAmountValidations
+                      setAmountValidations,
+                      null,
+                      null,
+                      usuario[index].cedula
                     );
                   }}
                 />

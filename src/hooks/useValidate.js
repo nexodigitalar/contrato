@@ -129,9 +129,22 @@ const useValidateInput = (
       let validate = useValidateCedula(editNumber);
 
       if (validate) {
-        newObj = { ...newObj, [position]: true };
-        newArr[index] = newObj;
-        setAmountValidations(newArr);
+        if (position === "cedulaConyuge") {
+          if (e == initialValues) {
+            newObj = { ...newObj, [position]: false };
+            newArr[index] = newObj;
+
+            setAmountValidations(newArr);
+          } else {
+            newObj = { ...newObj, [position]: true };
+            newArr[index] = newObj;
+            setAmountValidations(newArr);
+          }
+        } else {
+          newObj = { ...newObj, [position]: true };
+          newArr[index] = newObj;
+          setAmountValidations(newArr);
+        }
       } else {
         newObj = { ...newObj, [position]: false };
         newArr[index] = newObj;

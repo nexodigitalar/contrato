@@ -84,6 +84,10 @@
     "name": "Director"
   },
   {
+    "cod": 81,
+    "name": "Empleado"
+  },
+  {
     "cod": 82,
     "name": "Empresario"
   },
@@ -112,8 +116,16 @@
     "name": "Jubilado"
   },
   {
+    "cod": 222,
+    "name": "Desocupado"
+  },
+  {
     "cod": 123,
     "name": "Juez"
+  },
+  {
+    "cod": 152,
+    "name": "Pensionista"
   },
   {
     "cod": 154,
@@ -122,6 +134,10 @@
   {
     "cod": 156,
     "name": "Policia"
+  },
+  {
+    "cod": 164,
+    "name": "Profesonal"
   },
   {
     "cod": 180,
@@ -138,21 +154,5 @@
   {
     "cod": 211,
     "name": "Trabajador Independiente"
-  },
-  {
-    "cod": 81,
-    "name": "Empleado"
-  },
-  {
-    "cod": 152,
-    "name": "Pensionista"
-  },
-  {
-    "cod": 222,
-    "name": "Desocupado"
-  },
-  {
-    "cod": 164,
-    "name": "Profesonal"
   }
 ]
