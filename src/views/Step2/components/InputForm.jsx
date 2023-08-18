@@ -543,7 +543,7 @@ const InputForm = ({
                 <div className="inputForm2_divPhone">
                   <SelectPhone
                     name="telefonoCod"
-                    value={initialValues[index]?.telefonoCod || ""}
+                    value={initialValues[index]?.telefonoCod}
                     index={index}
                     click={(e) =>
                       useValidate(
