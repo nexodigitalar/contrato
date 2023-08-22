@@ -162,7 +162,6 @@ const Step4 = ({ images }) => {
       const data = await responseUser.json();
 
       if (data.pCodigoRespuesta === "00") {
-        console.log("se actualizo cliente:", i);
         await RegistrarClienteGestionOther(
           user,
           data.pCliId,
@@ -208,135 +207,6 @@ const Step4 = ({ images }) => {
     }
 
     let monedaCod = user.monedaIngreso === "Pesos Uruguayos" ? 1 : 2;
-
-    console.log("Registro envia:", {
-      pUsuario: import.meta.env.VITE_USUARIO,
-      pPassword: import.meta.env.VITE_PASSWORD,
-      pVentaOLId: ids.ventaId,
-      pEmpresaId: idEmpresa,
-      pCliId: idUser,
-      pSDTRegistrarClienteGestion: {
-        LicenciaCodigo: 1,
-        PersonaCodigo: 0,
-        PersonaNombre1: user.primerNombre,
-        PersonaNombre2: user.segundoNombre,
-        PersonaApellido1: user.primerApellido,
-        PersonaApellido2: user.segundoApellido,
-        PersonaDireccion1: user.calle + " " + user.puertaNumero,
-        PersonaDireccion2: "",
-        PersonaTelefono1: "",
-        PersonaTelefono2: "",
-        PersonaTelefonoMovil1: user.telefono,
-        PersonaTelefonoMovil2: "",
-        PersonaFechaNacimiento: user.fechaNacimiento,
-        EstadoCivilCodigo: estadoCivilCod.cod,
-        EstadoCivilNombre: user.estadoCivil,
-        PersonaPaisCodigo: "",
-        PersonaPaisNombre: user.nacionalidad,
-        PersonaMail1: user.email,
-        PersonaMail2: "",
-        PersonaSexo: user.sexo,
-        PersonaPaisResidenciaCodigo: paisCod.alpha2,
-        PersonaPaisResidenciaNombre: user.pais,
-        PersonaDepartamentoResCod: departamentoCod,
-        PersonaDepartamentoResNom: user.departamento,
-        PersonaCiudadResCod: "",
-        PersonaCiudadResNom: "",
-        PersonaCalle: user.calle,
-        PersonaPuerta: user.puertaNumero,
-        PersonaApartamento: "",
-        PersonaCodigoPostal: "",
-        PersonaSectorActividadCodigo: actividadCod.cod,
-        PersonaSectorActividadNombre: user.actividadPrincipal,
-        PersonaSectorActividadBCUCodigo: 0,
-        PersonaSectorActividadBCUNombre: "",
-        PersonaSectorActividadCIIuCodigo: 0,
-        PersonaSectorActividadCIIUNombre: "",
-        PersonaSeparacionBienes: false,
-        PersonaZonaCodigo: 0,
-        PersonaZonaNombre: "",
-        PersonaApellidosyNombres: "",
-        PersonaLocalidadNombre: "",
-        PersonaDocumento: userDoc,
-        PersonaOrigenInfo: "",
-        PersonaOrigenFechaAlta: "0000-00-00T00:00:00",
-        PersonaEsPEP: user.pep,
-        PersonaRelacionContacto: {
-          PersonaRelacionContactoItems: [
-            {
-              EmpresaId: idEmpresa,
-              CliId: idUser,
-              CliNom: user.primerNombre,
-              CliApe1: user.primerApellido,
-              CliApe2: user.segundoApellido,
-              CliDir: user.calle + user.puertaNumero,
-              CliTel: "",
-              CliMovil: user.telefono,
-            },
-          ],
-        },
-        PersonasRelacion: {
-          PersonasRelacionItems: [
-            {
-              PersonaCodigoRelacion: 0,
-              PersonaApellidoRelacion: "",
-              PersonaNombreRelacion: "",
-              PersonaRelacionCodigo: "",
-              PersonaRelacionNumeroDocumento: "",
-              PersonaRelacionOrigenInfo: "",
-              PersonaRelacionOrigenFechaAlta: "0000-00-00T00:00:00",
-            },
-          ],
-        },
-        TipoDocumento: {
-          TipoDocumentoItems: [
-            {
-              PersonaTipoDocumentoCodigo: "CI",
-              PersonaTipoDocumentoNombre: "CI",
-              PersonaNumeroDocumento: userDoc,
-              PersonaDocumentoFechaVencimineto: "2028-05-02T00:00:00",
-              PersonaDocumentoBlobOrdinal: 0,
-              PersonaDocumentoOrigenInfo: "",
-              PersonaDocumentoFechaAltaOrigen: "0000-00-00T00:00:00",
-              PersonaDocumentoPrincipal: true,
-            },
-          ],
-        },
-        PersonaFechaAlta: "0000-00-00T00:00:00",
-        PersonaFechaModificacion: "0000-00-00T00:00:00",
-        PersonaIngresosImporte: user.ingresosMensuales,
-        PersonaIngresosMonedaCodigo: monedaCod,
-        PersonaIngresosMonedaNombre: user.monedaIngreso,
-        PersonaRiesgoLavado: 0,
-        PersonaResidente: user.residenteUruguayo,
-        PersonaLugarTrabajoNombre: user.empresaTrabaja,
-        PersonaLugarTrabajoDireccion: "-",
-        PersonaLugarTrabajoCargo: user.cargoEmpresa,
-        PersonaOrigenDeFondos: user.origenFondos,
-        PersonaRubroEmpresa: user.rubroEmpresa,
-        PersonaConyugeCodigo: 0,
-        PersonaConyugeTipoDocumento: "CI",
-        PersonaConyugeDocumento: user.cedulaConyuge,
-        PersonaConyugeNombre1: user.primerNombreConyuge,
-        PersonaConyugeNombre2: user.segundoNombreConyue,
-        PersonaConyugeApellido1: user.primerApellidoConyuge,
-        PersonaConyugeApellido2: user.segundoApellidoConyuge,
-        PersonaConyugeSexo: "",
-        PersonaConyugeFechaNac: user.fechaNacimientoConyuge,
-        PersonaConyugeMail: "",
-        PersonaConyugeCelular: "",
-        PersonaConyugeSectorActCod: actividadCodConyuge,
-        PersonaConyugeSectorActNombre: user.actividadPrincipalConyuge,
-        PersonaConyugeMonedaIngreso: 0,
-        PersonaConyugeMonedaSimbolo: "",
-        PersonaConyugeIngresos: 0,
-        PersonaConyugeTrabajoNombre: "",
-        PersonaConyugeTrabajoDireccion: "",
-        PersonaConyugeTrabajoCargo: "",
-        PersonaConyugeOrigenFondo: "",
-        PersonaConyugeRubro: "",
-      },
-    });
 
     try {
       const responseUser = await fetch(
@@ -480,7 +350,6 @@ const Step4 = ({ images }) => {
       const data = await responseUser.json();
 
       if (data.pCodigoRespuesta === "00") {
-        console.log("se registro cliente:", i);
         await sendFrenteFile(userDoc, i);
       } else {
         console.log(data);
@@ -573,7 +442,6 @@ const Step4 = ({ images }) => {
       const data = await response.json();
 
       if (data.pCodigoRespuesta == "00") {
-        console.log("se envio doc frente");
         await sendDorsoFile(doc, index);
       } else {
         console.log("Error Cedula", data);
@@ -618,8 +486,6 @@ const Step4 = ({ images }) => {
       const data = await response.json();
 
       if (data.pCodigoRespuesta == "00") {
-        console.log("se envio doc dorso");
-        console.log(index);
         if (usuario.length === index + 1) {
           await AltaContratoGestion();
         }
