@@ -37,7 +37,7 @@ const Step4 = ({ images }) => {
   const [currency, setCurrency] = useState("$");
   const [validatePdf, setValidatePdf] = useState([false, false]);
   const [contratoId, setContratoId] = useState();
-  const [usersLength, setUserLength] = useState(1);
+  const [userStop, setUserStop] = useState(true);
 
   const checkLengthCedula = (user) => {
     if (user.cedula.length === 8) {
@@ -71,7 +71,9 @@ const Step4 = ({ images }) => {
 
   async function mapUsers() {
     for (let i = 0; i < usuario.length; i++) {
-      await ActualizarClienteCRMOther(usuario[i], i);
+      if (userStop) {
+        await ActualizarClienteCRMOther(usuario[i], i);
+      }
     }
   }
 
@@ -169,9 +171,11 @@ const Step4 = ({ images }) => {
         );
       } else {
         console.log(data);
+        setUserStop(false);
         dispatch(changePage(5));
       }
     } catch (error) {
+      setUserStop(false);
       dispatch(changePage(5));
     }
   }
@@ -311,7 +315,7 @@ const Step4 = ({ images }) => {
         PersonaOrigenDeFondos: user.origenFondos,
         PersonaRubroEmpresa: user.rubroEmpresa,
         PersonaConyugeCodigo: 0,
-        PersonaConyugeTipoDocumento: "",
+        PersonaConyugeTipoDocumento: "CI",
         PersonaConyugeDocumento: user.cedulaConyuge,
         PersonaConyugeNombre1: user.primerNombreConyuge,
         PersonaConyugeNombre2: user.segundoNombreConyue,
@@ -448,7 +452,7 @@ const Step4 = ({ images }) => {
               PersonaOrigenDeFondos: user.origenFondos,
               PersonaRubroEmpresa: user.rubroEmpresa,
               PersonaConyugeCodigo: 0,
-              PersonaConyugeTipoDocumento: "",
+              PersonaConyugeTipoDocumento: "CI",
               PersonaConyugeDocumento: user.cedulaConyuge,
               PersonaConyugeNombre1: user.primerNombreConyuge,
               PersonaConyugeNombre2: user.segundoNombreConyue,
@@ -480,9 +484,11 @@ const Step4 = ({ images }) => {
         await sendFrenteFile(userDoc, i);
       } else {
         console.log(data);
+        setUserStop(false);
         dispatch(changePage(5));
       }
     } catch (error) {
+      setUserStop(false);
       dispatch(changePage(5));
     }
   }
@@ -571,9 +577,11 @@ const Step4 = ({ images }) => {
         await sendDorsoFile(doc, index);
       } else {
         console.log("Error Cedula", data);
+        setUserStop(false);
         dispatch(changePage(5));
       }
     } catch (error) {
+      setUserStop(false);
       dispatch(changePage(5));
     }
   }
@@ -617,9 +625,11 @@ const Step4 = ({ images }) => {
         }
       } else {
         console.log("Error Cedula", data);
+        setUserStop(false);
         dispatch(changePage(5));
       }
     } catch (error) {
+      setUserStop(false);
       dispatch(changePage(5));
     }
   }
