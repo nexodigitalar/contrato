@@ -22,38 +22,48 @@ const useValidateInput = (
     if (position === "telefono") {
       let lengthValidation = e.length <= 12 && e.length >= 8;
 
-      if (lengthValidation) {
-        if (initialValues == 598) {
-          if (e[0] == 0 && e[1] == 9) {
-            newObj = { ...newObj, [position]: true };
-            newArr[index] = newObj;
+      if (e === "" || e === "placeholder") {
+        const updatedFiles = [...messageError];
+        updatedFiles[index] = "Campo obligatorio";
+        setMessageError(updatedFiles);
 
-            setAmountValidations(newArr);
+        newObj = { ...newObj, [position]: false };
+        newArr[index] = newObj;
+        setAmountValidations(newArr);
+      } else {
+        if (lengthValidation) {
+          if (initialValues == 598) {
+            if (e[0] == 0 && e[1] == 9) {
+              newObj = { ...newObj, [position]: true };
+              newArr[index] = newObj;
+
+              setAmountValidations(newArr);
+            } else {
+              const updatedFiles = [...messageError];
+              updatedFiles[index] = "Ingrese una característica válida";
+              setMessageError(updatedFiles);
+
+              newObj = { ...newObj, [position]: false };
+              newArr[index] = newObj;
+
+              setAmountValidations(newArr);
+            }
           } else {
-            const updatedFiles = [...messageError];
-            updatedFiles[index] = "Ingrese una característica válida";
-            setMessageError(updatedFiles);
-
-            newObj = { ...newObj, [position]: false };
+            newObj = { ...newObj, [position]: true };
             newArr[index] = newObj;
 
             setAmountValidations(newArr);
           }
         } else {
-          newObj = { ...newObj, [position]: true };
+          const updatedFiles = [...messageError];
+          updatedFiles[index] = "Ingrese un número válido";
+          setMessageError(updatedFiles);
+
+          newObj = { ...newObj, [position]: false };
           newArr[index] = newObj;
 
           setAmountValidations(newArr);
         }
-      } else {
-        const updatedFiles = [...messageError];
-        updatedFiles[index] = "Ingrese un número válido";
-        setMessageError(updatedFiles);
-
-        newObj = { ...newObj, [position]: false };
-        newArr[index] = newObj;
-
-        setAmountValidations(newArr);
       }
     } else if (position === "email") {
       // Validar Email
