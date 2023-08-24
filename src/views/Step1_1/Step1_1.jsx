@@ -7,7 +7,6 @@ import cuotaEntre from "@/assets/img/cuota-entre.png";
 import capitalEntre from "@/assets/img/capital-entre.png";
 import adjudicacion from "@/assets/img/adjudicacion.png";
 import indice from "@/assets/img/indice.png";
-
 import capital2 from "@/assets/img/capital2.png";
 import cuota2 from "@/assets/img/cuota2.png";
 import totalCuotas2 from "@/assets/img/total-cuotas2.png";

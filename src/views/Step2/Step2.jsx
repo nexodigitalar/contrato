@@ -10,13 +10,13 @@ import { useSelector, useDispatch } from "react-redux";
 import { changePage } from "@/store/pageSlice/pageSlice";
 import { setUsers } from "@/store/userSlice/userSlice";
 import { setStep2 } from "@/store/validationSlice/validationSlice";
+import { useEffect } from "react";
 
 /* Components */
 import Header from "@/components/Header/Header";
 import StepsContainer from "@/components/StepsContainer/StepsContainer";
 import InputForm from "./components/InputForm";
 import Button from "@/components/Button/Button";
-import { useEffect } from "react";
 
 const Step2 = ({ setImages, images }) => {
   const { simulador, plazo } = useSelector((state) => state.data);

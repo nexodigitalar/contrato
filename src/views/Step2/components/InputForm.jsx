@@ -5,6 +5,7 @@ import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { setAmountUser } from "@/store/userSlice/userSlice";
 import useValidate from "@/hooks/useValidate";
+import useValidateContact from "@/hooks/useValidateContact";
 
 /* Components */
 import Input from "../../../components/Input/Input";
@@ -30,6 +31,7 @@ const InputForm = ({
   ]);
   const [ejecuteValidation, setEjecuteValidation] = useState(false);
   const [messagePhone, setMessagePhone] = useState(["Campo obligatorio"]);
+  const [messageCedula, setMessageCedula] = useState(["Campo obligatorio"]);
   const usuarios = useSelector((state) => state.user.usuarios);
   const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
   const savedValidations = useSelector((state) => state.validation.step2);
@@ -167,6 +169,7 @@ const InputForm = ({
     };
 
     let phoneMessages = "Ingrese un número válido";
+    let cedulaMessages = "Campo obligatorio";
 
     if (!initialValues) {
       if (usuarios.length >= 1) {
@@ -175,6 +178,7 @@ const InputForm = ({
 
         let arrayFilesMessages = [];
         let arrayPhoneMessages = [];
+        let arrayCedulaMessages = [];
 
         let newNumber = new Array(Number(usuarios.length))
           .fill("")
@@ -183,9 +187,11 @@ const InputForm = ({
         newNumber.map((page) => {
           arrayFilesMessages.push(fileMessages);
           arrayPhoneMessages.push(phoneMessages);
+          arrayCedulaMessages.push(cedulaMessages);
         });
 
         setMessagePhone(arrayPhoneMessages);
+        setMessageCedula(arrayCedulaMessages);
         setMessageFile(arrayFilesMessages);
       } else {
         let newNumber = new Array(Number(amountUsers))
@@ -232,8 +238,9 @@ const InputForm = ({
       let imgValues = [...images];
       let arrayFilesMessages = [...messageFile];
       let arrayPhoneMessages = [...messagePhone];
+      let arrayCedulaMessages = [...messageCedula];
 
-      /* Cut or add to the array depens of user */
+      /* Cut or add to the array depens of amount of users */
       if (newNumber.length > arrayValues.length) {
         newNumber.map((page) => {
           if (page > arrayValues.length) {
@@ -241,6 +248,7 @@ const InputForm = ({
             imgValues.push(imgValue);
             arrayFilesMessages.push(fileMessages);
             arrayPhoneMessages.push(phoneMessages);
+            arrayCedulaMessages.push(cedulaMessages);
           }
         });
       } else if (newNumber.length < arrayValues.length) {
@@ -248,12 +256,14 @@ const InputForm = ({
         imgValues = imgValues.slice(0, newNumber.length);
         arrayFilesMessages = arrayFilesMessages.slice(0, newNumber.length);
         arrayPhoneMessages = arrayPhoneMessages.slice(0, newNumber.length);
+        arrayCedulaMessages = arrayCedulaMessages.slice(0, newNumber.length);
       }
 
       setImages(imgValues);
       setInitialValues(arrayValues);
       setMessageFile(arrayFilesMessages);
       setMessagePhone(arrayPhoneMessages);
+      setMessageCedula(arrayCedulaMessages);
     }
   };
 
@@ -359,6 +369,7 @@ const InputForm = ({
                   value={initialValues[index]?.cedula || ""}
                   error={amountValidations[index]?.cedula}
                   type="text"
+                  message={messageCedula[index]}
                   click={(e) => {
                     handleCedula(e, index),
                       setTimeout(() => {
@@ -367,8 +378,21 @@ const InputForm = ({
                           amountValidations,
                           index,
                           "cedula",
-                          setAmountValidations
-                        );
+                          setAmountValidations,
+                          setMessageCedula,
+                          messageCedula
+                        ),
+                          useValidateContact(
+                            e.target.value,
+                            amountValidations,
+                            index,
+                            "cedula",
+                            setAmountValidations,
+                            setMessageCedula,
+                            messageCedula,
+                            initialValues,
+                            "La cédula no puede estar repetida"
+                          );
                       }, 400);
                   }}
                   onfocusout={(e) => {
@@ -377,8 +401,21 @@ const InputForm = ({
                       amountValidations,
                       index,
                       "cedula",
-                      setAmountValidations
-                    );
+                      setAmountValidations,
+                      setMessageCedula,
+                      messageCedula
+                    ),
+                      useValidateContact(
+                        e.target.value,
+                        amountValidations,
+                        index,
+                        "cedula",
+                        setAmountValidations,
+                        setMessageCedula,
+                        messageCedula,
+                        initialValues,
+                        "La cédula no puede estar repetida"
+                      );
                   }}
                 />
               </div>
@@ -596,6 +633,17 @@ const InputForm = ({
                           setMessagePhone,
                           messagePhone,
                           initialValues[index].telefonoCod
+                        ),
+                        useValidateContact(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "telefono",
+                          setAmountValidations,
+                          setMessagePhone,
+                          messagePhone,
+                          initialValues,
+                          "El teléfono no puede estar repetido"
                         );
                     }}
                     onfocusout={(e) => {
@@ -608,7 +656,18 @@ const InputForm = ({
                         setMessagePhone,
                         messagePhone,
                         initialValues[index].telefonoCod
-                      );
+                      ),
+                        useValidateContact(
+                          e.target.value,
+                          amountValidations,
+                          index,
+                          "telefono",
+                          setAmountValidations,
+                          setMessagePhone,
+                          messagePhone,
+                          initialValues,
+                          "El teléfono no puede estar repetido"
+                        );
                     }}
                   />
                 </div>

@@ -67,6 +67,10 @@ const useValidateInput = (
 
         setAmountValidations(newArr);
       } else {
+        const updatedFiles = [...messageError];
+        updatedFiles[index] = "Ingrese un email válido";
+        setMessageError(updatedFiles);
+
         newObj = { ...newObj, [position]: false };
         newArr[index] = newObj;
 
@@ -128,28 +132,47 @@ const useValidateInput = (
       let editNumber = e.replaceAll("-", "");
       let validate = useValidateCedula(editNumber);
 
-      if (validate) {
-        if (position === "cedulaConyuge") {
-          if (e == initialValues) {
-            newObj = { ...newObj, [position]: false };
-            newArr[index] = newObj;
+      if (e === "" || e === "-") {
+        const updatedFiles = [...messageError];
+        updatedFiles[index] = "Campo obligatorio";
+        setMessageError(updatedFiles);
 
-            setAmountValidations(newArr);
+        newObj = { ...newObj, [position]: false };
+        newArr[index] = newObj;
+
+        setAmountValidations(newArr);
+      } else {
+        if (validate) {
+          if (position === "cedulaConyuge") {
+            if (e == initialValues) {
+              const updatedFiles = [...messageError];
+              updatedFiles[index] = "La cédula no puede estar repetida";
+              setMessageError(updatedFiles);
+
+              newObj = { ...newObj, [position]: false };
+              newArr[index] = newObj;
+
+              setAmountValidations(newArr);
+            } else {
+              newObj = { ...newObj, [position]: true };
+              newArr[index] = newObj;
+              setAmountValidations(newArr);
+            }
           } else {
             newObj = { ...newObj, [position]: true };
             newArr[index] = newObj;
             setAmountValidations(newArr);
           }
         } else {
-          newObj = { ...newObj, [position]: true };
+          const updatedFiles = [...messageError];
+          updatedFiles[index] = "Ingrese una cédula válida";
+          setMessageError(updatedFiles);
+
+          newObj = { ...newObj, [position]: false };
           newArr[index] = newObj;
+
           setAmountValidations(newArr);
         }
-      } else {
-        newObj = { ...newObj, [position]: false };
-        newArr[index] = newObj;
-
-        setAmountValidations(newArr);
       }
     } else if (
       position === "fechaNacimiento" ||

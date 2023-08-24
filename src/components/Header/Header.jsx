@@ -2,7 +2,6 @@ import "./Header.scss";
 import pesosFijos from "@/assets/img/pesos-fijos.png";
 import diferencial from "@/assets/img/diferencial.png";
 import cuotaLibre from "@/assets/img/cuota-libre.png";
-
 import pesosFijos2 from "@/assets/img/pesos-fijos2.png";
 import diferencial2 from "@/assets/img/diferencial2.png";
 import cuotaLibre2 from "@/assets/img/cuota-libre2.png";

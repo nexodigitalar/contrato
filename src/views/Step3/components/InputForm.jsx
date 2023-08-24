@@ -5,25 +5,29 @@ import Input from "@/components/Input/Input";
 import SelectInput from "@/components/SelectInput/SelectInput";
 import SelectMap from "@/components/SelectMap/SelectMap";
 import InputCheck from "../../../components/InputCheck/InputCheck";
+import InputDate from "../../../components/InputDate/InputDate";
 
 /* Hooks */
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { updateUsers } from "@/store/userSlice/userSlice";
 import useValidate from "@/hooks/useValidate";
+import useValidateContact from "../../../hooks/useValidateContact";
 
+/* Data */
 import countries from "@/utils/countries.json";
 import departamentos from "@/utils/departamentos.json";
 import tipoIngreso from "@/utils/tipoIngreso.json";
 import estadoCivil from "@/utils/estadoCivil.json";
 import actividad from "@/utils/actividad.json";
-import InputDate from "../../../components/InputDate/InputDate";
 
 const InputForm = ({ index, setAmountValidations, amountValidations }) => {
+  const dispatch = useDispatch();
   const usuario = useSelector((state) => state.user.usuarios);
   const savedValidations = useSelector((state) => state.validation.step3);
-  const dispatch = useDispatch();
   const defaultAmount = useSelector((state) => state.user.cantidadUsuarios);
+  const [messageEmail, setMessageEmail] = useState(["Campo obligatorio"]);
+  const [messageCedula, setMessageCedula] = useState(["Campo obligatorio"]);
 
   useEffect(() => {
     handleInitialValidations();
@@ -51,33 +55,57 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
     };
 
     if (amountValidations.length === 0) {
+      let emailMessages = "Campo obligatorio";
+      let cedulaMessages = "Campo obligatorio";
+
       if (savedValidations.length != 0) {
         let reduxCopy = JSON.parse(JSON.stringify(savedValidations));
         if (defaultAmount === reduxCopy.length) {
           setAmountValidations(reduxCopy);
         } else {
           let copyAmountValidations = [...reduxCopy];
+          let arrayEmailMessages = [...messageEmail];
+          let arrayCedulaMessages = [...messageCedula];
 
           if (defaultAmount > reduxCopy.length) {
             let sum = defaultAmount - reduxCopy.length;
 
             let arraySum = new Array(sum).fill("").map((_, i) => i + 1);
-            arraySum.forEach((n) => copyAmountValidations.push(values));
+            arraySum.forEach(
+              (n) => copyAmountValidations.push(values),
+              arrayEmailMessages.push(emailMessages),
+              arrayCedulaMessages.push(cedulaMessages)
+            );
 
             setAmountValidations(copyAmountValidations);
           } else {
             let newArr = copyAmountValidations.slice(0, defaultAmount);
+            arrayEmailMessages = arrayEmailMessages.slice(0, reduxCopy.length);
+            arrayCedulaMessages = arrayCedulaMessages.slice(
+              0,
+              reduxCopy.length
+            );
             setAmountValidations(newArr);
           }
+          setMessageEmail(arrayEmailMessages);
+          setMessageCedula(arrayCedulaMessages);
         }
       } else {
         let newArr = [];
-        Array.from({ length: usuario.length }, (_, index) =>
-          newArr.push(values)
+        let arrayEmailMessages = [];
+        let arrayCedulaMessages = [];
+
+        Array.from(
+          { length: usuario.length },
+          (_, index) => newArr.push(values),
+          arrayEmailMessages.push(emailMessages),
+          arrayCedulaMessages.push(cedulaMessages)
         );
 
         newArr[0].email = true;
 
+        setMessageEmail(arrayEmailMessages);
+        setMessageCedula(arrayCedulaMessages);
         setAmountValidations(newArr);
       }
     }
@@ -257,6 +285,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
               value={usuario[index]?.email || ""}
               error={amountValidations[index]?.email}
               type="email"
+              message={messageEmail[index]}
               click={(e) => {
                 handleInput(e, index),
                   setTimeout(() => {
@@ -265,8 +294,21 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       amountValidations,
                       index,
                       "email",
-                      setAmountValidations
-                    );
+                      setAmountValidations,
+                      setMessageEmail,
+                      messageEmail
+                    ),
+                      useValidateContact(
+                        e.target.value,
+                        amountValidations,
+                        index,
+                        "email",
+                        setAmountValidations,
+                        setMessageEmail,
+                        messageEmail,
+                        usuario,
+                        "El email no puede estar repetido"
+                      );
                   }, 400);
               }}
               onfocusout={(e) => {
@@ -275,8 +317,21 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                   amountValidations,
                   index,
                   "email",
-                  setAmountValidations
-                );
+                  setAmountValidations,
+                  setMessageEmail,
+                  messageEmail
+                ),
+                  useValidateContact(
+                    e.target.value,
+                    amountValidations,
+                    index,
+                    "email",
+                    setAmountValidations,
+                    setMessageEmail,
+                    messageEmail,
+                    usuario,
+                    "El email no puede estar repetido"
+                  );
               }}
             />
           </div>
@@ -772,6 +827,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                   value={usuario[index]?.cedulaConyuge || ""}
                   error={amountValidations[index]?.cedulaConyuge}
                   type="text"
+                  message={messageCedula[index]}
                   click={(e) => {
                     handleCedula(e, index),
                       setTimeout(() => {
@@ -781,8 +837,8 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                           index,
                           "cedulaConyuge",
                           setAmountValidations,
-                          null,
-                          null,
+                          setMessageCedula,
+                          messageCedula,
                           usuario[index].cedula
                         );
                       }, 400);
@@ -794,8 +850,8 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
                       index,
                       "cedulaConyuge",
                       setAmountValidations,
-                      null,
-                      null,
+                      setMessageCedula,
+                      messageCedula,
                       usuario[index].cedula
                     );
                   }}
