@@ -110,6 +110,7 @@ const Step2 = ({ setImages, images }) => {
                   dispatch(setStep2(amountValidations));
               }}
               disabled={disabled}
+              classSeo="contrato-paso-2"
             />
           </div>
         </div>

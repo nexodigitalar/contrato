@@ -102,6 +102,7 @@ const Step3 = () => {
                 text="Siguiente"
                 click={() => setShowPopUp(true)}
                 disabled={disabled}
+                classSeo="contrato-paso-3"
               />
             </div>
           </div>

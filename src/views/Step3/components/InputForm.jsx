@@ -163,7 +163,7 @@ const InputForm = ({ index, setAmountValidations, amountValidations }) => {
   const handleDate = (value, i) => {
     const event = new Date(value);
     /* Hay que comentarlo para webtest */
-    /*   event.setUTCHours(0, 0, 0, 0); */
+    event.setUTCHours(0, 0, 0, 0);
     const newDate = new Date(event).toISOString().replace("Z", "");
 
     dispatch(

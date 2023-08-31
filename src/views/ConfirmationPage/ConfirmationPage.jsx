@@ -73,13 +73,17 @@ const ConfirmationPage = () => {
           </p>
 
           <div className="confirmation_buttonContainer">
-            <a target="_blank" href="https://reporteconsorcio.com.uy">
+            <a
+              target="_blank"
+              href="https://reporteconsorcio.com.uy"
+              className="contrato-paso-4-exito-cuota"
+            >
               <Button text="PAGAR MI CUOTA" />
             </a>
             <a
               target="_blank"
               href="https://wa.me/+59894627000"
-              className="confirmation_button color_primary_gradient"
+              className="confirmation_button color_primary_gradient contrato-paso-4-exito-contacto"
             >
               CONTACTANOS{" "}
               <img src={wp} alt="icono whatsapp" className="button_icon" />

@@ -40,12 +40,15 @@ const ErrorPage = () => {
           </p>
 
           <div className="error_buttonContainer">
-            <a href="https://consorcio.uy/">
+            <a
+              href="https://consorcio.uy/"
+              className="contrato-paso-3-error-volver"
+            >
               <Button text="INTENTAR NUEVAMENTE" back={true} next={false} />
             </a>
             <a
               href="https://wa.me/+59894627000"
-              className="error_button color_primary_gradient"
+              className="error_button color_primary_gradient contrato-paso-3-error-contacto"
             >
               CONTACTANOS{" "}
               <img src={wp} alt="icono whatsapp" className="button_icon" />

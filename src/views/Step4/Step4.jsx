@@ -769,6 +769,7 @@ const Step4 = ({ images }) => {
                   text="Confirmar contrato"
                   click={() => ConfirmarRechazarContrato()}
                   disabled={confirmContract}
+                  classSeo="contrato-paso-4"
                 />
               </div>
             </div>

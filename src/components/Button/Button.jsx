@@ -8,13 +8,20 @@ import {
   faChevronLeft,
 } from "@fortawesome/free-solid-svg-icons";
 
-const Button = ({ text, click, disabled, back = false, next = true }) => {
+const Button = ({
+  text,
+  click,
+  disabled,
+  back = false,
+  next = true,
+  classSeo = "",
+}) => {
   return (
     <button
       className={
         !next && !back
-          ? "buttonSecondary color_primary_background"
-          : "button color_primary_gradient"
+          ? "buttonSecondary color_primary_background contrato-paso-4-token"
+          : `button color_primary_gradient ${classSeo}`
       }
       onClick={click}
       disabled={disabled}

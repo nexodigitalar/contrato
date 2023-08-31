@@ -304,7 +304,11 @@ const Step1_2 = ({ changePage }) => {
               />
               <div className="buttonContainer_steps">
                 <p className="mobileOnly">Paso 1.1 de 4</p>
-                <Button text="Siguiente" click={() => changePage(3)} />
+                <Button
+                  text="Siguiente"
+                  click={() => changePage(3)}
+                  classSeo="contrato-paso-2-b"
+                />
               </div>
             </div>
           </div>
