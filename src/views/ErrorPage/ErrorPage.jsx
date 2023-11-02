@@ -9,6 +9,7 @@ import Button from "@/components/Button/Button";
 
 const ErrorPage = () => {
   const idConfirmation = useSelector((state) => state.crm.idConfirmation);
+  let var1 = "hola <b>hola</b>";
 
   useEffect(() => {
     localStorage.removeItem("contrato");
