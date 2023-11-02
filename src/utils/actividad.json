@@ -1,0 +1,158 @@
+[
+  {
+    "cod": 2,
+    "name": "Abogado"
+  },
+  {
+    "cod": 10,
+    "name": "Agente Inmobiliario"
+  },
+  {
+    "cod": 12,
+    "name": "Agricultor"
+  },
+  {
+    "cod": 13,
+    "name": "Agrimensor"
+  },
+  {
+    "cod": 14,
+    "name": "Agronomo"
+  },
+  {
+    "cod": 16,
+    "name": "Agropecuaria"
+  },
+  {
+    "cod": 25,
+    "name": "Asesor De Seguros"
+  },
+  {
+    "cod": 28,
+    "name": "Asist.Social"
+  },
+  {
+    "cod": 35,
+    "name": "Azafata"
+  },
+  {
+    "cod": 36,
+    "name": "Bancario"
+  },
+  {
+    "cod": 41,
+    "name": "Cajero"
+  },
+  {
+    "cod": 42,
+    "name": "Capitan Mercante"
+  },
+  {
+    "cod": 47,
+    "name": "Chofer"
+  },
+  {
+    "cod": 48,
+    "name": "Comerciante"
+  },
+  {
+    "cod": 52,
+    "name": "Consultor"
+  },
+  {
+    "cod": 53,
+    "name": "Contador"
+  },
+  {
+    "cod": 55,
+    "name": "Cooperativista"
+  },
+  {
+    "cod": 56,
+    "name": "Corredor De Bolsa"
+  },
+  {
+    "cod": 57,
+    "name": "Corredor De Seguros"
+  },
+  {
+    "cod": 60,
+    "name": "Despachante"
+  },
+  {
+    "cod": 64,
+    "name": "Director"
+  },
+  {
+    "cod": 81,
+    "name": "Empleado"
+  },
+  {
+    "cod": 82,
+    "name": "Empresario"
+  },
+  {
+    "cod": 84,
+    "name": "Escribano"
+  },
+  {
+    "cod": 104,
+    "name": "Industrial"
+  },
+  {
+    "cod": 106,
+    "name": "Ingeniero"
+  },
+  {
+    "cod": 116,
+    "name": "Inmobiliaria"
+  },
+  {
+    "cod": 120,
+    "name": "Joyero"
+  },
+  {
+    "cod": 121,
+    "name": "Jubilado"
+  },
+  {
+    "cod": 222,
+    "name": "Desocupado"
+  },
+  {
+    "cod": 123,
+    "name": "Juez"
+  },
+  {
+    "cod": 152,
+    "name": "Pensionista"
+  },
+  {
+    "cod": 154,
+    "name": "Piloto"
+  },
+  {
+    "cod": 156,
+    "name": "Policia"
+  },
+  {
+    "cod": 164,
+    "name": "Profesonal"
+  },
+  {
+    "cod": 180,
+    "name": "Rematador Publico"
+  },
+  {
+    "cod": 181,
+    "name": "Rentas"
+  },
+  {
+    "cod": 196,
+    "name": "Tasador Publico"
+  },
+  {
+    "cod": 211,
+    "name": "Trabajador Independiente"
+  }
+]

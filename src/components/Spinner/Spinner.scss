@@ -1,0 +1,49 @@
+@import "@/utils/theme.scss";
+
+.spinnerContainer {
+  @include flex(column, center, center);
+  gap: 30px;
+  margin-top: 200px;
+  width: 100%;
+}
+
+.spinner {
+  border: 3px solid $neutral_dark;
+  border-radius: 100%;
+  border-left-color: transparent;
+  width: 36px;
+  height: 36px;
+
+  animation: spin 1s linear infinite;
+}
+
+.text {
+  @include primaryFont(18px);
+  color: $neutral_darker;
+  text-align: center;
+  animation: scaleFont 2s linear infinite;
+}
+
+@keyframes scaleFont {
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(0.99);
+  }
+
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}

@@ -1,0 +1,61 @@
+@import "@/utils/theme.scss";
+
+.smsContainer {
+  @include flex(column, flex-start, flex-start);
+  width: 50%;
+  margin-bottom: $margin_md;
+  .validated {
+    @include primaryFont($size_md);
+    color: $neutral_dark;
+    margin: $margin_sm 0;
+  }
+  .timerContainer {
+    .sms_text {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+      margin: 15px 0;
+    }
+  }
+  .sms_warning {
+    @include primaryFont($size_xs);
+    color: $error;
+    margin: $margin_md 0;
+  }
+  .smsInput {
+    @include flex(row, flex-start, center);
+    gap: 21px;
+    height: 90px;
+    .smsInput_number {
+      @include primaryFont($size_sm);
+      color: $neutral_dark;
+    }
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .smsContainer {
+    @include flex(column, flex-start, center);
+    gap: 0px;
+    margin-bottom: 0px;
+    width: 100%;
+    .validated {
+      text-align: center;
+    }
+    .sms_warning {
+      @include primaryFont($size_xs);
+      color: $error;
+      margin: $margin_md 0;
+    }
+    .smsInput {
+      gap: 5px;
+      height: 75px;
+      .smsInput_number {
+        @include primaryFont($size_xs);
+      }
+    }
+    .timerContainer {
+      display: flex;
+      flex-direction: column;
+    }
+  }
+}

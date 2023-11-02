@@ -1,0 +1,105 @@
+@import "@/utils/theme.scss";
+
+.step1 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .step1_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+    .step1_title {
+      @include secondaryFont($size_lg);
+      color: $neutral_dark;
+      align-self: flex-start;
+      margin: $margin_sm 0;
+    }
+    .step1_title2 {
+      @include primaryFont($size_lg);
+      color: $neutral_dark;
+      align-self: flex-start;
+      margin: $margin_sm 0;
+    }
+    .step1_right {
+      align-self: flex-end;
+    }
+    .step1_text {
+      @include primaryFont($size_sm);
+      color: $neutral_dark;
+      align-self: flex-start;
+      padding: $padding_lg 0;
+    }
+    .step1_imgContainer {
+      @include flex(row, center, center);
+      gap: 50px;
+      width: 100%;
+      margin: $margin_lg 0;
+    }
+    .step1_textSm {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+      width: 100%;
+    }
+  }
+}
+
+.step1_rightContainer {
+  @include flex(column, center, flex-end);
+  text-align: right;
+  width: 100%;
+  align-self: flex-end;
+}
+
+.step1_imgContainer_fechaElegida {
+  @include flex(row, center, center);
+  gap: 50px;
+  flex-wrap: wrap;
+  width: 100%;
+  margin: $margin_lg 0;
+}
+
+.step1_textCard {
+  @include primaryFont($size_sm);
+  color: $neutral_dark;
+  align-self: flex-start;
+  padding: $padding_lg 0;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step1 {
+    @include flex(row, center, center);
+    width: 100%;
+    margin-bottom: $margin_lg;
+    .step1_container {
+      margin: 0 $margin_md;
+      .step1_title {
+        @include secondaryFont($size_md);
+        margin: $margin_xs 0;
+      }
+      .step1_text {
+        padding-top: $padding_sm;
+      }
+      .step1_title2 {
+        @include primaryFont($size_md);
+      }
+      .step1_imgContainer {
+        margin: $margin_md $margin_md;
+        flex-wrap: wrap;
+        gap: 15px;
+        width: 100%;
+      }
+      .step1_textSm {
+        @include primaryFont($size_xxs);
+      }
+    }
+  }
+
+  .step1_rightContainer {
+    margin: 20px 0 0 0;
+  }
+
+  .step1_textCard {
+    @include primaryFont($size_xxs);
+    padding: $padding_xs 0;
+  }
+}

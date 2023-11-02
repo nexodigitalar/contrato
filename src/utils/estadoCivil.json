@@ -1,0 +1,22 @@
+[
+  {
+    "cod": "1",
+    "name": "Casado/a"
+  },
+  {
+    "cod": "2",
+    "name": "Soltero/a"
+  },
+  {
+    "cod": "3",
+    "name": "Divorciado/a"
+  },
+  {
+    "cod": "4",
+    "name": "Viudo/a"
+  },
+  {
+    "cod": "5",
+    "name": "Concubino/a"
+  }
+]

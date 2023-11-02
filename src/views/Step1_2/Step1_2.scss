@@ -1,0 +1,83 @@
+@import "@/utils/theme.scss";
+
+.step1_2 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+
+  .step1_2_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+
+    .step1_2_innerContainer {
+      align-self: flex-start;
+      margin-top: $margin_lg;
+      .step1_2_title {
+        @include primaryFont($size_lg);
+        color: $neutral_dark;
+        align-self: flex-start;
+        margin: $margin_sm 0;
+      }
+      .step1_2_textContainer {
+        @include flex(row, flex-start, center);
+        margin: $margin_md 0;
+        .step1_2_watermark {
+          @include secondaryFont($size_xl);
+          color: $neutral_light;
+          margin: 0 $margin_md;
+          align-self: flex-start;
+        }
+        .step1_2_infoContainer {
+          @include flex(column, center, flex-start);
+        }
+        .step1_2_text {
+          @include primaryFont($size_sm);
+          color: $neutral_dark;
+          margin: $margin_sm 0;
+        }
+      }
+      .step1_2_text {
+        @include primaryFont($size_sm);
+        color: $neutral_dark;
+        margin: $margin_sm 0;
+      }
+      .step1_2_textSm {
+        @include primaryFont($size_xs);
+        color: $neutral_dark;
+        width: 100%;
+      }
+      .step1_2_detail {
+        margin: 32px 0 24px 0;
+      }
+    }
+    .step1_2_buttonContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-self: flex-end;
+    }
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step1_2 {
+    .step1_2_container {
+      margin: 0 $margin_md;
+      .step1_2_innerContainer {
+        align-self: flex-start;
+        margin-top: $margin_md;
+        .step1_2_title {
+          @include primaryFont($size_md);
+          margin: $margin_xs 0;
+        }
+        .step1_2_textContainer {
+          margin: 0;
+        }
+        .step1_2_textSm {
+          @include primaryFont($size_xxs);
+        }
+      }
+    }
+  }
+}

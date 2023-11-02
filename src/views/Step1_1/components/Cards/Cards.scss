@@ -1,0 +1,80 @@
+@import "@/utils/theme.scss";
+
+.cards {
+  @include flex(row, center, center);
+  background-color: $cards;
+  border-radius: $border_radius;
+  width: 250px;
+  height: 240px;
+  position: relative;
+  .cards_svg {
+    color: $neutral;
+    position: absolute;
+    top: 50px;
+    left: 30px;
+    width: 40px;
+    transform: rotate(-90deg);
+  }
+  .cards_container {
+    @include flex(column, center, center);
+    width: 80%;
+    .cards_img {
+      width: 100px;
+      height: 100px;
+      object-fit: contain;
+    }
+    .cards_title {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+      margin: $margin_sm 0;
+      text-align: center;
+      width: 80%;
+    }
+    .cards_number {
+      @include secondaryFont($size_sm);
+      color: $neutral_dark;
+      text-align: center;
+      width: 80%;
+    }
+  }
+  .cards_line {
+    height: 120px;
+    width: 7px;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .cards {
+    @include flex(row, center, center);
+    background-color: $cards;
+    border-radius: 0px 40px;
+    width: 45%;
+    height: auto;
+
+    padding: 16px 0;
+    .cards_svg {
+      top: 30px;
+      left: 10px;
+      width: 25px;
+      transform: rotate(-90deg);
+    }
+    .cards_container {
+      width: 80%;
+      .cards_img {
+        width: 60px;
+        height: 60px;
+      }
+      .cards_title {
+        @include primaryFont($size_xxs);
+        margin: 0;
+      }
+      .cards_number {
+        @include secondaryFont($size_xxs);
+      }
+    }
+    .cards_line {
+      height: 70%;
+      width: 3px;
+    }
+  }
+}

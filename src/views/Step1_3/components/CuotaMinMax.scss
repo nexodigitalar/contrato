@@ -1,0 +1,56 @@
+@import "@/utils/theme.scss";
+
+.cuotam {
+  @include flex(column, center, flex-start);
+  width: 100%;
+  margin: $margin_sm 0;
+  .cuotam_section {
+    @include flex(row, center, flex-start);
+    gap: 20px;
+    margin: $margin_sm 0;
+    .cuotam_container {
+      @include flex(row, center, center);
+      gap: 20px;
+
+      .cuotam_textContainer {
+        @include flex(column, center, center);
+        .cuotam_text {
+          @include secondaryFont($size_sm);
+          color: $neutral_dark;
+          margin: $margin_xs 0;
+        }
+      }
+      .cuotam_icon {
+        color: var(--bg-primary-color);
+        font-size: $size_xl;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .cuotam {
+    .cuotam_section {
+      @include flex(row, center, flex-start);
+      gap: 8px;
+      margin: $margin_sm 0;
+      .cuotam_container {
+        @include flex(row, center, center);
+        gap: 3px;
+
+        .cuotam_textContainer {
+          @include flex(column, center, center);
+          .cuotam_text {
+            @include secondaryFont($size_xs);
+            text-align: center;
+            margin: 0;
+          }
+        }
+        .cuotam_icon {
+          color: $cristal_primary;
+          font-size: $size_md;
+        }
+      }
+    }
+  }
+}

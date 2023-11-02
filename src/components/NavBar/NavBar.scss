@@ -1,0 +1,52 @@
+@import "@/utils/theme.scss";
+
+.navBar {
+  @include flex(row, center, center);
+  background-color: $neutral_lighter;
+  width: 100%;
+  padding: $padding_md 0;
+  box-shadow: $shadow;
+  .navBar_container {
+    @include flex(row, space-between, center);
+    width: 100%;
+    max-width: $max_width;
+    .navBar_logo {
+      width: 200px;
+      height: auto;
+      object-fit: contain;
+    }
+    .navBar_innerContainer {
+      @include flex(row, center, center);
+      gap: 25px;
+      .navBar_title {
+        @include secondaryFont(40px);
+      }
+      .navBar_img {
+        height: 50px;
+        width: auto;
+        object-fit: contain;
+        position: relative;
+        top: 5px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .navBar {
+    padding: $padding_md 0;
+    .navBar_container {
+      @include flex(column, space-between, center);
+      margin: 0 $margin_md;
+      .navBar_logo {
+        width: 120px;
+      }
+      .navBar_innerContainer {
+        .navBar_title {
+          @include secondaryFont($size_md);
+          text-align: end;
+        }
+      }
+    }
+  }
+}

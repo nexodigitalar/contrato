@@ -1,0 +1,84 @@
+@import "@/utils/theme.scss";
+
+.header {
+  @include flex(column, center, center);
+  width: 100%;
+  .header_container {
+    @include flex(row, space-between, center);
+    width: 100%;
+    max-width: $max_width;
+    padding: $padding_md 0;
+    .header_titleContainer {
+      @include flex(row, space-between, center);
+      .header_title {
+        @include primaryFont($size_md);
+        text-align: right;
+        color: $neutral_darker;
+        width: 200px;
+        .header_titleBold {
+          @include secondaryFont($size_md);
+        }
+      }
+      .header_line {
+        height: 90px;
+        width: 2px;
+        margin: $margin_md;
+      }
+      .header_logo {
+        width: 130px;
+        object-fit: contain;
+      }
+      .header_number {
+        @include secondaryFont(50px);
+        color: $neutral_darker;
+      }
+    }
+    .header_subtitle {
+      @include secondaryFont(5vw);
+      color: $neutral_light;
+      opacity: 0.5;
+    }
+  }
+  .header_division {
+    width: 100%;
+    height: 1px;
+    background-color: $neutral_light;
+    max-width: $max_width;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .header {
+    .header_container {
+      display: block;
+      padding: $padding_lg 0;
+      .header_titleContainer {
+        @include flex(row, center, center);
+        margin: 0 $margin_md;
+        .header_title {
+          @include primaryFont($size_sm);
+          width: auto;
+        }
+        .header_line {
+          height: 80px;
+          width: 2px;
+          margin: 10px;
+        }
+        .header_logo {
+          width: 100px;
+          object-fit: contain;
+        }
+        .header_number {
+          @include secondaryFont(30px);
+        }
+      }
+      .header_subtitle {
+        display: none;
+      }
+    }
+    .header_division {
+      width: 90%;
+      background-color: $neutral_light;
+    }
+  }
+}

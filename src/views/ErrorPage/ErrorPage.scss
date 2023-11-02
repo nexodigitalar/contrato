@@ -1,0 +1,126 @@
+@import "@/utils/theme.scss";
+
+.error {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .error_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+    .error_header {
+      padding: $padding_lg 0;
+      width: 100%;
+      .error_header_title {
+        @include secondaryFont(5vw);
+        color: $neutral_light;
+        opacity: 0.5;
+        text-align: center;
+      }
+      .error_division {
+        width: 100%;
+        height: 1px;
+        background-color: $neutral_light;
+        max-width: $max_width;
+      }
+    }
+    .error_textContainer {
+      align-self: flex-start;
+      position: relative;
+      width: 100%;
+      .error_title {
+        @include primaryFont($size_xl);
+        color: $neutral_dark;
+        margin: $margin_sm 0;
+        margin-bottom: $margin_lg;
+        width: 80%;
+      }
+      .error_text {
+        @include primaryFont($size_sm);
+        color: $neutral_dark;
+        margin: $margin_md 0;
+        width: 80%;
+      }
+      .error_img {
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 150px;
+      }
+    }
+    .error_buttonContainer {
+      @include flex(row, flex-start, center);
+      gap: 20px;
+      width: 100%;
+      .error_button {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 5px;
+        @include primaryFont($size_xs);
+        border: none;
+        border-radius: 40px;
+        background-position: center;
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: $tertiary;
+        padding: $padding_md $padding_lg;
+        margin: $margin_md 0;
+        cursor: pointer;
+        transition: all 0.4s;
+        &:hover {
+          box-shadow: 2px 2px 8px #888888;
+        }
+        .button_icon {
+          width: $size_md;
+          height: $size_md;
+          object-fit: contain;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .error {
+    .error_container {
+      margin: 0 $margin_md;
+      .error_header {
+        padding: $padding_lg 0 $padding_md 0;
+        width: 100%;
+        .error_header_title {
+          @include secondaryFont(26px);
+          margin-bottom: $margin_sm;
+        }
+      }
+
+      .error_textContainer {
+        @include flex(column, center, center);
+        .error_title {
+          @include primaryFont($size_md);
+          margin: $margin_sm 0;
+          width: 100%;
+        }
+        .error_text {
+          margin: $margin_sm 0;
+          width: 100%;
+        }
+        .error_img {
+          position: inherit;
+        }
+      }
+      .error_buttonContainer {
+        @include flex(column, center, center);
+        gap: 0px;
+        margin: 20px 0;
+        button {
+          margin: 0px;
+        }
+        .error_button {
+          @include primaryFont($size_xs);
+          padding: $padding_sm $padding_md;
+        }
+      }
+    }
+  }
+}

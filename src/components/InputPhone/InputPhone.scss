@@ -1,0 +1,41 @@
+@import "@/utils/theme.scss";
+
+.inputPhoneContainer {
+  @include flex(column, flex-start, flex-start);
+  width: auto;
+  height: 85px;
+  .inputPhone {
+    background-color: $tertiary;
+    border: none;
+    border-bottom: 2px solid var(--primary-color);
+    border-radius: 3px 3px 0px 0px;
+    padding: $padding_md;
+    @include primaryFont($size_xs);
+    color: $neutral_dark;
+    margin: $margin_md 0 0 0;
+    width: 84%;
+    &::placeholder {
+      color: $neutral;
+    }
+    &:focus {
+      outline: 1px solid var(--primary-color);
+    }
+  }
+
+  .border_error {
+    border-bottom: 2px solid $error;
+  }
+
+  .border_empty {
+    border-bottom: 2px solid $neutral;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .inputContainer {
+    .input {
+      @include primaryFont($size_xs);
+      width: 90%;
+    }
+  }
+}

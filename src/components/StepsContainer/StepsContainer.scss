@@ -1,0 +1,26 @@
+@import "@/utils/theme.scss";
+
+.stepsContainer {
+  @include flex(row, center, center);
+  width: 100%;
+  padding: $padding_md 0 $padding_xl 0;
+  .stepsContainer_container {
+    @include flex(row, space-between, center);
+    max-width: $max_width;
+    width: 100%;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .stepsContainer {
+    flex-wrap: wrap;
+    width: 100%;
+    padding: $padding_lg 0 $padding_lg 0;
+    .stepsContainer_container {
+      margin: 0 $margin_md;
+      flex-wrap: wrap;
+      gap: 10px;
+      width: 100%;
+    }
+  }
+}

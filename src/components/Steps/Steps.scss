@@ -1,0 +1,63 @@
+@import "@/utils/theme.scss";
+
+.steps {
+  @include flex(column, center, center);
+  cursor: pointer;
+  .steps_container {
+    @include flex(row, space-between, flex-end);
+    gap: 22px;
+    .steps_textContainer {
+      @include flex(column, center, flex-start);
+      .steps_text {
+        @include primaryFont($size_sm);
+        color: $neutral_darker;
+      }
+      .steps_textBold {
+        @include secondaryFont($size_sm);
+        color: $neutral_darker;
+      }
+    }
+    .steps_number {
+      @include secondaryFont(150px);
+      height: 150px;
+      margin: 0;
+      color: #c8d1d3;
+    }
+  }
+  .steps_line {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    width: 100%;
+    height: 10px;
+  }
+}
+
+.steps_inactive {
+  opacity: 0.4;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .steps {
+    width: 48%;
+    .steps_container {
+      width: 100%;
+      gap: 5px;
+      .steps_textContainer {
+        .steps_text {
+          @include primaryFont($size_xxs);
+        }
+        .steps_textBold {
+          @include secondaryFont($size_xxs);
+        }
+      }
+      .steps_number {
+        @include secondaryFont(50px);
+        height: 50px;
+      }
+    }
+    .steps_line {
+      height: 5px;
+    }
+  }
+}

@@ -1,0 +1,57 @@
+@import "@/utils/theme.scss";
+
+.step3 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .step3_container {
+    @include flex(column, center, flex-start);
+    width: 100%;
+    max-width: $max_width;
+    .step3_innerContainer {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      width: 100%;
+      gap: 50px;
+      .step3_imgContainer {
+        @include flex(column, flex-start, center);
+        width: 100%;
+        .step3_img {
+          width: 50%;
+        }
+      }
+    }
+
+    .inputForm_mandatory {
+      @include primaryFont($size_xs);
+      color: $error;
+      margin-top: $margin_md;
+      align-self: flex-start;
+    }
+
+    .step3_buttonContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-self: flex-end;
+    }
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step3 {
+    margin-bottom: $margin_md;
+    .step3_container {
+      margin: 0 $margin_md;
+      .step3_innerContainer {
+        display: flex !important;
+        flex-direction: column;
+        width: 100%;
+        gap: 5px;
+        .step3_imgContainer {
+          display: none;
+        }
+      }
+    }
+  }
+}

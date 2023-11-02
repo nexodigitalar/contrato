@@ -1,0 +1,41 @@
+@import "@/utils/theme.scss";
+
+.timer_buttonContainer {
+  @include flex(row, center, center);
+  width: 55%;
+  gap: 10px;
+  margin: 20px 0;
+  .timer_span {
+    @include flex(row, center, center);
+    @include primaryFont($size_xxs);
+    color: $neutral_dark;
+    border: 1px solid $neutral_dark;
+    border-radius: 100%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+  }
+}
+
+.timer_buttonSubtitle {
+  @include primaryFont($size_xxs);
+  color: $neutral_dark;
+  text-decoration: underline;
+  background-color: transparent;
+  border: none;
+  &:hover {
+    cursor: pointer;
+  }
+}
+.timer_buttonSubtitle:disabled {
+  color: $neutral;
+  &:hover {
+    cursor: auto;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .timer_buttonContainer {
+    align-self: center;
+  }
+}

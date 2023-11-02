@@ -1,0 +1,109 @@
+@import "@/utils/theme.scss";
+
+.step1_3 {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .step1_3_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+
+    .step1_3_innerContainer {
+      @include flex(row, flex-start, flex-start);
+      margin: $margin_md 0;
+      width: 100%;
+      .step1_3_watermark {
+        @include secondaryFont(150px);
+        color: $neutral_light;
+        margin: 0 $margin_md;
+        align-self: flex-start;
+        width: 8%;
+      }
+
+      .step1_3_infoContainer {
+        width: 100%;
+        @include flex(column, center, flex-start);
+        .step1_3_title {
+          @include primaryFont($size_lg);
+          color: $neutral_dark;
+          margin: $margin_sm 0;
+        }
+        .step1_3_buttonInnercontainer {
+          @include flex(row, space-between, center);
+          width: 100%;
+          margin: 0 auto;
+          .step1_3_switchInnercontainer {
+            @include flex(row, center, center);
+            gap: 16px;
+          }
+        }
+        .step1_3_switchContainer {
+          align-self: flex-end;
+          @include flex(row, center, center);
+          gap: 16px;
+          margin-top: 10px;
+        }
+        .step1_3_text {
+          @include primaryFont($size_sm);
+          color: $neutral_dark;
+          margin: $margin_xs 0;
+        }
+      }
+    }
+
+    .step1_3_buttonContainer {
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-self: flex-end;
+    }
+    .step1_3_subtext {
+      @include primaryFont($size_xs);
+      color: $neutral_dark;
+      margin-top: $margin_md;
+      text-align: end;
+      width: 100%;
+    }
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .step1_3 {
+    .step1_3_container {
+      .step1_3_innerContainer {
+        margin: $margin_md $margin_md;
+        width: 90%;
+        .step1_3_watermark {
+          display: none;
+        }
+        .step1_3_infoContainer {
+          .step1_3_title {
+            @include primaryFont($size_md);
+          }
+          .text_mobile {
+            @include primaryFont($size_md);
+            margin: 0;
+          }
+          .step1_3_buttonInnercontainer {
+            @include flex(column, center, flex-start);
+          }
+          .step1_3_switchContainer {
+            align-self: flex-start;
+          }
+        }
+      }
+
+      .step1_3_buttonContainer {
+        margin: 0 $margin_md;
+        width: 90%;
+      }
+      .step1_3_subtext {
+        @include primaryFont($size_xxs);
+        text-align: end;
+        margin: 0 $margin_md;
+        width: auto;
+      }
+    }
+  }
+}

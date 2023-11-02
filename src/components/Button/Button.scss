@@ -1,0 +1,49 @@
+@import "@/utils/theme.scss";
+
+.button {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 5px;
+  @include primaryFont($size_xs);
+  border: none;
+  border-radius: 40px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: $tertiary;
+  padding: $padding_md $padding_lg;
+  margin: $margin_md 0;
+  cursor: pointer;
+  transition: all 0.4s;
+  &:hover {
+    box-shadow: 2px 2px 8px #888888;
+  }
+  .button_icon {
+    color: $tertiary;
+    font-size: $size_xs;
+  }
+  &:disabled {
+    background: none;
+    background-color: $neutral_light;
+  }
+}
+
+.buttonSecondary {
+  @include primaryFont($size_xs);
+  padding: $padding_sm $padding_md;
+  color: $tertiary;
+  display: inline-block;
+  cursor: pointer;
+  border: none;
+  &:disabled {
+    background-color: $neutral_light;
+  }
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .button {
+    @include primaryFont($size_xs);
+    padding: $padding_sm $padding_md;
+  }
+}

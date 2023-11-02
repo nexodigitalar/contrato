@@ -1,0 +1,22 @@
+@import "@/utils/theme.scss";
+
+.smsInput {
+  @include flex(row, flex-start, center);
+  gap: 21px;
+  width: 100%;
+}
+
+.smsInput_number {
+  @include primaryFont($size_sm);
+  color: $neutral_dark;
+}
+
+@media screen and (min-width: 200px) and (max-width: 1024px) {
+  .smsinput_button {
+    @include flex(row, space-between, center);
+    gap: 20px;
+  }
+  .smsinput_button {
+    margin-left: 15px;
+  }
+}

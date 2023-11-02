@@ -1,33 +1,80 @@
-// Colores
+// Colors
 
-$primary: #01a767;
-$secondary: #87e9c3;
+$cristal_primary: #003090;
+$cristal_secondary: #4986e8;
+$pimba_primary: #471c56;
+$pimba_secondary: #ffd500;
 $tertiary: #ffffff;
 
-$neutral_dark: #384751;
+$neutral_darker: #384751;
+$neutral_dark: #6e828f;
 $neutral: #b1babd;
 $neutral_light: #dce5e7;
 $neutral_lighter: #fafafa;
 
+$pimba_underline: #fceb96;
+$cristal_underline: #b3ccf3;
+
 $wallpaper: linear-gradient(
   180.16deg,
-  #dce5e7 0.13%,
-  rgba(220, 229, 231, 0) 98.63%
+  #f9fafa 0.5%,
+  rgba(220, 229, 231, 0) 99.5%
 );
 
-$button_gradient: linear-gradient(124.06deg, #01a767 7.23%, #00d281 83.23%);
+$cards: #f2f5f6;
+
+$cristal_primary_gradient: linear-gradient(
+  124.06deg,
+  rgba(0, 48, 144, 0.878431) 7.23%,
+  #4986e8 83.23%
+);
+$pimba_primary_gradient: linear-gradient(
+  124.06deg,
+  rgba(71, 28, 86, 0.878431) 7.23%,
+  #de7eff 83.23%
+);
 
 $error: #ff3a3a;
+$correct: #017347;
+
+/* Colors Var */
+
+:root {
+  --primary-color: #{$cristal_primary};
+  --bg-primary-color: #{$cristal_primary};
+  --secondary-color: #{$cristal_secondary};
+  --bg-secondary-color: #{$cristal_secondary};
+  --primary-gradient: #{$cristal_primary_gradient};
+  --underline: #{$cristal_underline};
+}
+
+[data-theme="cristal"] {
+  --primary-color: #{$cristal_primary};
+  --bg-primary-color: #{$cristal_primary};
+  --secondary-color: #{$cristal_secondary};
+  --bg-secondary-color: #{$cristal_secondary};
+  --primary-gradient: #{$cristal_primary_gradient};
+  --underline: #{$cristal_underline};
+}
+
+[data-theme="pimba"] {
+  --primary-color: #{$pimba_primary};
+  --bg-primary-color: #{$pimba_primary};
+  --secondary-color: #{$pimba_secondary};
+  --bg-secondary-color: #{$pimba_secondary};
+  --primary-gradient: #{$pimba_primary_gradient};
+  --underline: #{$pimba_underline};
+}
 
 // Settings
-$border_radius: 90px 0px;
+$border_radius: 0px 60px;
 $shadow: 0px 4px 5px rgba(0, 0, 0, 0.05);
 $max_width: 1140px;
 
 //Margin
 $margin_xs: 4px;
 $margin_sm: 8px;
-$margin_mm: 16px;
+$margin_md: 16px;
 $margin_lg: 32px;
 $margin_xl: 64px;
 
@@ -39,11 +86,12 @@ $padding_lg: 32px;
 $padding_xl: 64px;
 
 //Font Size
-$size_xs: 18px;
-$size_sm: 20px;
-$size_md: 22px;
-$size_lg: 24px;
-$size_xl: 30px;
+$size_xxs: 14px;
+$size_xs: 16px;
+$size_sm: 18px;
+$size_md: 20px;
+$size_lg: 22px;
+$size_xl: 24px;
 
 //Fonts
 @mixin primaryFont($size) {
