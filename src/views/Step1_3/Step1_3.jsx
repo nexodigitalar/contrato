@@ -283,7 +283,7 @@ const Step1_3 = ({ goBack }) => {
                   useScrollTop();
               }}
               disabled={disabled}
-              classSeo="contrato-paso-3-b"
+              classSeo="contrato-paso-1-b"
             />
           </div>
         </div>

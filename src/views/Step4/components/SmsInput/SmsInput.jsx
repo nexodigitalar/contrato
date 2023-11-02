@@ -20,6 +20,7 @@ const SmsInput = ({ setSmsSent, validatePdf }) => {
         next={false}
         disabled={disabled}
         click={() => setSmsSent(true)}
+        classSeo="contrato-paso-4-token"
       />
     </div>
   );

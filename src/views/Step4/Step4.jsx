@@ -18,6 +18,7 @@ import useFormatNumber from "@/hooks/useFormatNumber";
 import { useState, useEffect } from "react";
 import { blockPages, changePage } from "@/store/pageSlice/pageSlice";
 import { setCodContrato } from "@/store/crmSlice/crmSlice";
+import ReactHtmlParser from "react-html-parser";
 
 import countries from "@/utils/countries.json";
 import departamentos from "@/utils/departamentos.json";
@@ -757,7 +758,7 @@ const Step4 = ({ images }) => {
                   <span className="gray">contrato</span>
                 </h3>
                 <p className="step4_finalText">
-                  {infoGrupo.InfoGrupoProducto?.Observaciones}
+                  {ReactHtmlParser(infoGrupo.InfoGrupoProducto?.Observaciones)}
                 </p>
               </>
             )}

@@ -38,7 +38,7 @@ const SmsContainer = ({ setConfirmContract, validatePdf }) => {
     }
   }, [smsSent]);
 
-  /*   useEffect(() => {
+  /*  useEffect(() => {
     console.log("cod numero", numberValidation);
   }, [numberValidation]); */
 

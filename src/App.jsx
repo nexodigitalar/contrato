@@ -53,8 +53,8 @@ const App = () => {
   };
 
   const getDataFromLocal = () => {
-    let data = JSON.parse(localStorage.getItem("contrato"));
-    /* let data = {
+    /*  let data = JSON.parse(localStorage.getItem("contrato")); */
+    let data = {
       nombre: "Joye",
       apellido: "Ablott",
       email: "jablott2g@businessinsider.com",
@@ -70,7 +70,7 @@ const App = () => {
       espera: "",
       normal: "",
       final: "",
-    }; */
+    };
 
     if (data) {
       dispatch(setData(data));

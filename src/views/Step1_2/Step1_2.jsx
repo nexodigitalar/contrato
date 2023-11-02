@@ -8,6 +8,7 @@ import Button from "@/components/Button/Button";
 /* Hooks */
 import { useState, useEffect } from "react";
 import { useSelector } from "react-redux";
+import ReactHtmlParser from "react-html-parser";
 
 const Step1_2 = ({ changePage }) => {
   const [date, setDate] = useState("");
@@ -290,7 +291,7 @@ const Step1_2 = ({ changePage }) => {
                     <span className="gray">contrato</span>
                   </h3>
                   <p className="step1_2_text">
-                    {infoGrupo.InfoGrupoProducto.Observaciones}
+                    {ReactHtmlParser(infoGrupo.InfoGrupoProducto.Observaciones)}
                   </p>
                 </>
               )}
@@ -307,7 +308,7 @@ const Step1_2 = ({ changePage }) => {
                 <Button
                   text="Siguiente"
                   click={() => changePage(3)}
-                  classSeo="contrato-paso-2-b"
+                  classSeo="contrato-paso-1-a"
                 />
               </div>
             </div>
