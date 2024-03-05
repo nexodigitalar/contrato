@@ -50,12 +50,16 @@ const ConfirmationPage = () => {
         if (data.pCodigoRespuesta == "00") {
           setLink(data.pPagoCuotaResultado);
         } else {
-          console.log(data);
-          dispatch(changePage(5));
+          console.log(
+            "Error en la respuesta de la creación del link de pago:",
+            data.pCodigoRespuesta,
+            " - ",
+            data.pMensajeRespuesta
+          );
         }
       })
       .catch(() => {
-        dispatch(changePage(5));
+        console.log("Error con el servicio WSPagoCuota");
       });
   };
 
