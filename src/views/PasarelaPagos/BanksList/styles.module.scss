@@ -1,0 +1,74 @@
+@import "@/utils/theme.scss";
+
+.container {
+  @include width-height(100%, auto);
+
+  @include flex(column, flex-start, flex-start);
+  gap: 20px;
+  .inner_container {
+    @include width-height(100%, auto);
+    @include flex(row, space-evenly, flex-start);
+    gap: 5px;
+    flex-wrap: wrap;
+    .button_container {
+      @include flex(row, center, center);
+      gap: 5px;
+      .button {
+        background-color: transparent;
+        border: 2px solid transparent;
+        padding: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+        .bank {
+          @include width-height(auto, 35px);
+          max-width: 250px;
+          object-fit: contain;
+        }
+        .Bandes,
+        .Itau,
+        .Heritage {
+          @include width-height(auto, 50px);
+          object-fit: contain;
+        }
+      }
+      .dot {
+        @include width-height(15px, 15px);
+        background-color: $neutral_dark;
+        border-radius: 100%;
+        opacity: 0;
+      }
+      .dot_active {
+        opacity: 1;
+      }
+      .button_active {
+        border: 2px solid $neutral_dark;
+      }
+    }
+  }
+}
+
+// Media querys
+@media (max-width: 450px) {
+  .container {
+    .inner_container {
+      .button_container {
+        @include flex(row, center, center);
+        gap: 5px;
+        .button {
+          padding: 5px 10px;
+          .bank {
+            @include width-height(auto, 20px);
+          }
+          .Bandes,
+          .Itau,
+          .Heritage {
+            @include width-height(auto, 30px);
+          }
+        }
+        .dot {
+          @include width-height(10px, 10px);
+        }
+      }
+    }
+  }
+}

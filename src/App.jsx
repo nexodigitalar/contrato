@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setData } from "@/store/dataSlice/dataSlice";
 import { setId } from "@/store/crmSlice/crmSlice";
 import { setGrupo, setIdConfirmation } from "@/store/crmSlice/crmSlice";
+import { changePage } from "@/store/pageSlice/pageSlice";
 
 /* Components */
 import Step1 from "@/views/Step1/Step1";
@@ -18,7 +19,7 @@ import MainLayout from "@/layout/MainLayout";
 import ConfirmationLayout from "@/layout/ConfirmationLayout";
 import ErrorPage from "@/views/ErrorPage/ErrorPage";
 import ConfirmationPage from "@/views/ConfirmationPage/ConfirmationPage";
-import { changePage } from "@/store/pageSlice/pageSlice";
+import PasarelaPagos from "./views/PasarelaPagos";
 
 const App = () => {
   const [images, setImages] = useState();
@@ -37,7 +38,8 @@ const App = () => {
   }, [pathname]);
 
   useEffect(() => {
-    getDataFromLocal();
+    /*     getDataFromLocal(); */
+    document.documentElement.setAttribute("data-theme", "pimba");
   }, []);
 
   useEffect(() => {
@@ -218,6 +220,7 @@ const App = () => {
         <Route element={<ConfirmationLayout />}>
           {page === 5 && <Route path="/" element={<ErrorPage />} />}
           {page === 6 && <Route path="/" element={<ConfirmationPage />} />}
+          {page === 7 && <Route path="/" element={<PasarelaPagos />} />}
         </Route>
       </Routes>
     </>

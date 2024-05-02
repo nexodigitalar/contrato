@@ -11,7 +11,7 @@ const ConfirmationLayout = () => {
   return (
     <div>
       <NavBar
-        title={value === 6 ? "Confirmación de" : "Error de"}
+        title={value === 6 || 7 ? "Confirmación de" : "Error de"}
         underline="contrato"
         plazo={plazo}
         image={false}

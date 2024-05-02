@@ -1,0 +1,79 @@
+@import "@/utils/theme.scss";
+
+.pasarela_container {
+  @include flex(row, center, center);
+  width: 100%;
+  margin-bottom: $margin_lg;
+  .pasarela_inner_container {
+    @include flex(column, center, center);
+    width: 100%;
+    max-width: $max_width;
+    gap: 40px;
+    padding: $padding_lg 0;
+    .confirmation_header {
+      width: 100%;
+      .confirmation_header_title {
+        @include secondaryFont(5vw);
+        color: $neutral_light;
+        opacity: 0.5;
+        text-align: center;
+      }
+      .confirmation_division {
+        width: 100%;
+        height: 1px;
+        background-color: $neutral_light;
+        max-width: $max_width;
+      }
+    }
+    .pasarela_row {
+      width: 100%;
+      @include flex(row, flex-start, flex-start);
+      gap: 30px;
+      .pasarela_watermark {
+        @include secondaryFont(150px);
+        color: $neutral_light;
+        margin: 0 $margin_md;
+        align-self: flex-start;
+        width: 8%;
+      }
+      .pasarela_title {
+        @include secondaryFont($size_lg);
+        color: $neutral_dark;
+        align-self: flex-start;
+        margin-bottom: $margin_md;
+      }
+    }
+  }
+}
+
+// Media querys
+@media (max-width: 450px) {
+  .pasarela_container {
+    .pasarela_inner_container {
+      margin: 0 $margin_md;
+      gap: 40px;
+      .confirmation_header {
+        padding: $padding_md 0 $padding_md 0;
+        width: 100%;
+        .confirmation_header_title {
+          @include secondaryFont(26px);
+          margin-bottom: $margin_sm;
+        }
+      }
+      .pasarela_row {
+        gap: 15px;
+        .pasarela_watermark {
+          @include secondaryFont(50px);
+          margin: 0;
+          width: auto;
+          margin-top: -3px;
+        }
+        .pasarela_title {
+          @include secondaryFont($size_md);
+          margin: $margin_xs 0;
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+}

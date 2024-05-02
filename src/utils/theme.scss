@@ -113,3 +113,8 @@ $size_xl: 24px;
   justify-content: $justify;
   align-items: $align;
 }
+
+@mixin width-height($width, $height) {
+  width: $width;
+  height: $height;
+}
