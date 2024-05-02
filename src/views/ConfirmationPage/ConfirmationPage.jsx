@@ -7,6 +7,7 @@ import { useSelector } from "react-redux";
 import Button from "@/components/Button/Button";
 import { useEffect, useState } from "react";
 
+
 const ConfirmationPage = () => {
   const idConfirmation = useSelector((state) => state.crm.idConfirmation);
   const codContrato = useSelector((state) => state.crm.codigoContrato);
