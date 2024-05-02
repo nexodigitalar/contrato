@@ -5,10 +5,13 @@ import { useSelector } from "react-redux";
 
 /* Components */
 import Button from "@/components/Button/Button";
+import { useEffect, useState } from "react";
+
 
 const ConfirmationPage = () => {
   const idConfirmation = useSelector((state) => state.crm.idConfirmation);
   const codContrato = useSelector((state) => state.crm.codigoContrato);
+  const [link, setLink] = useState("");
 
   const downloadPdf = (url, name) => {
     fetch(url).then((response) => {
@@ -20,6 +23,45 @@ const ConfirmationPage = () => {
         a.click();
       });
     });
+  };
+
+  useEffect(() => {
+    generateLinkPayment();
+  }, []);
+
+  const generateLinkPayment = async () => {
+    let numberToSend = idConfirmation.split("-");
+    let gruposCodigo = numberToSend[0];
+    let numeroGrupoCodigo = numberToSend[1];
+
+    await fetch(`${import.meta.env.VITE_URL}/WSPagoCuota`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        pUsuario: import.meta.env.VITE_USUARIO,
+        pPassword: import.meta.env.VITE_PASSWORD,
+        pGruposCodigo: gruposCodigo,
+        pNumeroGrupoCodigo: numeroGrupoCodigo,
+      }),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        if (data.pCodigoRespuesta == "00") {
+          setLink(data.pPagoCuotaResultado);
+        } else {
+          console.log(
+            "Error en la respuesta de la creación del link de pago:",
+            data.pCodigoRespuesta,
+            " - ",
+            data.pMensajeRespuesta
+          );
+        }
+      })
+      .catch(() => {
+        console.log("Error con el servicio WSPagoCuota");
+      });
   };
 
   return (
@@ -75,7 +117,7 @@ const ConfirmationPage = () => {
           <div className="confirmation_buttonContainer">
             <a
               target="_blank"
-              href="https://reporteconsorcio.com.uy"
+              href={link}
               className="contrato-paso-4-exito-cuota"
             >
               <Button text="PAGAR MI CUOTA" />
