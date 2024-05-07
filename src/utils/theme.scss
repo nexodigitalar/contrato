@@ -93,6 +93,8 @@ $size_md: 20px;
 $size_lg: 22px;
 $size_xl: 24px;
 
+$querySm: 460px;
+
 //Fonts
 @mixin primaryFont($size) {
   font-family: "GilroyLight", Arial, sans-serif;

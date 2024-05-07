@@ -1,0 +1,19 @@
+@import "@/utils/theme.scss";
+
+.container {
+  @include flex(column, center, flex-start);
+  gap: 50px;
+  @include width-height(100%, auto);
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px 0;
+}
+
+// Media querys
+@media (max-width: $querySm) {
+  .container {
+    gap: 30px;
+    padding: 20px;
+    box-sizing: border-box;
+  }
+}

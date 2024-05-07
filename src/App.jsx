@@ -19,7 +19,7 @@ import MainLayout from "@/layout/MainLayout";
 import ConfirmationLayout from "@/layout/ConfirmationLayout";
 import ErrorPage from "@/views/ErrorPage/ErrorPage";
 import ConfirmationPage from "@/views/ConfirmationPage/ConfirmationPage";
-import PasarelaPagos from "./views/PasarelaPagos";
+import PasarelaPagos from "./views/PasarelaPagos2";
 
 const App = () => {
   const [images, setImages] = useState();

@@ -1,0 +1,90 @@
+@import "@/utils/theme.scss";
+
+.container {
+  @include width-height(100%, auto);
+  background-color: white;
+  margin: 0 auto;
+  border-radius: 20px;
+  .btn {
+    @include width-height(100%, 70px);
+    @include flex(row, space-between, center);
+    background-color: var(--primary-color);
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+    padding: 0 50px;
+    .title {
+      @include secondaryFont(25px);
+      color: white;
+      text-transform: uppercase;
+      text-align: start;
+    }
+    .titleHome {
+      @include secondaryFont(20px);
+      color: white;
+      text-transform: uppercase;
+      text-align: start;
+    }
+    .image {
+      @include width-height(35px, auto);
+      object-fit: contain;
+      transition: all 0.7s;
+    }
+    .imageOpen {
+      transform: rotate(180deg);
+    }
+    .imageClosed {
+      transform: rotate(0deg);
+    }
+  }
+  .dropdown {
+    @include width-height(100%, auto);
+    transition: all 0.7s;
+    .dropdownContent {
+      @include width-height(100%, auto);
+      padding: 20px;
+      transition: all 0.7s;
+    }
+  }
+  .dropdownOpen {
+    max-height: 1200px;
+    transition: max-height 0.7s;
+  }
+  .dropdownClosed {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.7s;
+  }
+}
+
+// Media querys
+@media (max-width: $querySm) {
+  .container {
+    border-radius: 15px;
+    .btn {
+      border-radius: 15px;
+      padding: 0 20px;
+      .title {
+        @include secondaryFont(20px);
+        color: white;
+        margin-right: 10px;
+      }
+      .titleHome {
+        @include secondaryFont(16px);
+        color: white;
+        margin-right: 10px;
+      }
+      .image {
+        @include width-height(25px, auto);
+      }
+    }
+    .dropdown {
+      .dropdownContent {
+        padding: 0 10px;
+      }
+    }
+    .dropdownOpen {
+      padding: 20px 0;
+    }
+  }
+}

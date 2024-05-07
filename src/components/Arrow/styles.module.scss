@@ -1,0 +1,9 @@
+@import "@/utils/theme.scss";
+
+// Media querys
+@media (max-width: $querySm) {
+  .arrow {
+    @include width-height(12px, auto);
+    object-fit: contain;
+  }
+}
