@@ -1,0 +1,50 @@
+@import "@/utils/theme.scss";
+
+.label {
+  @include flex(row, flex-start, center);
+  gap: 20px;
+  @include primaryFont($size_sm);
+  .label_container {
+    position: relative;
+    span {
+      @include secondaryFont($size_sm);
+      position: absolute;
+      color: $neutral_darker;
+      top: 50%;
+      transform: translate(0, -50%);
+      left: 5px;
+    }
+    input {
+      width: 80px;
+      border: none;
+      background-color: $neutral_light;
+      padding: 10px;
+      border-radius: 4px;
+      @include secondaryFont($size_sm);
+      color: $neutral_darker;
+      padding-left: 20px;
+      &:focus {
+        outline: none;
+      }
+    }
+    .label_white {
+      background-color: white;
+    }
+  }
+}
+
+// Media querys
+@media (max-width: $querySm) {
+  .label {
+    @include width-height(100%, auto);
+    @include flex(column, space-between, flex-start);
+    gap: 15px;
+    @include primaryFont($size_xs);
+    .label_container {
+      @include width-height(100%, auto);
+      input {
+        @include width-height(auto, auto);
+      }
+    }
+  }
+}

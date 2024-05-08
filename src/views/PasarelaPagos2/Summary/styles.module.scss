@@ -31,6 +31,10 @@
           @include primaryFont($size_sm);
         }
       }
+      .input_container {
+        @include flex(row, center, center);
+        gap: 10px;
+      }
       .message {
         @include primaryFont($size_xs);
         text-align: end;
@@ -88,7 +92,11 @@
             @include primaryFont($size_xs);
           }
         }
-
+        .input_container {
+          @include flex(column, flex-start, flex-start);
+          gap: 20px;
+          @include width-height(100%, auto);
+        }
         .message {
           text-align: start;
           width: 100%;

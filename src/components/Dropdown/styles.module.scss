@@ -41,7 +41,7 @@
     @include width-height(100%, auto);
     transition: all 0.7s;
     .dropdownContent {
-      @include width-height(100%, auto);
+      @include width-height(auto, auto);
       padding: 20px;
       transition: all 0.7s;
     }
