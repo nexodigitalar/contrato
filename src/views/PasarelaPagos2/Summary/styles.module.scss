@@ -36,7 +36,7 @@
         gap: 10px;
       }
       .message {
-        @include primaryFont($size_xs);
+        @include primaryFont(12px);
         text-align: end;
         width: 80%;
       }
