@@ -38,7 +38,7 @@ const App = () => {
   }, [pathname]);
 
   useEffect(() => {
-    /*     getDataFromLocal(); */
+    getDataFromLocal();
     document.documentElement.setAttribute("data-theme", "pimba");
   }, []);
 

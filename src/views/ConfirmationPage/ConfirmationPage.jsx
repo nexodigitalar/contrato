@@ -1,16 +1,18 @@
 import "./ConfirmationPage.scss";
 import check from "@/assets/img/check.png";
 import wp from "@/assets/img/whatsapp.svg";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 /* Components */
 import Button from "@/components/Button/Button";
 import { useEffect, useState } from "react";
+import { changePage } from "../../store/pageSlice/pageSlice";
 
 const ConfirmationPage = () => {
   const idConfirmation = useSelector((state) => state.crm.idConfirmation);
   const codContrato = useSelector((state) => state.crm.codigoContrato);
   const [link, setLink] = useState("");
+  const dispatch = useDispatch();
 
   const downloadPdf = (url, name) => {
     fetch(url).then((response) => {
@@ -24,11 +26,11 @@ const ConfirmationPage = () => {
     });
   };
 
-  useEffect(() => {
+  /*   useEffect(() => {
     generateLinkPayment();
-  }, []);
+  }, []); */
 
-  const generateLinkPayment = async () => {
+  /*   const generateLinkPayment = async () => {
     let numberToSend = idConfirmation.split("-");
     let gruposCodigo = numberToSend[0];
     let numeroGrupoCodigo = numberToSend[1];
@@ -61,7 +63,7 @@ const ConfirmationPage = () => {
       .catch(() => {
         console.log("Error con el servicio WSPagoCuota");
       });
-  };
+  }; */
 
   return (
     <div className="confirmation">
@@ -114,13 +116,13 @@ const ConfirmationPage = () => {
           </p>
 
           <div className="confirmation_buttonContainer">
-            <a
+            <button
               target="_blank"
-              href={link}
+              href={() => dispatch(changePage(7))}
               className="contrato-paso-4-exito-cuota"
             >
               <Button text="PAGAR MI CUOTA" />
-            </a>
+            </button>
             <a
               target="_blank"
               href="https://wa.me/+59894627000"

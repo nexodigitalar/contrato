@@ -41,7 +41,7 @@ const ErrorPage = () => {
 
           <div className="error_buttonContainer">
             <a
-              href="https://consorcio.uy/"
+              href="https://webtest.consorciouruguay.com/contrato/"
               className="contrato-paso-3-error-volver"
             >
               <Button text="INTENTAR NUEVAMENTE" back={true} next={false} />
